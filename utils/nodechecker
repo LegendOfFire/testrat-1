@@ -1,0 +1,149 @@
+#!/usr/bin/env perl
+# vim:ft=perl
+
+use strict;
+use warnings;
+use DateTime;
+use JSON;
+
+sub fetch_node_info;
+
+my $ni = {};
+my $niParsers = {
+  cell => sub {
+    my ($cni, $ctx, $line) = @_;
+    if ($line =~ /^.*\((?<admState>[^\)]+)\).*\((?<opState>[^\)]+)\)\s*(?<ldn>[^\s]+)\s*$/) {
+      defined($cni->{cell}) or $cni->{cell} = {};
+      $cni->{cell}->{$+{ldn}} = {
+        admState => $+{admState},
+        opState => $+{opState},
+      };
+    }
+  },
+  alarm => sub {
+    my ($cni, $ctx, $line) = @_;
+    if ($line =~ /^Sever\s+(Specific).*(MO)/) {
+      $ctx->{position} = {
+        severity => [0,     $-[1]],
+        problem  => [$-[1], $-[2] - $-[1]],
+        mo       => [$-[2], undef],
+      };
+    } elsif ($line =~ /^M.*\)\s*$/) {
+      defined($cni->{alarm}) or $cni->{alarm} = [];
+      my $alm = {};
+      while (my ($k, $v) = each(%{$ctx->{position}})) {
+        my $s;
+        defined($v->[1])
+          and $s = substr $line, $v->[0], $v->[1]
+          or  $s = substr $line, $v->[0];
+        $s =~ s/^\s+|\s+$//g;
+        $alm->{$k} = $s;
+      }
+      push @{$cni->{alarm}}, $alm;
+    }
+  },
+  board => sub {
+    my ($cni, $ctx, $line) = @_;
+    if (defined($ctx->{table})) {
+      if ($line =~ /^\s*\-+\s*$/) {
+        $ctx->{table} = undef;
+      } elsif ($ctx->{table} == 1) {
+        $line =~ s/^\s+|\s+$//g;
+        my @f = split /\s+/, $line;
+        if (scalar(@f) > 9) {
+          $cni->{board}->{$f[9]} = {
+            serial => $f[9],
+            board => $f[2],
+            date => $f[10],
+            led => {
+              fault => $f[3],
+              oper => $f[4],
+              maint => $f[5],
+            },
+          };
+        }
+      } elsif ($ctx->{table} == 2) {
+        $line =~ s/^\s+|\s+$//g;
+        my @f = split /\s+/, $line;
+        if (scalar(@f) > 10) {
+          $cni->{board}->{$f[9]} = {
+            serial => $f[9],
+            board => $f[3],
+            date => $f[10],
+            led => {
+              fault => $f[4],
+              oper => $f[5],
+              maint => $f[6],
+            },
+          };
+        }
+      } elsif ($ctx->{table} == 3) {
+        $line =~ s/^\s+|\s+$//g;
+        my @f = split /\s+/, $line;
+        if (scalar(@f) > 11) {
+          $cni->{board}->{$f[10]} = {
+            serial => $f[10],
+            board => $f[2],
+            date => $f[11],
+            led => {
+              fault => $f[4],
+              oper => $f[5],
+              maint => $f[6],
+            },
+          };
+        }
+      }
+    } elsif ($line =~ /^SMN\s+APN\s+BOARD\s+FAULT/) {
+      $ctx->{table} = 1;
+    } elsif ($line =~ /^SMN\s+APN\s+PORT\s+BOARD\s+FAULT/) {
+      $ctx->{table} = 2;
+    } elsif ($line =~ /^FRU\s+LNH\s+BOARD\s+ST\s+FAULT/) {
+      $ctx->{table} = 3;
+    }
+  },
+};
+
+my $server = shift @ARGV;
+for my $ip (@ARGV) {
+  my $cni = fetch_node_info($ip);
+  defined($cni) and $ni->{$ip} = $cni;
+}
+
+sub fetch_node_info {
+  my ($ip) = @_;
+  print STDERR "Fetching $ip ...\n";
+  my $cni = {
+    ip => $ip,
+  };
+  open(my $p, "ssh eyinyin\@$server /app/moshell/latest/moshell/moshell $ip <nodechecker.cmd|")
+    or warn "Couldn't open pipe: $!";
+  my $parserId = undef;
+  my $parser = undef;
+  my $ctx = undef;
+  while (my $line = <$p>) {
+    chomp $line;
+    if (defined($parserId)) {
+      if ($line =~ /end:$parserId/) {
+        $parserId = undef;
+        $parser = undef;
+        $ctx = undef;
+      } else {
+        $parser->($cni, $ctx, $line);
+      }
+    } else {
+      while (my ($id, $p) = each(%$niParsers)) {
+        if ($line =~ /begin:$id/) {
+          $parserId = $id;
+          $parser = $p;
+          $ctx = {};
+          last;
+        }
+      }
+    }
+  }
+  close $p;
+  $cni->{datetime} = DateTime->now . "";
+  return $cni;
+}
+
+print to_json($ni, {pretty => 1});
