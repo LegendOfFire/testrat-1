@@ -1,0 +1,98 @@
+#!/usr/bin/env perl
+# vim:ft=perl
+
+use strict;
+use warnings;
+use Carp;
+use File::Basename;
+use Proc::ProcessTable;
+use Getopt::Long;
+
+sub parseSshAgentOutput;
+sub startSshAgent;
+
+my $verbose = 0;
+GetOptions(
+  "v" => \$verbose,
+);
+
+my $shell = basename($ENV{SHELL} || $ENV{XTERM_SHELL});
+if ($shell eq 'sh' || $shell eq 'bash') {
+  $shell = 'sh';
+} elsif ($shell eq 'csh' || $shell eq 'tcsh') {
+  $shell = 'csh';
+} else {
+  confess "Unknown shell '$shell'";
+}
+my $sshEnvFile = "/tmp/$ENV{USER}.sshenv";
+
+my %envs = ();
+if (-e $sshEnvFile) {
+  open my $f, "<$sshEnvFile"
+    or confess "Couldn't open file '$sshEnvFile':$!";
+  %envs = parseSshAgentOutput($f);
+  close $f;
+
+  if (!defined($envs{SSH_AGENT_PID})) {
+    $verbose
+      and print STDERR "Start SSH agent due to 'SSH_AGENT_PID' doesn't exist\n";
+    %envs = startSshAgent;
+  } else {
+    my $procs = Proc::ProcessTable->new;
+    my $found = 0;
+    for my $proc (@{$procs->table}) {
+      if ($proc->pid == $envs{SSH_AGENT_PID}) {
+        $found = 1;
+        last;
+      }
+    }
+    if (!$found) {
+      $verbose
+        and print STDERR "Start SSH agent due to ssh-agent process($envs{SSH_AGENT_PID}) not found\n";
+      %envs = startSshAgent;
+    }
+  }
+} else {
+  $verbose
+    and print STDERR "Start SSH agent due to '$sshEnvFile' doesn't exist\n";
+  %envs = startSshAgent;
+}
+
+open my $f, ">$sshEnvFile"
+  or confess "Couldn't write '$sshEnvFile':$!";
+while (my ($name, $value) = each(%envs)) {
+  print $f "$name=$value; export $name;\n";
+}
+close $f;
+
+if ($shell eq 'sh') {
+  while (my ($name, $value) = each(%envs)) {
+    print "export $name=\"$value\";\n";
+  }
+} elsif ($shell eq 'csh') {
+  while (my ($name, $value) = each(%envs)) {
+    print "setenv $name \"$value\";\n";
+  }
+} else {
+  confess "Unknown shell '$shell'";
+}
+
+sub parseSshAgentOutput {
+  my $p = shift;
+  my %envs = ();
+  while (<$p>) {
+    chomp;
+    /^(?<name>[^=]+)=(?<value>[^;]+);/
+      and $envs{$+{name}} = $+{value};
+  }
+  return %envs;
+}
+
+sub startSshAgent {
+  %envs = ();
+  open my $p, "ssh-agent -s|"
+    or confess "Couldn't run ssh-agent:$!";
+  %envs = parseSshAgentOutput($p);
+  close $p;
+  return %envs;
+}
