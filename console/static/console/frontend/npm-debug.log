@@ -1,0 +1,3186 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@2.15.9
+3 info using node@v4.6.0
+4 verbose readDependencies loading dependencies from C:\Users\eligfeg\Documents\Ericsson\Hackathon\testrat\console\static\console\frontend\package.json
+5 warn package.json webrat-frontend@1.0.0 No description
+6 warn package.json webrat-frontend@1.0.0 No repository field.
+7 warn package.json webrat-frontend@1.0.0 No README data
+8 warn package.json webrat-frontend@1.0.0 No license field.
+9 verbose install where, deps [ 'C:\\Users\\eligfeg\\Documents\\Ericsson\\Hackathon\\testrat\\console\\static\\console\\frontend',
+9 verbose install   [ '@angular/common',
+9 verbose install     '@angular/compiler',
+9 verbose install     '@angular/core',
+9 verbose install     '@angular/forms',
+9 verbose install     '@angular/http',
+9 verbose install     '@angular/platform-browser',
+9 verbose install     '@angular/platform-browser-dynamic',
+9 verbose install     '@angular/router',
+9 verbose install     '@angular/upgrade',
+9 verbose install     'angular-in-memory-web-api',
+9 verbose install     'bootstrap',
+9 verbose install     'core-js',
+9 verbose install     'reflect-metadata',
+9 verbose install     'rxjs',
+9 verbose install     'systemjs',
+9 verbose install     'zone.js',
+9 verbose install     'angular2-fontawesome',
+9 verbose install     '@types/core-js',
+9 verbose install     '@types/node',
+9 verbose install     'concurrently',
+9 verbose install     'lite-server',
+9 verbose install     'typescript' ] ]
+10 verbose install where, peers [ 'C:\\Users\\eligfeg\\Documents\\Ericsson\\Hackathon\\testrat\\console\\static\\console\\frontend',
+10 verbose install   [] ]
+11 verbose installManyTop reading for lifecycle C:\Users\eligfeg\Documents\Ericsson\Hackathon\testrat\console\static\console\frontend\package.json
+12 info preinstall webrat-frontend@1.0.0
+13 verbose readDependencies loading dependencies from C:\Users\eligfeg\Documents\Ericsson\Hackathon\testrat\console\static\console\frontend\package.json
+14 silly cache add args [ '@angular/core@~2.1.1', null ]
+15 verbose cache add spec @angular/core@~2.1.1
+16 silly cache add parsed spec Result {
+16 silly cache add   raw: '@angular/core@~2.1.1',
+16 silly cache add   scope: '@angular',
+16 silly cache add   name: '@angular/core',
+16 silly cache add   rawSpec: '~2.1.1',
+16 silly cache add   spec: '>=2.1.1 <2.2.0',
+16 silly cache add   type: 'range' }
+17 silly addNamed @angular/core@>=2.1.1 <2.2.0
+18 verbose addNamed ">=2.1.1 <2.2.0" is a valid semver range for @angular/core
+19 silly addNameRange { name: '@angular/core',
+19 silly addNameRange   range: '>=2.1.1 <2.2.0',
+19 silly addNameRange   hasData: false }
+20 silly mapToRegistry name @angular/core
+21 silly mapToRegistry scope (from package name) @angular
+22 verbose mapToRegistry no registry URL found in name for scope @angular
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry data Result {
+25 silly mapToRegistry   raw: '@angular/core',
+25 silly mapToRegistry   scope: '@angular',
+25 silly mapToRegistry   name: '@angular/core',
+25 silly mapToRegistry   rawSpec: '',
+25 silly mapToRegistry   spec: 'latest',
+25 silly mapToRegistry   type: 'tag' }
+26 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcore
+27 verbose addNameRange registry:https://registry.npmjs.org/@angular%2fcore not in flight; fetching
+28 silly cache add args [ '@angular/forms@~2.1.1', null ]
+29 verbose cache add spec @angular/forms@~2.1.1
+30 silly cache add parsed spec Result {
+30 silly cache add   raw: '@angular/forms@~2.1.1',
+30 silly cache add   scope: '@angular',
+30 silly cache add   name: '@angular/forms',
+30 silly cache add   rawSpec: '~2.1.1',
+30 silly cache add   spec: '>=2.1.1 <2.2.0',
+30 silly cache add   type: 'range' }
+31 silly addNamed @angular/forms@>=2.1.1 <2.2.0
+32 verbose addNamed ">=2.1.1 <2.2.0" is a valid semver range for @angular/forms
+33 silly addNameRange { name: '@angular/forms',
+33 silly addNameRange   range: '>=2.1.1 <2.2.0',
+33 silly addNameRange   hasData: false }
+34 silly mapToRegistry name @angular/forms
+35 silly mapToRegistry scope (from package name) @angular
+36 verbose mapToRegistry no registry URL found in name for scope @angular
+37 silly mapToRegistry using default registry
+38 silly mapToRegistry registry https://registry.npmjs.org/
+39 silly mapToRegistry data Result {
+39 silly mapToRegistry   raw: '@angular/forms',
+39 silly mapToRegistry   scope: '@angular',
+39 silly mapToRegistry   name: '@angular/forms',
+39 silly mapToRegistry   rawSpec: '',
+39 silly mapToRegistry   spec: 'latest',
+39 silly mapToRegistry   type: 'tag' }
+40 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fforms
+41 verbose addNameRange registry:https://registry.npmjs.org/@angular%2fforms not in flight; fetching
+42 silly cache add args [ '@angular/http@~2.1.1', null ]
+43 verbose cache add spec @angular/http@~2.1.1
+44 silly cache add parsed spec Result {
+44 silly cache add   raw: '@angular/http@~2.1.1',
+44 silly cache add   scope: '@angular',
+44 silly cache add   name: '@angular/http',
+44 silly cache add   rawSpec: '~2.1.1',
+44 silly cache add   spec: '>=2.1.1 <2.2.0',
+44 silly cache add   type: 'range' }
+45 silly addNamed @angular/http@>=2.1.1 <2.2.0
+46 verbose addNamed ">=2.1.1 <2.2.0" is a valid semver range for @angular/http
+47 silly addNameRange { name: '@angular/http',
+47 silly addNameRange   range: '>=2.1.1 <2.2.0',
+47 silly addNameRange   hasData: false }
+48 silly mapToRegistry name @angular/http
+49 silly mapToRegistry scope (from package name) @angular
+50 verbose mapToRegistry no registry URL found in name for scope @angular
+51 silly mapToRegistry using default registry
+52 silly mapToRegistry registry https://registry.npmjs.org/
+53 silly mapToRegistry data Result {
+53 silly mapToRegistry   raw: '@angular/http',
+53 silly mapToRegistry   scope: '@angular',
+53 silly mapToRegistry   name: '@angular/http',
+53 silly mapToRegistry   rawSpec: '',
+53 silly mapToRegistry   spec: 'latest',
+53 silly mapToRegistry   type: 'tag' }
+54 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fhttp
+55 verbose addNameRange registry:https://registry.npmjs.org/@angular%2fhttp not in flight; fetching
+56 silly cache add args [ '@angular/platform-browser@~2.1.1', null ]
+57 verbose cache add spec @angular/platform-browser@~2.1.1
+58 silly cache add parsed spec Result {
+58 silly cache add   raw: '@angular/platform-browser@~2.1.1',
+58 silly cache add   scope: '@angular',
+58 silly cache add   name: '@angular/platform-browser',
+58 silly cache add   rawSpec: '~2.1.1',
+58 silly cache add   spec: '>=2.1.1 <2.2.0',
+58 silly cache add   type: 'range' }
+59 silly addNamed @angular/platform-browser@>=2.1.1 <2.2.0
+60 verbose addNamed ">=2.1.1 <2.2.0" is a valid semver range for @angular/platform-browser
+61 silly addNameRange { name: '@angular/platform-browser',
+61 silly addNameRange   range: '>=2.1.1 <2.2.0',
+61 silly addNameRange   hasData: false }
+62 silly mapToRegistry name @angular/platform-browser
+63 silly mapToRegistry scope (from package name) @angular
+64 verbose mapToRegistry no registry URL found in name for scope @angular
+65 silly mapToRegistry using default registry
+66 silly mapToRegistry registry https://registry.npmjs.org/
+67 silly mapToRegistry data Result {
+67 silly mapToRegistry   raw: '@angular/platform-browser',
+67 silly mapToRegistry   scope: '@angular',
+67 silly mapToRegistry   name: '@angular/platform-browser',
+67 silly mapToRegistry   rawSpec: '',
+67 silly mapToRegistry   spec: 'latest',
+67 silly mapToRegistry   type: 'tag' }
+68 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fplatform-browser
+69 verbose addNameRange registry:https://registry.npmjs.org/@angular%2fplatform-browser not in flight; fetching
+70 silly cache add args [ '@angular/platform-browser-dynamic@~2.1.1', null ]
+71 verbose cache add spec @angular/platform-browser-dynamic@~2.1.1
+72 silly cache add parsed spec Result {
+72 silly cache add   raw: '@angular/platform-browser-dynamic@~2.1.1',
+72 silly cache add   scope: '@angular',
+72 silly cache add   name: '@angular/platform-browser-dynamic',
+72 silly cache add   rawSpec: '~2.1.1',
+72 silly cache add   spec: '>=2.1.1 <2.2.0',
+72 silly cache add   type: 'range' }
+73 silly addNamed @angular/platform-browser-dynamic@>=2.1.1 <2.2.0
+74 verbose addNamed ">=2.1.1 <2.2.0" is a valid semver range for @angular/platform-browser-dynamic
+75 silly addNameRange { name: '@angular/platform-browser-dynamic',
+75 silly addNameRange   range: '>=2.1.1 <2.2.0',
+75 silly addNameRange   hasData: false }
+76 silly mapToRegistry name @angular/platform-browser-dynamic
+77 silly mapToRegistry scope (from package name) @angular
+78 verbose mapToRegistry no registry URL found in name for scope @angular
+79 silly mapToRegistry using default registry
+80 silly mapToRegistry registry https://registry.npmjs.org/
+81 silly mapToRegistry data Result {
+81 silly mapToRegistry   raw: '@angular/platform-browser-dynamic',
+81 silly mapToRegistry   scope: '@angular',
+81 silly mapToRegistry   name: '@angular/platform-browser-dynamic',
+81 silly mapToRegistry   rawSpec: '',
+81 silly mapToRegistry   spec: 'latest',
+81 silly mapToRegistry   type: 'tag' }
+82 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+83 verbose addNameRange registry:https://registry.npmjs.org/@angular%2fplatform-browser-dynamic not in flight; fetching
+84 silly cache add args [ '@angular/router@~3.1.1', null ]
+85 verbose cache add spec @angular/router@~3.1.1
+86 silly cache add parsed spec Result {
+86 silly cache add   raw: '@angular/router@~3.1.1',
+86 silly cache add   scope: '@angular',
+86 silly cache add   name: '@angular/router',
+86 silly cache add   rawSpec: '~3.1.1',
+86 silly cache add   spec: '>=3.1.1 <3.2.0',
+86 silly cache add   type: 'range' }
+87 silly addNamed @angular/router@>=3.1.1 <3.2.0
+88 verbose addNamed ">=3.1.1 <3.2.0" is a valid semver range for @angular/router
+89 silly addNameRange { name: '@angular/router',
+89 silly addNameRange   range: '>=3.1.1 <3.2.0',
+89 silly addNameRange   hasData: false }
+90 silly mapToRegistry name @angular/router
+91 silly mapToRegistry scope (from package name) @angular
+92 verbose mapToRegistry no registry URL found in name for scope @angular
+93 silly mapToRegistry using default registry
+94 silly mapToRegistry registry https://registry.npmjs.org/
+95 silly mapToRegistry data Result {
+95 silly mapToRegistry   raw: '@angular/router',
+95 silly mapToRegistry   scope: '@angular',
+95 silly mapToRegistry   name: '@angular/router',
+95 silly mapToRegistry   rawSpec: '',
+95 silly mapToRegistry   spec: 'latest',
+95 silly mapToRegistry   type: 'tag' }
+96 silly mapToRegistry uri https://registry.npmjs.org/@angular%2frouter
+97 verbose addNameRange registry:https://registry.npmjs.org/@angular%2frouter not in flight; fetching
+98 silly cache add args [ '@angular/upgrade@~2.1.1', null ]
+99 verbose cache add spec @angular/upgrade@~2.1.1
+100 silly cache add parsed spec Result {
+100 silly cache add   raw: '@angular/upgrade@~2.1.1',
+100 silly cache add   scope: '@angular',
+100 silly cache add   name: '@angular/upgrade',
+100 silly cache add   rawSpec: '~2.1.1',
+100 silly cache add   spec: '>=2.1.1 <2.2.0',
+100 silly cache add   type: 'range' }
+101 silly addNamed @angular/upgrade@>=2.1.1 <2.2.0
+102 verbose addNamed ">=2.1.1 <2.2.0" is a valid semver range for @angular/upgrade
+103 silly addNameRange { name: '@angular/upgrade',
+103 silly addNameRange   range: '>=2.1.1 <2.2.0',
+103 silly addNameRange   hasData: false }
+104 silly mapToRegistry name @angular/upgrade
+105 silly mapToRegistry scope (from package name) @angular
+106 verbose mapToRegistry no registry URL found in name for scope @angular
+107 silly mapToRegistry using default registry
+108 silly mapToRegistry registry https://registry.npmjs.org/
+109 silly mapToRegistry data Result {
+109 silly mapToRegistry   raw: '@angular/upgrade',
+109 silly mapToRegistry   scope: '@angular',
+109 silly mapToRegistry   name: '@angular/upgrade',
+109 silly mapToRegistry   rawSpec: '',
+109 silly mapToRegistry   spec: 'latest',
+109 silly mapToRegistry   type: 'tag' }
+110 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fupgrade
+111 verbose addNameRange registry:https://registry.npmjs.org/@angular%2fupgrade not in flight; fetching
+112 silly cache add args [ 'angular-in-memory-web-api@~0.1.13', null ]
+113 verbose cache add spec angular-in-memory-web-api@~0.1.13
+114 silly cache add parsed spec Result {
+114 silly cache add   raw: 'angular-in-memory-web-api@~0.1.13',
+114 silly cache add   scope: null,
+114 silly cache add   name: 'angular-in-memory-web-api',
+114 silly cache add   rawSpec: '~0.1.13',
+114 silly cache add   spec: '>=0.1.13 <0.2.0',
+114 silly cache add   type: 'range' }
+115 silly addNamed angular-in-memory-web-api@>=0.1.13 <0.2.0
+116 verbose addNamed ">=0.1.13 <0.2.0" is a valid semver range for angular-in-memory-web-api
+117 silly addNameRange { name: 'angular-in-memory-web-api',
+117 silly addNameRange   range: '>=0.1.13 <0.2.0',
+117 silly addNameRange   hasData: false }
+118 silly mapToRegistry name angular-in-memory-web-api
+119 silly mapToRegistry using default registry
+120 silly mapToRegistry registry https://registry.npmjs.org/
+121 silly mapToRegistry data Result {
+121 silly mapToRegistry   raw: 'angular-in-memory-web-api',
+121 silly mapToRegistry   scope: null,
+121 silly mapToRegistry   name: 'angular-in-memory-web-api',
+121 silly mapToRegistry   rawSpec: '',
+121 silly mapToRegistry   spec: 'latest',
+121 silly mapToRegistry   type: 'tag' }
+122 silly mapToRegistry uri https://registry.npmjs.org/angular-in-memory-web-api
+123 verbose addNameRange registry:https://registry.npmjs.org/angular-in-memory-web-api not in flight; fetching
+124 silly cache add args [ 'bootstrap@^3.3.7', null ]
+125 verbose cache add spec bootstrap@^3.3.7
+126 silly cache add parsed spec Result {
+126 silly cache add   raw: 'bootstrap@^3.3.7',
+126 silly cache add   scope: null,
+126 silly cache add   name: 'bootstrap',
+126 silly cache add   rawSpec: '^3.3.7',
+126 silly cache add   spec: '>=3.3.7 <4.0.0',
+126 silly cache add   type: 'range' }
+127 silly addNamed bootstrap@>=3.3.7 <4.0.0
+128 verbose addNamed ">=3.3.7 <4.0.0" is a valid semver range for bootstrap
+129 silly addNameRange { name: 'bootstrap', range: '>=3.3.7 <4.0.0', hasData: false }
+130 silly mapToRegistry name bootstrap
+131 silly mapToRegistry using default registry
+132 silly mapToRegistry registry https://registry.npmjs.org/
+133 silly mapToRegistry data Result {
+133 silly mapToRegistry   raw: 'bootstrap',
+133 silly mapToRegistry   scope: null,
+133 silly mapToRegistry   name: 'bootstrap',
+133 silly mapToRegistry   rawSpec: '',
+133 silly mapToRegistry   spec: 'latest',
+133 silly mapToRegistry   type: 'tag' }
+134 silly mapToRegistry uri https://registry.npmjs.org/bootstrap
+135 verbose addNameRange registry:https://registry.npmjs.org/bootstrap not in flight; fetching
+136 silly cache add args [ 'core-js@^2.4.1', null ]
+137 verbose cache add spec core-js@^2.4.1
+138 silly cache add parsed spec Result {
+138 silly cache add   raw: 'core-js@^2.4.1',
+138 silly cache add   scope: null,
+138 silly cache add   name: 'core-js',
+138 silly cache add   rawSpec: '^2.4.1',
+138 silly cache add   spec: '>=2.4.1 <3.0.0',
+138 silly cache add   type: 'range' }
+139 silly addNamed core-js@>=2.4.1 <3.0.0
+140 verbose addNamed ">=2.4.1 <3.0.0" is a valid semver range for core-js
+141 silly addNameRange { name: 'core-js', range: '>=2.4.1 <3.0.0', hasData: false }
+142 silly mapToRegistry name core-js
+143 silly mapToRegistry using default registry
+144 silly mapToRegistry registry https://registry.npmjs.org/
+145 silly mapToRegistry data Result {
+145 silly mapToRegistry   raw: 'core-js',
+145 silly mapToRegistry   scope: null,
+145 silly mapToRegistry   name: 'core-js',
+145 silly mapToRegistry   rawSpec: '',
+145 silly mapToRegistry   spec: 'latest',
+145 silly mapToRegistry   type: 'tag' }
+146 silly mapToRegistry uri https://registry.npmjs.org/core-js
+147 verbose addNameRange registry:https://registry.npmjs.org/core-js not in flight; fetching
+148 silly cache add args [ 'reflect-metadata@^0.1.8', null ]
+149 verbose cache add spec reflect-metadata@^0.1.8
+150 silly cache add parsed spec Result {
+150 silly cache add   raw: 'reflect-metadata@^0.1.8',
+150 silly cache add   scope: null,
+150 silly cache add   name: 'reflect-metadata',
+150 silly cache add   rawSpec: '^0.1.8',
+150 silly cache add   spec: '>=0.1.8 <0.2.0',
+150 silly cache add   type: 'range' }
+151 silly addNamed reflect-metadata@>=0.1.8 <0.2.0
+152 verbose addNamed ">=0.1.8 <0.2.0" is a valid semver range for reflect-metadata
+153 silly addNameRange { name: 'reflect-metadata',
+153 silly addNameRange   range: '>=0.1.8 <0.2.0',
+153 silly addNameRange   hasData: false }
+154 silly mapToRegistry name reflect-metadata
+155 silly mapToRegistry using default registry
+156 silly mapToRegistry registry https://registry.npmjs.org/
+157 silly mapToRegistry data Result {
+157 silly mapToRegistry   raw: 'reflect-metadata',
+157 silly mapToRegistry   scope: null,
+157 silly mapToRegistry   name: 'reflect-metadata',
+157 silly mapToRegistry   rawSpec: '',
+157 silly mapToRegistry   spec: 'latest',
+157 silly mapToRegistry   type: 'tag' }
+158 silly mapToRegistry uri https://registry.npmjs.org/reflect-metadata
+159 verbose addNameRange registry:https://registry.npmjs.org/reflect-metadata not in flight; fetching
+160 silly cache add args [ 'rxjs@5.0.0-beta.12', null ]
+161 verbose cache add spec rxjs@5.0.0-beta.12
+162 silly cache add parsed spec Result {
+162 silly cache add   raw: 'rxjs@5.0.0-beta.12',
+162 silly cache add   scope: null,
+162 silly cache add   name: 'rxjs',
+162 silly cache add   rawSpec: '5.0.0-beta.12',
+162 silly cache add   spec: '5.0.0-beta.12',
+162 silly cache add   type: 'version' }
+163 silly addNamed rxjs@5.0.0-beta.12
+164 verbose addNamed "5.0.0-beta.12" is a plain semver version for rxjs
+165 silly mapToRegistry name rxjs
+166 silly mapToRegistry using default registry
+167 silly mapToRegistry registry https://registry.npmjs.org/
+168 silly mapToRegistry data Result {
+168 silly mapToRegistry   raw: 'rxjs',
+168 silly mapToRegistry   scope: null,
+168 silly mapToRegistry   name: 'rxjs',
+168 silly mapToRegistry   rawSpec: '',
+168 silly mapToRegistry   spec: 'latest',
+168 silly mapToRegistry   type: 'tag' }
+169 silly mapToRegistry uri https://registry.npmjs.org/rxjs
+170 verbose addNameVersion registry:https://registry.npmjs.org/rxjs not in flight; fetching
+171 silly cache add args [ 'systemjs@0.19.39', null ]
+172 verbose cache add spec systemjs@0.19.39
+173 silly cache add parsed spec Result {
+173 silly cache add   raw: 'systemjs@0.19.39',
+173 silly cache add   scope: null,
+173 silly cache add   name: 'systemjs',
+173 silly cache add   rawSpec: '0.19.39',
+173 silly cache add   spec: '0.19.39',
+173 silly cache add   type: 'version' }
+174 silly addNamed systemjs@0.19.39
+175 verbose addNamed "0.19.39" is a plain semver version for systemjs
+176 silly mapToRegistry name systemjs
+177 silly mapToRegistry using default registry
+178 silly mapToRegistry registry https://registry.npmjs.org/
+179 silly mapToRegistry data Result {
+179 silly mapToRegistry   raw: 'systemjs',
+179 silly mapToRegistry   scope: null,
+179 silly mapToRegistry   name: 'systemjs',
+179 silly mapToRegistry   rawSpec: '',
+179 silly mapToRegistry   spec: 'latest',
+179 silly mapToRegistry   type: 'tag' }
+180 silly mapToRegistry uri https://registry.npmjs.org/systemjs
+181 verbose addNameVersion registry:https://registry.npmjs.org/systemjs not in flight; fetching
+182 silly cache add args [ 'zone.js@^0.6.25', null ]
+183 verbose cache add spec zone.js@^0.6.25
+184 silly cache add parsed spec Result {
+184 silly cache add   raw: 'zone.js@^0.6.25',
+184 silly cache add   scope: null,
+184 silly cache add   name: 'zone.js',
+184 silly cache add   rawSpec: '^0.6.25',
+184 silly cache add   spec: '>=0.6.25 <0.7.0',
+184 silly cache add   type: 'range' }
+185 silly addNamed zone.js@>=0.6.25 <0.7.0
+186 verbose addNamed ">=0.6.25 <0.7.0" is a valid semver range for zone.js
+187 silly addNameRange { name: 'zone.js', range: '>=0.6.25 <0.7.0', hasData: false }
+188 silly mapToRegistry name zone.js
+189 silly mapToRegistry using default registry
+190 silly mapToRegistry registry https://registry.npmjs.org/
+191 silly mapToRegistry data Result {
+191 silly mapToRegistry   raw: 'zone.js',
+191 silly mapToRegistry   scope: null,
+191 silly mapToRegistry   name: 'zone.js',
+191 silly mapToRegistry   rawSpec: '',
+191 silly mapToRegistry   spec: 'latest',
+191 silly mapToRegistry   type: 'tag' }
+192 silly mapToRegistry uri https://registry.npmjs.org/zone.js
+193 verbose addNameRange registry:https://registry.npmjs.org/zone.js not in flight; fetching
+194 silly cache add args [ 'angular2-fontawesome@~0.7.0', null ]
+195 verbose cache add spec angular2-fontawesome@~0.7.0
+196 silly cache add parsed spec Result {
+196 silly cache add   raw: 'angular2-fontawesome@~0.7.0',
+196 silly cache add   scope: null,
+196 silly cache add   name: 'angular2-fontawesome',
+196 silly cache add   rawSpec: '~0.7.0',
+196 silly cache add   spec: '>=0.7.0 <0.8.0',
+196 silly cache add   type: 'range' }
+197 silly addNamed angular2-fontawesome@>=0.7.0 <0.8.0
+198 verbose addNamed ">=0.7.0 <0.8.0" is a valid semver range for angular2-fontawesome
+199 silly addNameRange { name: 'angular2-fontawesome',
+199 silly addNameRange   range: '>=0.7.0 <0.8.0',
+199 silly addNameRange   hasData: false }
+200 silly mapToRegistry name angular2-fontawesome
+201 silly mapToRegistry using default registry
+202 silly mapToRegistry registry https://registry.npmjs.org/
+203 silly mapToRegistry data Result {
+203 silly mapToRegistry   raw: 'angular2-fontawesome',
+203 silly mapToRegistry   scope: null,
+203 silly mapToRegistry   name: 'angular2-fontawesome',
+203 silly mapToRegistry   rawSpec: '',
+203 silly mapToRegistry   spec: 'latest',
+203 silly mapToRegistry   type: 'tag' }
+204 silly mapToRegistry uri https://registry.npmjs.org/angular2-fontawesome
+205 verbose addNameRange registry:https://registry.npmjs.org/angular2-fontawesome not in flight; fetching
+206 silly cache add args [ '@types/core-js@^0.9.34', null ]
+207 verbose cache add spec @types/core-js@^0.9.34
+208 silly cache add parsed spec Result {
+208 silly cache add   raw: '@types/core-js@^0.9.34',
+208 silly cache add   scope: '@types',
+208 silly cache add   name: '@types/core-js',
+208 silly cache add   rawSpec: '^0.9.34',
+208 silly cache add   spec: '>=0.9.34 <0.10.0',
+208 silly cache add   type: 'range' }
+209 silly addNamed @types/core-js@>=0.9.34 <0.10.0
+210 verbose addNamed ">=0.9.34 <0.10.0" is a valid semver range for @types/core-js
+211 silly addNameRange { name: '@types/core-js',
+211 silly addNameRange   range: '>=0.9.34 <0.10.0',
+211 silly addNameRange   hasData: false }
+212 silly mapToRegistry name @types/core-js
+213 silly mapToRegistry scope (from package name) @types
+214 verbose mapToRegistry no registry URL found in name for scope @types
+215 silly mapToRegistry using default registry
+216 silly mapToRegistry registry https://registry.npmjs.org/
+217 silly mapToRegistry data Result {
+217 silly mapToRegistry   raw: '@types/core-js',
+217 silly mapToRegistry   scope: '@types',
+217 silly mapToRegistry   name: '@types/core-js',
+217 silly mapToRegistry   rawSpec: '',
+217 silly mapToRegistry   spec: 'latest',
+217 silly mapToRegistry   type: 'tag' }
+218 silly mapToRegistry uri https://registry.npmjs.org/@types%2fcore-js
+219 verbose addNameRange registry:https://registry.npmjs.org/@types%2fcore-js not in flight; fetching
+220 silly cache add args [ '@types/node@^6.0.45', null ]
+221 verbose cache add spec @types/node@^6.0.45
+222 silly cache add parsed spec Result {
+222 silly cache add   raw: '@types/node@^6.0.45',
+222 silly cache add   scope: '@types',
+222 silly cache add   name: '@types/node',
+222 silly cache add   rawSpec: '^6.0.45',
+222 silly cache add   spec: '>=6.0.45 <7.0.0',
+222 silly cache add   type: 'range' }
+223 silly addNamed @types/node@>=6.0.45 <7.0.0
+224 verbose addNamed ">=6.0.45 <7.0.0" is a valid semver range for @types/node
+225 silly addNameRange { name: '@types/node', range: '>=6.0.45 <7.0.0', hasData: false }
+226 silly mapToRegistry name @types/node
+227 silly mapToRegistry scope (from package name) @types
+228 verbose mapToRegistry no registry URL found in name for scope @types
+229 silly mapToRegistry using default registry
+230 silly mapToRegistry registry https://registry.npmjs.org/
+231 silly mapToRegistry data Result {
+231 silly mapToRegistry   raw: '@types/node',
+231 silly mapToRegistry   scope: '@types',
+231 silly mapToRegistry   name: '@types/node',
+231 silly mapToRegistry   rawSpec: '',
+231 silly mapToRegistry   spec: 'latest',
+231 silly mapToRegistry   type: 'tag' }
+232 silly mapToRegistry uri https://registry.npmjs.org/@types%2fnode
+233 verbose addNameRange registry:https://registry.npmjs.org/@types%2fnode not in flight; fetching
+234 silly cache add args [ 'concurrently@^3.0.0', null ]
+235 verbose cache add spec concurrently@^3.0.0
+236 silly cache add parsed spec Result {
+236 silly cache add   raw: 'concurrently@^3.0.0',
+236 silly cache add   scope: null,
+236 silly cache add   name: 'concurrently',
+236 silly cache add   rawSpec: '^3.0.0',
+236 silly cache add   spec: '>=3.0.0 <4.0.0',
+236 silly cache add   type: 'range' }
+237 silly addNamed concurrently@>=3.0.0 <4.0.0
+238 verbose addNamed ">=3.0.0 <4.0.0" is a valid semver range for concurrently
+239 silly addNameRange { name: 'concurrently', range: '>=3.0.0 <4.0.0', hasData: false }
+240 silly mapToRegistry name concurrently
+241 silly mapToRegistry using default registry
+242 silly mapToRegistry registry https://registry.npmjs.org/
+243 silly mapToRegistry data Result {
+243 silly mapToRegistry   raw: 'concurrently',
+243 silly mapToRegistry   scope: null,
+243 silly mapToRegistry   name: 'concurrently',
+243 silly mapToRegistry   rawSpec: '',
+243 silly mapToRegistry   spec: 'latest',
+243 silly mapToRegistry   type: 'tag' }
+244 silly mapToRegistry uri https://registry.npmjs.org/concurrently
+245 verbose addNameRange registry:https://registry.npmjs.org/concurrently not in flight; fetching
+246 silly cache add args [ 'lite-server@^2.2.2', null ]
+247 verbose cache add spec lite-server@^2.2.2
+248 silly cache add parsed spec Result {
+248 silly cache add   raw: 'lite-server@^2.2.2',
+248 silly cache add   scope: null,
+248 silly cache add   name: 'lite-server',
+248 silly cache add   rawSpec: '^2.2.2',
+248 silly cache add   spec: '>=2.2.2 <3.0.0',
+248 silly cache add   type: 'range' }
+249 silly addNamed lite-server@>=2.2.2 <3.0.0
+250 verbose addNamed ">=2.2.2 <3.0.0" is a valid semver range for lite-server
+251 silly addNameRange { name: 'lite-server', range: '>=2.2.2 <3.0.0', hasData: false }
+252 silly mapToRegistry name lite-server
+253 silly mapToRegistry using default registry
+254 silly mapToRegistry registry https://registry.npmjs.org/
+255 silly mapToRegistry data Result {
+255 silly mapToRegistry   raw: 'lite-server',
+255 silly mapToRegistry   scope: null,
+255 silly mapToRegistry   name: 'lite-server',
+255 silly mapToRegistry   rawSpec: '',
+255 silly mapToRegistry   spec: 'latest',
+255 silly mapToRegistry   type: 'tag' }
+256 silly mapToRegistry uri https://registry.npmjs.org/lite-server
+257 verbose addNameRange registry:https://registry.npmjs.org/lite-server not in flight; fetching
+258 silly cache add args [ 'typescript@^2.0.3', null ]
+259 verbose cache add spec typescript@^2.0.3
+260 silly cache add parsed spec Result {
+260 silly cache add   raw: 'typescript@^2.0.3',
+260 silly cache add   scope: null,
+260 silly cache add   name: 'typescript',
+260 silly cache add   rawSpec: '^2.0.3',
+260 silly cache add   spec: '>=2.0.3 <3.0.0',
+260 silly cache add   type: 'range' }
+261 silly addNamed typescript@>=2.0.3 <3.0.0
+262 verbose addNamed ">=2.0.3 <3.0.0" is a valid semver range for typescript
+263 silly addNameRange { name: 'typescript', range: '>=2.0.3 <3.0.0', hasData: false }
+264 silly mapToRegistry name typescript
+265 silly mapToRegistry using default registry
+266 silly mapToRegistry registry https://registry.npmjs.org/
+267 silly mapToRegistry data Result {
+267 silly mapToRegistry   raw: 'typescript',
+267 silly mapToRegistry   scope: null,
+267 silly mapToRegistry   name: 'typescript',
+267 silly mapToRegistry   rawSpec: '',
+267 silly mapToRegistry   spec: 'latest',
+267 silly mapToRegistry   type: 'tag' }
+268 silly mapToRegistry uri https://registry.npmjs.org/typescript
+269 verbose addNameRange registry:https://registry.npmjs.org/typescript not in flight; fetching
+270 silly cache add args [ '@angular/common@~2.1.1', null ]
+271 verbose cache add spec @angular/common@~2.1.1
+272 silly cache add parsed spec Result {
+272 silly cache add   raw: '@angular/common@~2.1.1',
+272 silly cache add   scope: '@angular',
+272 silly cache add   name: '@angular/common',
+272 silly cache add   rawSpec: '~2.1.1',
+272 silly cache add   spec: '>=2.1.1 <2.2.0',
+272 silly cache add   type: 'range' }
+273 silly addNamed @angular/common@>=2.1.1 <2.2.0
+274 verbose addNamed ">=2.1.1 <2.2.0" is a valid semver range for @angular/common
+275 silly addNameRange { name: '@angular/common',
+275 silly addNameRange   range: '>=2.1.1 <2.2.0',
+275 silly addNameRange   hasData: false }
+276 silly mapToRegistry name @angular/common
+277 silly mapToRegistry scope (from package name) @angular
+278 verbose mapToRegistry no registry URL found in name for scope @angular
+279 silly mapToRegistry using default registry
+280 silly mapToRegistry registry https://registry.npmjs.org/
+281 silly mapToRegistry data Result {
+281 silly mapToRegistry   raw: '@angular/common',
+281 silly mapToRegistry   scope: '@angular',
+281 silly mapToRegistry   name: '@angular/common',
+281 silly mapToRegistry   rawSpec: '',
+281 silly mapToRegistry   spec: 'latest',
+281 silly mapToRegistry   type: 'tag' }
+282 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcommon
+283 verbose addNameRange registry:https://registry.npmjs.org/@angular%2fcommon not in flight; fetching
+284 silly cache add args [ '@angular/compiler@~2.1.1', null ]
+285 verbose cache add spec @angular/compiler@~2.1.1
+286 silly cache add parsed spec Result {
+286 silly cache add   raw: '@angular/compiler@~2.1.1',
+286 silly cache add   scope: '@angular',
+286 silly cache add   name: '@angular/compiler',
+286 silly cache add   rawSpec: '~2.1.1',
+286 silly cache add   spec: '>=2.1.1 <2.2.0',
+286 silly cache add   type: 'range' }
+287 silly addNamed @angular/compiler@>=2.1.1 <2.2.0
+288 verbose addNamed ">=2.1.1 <2.2.0" is a valid semver range for @angular/compiler
+289 silly addNameRange { name: '@angular/compiler',
+289 silly addNameRange   range: '>=2.1.1 <2.2.0',
+289 silly addNameRange   hasData: false }
+290 silly mapToRegistry name @angular/compiler
+291 silly mapToRegistry scope (from package name) @angular
+292 verbose mapToRegistry no registry URL found in name for scope @angular
+293 silly mapToRegistry using default registry
+294 silly mapToRegistry registry https://registry.npmjs.org/
+295 silly mapToRegistry data Result {
+295 silly mapToRegistry   raw: '@angular/compiler',
+295 silly mapToRegistry   scope: '@angular',
+295 silly mapToRegistry   name: '@angular/compiler',
+295 silly mapToRegistry   rawSpec: '',
+295 silly mapToRegistry   spec: 'latest',
+295 silly mapToRegistry   type: 'tag' }
+296 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcompiler
+297 verbose addNameRange registry:https://registry.npmjs.org/@angular%2fcompiler not in flight; fetching
+298 verbose request uri https://registry.npmjs.org/@angular%2fcore
+299 verbose request no auth needed
+300 info attempt registry request try #1 at 10:21:06 AM
+301 verbose request id d1d0f30e631d0d0f
+302 http request GET https://registry.npmjs.org/@angular%2fcore
+303 verbose request uri https://registry.npmjs.org/@angular%2fforms
+304 verbose request no auth needed
+305 info attempt registry request try #1 at 10:21:06 AM
+306 http request GET https://registry.npmjs.org/@angular%2fforms
+307 verbose request uri https://registry.npmjs.org/@angular%2fhttp
+308 verbose request no auth needed
+309 info attempt registry request try #1 at 10:21:06 AM
+310 http request GET https://registry.npmjs.org/@angular%2fhttp
+311 verbose request uri https://registry.npmjs.org/@angular%2fplatform-browser
+312 verbose request no auth needed
+313 info attempt registry request try #1 at 10:21:06 AM
+314 http request GET https://registry.npmjs.org/@angular%2fplatform-browser
+315 verbose request uri https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+316 verbose request no auth needed
+317 info attempt registry request try #1 at 10:21:06 AM
+318 http request GET https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+319 verbose request uri https://registry.npmjs.org/@angular%2frouter
+320 verbose request no auth needed
+321 info attempt registry request try #1 at 10:21:06 AM
+322 http request GET https://registry.npmjs.org/@angular%2frouter
+323 verbose request uri https://registry.npmjs.org/@angular%2fupgrade
+324 verbose request no auth needed
+325 info attempt registry request try #1 at 10:21:06 AM
+326 http request GET https://registry.npmjs.org/@angular%2fupgrade
+327 verbose request uri https://registry.npmjs.org/angular-in-memory-web-api
+328 verbose request no auth needed
+329 info attempt registry request try #1 at 10:21:06 AM
+330 http request GET https://registry.npmjs.org/angular-in-memory-web-api
+331 verbose request uri https://registry.npmjs.org/core-js
+332 verbose request no auth needed
+333 info attempt registry request try #1 at 10:21:06 AM
+334 http request GET https://registry.npmjs.org/core-js
+335 verbose request uri https://registry.npmjs.org/reflect-metadata
+336 verbose request no auth needed
+337 info attempt registry request try #1 at 10:21:06 AM
+338 http request GET https://registry.npmjs.org/reflect-metadata
+339 verbose request uri https://registry.npmjs.org/rxjs
+340 verbose request no auth needed
+341 info attempt registry request try #1 at 10:21:06 AM
+342 http request GET https://registry.npmjs.org/rxjs
+343 verbose request uri https://registry.npmjs.org/systemjs
+344 verbose request no auth needed
+345 info attempt registry request try #1 at 10:21:06 AM
+346 http request GET https://registry.npmjs.org/systemjs
+347 verbose request uri https://registry.npmjs.org/zone.js
+348 verbose request no auth needed
+349 info attempt registry request try #1 at 10:21:06 AM
+350 http request GET https://registry.npmjs.org/zone.js
+351 verbose request uri https://registry.npmjs.org/angular2-fontawesome
+352 verbose request no auth needed
+353 info attempt registry request try #1 at 10:21:06 AM
+354 http request GET https://registry.npmjs.org/angular2-fontawesome
+355 verbose request uri https://registry.npmjs.org/@types%2fcore-js
+356 verbose request no auth needed
+357 info attempt registry request try #1 at 10:21:06 AM
+358 http request GET https://registry.npmjs.org/@types%2fcore-js
+359 verbose request uri https://registry.npmjs.org/@types%2fnode
+360 verbose request no auth needed
+361 info attempt registry request try #1 at 10:21:06 AM
+362 http request GET https://registry.npmjs.org/@types%2fnode
+363 verbose request uri https://registry.npmjs.org/concurrently
+364 verbose request no auth needed
+365 info attempt registry request try #1 at 10:21:06 AM
+366 http request GET https://registry.npmjs.org/concurrently
+367 verbose request uri https://registry.npmjs.org/lite-server
+368 verbose request no auth needed
+369 info attempt registry request try #1 at 10:21:06 AM
+370 http request GET https://registry.npmjs.org/lite-server
+371 verbose request uri https://registry.npmjs.org/typescript
+372 verbose request no auth needed
+373 info attempt registry request try #1 at 10:21:06 AM
+374 http request GET https://registry.npmjs.org/typescript
+375 verbose request uri https://registry.npmjs.org/@angular%2fcommon
+376 verbose request no auth needed
+377 info attempt registry request try #1 at 10:21:06 AM
+378 http request GET https://registry.npmjs.org/@angular%2fcommon
+379 verbose request uri https://registry.npmjs.org/@angular%2fcompiler
+380 verbose request no auth needed
+381 info attempt registry request try #1 at 10:21:06 AM
+382 http request GET https://registry.npmjs.org/@angular%2fcompiler
+383 verbose request uri https://registry.npmjs.org/bootstrap
+384 verbose request no auth needed
+385 info attempt registry request try #1 at 10:21:07 AM
+386 verbose etag "AIT17F5GYY57AYUMSRKUK9FKW"
+387 http request GET https://registry.npmjs.org/bootstrap
+388 http 200 https://registry.npmjs.org/reflect-metadata
+389 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+389 verbose headers   etag: '"D4GO0I30YQSD17ETTXWA2YIJD"',
+389 verbose headers   'content-type': 'application/json',
+389 verbose headers   'content-encoding': 'gzip',
+389 verbose headers   'cache-control': 'max-age=300',
+389 verbose headers   'content-length': '5289',
+389 verbose headers   'accept-ranges': 'bytes',
+389 verbose headers   date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+389 verbose headers   via: '1.1 varnish',
+389 verbose headers   age: '139',
+389 verbose headers   connection: 'keep-alive',
+389 verbose headers   'x-served-by': 'cache-lcy1136-LCY',
+389 verbose headers   'x-cache': 'HIT',
+389 verbose headers   'x-cache-hits': '2',
+389 verbose headers   'x-timer': 'S1477534866.956179,VS0,VE0',
+389 verbose headers   vary: 'Accept-Encoding' }
+390 silly get cb [ 200,
+390 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+390 silly get     etag: '"D4GO0I30YQSD17ETTXWA2YIJD"',
+390 silly get     'content-type': 'application/json',
+390 silly get     'content-encoding': 'gzip',
+390 silly get     'cache-control': 'max-age=300',
+390 silly get     'content-length': '5289',
+390 silly get     'accept-ranges': 'bytes',
+390 silly get     date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+390 silly get     via: '1.1 varnish',
+390 silly get     age: '139',
+390 silly get     connection: 'keep-alive',
+390 silly get     'x-served-by': 'cache-lcy1136-LCY',
+390 silly get     'x-cache': 'HIT',
+390 silly get     'x-cache-hits': '2',
+390 silly get     'x-timer': 'S1477534866.956179,VS0,VE0',
+390 silly get     vary: 'Accept-Encoding' } ]
+391 verbose get saving reflect-metadata to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\reflect-metadata\.cache.json
+392 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+393 http 200 https://registry.npmjs.org/bootstrap
+394 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+394 verbose headers   etag: '"7ZRAOM1O81TNVYDGO5JR3MGNZ"',
+394 verbose headers   'content-type': 'application/json',
+394 verbose headers   'content-encoding': 'gzip',
+394 verbose headers   'cache-control': 'max-age=300',
+394 verbose headers   'content-length': '10608',
+394 verbose headers   'accept-ranges': 'bytes',
+394 verbose headers   date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+394 verbose headers   via: '1.1 varnish',
+394 verbose headers   age: '119',
+394 verbose headers   connection: 'keep-alive',
+394 verbose headers   'x-served-by': 'cache-lcy1130-LCY',
+394 verbose headers   'x-cache': 'HIT',
+394 verbose headers   'x-cache-hits': '1',
+394 verbose headers   'x-timer': 'S1477534866.953510,VS0,VE0',
+394 verbose headers   vary: 'Accept-Encoding' }
+395 silly get cb [ 200,
+395 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+395 silly get     etag: '"7ZRAOM1O81TNVYDGO5JR3MGNZ"',
+395 silly get     'content-type': 'application/json',
+395 silly get     'content-encoding': 'gzip',
+395 silly get     'cache-control': 'max-age=300',
+395 silly get     'content-length': '10608',
+395 silly get     'accept-ranges': 'bytes',
+395 silly get     date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+395 silly get     via: '1.1 varnish',
+395 silly get     age: '119',
+395 silly get     connection: 'keep-alive',
+395 silly get     'x-served-by': 'cache-lcy1130-LCY',
+395 silly get     'x-cache': 'HIT',
+395 silly get     'x-cache-hits': '1',
+395 silly get     'x-timer': 'S1477534866.953510,VS0,VE0',
+395 silly get     vary: 'Accept-Encoding' } ]
+396 verbose get saving bootstrap to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\bootstrap\.cache.json
+397 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+398 silly addNameRange number 2 { name: 'reflect-metadata',
+398 silly addNameRange   range: '>=0.1.8 <0.2.0',
+398 silly addNameRange   hasData: true }
+399 silly addNameRange versions [ 'reflect-metadata',
+399 silly addNameRange   [ '0.0.2',
+399 silly addNameRange     '0.0.3',
+399 silly addNameRange     '0.1.0',
+399 silly addNameRange     '0.1.1',
+399 silly addNameRange     '0.1.2',
+399 silly addNameRange     '0.1.3',
+399 silly addNameRange     '0.1.4',
+399 silly addNameRange     '0.1.5',
+399 silly addNameRange     '0.1.6',
+399 silly addNameRange     '0.1.7',
+399 silly addNameRange     '0.1.8' ] ]
+400 silly addNamed reflect-metadata@0.1.8
+401 verbose addNamed "0.1.8" is a plain semver version for reflect-metadata
+402 silly mapToRegistry name reflect-metadata
+403 silly mapToRegistry using default registry
+404 silly mapToRegistry registry https://registry.npmjs.org/
+405 silly mapToRegistry data Result {
+405 silly mapToRegistry   raw: 'reflect-metadata',
+405 silly mapToRegistry   scope: null,
+405 silly mapToRegistry   name: 'reflect-metadata',
+405 silly mapToRegistry   rawSpec: '',
+405 silly mapToRegistry   spec: 'latest',
+405 silly mapToRegistry   type: 'tag' }
+406 silly mapToRegistry uri https://registry.npmjs.org/reflect-metadata
+407 verbose addRemoteTarball https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.8.tgz not in flight; adding
+408 verbose addRemoteTarball [ 'https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.8.tgz',
+408 verbose addRemoteTarball   '72426d570b60776e3688968bd5ab9537a15cecf6' ]
+409 info retry fetch attempt 1 at 10:21:09 AM
+410 info attempt registry request try #1 at 10:21:09 AM
+411 http fetch GET https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.8.tgz
+412 silly addNameRange number 2 { name: 'bootstrap', range: '>=3.3.7 <4.0.0', hasData: true }
+413 silly addNameRange versions [ 'bootstrap',
+413 silly addNameRange   [ '0.0.1',
+413 silly addNameRange     '0.0.2',
+413 silly addNameRange     '3.1.1',
+413 silly addNameRange     '3.2.0',
+413 silly addNameRange     '3.3.0',
+413 silly addNameRange     '3.3.1',
+413 silly addNameRange     '3.3.2',
+413 silly addNameRange     '3.3.4',
+413 silly addNameRange     '3.3.5',
+413 silly addNameRange     '3.3.6',
+413 silly addNameRange     '4.0.0-alpha.2',
+413 silly addNameRange     '3.3.7',
+413 silly addNameRange     '4.0.0-alpha.3',
+413 silly addNameRange     '4.0.0-alpha.4',
+413 silly addNameRange     '4.0.0-alpha.5' ] ]
+414 silly addNamed bootstrap@3.3.7
+415 verbose addNamed "3.3.7" is a plain semver version for bootstrap
+416 silly mapToRegistry name bootstrap
+417 silly mapToRegistry using default registry
+418 silly mapToRegistry registry https://registry.npmjs.org/
+419 silly mapToRegistry data Result {
+419 silly mapToRegistry   raw: 'bootstrap',
+419 silly mapToRegistry   scope: null,
+419 silly mapToRegistry   name: 'bootstrap',
+419 silly mapToRegistry   rawSpec: '',
+419 silly mapToRegistry   spec: 'latest',
+419 silly mapToRegistry   type: 'tag' }
+420 silly mapToRegistry uri https://registry.npmjs.org/bootstrap
+421 verbose addRemoteTarball https://registry.npmjs.org/bootstrap/-/bootstrap-3.3.7.tgz not in flight; adding
+422 verbose addRemoteTarball [ 'https://registry.npmjs.org/bootstrap/-/bootstrap-3.3.7.tgz',
+422 verbose addRemoteTarball   '5a389394549f23330875a3b150656574f8a9eb71' ]
+423 info retry fetch attempt 1 at 10:21:09 AM
+424 info attempt registry request try #1 at 10:21:09 AM
+425 http fetch GET https://registry.npmjs.org/bootstrap/-/bootstrap-3.3.7.tgz
+426 http 200 https://registry.npmjs.org/rxjs
+427 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+427 verbose headers   etag: '"47RCSIGRIDYI7LR1IXL61TKML"',
+427 verbose headers   'content-type': 'application/json',
+427 verbose headers   'content-encoding': 'gzip',
+427 verbose headers   'cache-control': 'max-age=300',
+427 verbose headers   'content-length': '11641',
+427 verbose headers   'accept-ranges': 'bytes',
+427 verbose headers   date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+427 verbose headers   via: '1.1 varnish',
+427 verbose headers   age: '138',
+427 verbose headers   connection: 'keep-alive',
+427 verbose headers   'x-served-by': 'cache-lcy1137-LCY',
+427 verbose headers   'x-cache': 'HIT',
+427 verbose headers   'x-cache-hits': '1',
+427 verbose headers   'x-timer': 'S1477534866.956491,VS0,VE0',
+427 verbose headers   vary: 'Accept-Encoding' }
+428 silly get cb [ 200,
+428 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+428 silly get     etag: '"47RCSIGRIDYI7LR1IXL61TKML"',
+428 silly get     'content-type': 'application/json',
+428 silly get     'content-encoding': 'gzip',
+428 silly get     'cache-control': 'max-age=300',
+428 silly get     'content-length': '11641',
+428 silly get     'accept-ranges': 'bytes',
+428 silly get     date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+428 silly get     via: '1.1 varnish',
+428 silly get     age: '138',
+428 silly get     connection: 'keep-alive',
+428 silly get     'x-served-by': 'cache-lcy1137-LCY',
+428 silly get     'x-cache': 'HIT',
+428 silly get     'x-cache-hits': '1',
+428 silly get     'x-timer': 'S1477534866.956491,VS0,VE0',
+428 silly get     vary: 'Accept-Encoding' } ]
+429 verbose get saving rxjs to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\rxjs\.cache.json
+430 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+431 silly mapToRegistry name rxjs
+432 silly mapToRegistry using default registry
+433 silly mapToRegistry registry https://registry.npmjs.org/
+434 silly mapToRegistry data Result {
+434 silly mapToRegistry   raw: 'rxjs',
+434 silly mapToRegistry   scope: null,
+434 silly mapToRegistry   name: 'rxjs',
+434 silly mapToRegistry   rawSpec: '',
+434 silly mapToRegistry   spec: 'latest',
+434 silly mapToRegistry   type: 'tag' }
+435 silly mapToRegistry uri https://registry.npmjs.org/rxjs
+436 verbose addRemoteTarball https://registry.npmjs.org/rxjs/-/rxjs-5.0.0-beta.12.tgz not in flight; adding
+437 verbose addRemoteTarball [ 'https://registry.npmjs.org/rxjs/-/rxjs-5.0.0-beta.12.tgz',
+437 verbose addRemoteTarball   'cdfde2d8c4639d20ae7794bff8fddf32da7ad337' ]
+438 info retry fetch attempt 1 at 10:21:09 AM
+439 info attempt registry request try #1 at 10:21:09 AM
+440 http fetch GET https://registry.npmjs.org/rxjs/-/rxjs-5.0.0-beta.12.tgz
+441 http 200 https://registry.npmjs.org/systemjs
+442 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+442 verbose headers   etag: '"3U1V19WGBB51OEZT64PJGX7T"',
+442 verbose headers   'content-type': 'application/json',
+442 verbose headers   'content-encoding': 'gzip',
+442 verbose headers   'cache-control': 'max-age=300',
+442 verbose headers   'content-length': '18284',
+442 verbose headers   'accept-ranges': 'bytes',
+442 verbose headers   date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+442 verbose headers   via: '1.1 varnish',
+442 verbose headers   age: '239',
+442 verbose headers   connection: 'keep-alive',
+442 verbose headers   'x-served-by': 'cache-lcy1147-LCY',
+442 verbose headers   'x-cache': 'HIT',
+442 verbose headers   'x-cache-hits': '1',
+442 verbose headers   'x-timer': 'S1477534866.947805,VS0,VE0',
+442 verbose headers   vary: 'Accept-Encoding' }
+443 silly get cb [ 200,
+443 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+443 silly get     etag: '"3U1V19WGBB51OEZT64PJGX7T"',
+443 silly get     'content-type': 'application/json',
+443 silly get     'content-encoding': 'gzip',
+443 silly get     'cache-control': 'max-age=300',
+443 silly get     'content-length': '18284',
+443 silly get     'accept-ranges': 'bytes',
+443 silly get     date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+443 silly get     via: '1.1 varnish',
+443 silly get     age: '239',
+443 silly get     connection: 'keep-alive',
+443 silly get     'x-served-by': 'cache-lcy1147-LCY',
+443 silly get     'x-cache': 'HIT',
+443 silly get     'x-cache-hits': '1',
+443 silly get     'x-timer': 'S1477534866.947805,VS0,VE0',
+443 silly get     vary: 'Accept-Encoding' } ]
+444 verbose get saving systemjs to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\systemjs\.cache.json
+445 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+446 silly mapToRegistry name systemjs
+447 silly mapToRegistry using default registry
+448 silly mapToRegistry registry https://registry.npmjs.org/
+449 silly mapToRegistry data Result {
+449 silly mapToRegistry   raw: 'systemjs',
+449 silly mapToRegistry   scope: null,
+449 silly mapToRegistry   name: 'systemjs',
+449 silly mapToRegistry   rawSpec: '',
+449 silly mapToRegistry   spec: 'latest',
+449 silly mapToRegistry   type: 'tag' }
+450 silly mapToRegistry uri https://registry.npmjs.org/systemjs
+451 verbose addRemoteTarball https://registry.npmjs.org/systemjs/-/systemjs-0.19.39.tgz not in flight; adding
+452 verbose addRemoteTarball [ 'https://registry.npmjs.org/systemjs/-/systemjs-0.19.39.tgz',
+452 verbose addRemoteTarball   'e513e6f91a25a37b8b607c51c7989ee0d67b9356' ]
+453 info retry fetch attempt 1 at 10:21:09 AM
+454 info attempt registry request try #1 at 10:21:09 AM
+455 http fetch GET https://registry.npmjs.org/systemjs/-/systemjs-0.19.39.tgz
+456 http 200 https://registry.npmjs.org/@types%2fnode
+457 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+457 verbose headers   etag: '"18HH42ZQQXVAGDD5F455TP9GZ"',
+457 verbose headers   'content-type': 'application/json',
+457 verbose headers   'content-encoding': 'gzip',
+457 verbose headers   'cache-control': 'max-age=0',
+457 verbose headers   'transfer-encoding': 'chunked',
+457 verbose headers   'accept-ranges': 'bytes',
+457 verbose headers   date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+457 verbose headers   via: '1.1 varnish',
+457 verbose headers   age: '0',
+457 verbose headers   connection: 'keep-alive',
+457 verbose headers   'x-served-by': 'cache-lcy1129-LCY',
+457 verbose headers   'x-cache': 'MISS',
+457 verbose headers   'x-cache-hits': '0',
+457 verbose headers   'x-timer': 'S1477534866.962108,VS0,VE216',
+457 verbose headers   vary: 'Accept-Encoding' }
+458 silly get cb [ 200,
+458 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+458 silly get     etag: '"18HH42ZQQXVAGDD5F455TP9GZ"',
+458 silly get     'content-type': 'application/json',
+458 silly get     'content-encoding': 'gzip',
+458 silly get     'cache-control': 'max-age=0',
+458 silly get     'transfer-encoding': 'chunked',
+458 silly get     'accept-ranges': 'bytes',
+458 silly get     date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+458 silly get     via: '1.1 varnish',
+458 silly get     age: '0',
+458 silly get     connection: 'keep-alive',
+458 silly get     'x-served-by': 'cache-lcy1129-LCY',
+458 silly get     'x-cache': 'MISS',
+458 silly get     'x-cache-hits': '0',
+458 silly get     'x-timer': 'S1477534866.962108,VS0,VE216',
+458 silly get     vary: 'Accept-Encoding' } ]
+459 verbose get saving @types/node to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\_40types_252fnode\.cache.json
+460 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+461 silly addNameRange number 2 { name: '@types/node', range: '>=6.0.45 <7.0.0', hasData: true }
+462 silly addNameRange versions [ '@types/node',
+462 silly addNameRange   [ '4.0.15-alpha',
+462 silly addNameRange     '4.0.16-alpha',
+462 silly addNameRange     '4.0.21-alpha',
+462 silly addNameRange     '4.0.22-alpha',
+462 silly addNameRange     '4.0.23-alpha',
+462 silly addNameRange     '4.0.24-alpha',
+462 silly addNameRange     '4.0.25-alpha',
+462 silly addNameRange     '4.0.26-alpha',
+462 silly addNameRange     '4.0.27-alpha',
+462 silly addNameRange     '4.0.28-alpha',
+462 silly addNameRange     '4.0.29',
+462 silly addNameRange     '4.0.30',
+462 silly addNameRange     '6.0.31',
+462 silly addNameRange     '6.0.32',
+462 silly addNameRange     '6.0.33',
+462 silly addNameRange     '6.0.34',
+462 silly addNameRange     '6.0.35',
+462 silly addNameRange     '6.0.36',
+462 silly addNameRange     '6.0.37',
+462 silly addNameRange     '6.0.38',
+462 silly addNameRange     '6.0.39',
+462 silly addNameRange     '6.0.40',
+462 silly addNameRange     '6.0.41',
+462 silly addNameRange     '6.0.42',
+462 silly addNameRange     '6.0.43',
+462 silly addNameRange     '6.0.44',
+462 silly addNameRange     '6.0.45',
+462 silly addNameRange     '6.0.46' ] ]
+463 silly addNamed @types/node@6.0.46
+464 verbose addNamed "6.0.46" is a plain semver version for @types/node
+465 silly mapToRegistry name @types/node
+466 silly mapToRegistry scope (from package name) @types
+467 verbose mapToRegistry no registry URL found in name for scope @types
+468 silly mapToRegistry using default registry
+469 silly mapToRegistry registry https://registry.npmjs.org/
+470 silly mapToRegistry data Result {
+470 silly mapToRegistry   raw: '@types/node',
+470 silly mapToRegistry   scope: '@types',
+470 silly mapToRegistry   name: '@types/node',
+470 silly mapToRegistry   rawSpec: '',
+470 silly mapToRegistry   spec: 'latest',
+470 silly mapToRegistry   type: 'tag' }
+471 silly mapToRegistry uri https://registry.npmjs.org/@types%2fnode
+472 verbose addRemoteTarball https://registry.npmjs.org/@types/node/-/node-6.0.46.tgz not in flight; adding
+473 verbose addRemoteTarball [ 'https://registry.npmjs.org/@types/node/-/node-6.0.46.tgz',
+473 verbose addRemoteTarball   '8d9e48572831f05b11cc4c793754d43437219d62' ]
+474 info retry fetch attempt 1 at 10:21:09 AM
+475 info attempt registry request try #1 at 10:21:09 AM
+476 http fetch GET https://registry.npmjs.org/@types/node/-/node-6.0.46.tgz
+477 http 200 https://registry.npmjs.org/core-js
+478 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+478 verbose headers   etag: '"C6FI1SES1KL1JLSHTAWG2W1UB"',
+478 verbose headers   'content-type': 'application/json',
+478 verbose headers   'content-encoding': 'gzip',
+478 verbose headers   'cache-control': 'max-age=300',
+478 verbose headers   'content-length': '33452',
+478 verbose headers   'accept-ranges': 'bytes',
+478 verbose headers   date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+478 verbose headers   via: '1.1 varnish',
+478 verbose headers   age: '99',
+478 verbose headers   connection: 'keep-alive',
+478 verbose headers   'x-served-by': 'cache-lcy1138-LCY',
+478 verbose headers   'x-cache': 'HIT',
+478 verbose headers   'x-cache-hits': '1',
+478 verbose headers   'x-timer': 'S1477534866.950495,VS0,VE1',
+478 verbose headers   vary: 'Accept-Encoding' }
+479 silly get cb [ 200,
+479 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+479 silly get     etag: '"C6FI1SES1KL1JLSHTAWG2W1UB"',
+479 silly get     'content-type': 'application/json',
+479 silly get     'content-encoding': 'gzip',
+479 silly get     'cache-control': 'max-age=300',
+479 silly get     'content-length': '33452',
+479 silly get     'accept-ranges': 'bytes',
+479 silly get     date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+479 silly get     via: '1.1 varnish',
+479 silly get     age: '99',
+479 silly get     connection: 'keep-alive',
+479 silly get     'x-served-by': 'cache-lcy1138-LCY',
+479 silly get     'x-cache': 'HIT',
+479 silly get     'x-cache-hits': '1',
+479 silly get     'x-timer': 'S1477534866.950495,VS0,VE1',
+479 silly get     vary: 'Accept-Encoding' } ]
+480 verbose get saving core-js to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\core-js\.cache.json
+481 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+482 silly addNameRange number 2 { name: 'core-js', range: '>=2.4.1 <3.0.0', hasData: true }
+483 silly addNameRange versions [ 'core-js',
+483 silly addNameRange   [ '0.0.3',
+483 silly addNameRange     '0.0.4',
+483 silly addNameRange     '0.0.5',
+483 silly addNameRange     '0.0.7',
+483 silly addNameRange     '0.0.8',
+483 silly addNameRange     '0.0.9',
+483 silly addNameRange     '0.1.1',
+483 silly addNameRange     '0.1.2',
+483 silly addNameRange     '0.1.3',
+483 silly addNameRange     '0.1.4',
+483 silly addNameRange     '0.1.5',
+483 silly addNameRange     '0.2.0',
+483 silly addNameRange     '0.2.1',
+483 silly addNameRange     '0.2.2',
+483 silly addNameRange     '0.2.3',
+483 silly addNameRange     '0.2.4',
+483 silly addNameRange     '0.2.5',
+483 silly addNameRange     '0.3.0',
+483 silly addNameRange     '0.3.1',
+483 silly addNameRange     '0.3.2',
+483 silly addNameRange     '0.3.3',
+483 silly addNameRange     '0.4.0',
+483 silly addNameRange     '0.4.1',
+483 silly addNameRange     '0.4.2',
+483 silly addNameRange     '0.4.3',
+483 silly addNameRange     '0.4.4',
+483 silly addNameRange     '0.4.5',
+483 silly addNameRange     '0.4.6',
+483 silly addNameRange     '0.4.7',
+483 silly addNameRange     '0.4.8',
+483 silly addNameRange     '0.4.9',
+483 silly addNameRange     '0.4.10',
+483 silly addNameRange     '0.5.0',
+483 silly addNameRange     '0.5.1',
+483 silly addNameRange     '0.5.2',
+483 silly addNameRange     '0.5.3',
+483 silly addNameRange     '0.5.4',
+483 silly addNameRange     '0.6.0',
+483 silly addNameRange     '0.6.1',
+483 silly addNameRange     '0.7.0',
+483 silly addNameRange     '0.7.1',
+483 silly addNameRange     '0.7.2',
+483 silly addNameRange     '0.8.0',
+483 silly addNameRange     '0.8.1',
+483 silly addNameRange     '0.8.2',
+483 silly addNameRange     '0.8.3',
+483 silly addNameRange     '0.8.4',
+483 silly addNameRange     '0.9.0',
+483 silly addNameRange     '0.9.1',
+483 silly addNameRange     '0.9.2',
+483 silly addNameRange     '0.9.3',
+483 silly addNameRange     '0.9.4',
+483 silly addNameRange     '0.9.5',
+483 silly addNameRange     '0.9.6',
+483 silly addNameRange     '0.9.7',
+483 silly addNameRange     '0.9.8',
+483 silly addNameRange     '0.9.9',
+483 silly addNameRange     '0.9.10',
+483 silly addNameRange     '0.9.11',
+483 silly addNameRange     '0.9.12',
+483 silly addNameRange     '0.9.13',
+483 silly addNameRange     '0.9.14',
+483 silly addNameRange     '0.9.15',
+483 silly addNameRange     '0.9.16',
+483 silly addNameRange     '0.9.17',
+483 silly addNameRange     '0.9.18',
+483 silly addNameRange     '1.0.0',
+483 silly addNameRange     '1.0.1',
+483 silly addNameRange     '1.1.0',
+483 silly addNameRange     '1.1.1',
+483 silly addNameRange     '1.1.2',
+483 silly addNameRange     '1.1.3',
+483 silly addNameRange     '1.1.4',
+483 silly addNameRange     '1.2.0',
+483 silly addNameRange     '1.2.1',
+483 silly addNameRange     '1.2.2',
+483 silly addNameRange     '1.2.3',
+483 silly addNameRange     '1.2.4',
+483 silly addNameRange     '1.2.5',
+483 silly addNameRange     '1.2.6',
+483 silly addNameRange     '2.0.0-alpha',
+483 silly addNameRange     '2.0.0-beta',
+483 silly addNameRange     '2.0.0-beta.2',
+483 silly addNameRange     '2.0.0',
+483 silly addNameRange     '2.0.1',
+483 silly addNameRange     '2.0.2',
+483 silly addNameRange     '2.0.3',
+483 silly addNameRange     '2.1.0',
+483 silly addNameRange     '2.1.1',
+483 silly addNameRange     '2.1.2',
+483 silly addNameRange     '2.1.3',
+483 silly addNameRange     '2.1.4',
+483 silly addNameRange     '2.1.5',
+483 silly addNameRange     '2.2.0',
+483 silly addNameRange     '2.2.1',
+483 silly addNameRange     '2.2.2',
+483 silly addNameRange     '2.3.0',
+483 silly addNameRange     '2.4.0',
+483 silly addNameRange     '1.2.7',
+483 silly addNameRange     '2.4.1' ] ]
+484 silly addNamed core-js@2.4.1
+485 verbose addNamed "2.4.1" is a plain semver version for core-js
+486 silly mapToRegistry name core-js
+487 silly mapToRegistry using default registry
+488 silly mapToRegistry registry https://registry.npmjs.org/
+489 silly mapToRegistry data Result {
+489 silly mapToRegistry   raw: 'core-js',
+489 silly mapToRegistry   scope: null,
+489 silly mapToRegistry   name: 'core-js',
+489 silly mapToRegistry   rawSpec: '',
+489 silly mapToRegistry   spec: 'latest',
+489 silly mapToRegistry   type: 'tag' }
+490 silly mapToRegistry uri https://registry.npmjs.org/core-js
+491 verbose addRemoteTarball https://registry.npmjs.org/core-js/-/core-js-2.4.1.tgz not in flight; adding
+492 verbose addRemoteTarball [ 'https://registry.npmjs.org/core-js/-/core-js-2.4.1.tgz',
+492 verbose addRemoteTarball   '4de911e667b0eae9124e34254b53aea6fc618d3e' ]
+493 info retry fetch attempt 1 at 10:21:09 AM
+494 info attempt registry request try #1 at 10:21:09 AM
+495 http fetch GET https://registry.npmjs.org/core-js/-/core-js-2.4.1.tgz
+496 http 200 https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+497 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+497 verbose headers   etag: '"EBKWG3URTDJ0PRWT954WH6D94"',
+497 verbose headers   'content-type': 'application/json',
+497 verbose headers   'content-encoding': 'gzip',
+497 verbose headers   'cache-control': 'max-age=0',
+497 verbose headers   'transfer-encoding': 'chunked',
+497 verbose headers   'accept-ranges': 'bytes',
+497 verbose headers   date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+497 verbose headers   via: '1.1 varnish',
+497 verbose headers   age: '0',
+497 verbose headers   connection: 'keep-alive',
+497 verbose headers   'x-served-by': 'cache-lcy1149-LCY',
+497 verbose headers   'x-cache': 'MISS',
+497 verbose headers   'x-cache-hits': '0',
+497 verbose headers   'x-timer': 'S1477534866.957887,VS0,VE369',
+497 verbose headers   vary: 'Accept-Encoding' }
+498 silly get cb [ 200,
+498 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+498 silly get     etag: '"EBKWG3URTDJ0PRWT954WH6D94"',
+498 silly get     'content-type': 'application/json',
+498 silly get     'content-encoding': 'gzip',
+498 silly get     'cache-control': 'max-age=0',
+498 silly get     'transfer-encoding': 'chunked',
+498 silly get     'accept-ranges': 'bytes',
+498 silly get     date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+498 silly get     via: '1.1 varnish',
+498 silly get     age: '0',
+498 silly get     connection: 'keep-alive',
+498 silly get     'x-served-by': 'cache-lcy1149-LCY',
+498 silly get     'x-cache': 'MISS',
+498 silly get     'x-cache-hits': '0',
+498 silly get     'x-timer': 'S1477534866.957887,VS0,VE369',
+498 silly get     vary: 'Accept-Encoding' } ]
+499 verbose get saving @angular/platform-browser-dynamic to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\_40angular_252fplatform-browser-dynamic\.cache.json
+500 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+501 silly addNameRange number 2 { name: '@angular/platform-browser-dynamic',
+501 silly addNameRange   range: '>=2.1.1 <2.2.0',
+501 silly addNameRange   hasData: true }
+502 silly addNameRange versions [ '@angular/platform-browser-dynamic',
+502 silly addNameRange   [ '0.0.0-0',
+502 silly addNameRange     '0.0.0-1',
+502 silly addNameRange     '0.0.0-2',
+502 silly addNameRange     '0.0.0-3',
+502 silly addNameRange     '0.0.0-4',
+502 silly addNameRange     '0.0.0-5',
+502 silly addNameRange     '0.0.0-6',
+502 silly addNameRange     '0.0.0-7',
+502 silly addNameRange     '2.0.0-rc.0',
+502 silly addNameRange     '2.0.0-rc.1',
+502 silly addNameRange     '2.0.0-rc.2',
+502 silly addNameRange     '2.0.0-rc.3',
+502 silly addNameRange     '2.0.0-rc.4',
+502 silly addNameRange     '2.0.0-rc.5',
+502 silly addNameRange     '2.0.0-rc.6',
+502 silly addNameRange     '2.0.0-rc.7',
+502 silly addNameRange     '2.0.0',
+502 silly addNameRange     '2.0.1',
+502 silly addNameRange     '2.1.0-beta.0',
+502 silly addNameRange     '2.0.2',
+502 silly addNameRange     '2.1.0-rc.0',
+502 silly addNameRange     '2.1.0',
+502 silly addNameRange     '2.2.0-beta.0',
+502 silly addNameRange     '2.1.1' ] ]
+503 silly addNamed @angular/platform-browser-dynamic@2.1.1
+504 verbose addNamed "2.1.1" is a plain semver version for @angular/platform-browser-dynamic
+505 silly mapToRegistry name @angular/platform-browser-dynamic
+506 silly mapToRegistry scope (from package name) @angular
+507 verbose mapToRegistry no registry URL found in name for scope @angular
+508 silly mapToRegistry using default registry
+509 silly mapToRegistry registry https://registry.npmjs.org/
+510 silly mapToRegistry data Result {
+510 silly mapToRegistry   raw: '@angular/platform-browser-dynamic',
+510 silly mapToRegistry   scope: '@angular',
+510 silly mapToRegistry   name: '@angular/platform-browser-dynamic',
+510 silly mapToRegistry   rawSpec: '',
+510 silly mapToRegistry   spec: 'latest',
+510 silly mapToRegistry   type: 'tag' }
+511 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fplatform-browser-dynamic
+512 verbose addRemoteTarball https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-2.1.1.tgz not in flight; adding
+513 verbose addRemoteTarball [ 'https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-2.1.1.tgz',
+513 verbose addRemoteTarball   'd1e671abbc35c4c3dab01d266a239ebfb0ef8b6e' ]
+514 info retry fetch attempt 1 at 10:21:09 AM
+515 info attempt registry request try #1 at 10:21:09 AM
+516 http fetch GET https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-2.1.1.tgz
+517 http 200 https://registry.npmjs.org/typescript
+518 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+518 verbose headers   etag: '"40NTLXD6D4MVAU8X8N95XEVDZ"',
+518 verbose headers   'content-type': 'application/json',
+518 verbose headers   'content-encoding': 'gzip',
+518 verbose headers   'cache-control': 'max-age=300',
+518 verbose headers   'content-length': '78687',
+518 verbose headers   'accept-ranges': 'bytes',
+518 verbose headers   date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+518 verbose headers   via: '1.1 varnish',
+518 verbose headers   age: '103',
+518 verbose headers   connection: 'keep-alive',
+518 verbose headers   'x-served-by': 'cache-lcy1142-LCY',
+518 verbose headers   'x-cache': 'HIT',
+518 verbose headers   'x-cache-hits': '24',
+518 verbose headers   'x-timer': 'S1477534866.951829,VS0,VE0',
+518 verbose headers   vary: 'Accept-Encoding' }
+519 silly get cb [ 200,
+519 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+519 silly get     etag: '"40NTLXD6D4MVAU8X8N95XEVDZ"',
+519 silly get     'content-type': 'application/json',
+519 silly get     'content-encoding': 'gzip',
+519 silly get     'cache-control': 'max-age=300',
+519 silly get     'content-length': '78687',
+519 silly get     'accept-ranges': 'bytes',
+519 silly get     date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+519 silly get     via: '1.1 varnish',
+519 silly get     age: '103',
+519 silly get     connection: 'keep-alive',
+519 silly get     'x-served-by': 'cache-lcy1142-LCY',
+519 silly get     'x-cache': 'HIT',
+519 silly get     'x-cache-hits': '24',
+519 silly get     'x-timer': 'S1477534866.951829,VS0,VE0',
+519 silly get     vary: 'Accept-Encoding' } ]
+520 verbose get saving typescript to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\typescript\.cache.json
+521 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+522 silly addNameRange number 2 { name: 'typescript', range: '>=2.0.3 <3.0.0', hasData: true }
+523 silly addNameRange versions [ 'typescript',
+523 silly addNameRange   [ '0.8.0',
+523 silly addNameRange     '0.8.1',
+523 silly addNameRange     '0.8.1-1',
+523 silly addNameRange     '0.8.2',
+523 silly addNameRange     '0.8.3',
+523 silly addNameRange     '0.9.0',
+523 silly addNameRange     '0.9.0-1',
+523 silly addNameRange     '0.9.1',
+523 silly addNameRange     '0.9.1-1',
+523 silly addNameRange     '0.9.5',
+523 silly addNameRange     '0.9.7',
+523 silly addNameRange     '1.0.0',
+523 silly addNameRange     '1.0.1',
+523 silly addNameRange     '1.1.0-1',
+523 silly addNameRange     '1.3.0',
+523 silly addNameRange     '1.4.1',
+523 silly addNameRange     '1.5.0-alpha',
+523 silly addNameRange     '1.5.0-beta',
+523 silly addNameRange     '1.5.3',
+523 silly addNameRange     '1.6.0-dev.20150722.1',
+523 silly addNameRange     '1.6.0-dev.20150723',
+523 silly addNameRange     '1.6.0-dev.20150724',
+523 silly addNameRange     '1.6.0-dev.20150725',
+523 silly addNameRange     '1.6.0-dev.20150726',
+523 silly addNameRange     '1.6.0-dev.20150727',
+523 silly addNameRange     '1.6.0-dev.20150728',
+523 silly addNameRange     '1.6.0-dev.20150729',
+523 silly addNameRange     '1.6.0-dev.20150730',
+523 silly addNameRange     '1.6.0-dev.20150731',
+523 silly addNameRange     '1.6.0-dev.20150801',
+523 silly addNameRange     '1.6.0-dev.20150802',
+523 silly addNameRange     '1.6.0-dev.20150803',
+523 silly addNameRange     '1.6.0-dev.20150804',
+523 silly addNameRange     '1.6.0-dev.20150805',
+523 silly addNameRange     '1.6.0-dev.20150806',
+523 silly addNameRange     '1.6.0-dev.20150807',
+523 silly addNameRange     '1.6.0-dev.20150808',
+523 silly addNameRange     '1.6.0-dev.20150809',
+523 silly addNameRange     '1.6.0-dev.20150810',
+523 silly addNameRange     '1.6.0-dev.20150811',
+523 silly addNameRange     '1.6.0-dev.20150812',
+523 silly addNameRange     '1.6.0-dev.20150813',
+523 silly addNameRange     '1.6.0-dev.20150814',
+523 silly addNameRange     '1.6.0-dev.20150815',
+523 silly addNameRange     '1.6.0-dev.20150816',
+523 silly addNameRange     '1.6.0-dev.20150817',
+523 silly addNameRange     '1.6.0-dev.20150818',
+523 silly addNameRange     '1.6.0-dev.20150819',
+523 silly addNameRange     '1.6.0-dev.20150820',
+523 silly addNameRange     '1.6.0-dev.20150821',
+523 silly addNameRange     '1.6.0-dev.20150822',
+523 silly addNameRange     '1.6.0-dev.20150823',
+523 silly addNameRange     '1.6.0-dev.20150824',
+523 silly addNameRange     '1.6.0-dev.20150825',
+523 silly addNameRange     '1.7.0-dev.20150826',
+523 silly addNameRange     '1.7.0-dev.20150827',
+523 silly addNameRange     '1.7.0-dev.20150828',
+523 silly addNameRange     '1.7.0-dev.20150829',
+523 silly addNameRange     '1.7.0-dev.20150830',
+523 silly addNameRange     '1.7.0-dev.20150831',
+523 silly addNameRange     '1.7.0-dev.20150901',
+523 silly addNameRange     '1.7.0-dev.20150902',
+523 silly addNameRange     '1.6.0-beta',
+523 silly addNameRange     '1.7.0-dev.20150903',
+523 silly addNameRange     '1.7.0-dev.20150904',
+523 silly addNameRange     '1.6.0-dev.20150905',
+523 silly addNameRange     '1.6.0-dev.20150906',
+523 silly addNameRange     '1.6.0-dev.20150907',
+523 silly addNameRange     '1.6.0-dev.20150908',
+523 silly addNameRange     '1.6.0-dev.20150909',
+523 silly addNameRange     '1.6.0-dev.20150910',
+523 silly addNameRange     '1.6.0-dev.20150911',
+523 silly addNameRange     '1.6.0-dev.20150912',
+523 silly addNameRange     '1.6.0-dev.20150913',
+523 silly addNameRange     '1.6.0-dev.20150914',
+523 silly addNameRange     '1.6.0-dev.20150915',
+523 silly addNameRange     '1.7.0-dev.20150916',
+523 silly addNameRange     '1.6.2',
+523 silly addNameRange     '1.7.0-dev.20150917',
+523 silly addNameRange     '1.7.0-dev.20150918',
+523 silly addNameRange     '1.7.0-dev.20150919',
+523 silly addNameRange     '1.7.0-dev.20150920',
+523 silly addNameRange     '1.7.0-dev.20150921',
+523 silly addNameRange     '1.7.0-dev.20150922',
+523 silly addNameRange     '1.7.0-dev.20150923',
+523 silly addNameRange     '1.7.0-dev.20150924',
+523 silly addNameRange     '1.7.0-dev.20150925',
+523 silly addNameRange     '1.7.0-dev.20150926',
+523 silly addNameRange     '1.7.0-dev.20150927',
+523 silly addNameRange     '1.7.0-dev.20150928',
+523 silly addNameRange     '1.7.0-dev.20150929',
+523 silly addNameRange     '1.7.0-dev.20150930',
+523 silly addNameRange     '1.7.0-dev.20151001',
+523 silly addNameRange     '1.7.0-dev.20151002',
+523 silly addNameRange     '1.7.0-dev.20151003',
+523 silly addNameRange     '1.7.0-dev.20151004',
+523 silly addNameRange     '1.7.0-dev.20151005',
+523 silly addNameRange     '1.7.0-dev.20151006',
+523 silly addNameRange     '1.7.0-dev.20151014',
+523 silly addNameRange     '1.7.0-dev.20151015',
+523 silly addNameRange     '1.7.0-dev.20151016',
+523 silly addNameRange     '1.8.0-dev.20151017',
+523 silly addNameRange     '1.8.0-dev.20151018',
+523 silly addNameRange     '1.8.0-dev.20151019',
+523 silly addNameRange     '1.8.0-dev.20151020',
+523 silly addNameRange     '1.8.0-dev.20151021',
+523 silly addNameRange     '1.8.0-dev.20151022',
+523 silly addNameRange     '1.8.0-dev.20151023',
+523 silly addNameRange     '1.8.0-dev.20151024',
+523 silly addNameRange     '1.8.0-dev.20151025',
+523 silly addNameRange     '1.8.0-dev.20151026',
+523 silly addNameRange     '1.8.0-dev.20151027',
+523 silly addNameRange     '1.8.0-dev.20151028',
+523 silly addNameRange     '1.8.0-dev.20151029',
+523 silly addNameRange     '1.8.0-dev.20151030',
+523 silly addNameRange     '1.8.0-dev.20151031',
+523 silly addNameRange     '1.8.0-dev.20151101',
+523 silly addNameRange     '1.8.0-dev.20151102',
+523 silly addNameRange     '1.8.0-dev.20151103',
+523 silly addNameRange     '1.8.0-dev.20151104',
+523 silly addNameRange     '1.8.0-dev.20151105',
+523 silly addNameRange     '1.8.0-dev.20151106',
+523 silly addNameRange     '1.8.0-dev.20151107',
+523 silly addNameRange     '1.8.0-dev.20151108',
+523 silly addNameRange     '1.8.0-dev.20151109',
+523 silly addNameRange     '1.8.0-dev.20151110',
+523 silly addNameRange     '1.8.0-dev.20151111',
+523 silly addNameRange     '1.8.0-dev.20151112',
+523 silly addNameRange     '1.8.0-dev.20151113',
+523 silly addNameRange     '1.8.0-dev.20151114',
+523 silly addNameRange     '1.8.0-dev.20151115',
+523 silly addNameRange     '1.8.0-dev.20151116',
+523 silly addNameRange     '1.8.0-dev.20151117',
+523 silly addNameRange     '1.8.0-dev.20151118',
+523 silly addNameRange     '1.8.0-dev.20151119',
+523 silly addNameRange     '1.8.0-dev.20151120',
+523 silly addNameRange     '1.8.0-dev.20151121',
+523 silly addNameRange     '1.8.0-dev.20151122',
+523 silly addNameRange     '1.8.0-dev.20151123',
+523 silly addNameRange     '1.8.0-dev.20151124',
+523 silly addNameRange     '1.8.0-dev.20151125',
+523 silly addNameRange     '1.8.0-dev.20151126',
+523 silly addNameRange     '1.8.0-dev.20151127',
+523 silly addNameRange     '1.8.0-dev.20151128',
+523 silly addNameRange     '1.8.0-dev.20151129',
+523 silly addNameRange     '1.8.0-dev.20151130',
+523 silly addNameRange     '1.7.3',
+523 silly addNameRange     '1.8.0-dev.20151201',
+523 silly addNameRange     '1.8.0-dev.20151202',
+523 silly addNameRange     '1.8.0-dev.20151203',
+523 silly addNameRange     '1.8.0-dev.20151204',
+523 silly addNameRange     '1.8.0-dev.20151210',
+523 silly addNameRange     '1.8.0-dev.20151211',
+523 silly addNameRange     '1.8.0-dev.20151212',
+523 silly addNameRange     '1.8.0-dev.20151213',
+523 silly addNameRange     '1.8.0-dev.20151214',
+523 silly addNameRange     '1.7.5',
+523 silly addNameRange     '1.8.0-dev.20151215',
+523 silly addNameRange     '1.8.0-dev.20151216',
+523 silly addNameRange     '1.8.0-dev.20151217',
+523 silly addNameRange     '1.8.0-dev.20151218',
+523 silly addNameRange     '1.8.0-dev.20151219',
+523 silly addNameRange     '1.8.0-dev.20151220',
+523 silly addNameRange     '1.8.0-dev.20151221',
+523 silly addNameRange     '1.8.0-dev.20151222',
+523 silly addNameRange     '1.8.0-dev.20151223',
+523 silly addNameRange     '1.8.0-dev.20151224',
+523 silly addNameRange     '1.8.0-dev.20151225',
+523 silly addNameRange     '1.8.0-dev.20151226',
+523 silly addNameRange     '1.8.0-dev.20151227',
+523 silly addNameRange     '1.8.0-dev.20151228',
+523 silly addNameRange     '1.8.0-dev.20151229',
+523 silly addNameRange     '1.8.0-dev.20151230',
+523 silly addNameRange     '1.8.0-dev.20151231',
+523 silly addNameRange     '1.8.0-dev.20160101',
+523 silly addNameRange     '1.8.0-dev.20160102',
+523 silly addNameRange     '1.8.0-dev.20160103',
+523 silly addNameRange     '1.8.0-dev.20160104',
+523 silly addNameRange     '1.8.0-dev.20160105',
+523 silly addNameRange     '1.8.0-dev.20160106',
+523 silly addNameRange     '1.8.0-dev.20160107',
+523 silly addNameRange     '1.8.0-dev.20160108',
+523 silly addNameRange     '1.8.0-dev.20160109',
+523 silly addNameRange     '1.8.0-dev.20160110',
+523 silly addNameRange     '1.8.0-dev.20160111',
+523 silly addNameRange     '1.8.0-dev.20160112',
+523 silly addNameRange     '1.8.0-dev.20160113',
+523 silly addNameRange     '1.8.0-dev.20160114',
+523 silly addNameRange     '1.8.0-dev.20160115',
+523 silly addNameRange     '1.8.0-dev.20160116',
+523 silly addNameRange     '1.8.0-dev.20160117',
+523 silly addNameRange     '1.8.0-dev.20160118',
+523 silly addNameRange     '1.8.0-dev.20160119',
+523 silly addNameRange     '1.8.0-dev.20160120',
+523 silly addNameRange     '1.8.0-dev.20160121',
+523 silly addNameRange     '1.8.0-dev.20160122',
+523 silly addNameRange     '1.8.0-dev.20160123',
+523 silly addNameRange     '1.8.0-dev.20160124',
+523 silly addNameRange     '1.8.0-dev.20160125',
+523 silly addNameRange     '1.9.0-dev.20160126',
+523 silly addNameRange     '1.9.0-dev.20160127',
+523 silly addNameRange     '1.9.0-dev.20160128',
+523 silly addNameRange     '1.8.0',
+523 silly addNameRange     '1.9.0-dev.20160129',
+523 silly addNameRange     '1.9.0-dev.20160130',
+523 silly addNameRange     '1.9.0-dev.20160131',
+523 silly addNameRange     '1.9.0-dev.20160201',
+523 silly addNameRange     '1.9.0-dev.20160202',
+523 silly addNameRange     '1.9.0-dev.20160203',
+523 silly addNameRange     '1.9.0-dev.20160204',
+523 silly addNameRange     '1.9.0-dev.20160205',
+523 silly addNameRange     '1.9.0-dev.20160206',
+523 silly addNameRange     '1.9.0-dev.20160207',
+523 silly addNameRange     '1.9.0-dev.20160208',
+523 silly addNameRange     '1.9.0-dev.20160209',
+523 silly addNameRange     '1.9.0-dev.20160210',
+523 silly addNameRange     '1.9.0-dev.20160211',
+523 silly addNameRange     '1.9.0-dev.20160212',
+523 silly addNameRange     '1.9.0-dev.20160213',
+523 silly addNameRange     '1.9.0-dev.20160214',
+523 silly addNameRange     '1.9.0-dev.20160215',
+523 silly addNameRange     '1.9.0-dev.20160216',
+523 silly addNameRange     '1.9.0-dev.20160217',
+523 silly addNameRange     '1.9.0-dev.20160218',
+523 silly addNameRange     '1.9.0-dev.20160219',
+523 silly addNameRange     '1.9.0-dev.20160220',
+523 silly addNameRange     '1.9.0-dev.20160221',
+523 silly addNameRange     '1.9.0-dev.20160222',
+523 silly addNameRange     '1.8.2',
+523 silly addNameRange     '1.9.0-dev.20160223',
+523 silly addNameRange     '1.9.0-dev.20160224',
+523 silly addNameRange     '1.9.0-dev.20160225',
+523 silly addNameRange     '1.9.0-dev.20160226',
+523 silly addNameRange     '1.9.0-dev.20160227',
+523 silly addNameRange     '1.9.0-dev.20160228',
+523 silly addNameRange     '1.9.0-dev.20160229',
+523 silly addNameRange     '1.9.0-dev.20160301',
+523 silly addNameRange     '1.8.5',
+523 silly addNameRange     '1.8.6',
+523 silly addNameRange     '1.8.7',
+523 silly addNameRange     '1.9.0-dev.20160302',
+523 silly addNameRange     '1.9.0-dev.20160302.1',
+523 silly addNameRange     '1.9.0-dev.20160303',
+523 silly addNameRange     '1.9.0-dev.20160304',
+523 silly addNameRange     '1.9.0-dev.20160305',
+523 silly addNameRange     '1.9.0-dev.20160306',
+523 silly addNameRange     '1.9.0-dev.20160307',
+523 silly addNameRange     '1.9.0-dev.20160308',
+523 silly addNameRange     '1.9.0-dev.20160309',
+523 silly addNameRange     '1.9.0-dev.20160310',
+523 silly addNameRange     '1.9.0-dev.20160311',
+523 silly addNameRange     '1.9.0-dev.20160312',
+523 silly addNameRange     '1.9.0-dev.20160313',
+523 silly addNameRange     '1.9.0-dev.20160315',
+523 silly addNameRange     '1.9.0-dev.20160316',
+523 silly addNameRange     '1.8.9',
+523 silly addNameRange     '1.9.0-dev.20160317',
+523 silly addNameRange     '1.9.0-dev.20160318',
+523 silly addNameRange     '1.9.0-dev.20160319',
+523 silly addNameRange     '1.9.0-dev.20160320',
+523 silly addNameRange     '1.9.0-dev.20160321',
+523 silly addNameRange     '1.9.0-dev.20160322',
+523 silly addNameRange     '1.9.0-dev.20160323',
+523 silly addNameRange     '1.9.0-dev.20160324',
+523 silly addNameRange     '1.9.0-dev.20160325',
+523 silly addNameRange     '1.9.0-dev.20160326',
+523 silly addNameRange     '1.9.0-dev.20160327',
+523 silly addNameRange     '1.9.0-dev.20160328',
+523 silly addNameRange     '1.9.0-dev.20160329',
+523 silly addNameRange     '1.9.0-dev.20160330',
+523 silly addNameRange     '1.9.0-dev.20160331',
+523 silly addNameRange     '1.9.0-dev.20160401',
+523 silly addNameRange     '1.9.0-dev.20160402',
+523 silly addNameRange     '1.9.0-dev.20160403',
+523 silly addNameRange     '1.9.0-dev.20160404',
+523 silly addNameRange     '1.9.0-dev.20160405',
+523 silly addNameRange     '1.9.0-dev.20160406',
+523 silly addNameRange     '1.9.0-dev.20160407',
+523 silly addNameRange     '1.9.0-dev.20160408',
+523 silly addNameRange     '1.9.0-dev.20160409',
+523 silly addNameRange     '1.9.0-dev.20160411',
+523 silly addNameRange     '1.9.0-dev.20160412',
+523 silly addNameRange     '1.8.10',
+523 silly addNameRange     '1.9.0-dev.20160413',
+523 silly addNameRange     '1.9.0-dev.20160414',
+523 silly addNameRange     '1.9.0-dev.20160415',
+523 silly addNameRange     '1.9.0-dev.20160416',
+523 silly addNameRange     '1.9.0-dev.20160417',
+523 silly addNameRange     '1.9.0-dev.20160418',
+523 silly addNameRange     '1.9.0-dev.20160419',
+523 silly addNameRange     '1.9.0-dev.20160420',
+523 silly addNameRange     '1.9.0-dev.20160421',
+523 silly addNameRange     '1.9.0-dev.20160422',
+523 silly addNameRange     '1.9.0-dev.20160423',
+523 silly addNameRange     '1.9.0-dev.20160424',
+523 silly addNameRange     '1.9.0-dev.20160425',
+523 silly addNameRange     '1.9.0-dev.20160426',
+523 silly addNameRange     '1.9.0-dev.20160427',
+523 silly addNameRange     '1.9.0-dev.20160428',
+523 silly addNameRange     '1.9.0-dev.20160428-1.0',
+523 silly addNameRange     '1.9.0-dev.20160429',
+523 silly addNameRange     '1.9.0-dev.20160430',
+523 silly addNameRange     '1.9.0-dev.20160501',
+523 silly addNameRange     '1.9.0-dev.20160502',
+523 silly addNameRange     '1.9.0-dev.20160503',
+523 silly addNameRange     '1.9.0-dev.20160504',
+523 silly addNameRange     '1.9.0-dev.20160505',
+523 silly addNameRange     '1.9.0-dev.20160506',
+523 silly addNameRange     '1.9.0-dev.20160507',
+523 silly addNameRange     '1.9.0-dev.20160508',
+523 silly addNameRange     '1.9.0-dev.20160509',
+523 silly addNameRange     '1.9.0-dev.20160510',
+523 silly addNameRange     '1.9.0-dev.20160511',
+523 silly addNameRange     '1.9.0-dev.20160512',
+523 silly addNameRange     '1.9.0-dev.20160513',
+523 silly addNameRange     '1.9.0-dev.20160514',
+523 silly addNameRange     '1.9.0-dev.20160515',
+523 silly addNameRange     '1.9.0-dev.20160516',
+523 silly addNameRange     '1.9.0-dev.20160517-1.0',
+523 silly addNameRange     '1.9.0-dev.20160518-1.0',
+523 silly addNameRange     '1.9.0-dev.20160519-1.0',
+523 silly addNameRange     '1.9.0-dev.20160520-1.0',
+523 silly addNameRange     '1.9.0-dev.20160521-1.0',
+523 silly addNameRange     '1.9.0-dev.20160522-1.0',
+523 silly addNameRange     '1.9.0-dev.20160523-1.0',
+523 silly addNameRange     '1.9.0-dev.20160524-1.0',
+523 silly addNameRange     '1.9.0-dev.20160525-1.0',
+523 silly addNameRange     '1.9.0-dev.20160526-1.0',
+523 silly addNameRange     '1.9.0-dev.20160527-1.0',
+523 silly addNameRange     '1.9.0-dev.20160528-1.0',
+523 silly addNameRange     '1.9.0-dev.20160529-1.0',
+523 silly addNameRange     '1.9.0-dev.20160530-1.0',
+523 silly addNameRange     '1.9.0-dev.20160531-1.0',
+523 silly addNameRange     '1.9.0-dev.20160601-1.0',
+523 silly addNameRange     '1.9.0-dev.20160602-1.0',
+523 silly addNameRange     '1.9.0-dev.20160603-1.0',
+523 silly addNameRange     '1.9.0-dev.20160604-1.0',
+523 silly addNameRange     '1.9.0-dev.20160605-1.0',
+523 silly addNameRange     '1.9.0-dev.20160606-1.0',
+523 silly addNameRange     '1.9.0-dev.20160607-1.0',
+523 silly addNameRange     '1.9.0-dev.20160608-1.0',
+523 silly addNameRange     '1.9.0-dev.20160609-1.0',
+523 silly addNameRange     '1.9.0-dev.20160610-1.0',
+523 silly addNameRange     '1.9.0-dev.20160611-1.0',
+523 silly addNameRange     '1.9.0-dev.20160612-1.0',
+523 silly addNameRange     '1.9.0-dev.20160613-1.0',
+523 silly addNameRange     '1.9.0-dev.20160614-1.0',
+523 silly addNameRange     '1.9.0-dev.20160615-1.0',
+523 silly addNameRange     '1.9.0-dev.20160616-1.0',
+523 silly addNameRange     '1.9.0-dev.20160617-1.0',
+523 silly addNameRange     '1.9.0-dev.20160618-1.0',
+523 silly addNameRange     '1.9.0-dev.20160619-1.0',
+523 silly addNameRange     '1.9.0-dev.20160620-1.0',
+523 silly addNameRange     '1.9.0-dev.20160622-1.0',
+523 silly addNameRange     '1.9.0-dev.20160623-1.0',
+523 silly addNameRange     '1.9.0-dev.20160624-1.0',
+523 silly addNameRange     '1.9.0-dev.20160625-1.0',
+523 silly addNameRange     '1.9.0-dev.20160626-1.0',
+523 silly addNameRange     '1.9.0-dev.20160627-1.0',
+523 silly addNameRange     '2.0.0-dev.20160628',
+523 silly addNameRange     '2.0.0-dev.20160629',
+523 silly addNameRange     '2.0.0-dev.20160630',
+523 silly addNameRange     '2.0.0-dev.20160701',
+523 silly addNameRange     '2.0.0-dev.20160702',
+523 silly addNameRange     '2.0.0-dev.20160703',
+523 silly addNameRange     '2.0.0-dev.20160704',
+523 silly addNameRange     '2.0.0-dev.20160705',
+523 silly addNameRange     '2.0.0-dev.20160706',
+523 silly addNameRange     '2.0.0-dev.20160707',
+523 silly addNameRange     '2.0.0-dev.20160711',
+523 silly addNameRange     '2.0.0',
+523 silly addNameRange     '2.1.0-dev.20160712',
+523 silly addNameRange     '2.1.0-dev.20160713',
+523 silly addNameRange     '2.1.0-dev.20160714',
+523 silly addNameRange     '2.1.0-dev.20160715',
+523 silly addNameRange     '2.1.0-dev.20160716',
+523 silly addNameRange     '2.1.0-dev.20160717',
+523 silly addNameRange     '2.1.0-dev.20160718',
+523 silly addNameRange     '2.1.0-dev.20160719',
+523 silly addNameRange     '2.1.0-dev.20160720',
+523 silly addNameRange     '2.1.0-dev.20160721',
+523 silly addNameRange     '2.1.0-dev.20160722',
+523 silly addNameRange     '2.1.0-dev.20160723',
+523 silly addNameRange     '2.1.0-dev.20160724',
+523 silly addNameRange     '2.1.0-dev.20160725',
+523 silly addNameRange     '2.1.0-dev.20160726',
+523 silly addNameRange     '2.1.0-dev.20160727',
+523 silly addNameRange     '2.1.0-dev.20160728',
+523 silly addNameRange     '2.1.0-dev.20160729',
+523 silly addNameRange     '2.1.0-dev.20160730',
+523 silly addNameRange     '2.1.0-dev.20160731',
+523 silly addNameRange     '2.1.0-dev.20160801',
+523 silly addNameRange     '2.1.0-dev.20160802',
+523 silly addNameRange     '2.1.0-dev.20160803',
+523 silly addNameRange     '2.1.0-dev.20160804',
+523 silly addNameRange     '2.1.0-dev.20160805',
+523 silly addNameRange     '2.1.0-dev.20160806',
+523 silly addNameRange     '2.1.0-dev.20160807',
+523 silly addNameRange     '2.1.0-dev.20160808',
+523 silly addNameRange     '2.1.0-dev.20160809',
+523 silly addNameRange     '2.1.0-dev.20160810',
+523 silly addNameRange     '2.1.0-dev.20160811',
+523 silly addNameRange     '2.1.0-dev.20160812',
+523 silly addNameRange     '2.1.0-dev.20160813',
+523 silly addNameRange     '2.1.0-dev.20160814',
+523 silly addNameRange     '2.1.0-dev.20160815',
+523 silly addNameRange     '2.1.0-dev.20160816',
+523 silly addNameRange     '2.1.0-dev.20160817',
+523 silly addNameRange     '2.1.0-dev.20160818',
+523 silly addNameRange     '2.1.0-dev.20160819',
+523 silly addNameRange     '2.1.0-dev.20160820',
+523 silly addNameRange     '2.1.0-dev.20160821',
+523 silly addNameRange     '2.1.0-dev.20160822',
+523 silly addNameRange     '2.1.0-dev.20160823',
+523 silly addNameRange     '2.1.0-dev.20160824',
+523 silly addNameRange     '2.1.0-dev.20160825',
+523 silly addNameRange     '2.1.0-dev.20160826',
+523 silly addNameRange     '2.1.0-dev.20160827',
+523 silly addNameRange     '2.1.0-dev.20160828',
+523 silly addNameRange     '2.1.0-dev.20160829',
+523 silly addNameRange     '2.1.0-dev.20160830',
+523 silly addNameRange     '2.0.2',
+523 silly addNameRange     '2.1.0-dev.20160831',
+523 silly addNameRange     '2.1.0-dev.20160901',
+523 silly addNameRange     '2.1.0-dev.20160902',
+523 silly addNameRange     '2.1.0-dev.20160903',
+523 silly addNameRange     '2.1.0-dev.20160904',
+523 silly addNameRange     '2.1.0-dev.20160905',
+523 silly addNameRange     '2.1.0-dev.20160906',
+523 silly addNameRange     '2.1.0-dev.20160907',
+523 silly addNameRange     '2.1.0-dev.20160908',
+523 silly addNameRange     '2.1.0-dev.20160909',
+523 silly addNameRange     '2.1.0-dev.20160910',
+523 silly addNameRange     '2.1.0-dev.20160911',
+523 silly addNameRange     '2.1.0-dev.20160912',
+523 silly addNameRange     '2.1.0-dev.20160913',
+523 silly addNameRange     '2.1.0-dev.20160914',
+523 silly addNameRange     '2.1.0-dev.20160915',
+523 silly addNameRange     '2.1.0-dev.20160916',
+523 silly addNameRange     '2.1.0-dev.20160917',
+523 silly addNameRange     '2.1.0-dev.20160918',
+523 silly addNameRange     '2.1.0-dev.20160919',
+523 silly addNameRange     '2.1.0-dev.20160920',
+523 silly addNameRange     '2.1.0-dev.20160921',
+523 silly addNameRange     '2.1.0-dev.20160922',
+523 silly addNameRange     '2.0.3',
+523 silly addNameRange     '2.1.0-dev.20160923',
+523 silly addNameRange     '2.1.0-dev.20160924',
+523 silly addNameRange     '2.1.0-dev.20160925',
+523 silly addNameRange     '2.1.0-dev.20160926',
+523 silly addNameRange     '2.1.0-dev.20160927',
+523 silly addNameRange     '2.1.0-dev.20160928',
+523 silly addNameRange     '2.1.0-dev.20160929',
+523 silly addNameRange     '2.1.0-dev.20160930',
+523 silly addNameRange     '2.1.0-dev.20161001',
+523 silly addNameRange     '2.1.0-dev.20161002',
+523 silly addNameRange     '2.1.0-dev.20161003',
+523 silly addNameRange     '2.1.0-dev.20161004',
+523 silly addNameRange     '2.1.0-dev.20161005',
+523 silly addNameRange     '2.1.0-dev.20161006',
+523 silly addNameRange     '2.1.0-dev.20161007',
+523 silly addNameRange     '2.0.6-insiders.20161007',
+523 silly addNameRange     '2.1.0-dev.20161008',
+523 silly addNameRange     '2.1.0-dev.20161009',
+523 silly addNameRange     '2.1.0-dev.20161010',
+523 silly addNameRange     '2.1.0-dev.20161011',
+523 silly addNameRange     '2.1.0-dev.20161012',
+523 silly addNameRange     '2.0.6-insiders.20161012',
+523 silly addNameRange     '2.1.0-dev.20161013',
+523 silly addNameRange     '2.1.0-dev.20161014',
+523 silly addNameRange     '2.0.6-insiders.20161014',
+523 silly addNameRange     '2.1.0-dev.20161015',
+523 silly addNameRange     '2.1.0-dev.20161016',
+523 silly addNameRange     '2.1.0-dev.20161017',
+523 silly addNameRange     '2.0.6-insiders.20161017',
+523 silly addNameRange     '2.1.0-dev.20161018',
+523 silly addNameRange     '2.1.0-dev.20161019',
+523 silly addNameRange     '2.1.0-dev.20161020',
+523 silly addNameRange     '2.1.0-dev.20161021',
+523 silly addNameRange     '2.1.0-dev.20161022',
+523 silly addNameRange     '2.1.0-dev.20161023',
+523 silly addNameRange     '2.1.0-dev.20161024',
+523 silly addNameRange     '2.1.0-dev.20161025',
+523 silly addNameRange     '2.0.6',
+523 silly addNameRange     '2.1.0-dev.20161026' ] ]
+524 silly addNamed typescript@2.0.6
+525 verbose addNamed "2.0.6" is a plain semver version for typescript
+526 silly mapToRegistry name typescript
+527 silly mapToRegistry using default registry
+528 silly mapToRegistry registry https://registry.npmjs.org/
+529 silly mapToRegistry data Result {
+529 silly mapToRegistry   raw: 'typescript',
+529 silly mapToRegistry   scope: null,
+529 silly mapToRegistry   name: 'typescript',
+529 silly mapToRegistry   rawSpec: '',
+529 silly mapToRegistry   spec: 'latest',
+529 silly mapToRegistry   type: 'tag' }
+530 silly mapToRegistry uri https://registry.npmjs.org/typescript
+531 verbose addRemoteTarball https://registry.npmjs.org/typescript/-/typescript-2.0.6.tgz not in flight; adding
+532 verbose addRemoteTarball [ 'https://registry.npmjs.org/typescript/-/typescript-2.0.6.tgz',
+532 verbose addRemoteTarball   '5385499ac9811508c2c43e0ea07a1ddca435e111' ]
+533 info retry fetch attempt 1 at 10:21:09 AM
+534 info attempt registry request try #1 at 10:21:09 AM
+535 http fetch GET https://registry.npmjs.org/typescript/-/typescript-2.0.6.tgz
+536 http fetch 200 https://registry.npmjs.org/rxjs/-/rxjs-5.0.0-beta.12.tgz
+537 http fetch 200 https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.8.tgz
+538 http fetch 200 https://registry.npmjs.org/systemjs/-/systemjs-0.19.39.tgz
+539 http 200 https://registry.npmjs.org/@types%2fcore-js
+540 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+540 verbose headers   etag: '"2ZEN626DF53FX486A4IOSDR07"',
+540 verbose headers   'content-type': 'application/json',
+540 verbose headers   'content-encoding': 'gzip',
+540 verbose headers   'cache-control': 'max-age=0',
+540 verbose headers   'transfer-encoding': 'chunked',
+540 verbose headers   'accept-ranges': 'bytes',
+540 verbose headers   date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+540 verbose headers   via: '1.1 varnish',
+540 verbose headers   age: '0',
+540 verbose headers   connection: 'keep-alive',
+540 verbose headers   'x-served-by': 'cache-lcy1148-LCY',
+540 verbose headers   'x-cache': 'MISS',
+540 verbose headers   'x-cache-hits': '0',
+540 verbose headers   'x-timer': 'S1477534866.956750,VS0,VE633',
+540 verbose headers   vary: 'Accept-Encoding' }
+541 silly get cb [ 200,
+541 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+541 silly get     etag: '"2ZEN626DF53FX486A4IOSDR07"',
+541 silly get     'content-type': 'application/json',
+541 silly get     'content-encoding': 'gzip',
+541 silly get     'cache-control': 'max-age=0',
+541 silly get     'transfer-encoding': 'chunked',
+541 silly get     'accept-ranges': 'bytes',
+541 silly get     date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+541 silly get     via: '1.1 varnish',
+541 silly get     age: '0',
+541 silly get     connection: 'keep-alive',
+541 silly get     'x-served-by': 'cache-lcy1148-LCY',
+541 silly get     'x-cache': 'MISS',
+541 silly get     'x-cache-hits': '0',
+541 silly get     'x-timer': 'S1477534866.956750,VS0,VE633',
+541 silly get     vary: 'Accept-Encoding' } ]
+542 verbose get saving @types/core-js to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\_40types_252fcore-js\.cache.json
+543 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+544 silly addNameRange number 2 { name: '@types/core-js',
+544 silly addNameRange   range: '>=0.9.34 <0.10.0',
+544 silly addNameRange   hasData: true }
+545 silly addNameRange versions [ '@types/core-js',
+545 silly addNameRange   [ '0.9.15-alpha',
+545 silly addNameRange     '0.9.16-alpha',
+545 silly addNameRange     '0.9.21-alpha',
+545 silly addNameRange     '0.9.22-alpha',
+545 silly addNameRange     '0.9.23-alpha',
+545 silly addNameRange     '0.9.24-alpha',
+545 silly addNameRange     '0.9.25-alpha',
+545 silly addNameRange     '0.9.26-alpha',
+545 silly addNameRange     '0.9.27-alpha',
+545 silly addNameRange     '0.9.28',
+545 silly addNameRange     '0.9.29',
+545 silly addNameRange     '0.9.30',
+545 silly addNameRange     '0.9.31',
+545 silly addNameRange     '0.9.32',
+545 silly addNameRange     '0.9.33',
+545 silly addNameRange     '0.9.34' ] ]
+546 silly addNamed @types/core-js@0.9.34
+547 verbose addNamed "0.9.34" is a plain semver version for @types/core-js
+548 silly mapToRegistry name @types/core-js
+549 silly mapToRegistry scope (from package name) @types
+550 verbose mapToRegistry no registry URL found in name for scope @types
+551 silly mapToRegistry using default registry
+552 silly mapToRegistry registry https://registry.npmjs.org/
+553 silly mapToRegistry data Result {
+553 silly mapToRegistry   raw: '@types/core-js',
+553 silly mapToRegistry   scope: '@types',
+553 silly mapToRegistry   name: '@types/core-js',
+553 silly mapToRegistry   rawSpec: '',
+553 silly mapToRegistry   spec: 'latest',
+553 silly mapToRegistry   type: 'tag' }
+554 silly mapToRegistry uri https://registry.npmjs.org/@types%2fcore-js
+555 verbose addRemoteTarball https://registry.npmjs.org/@types/core-js/-/core-js-0.9.34.tgz not in flight; adding
+556 verbose addRemoteTarball [ 'https://registry.npmjs.org/@types/core-js/-/core-js-0.9.34.tgz',
+556 verbose addRemoteTarball   '72c521d8e59fdaa8b65f76db71fa53c82c7c21c5' ]
+557 info retry fetch attempt 1 at 10:21:09 AM
+558 info attempt registry request try #1 at 10:21:09 AM
+559 http fetch GET https://registry.npmjs.org/@types/core-js/-/core-js-0.9.34.tgz
+560 http 200 https://registry.npmjs.org/@angular%2fcommon
+561 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+561 verbose headers   etag: '"167PU1Y36V2FK5TM1A9XSSUX8"',
+561 verbose headers   'content-type': 'application/json',
+561 verbose headers   'content-encoding': 'gzip',
+561 verbose headers   'cache-control': 'max-age=0',
+561 verbose headers   'transfer-encoding': 'chunked',
+561 verbose headers   'accept-ranges': 'bytes',
+561 verbose headers   date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+561 verbose headers   via: '1.1 varnish',
+561 verbose headers   connection: 'keep-alive',
+561 verbose headers   'x-served-by': 'cache-lcy1144-LCY',
+561 verbose headers   'x-cache': 'MISS',
+561 verbose headers   'x-cache-hits': '0',
+561 verbose headers   'x-timer': 'S1477534866.960628,VS0,VE648',
+561 verbose headers   vary: 'Accept-Encoding' }
+562 silly get cb [ 200,
+562 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+562 silly get     etag: '"167PU1Y36V2FK5TM1A9XSSUX8"',
+562 silly get     'content-type': 'application/json',
+562 silly get     'content-encoding': 'gzip',
+562 silly get     'cache-control': 'max-age=0',
+562 silly get     'transfer-encoding': 'chunked',
+562 silly get     'accept-ranges': 'bytes',
+562 silly get     date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+562 silly get     via: '1.1 varnish',
+562 silly get     connection: 'keep-alive',
+562 silly get     'x-served-by': 'cache-lcy1144-LCY',
+562 silly get     'x-cache': 'MISS',
+562 silly get     'x-cache-hits': '0',
+562 silly get     'x-timer': 'S1477534866.960628,VS0,VE648',
+562 silly get     vary: 'Accept-Encoding' } ]
+563 verbose get saving @angular/common to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\_40angular_252fcommon\.cache.json
+564 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+565 silly addNameRange number 2 { name: '@angular/common',
+565 silly addNameRange   range: '>=2.1.1 <2.2.0',
+565 silly addNameRange   hasData: true }
+566 silly addNameRange versions [ '@angular/common',
+566 silly addNameRange   [ '0.0.0-0',
+566 silly addNameRange     '0.0.0-1',
+566 silly addNameRange     '0.0.0-2',
+566 silly addNameRange     '0.0.0-3',
+566 silly addNameRange     '0.0.0-4',
+566 silly addNameRange     '0.0.0-5',
+566 silly addNameRange     '0.0.0-6',
+566 silly addNameRange     '0.0.0-7',
+566 silly addNameRange     '2.0.0-rc.0',
+566 silly addNameRange     '2.0.0-rc.1',
+566 silly addNameRange     '2.0.0-rc.2',
+566 silly addNameRange     '2.0.0-rc.3',
+566 silly addNameRange     '2.0.0-rc.4',
+566 silly addNameRange     '2.0.0-rc.5',
+566 silly addNameRange     '2.0.0-rc.6',
+566 silly addNameRange     '2.0.0-rc.7',
+566 silly addNameRange     '2.0.0',
+566 silly addNameRange     '2.0.1',
+566 silly addNameRange     '2.1.0-beta.0',
+566 silly addNameRange     '2.0.2',
+566 silly addNameRange     '2.1.0-rc.0',
+566 silly addNameRange     '2.1.0',
+566 silly addNameRange     '2.2.0-beta.0',
+566 silly addNameRange     '2.1.1' ] ]
+567 silly addNamed @angular/common@2.1.1
+568 verbose addNamed "2.1.1" is a plain semver version for @angular/common
+569 silly mapToRegistry name @angular/common
+570 silly mapToRegistry scope (from package name) @angular
+571 verbose mapToRegistry no registry URL found in name for scope @angular
+572 silly mapToRegistry using default registry
+573 silly mapToRegistry registry https://registry.npmjs.org/
+574 silly mapToRegistry data Result {
+574 silly mapToRegistry   raw: '@angular/common',
+574 silly mapToRegistry   scope: '@angular',
+574 silly mapToRegistry   name: '@angular/common',
+574 silly mapToRegistry   rawSpec: '',
+574 silly mapToRegistry   spec: 'latest',
+574 silly mapToRegistry   type: 'tag' }
+575 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcommon
+576 verbose addRemoteTarball https://registry.npmjs.org/@angular/common/-/common-2.1.1.tgz not in flight; adding
+577 verbose addRemoteTarball [ 'https://registry.npmjs.org/@angular/common/-/common-2.1.1.tgz',
+577 verbose addRemoteTarball   '4b28de02c07f1395fbbdb403983c82a47490f39e' ]
+578 info retry fetch attempt 1 at 10:21:09 AM
+579 info attempt registry request try #1 at 10:21:09 AM
+580 http fetch GET https://registry.npmjs.org/@angular/common/-/common-2.1.1.tgz
+581 http fetch 200 https://registry.npmjs.org/core-js/-/core-js-2.4.1.tgz
+582 http 200 https://registry.npmjs.org/@angular%2fhttp
+583 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+583 verbose headers   etag: '"7GXBUG57TF03PMYZ1KGVJNSSD"',
+583 verbose headers   'content-type': 'application/json',
+583 verbose headers   'content-encoding': 'gzip',
+583 verbose headers   'cache-control': 'max-age=0',
+583 verbose headers   'transfer-encoding': 'chunked',
+583 verbose headers   'accept-ranges': 'bytes',
+583 verbose headers   date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+583 verbose headers   via: '1.1 varnish',
+583 verbose headers   age: '0',
+583 verbose headers   connection: 'keep-alive',
+583 verbose headers   'x-served-by': 'cache-lcy1143-LCY',
+583 verbose headers   'x-cache': 'MISS',
+583 verbose headers   'x-cache-hits': '0',
+583 verbose headers   'x-timer': 'S1477534866.950806,VS0,VE704',
+583 verbose headers   vary: 'Accept-Encoding' }
+584 silly get cb [ 200,
+584 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+584 silly get     etag: '"7GXBUG57TF03PMYZ1KGVJNSSD"',
+584 silly get     'content-type': 'application/json',
+584 silly get     'content-encoding': 'gzip',
+584 silly get     'cache-control': 'max-age=0',
+584 silly get     'transfer-encoding': 'chunked',
+584 silly get     'accept-ranges': 'bytes',
+584 silly get     date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+584 silly get     via: '1.1 varnish',
+584 silly get     age: '0',
+584 silly get     connection: 'keep-alive',
+584 silly get     'x-served-by': 'cache-lcy1143-LCY',
+584 silly get     'x-cache': 'MISS',
+584 silly get     'x-cache-hits': '0',
+584 silly get     'x-timer': 'S1477534866.950806,VS0,VE704',
+584 silly get     vary: 'Accept-Encoding' } ]
+585 verbose get saving @angular/http to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\_40angular_252fhttp\.cache.json
+586 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+587 silly addNameRange number 2 { name: '@angular/http', range: '>=2.1.1 <2.2.0', hasData: true }
+588 silly addNameRange versions [ '@angular/http',
+588 silly addNameRange   [ '0.0.0-0',
+588 silly addNameRange     '0.0.0-1',
+588 silly addNameRange     '0.0.0-2',
+588 silly addNameRange     '0.0.0-3',
+588 silly addNameRange     '0.0.0-4',
+588 silly addNameRange     '0.0.0-5',
+588 silly addNameRange     '0.0.0-6',
+588 silly addNameRange     '0.0.0-7',
+588 silly addNameRange     '2.0.0-rc.0',
+588 silly addNameRange     '2.0.0-rc.1',
+588 silly addNameRange     '2.0.0-rc.2',
+588 silly addNameRange     '2.0.0-rc.3',
+588 silly addNameRange     '2.0.0-rc.4',
+588 silly addNameRange     '2.0.0-rc.5',
+588 silly addNameRange     '2.0.0-rc.6',
+588 silly addNameRange     '2.0.0-rc.7',
+588 silly addNameRange     '2.0.0',
+588 silly addNameRange     '2.0.1',
+588 silly addNameRange     '2.1.0-beta.0',
+588 silly addNameRange     '2.0.2',
+588 silly addNameRange     '2.1.0-rc.0',
+588 silly addNameRange     '2.1.0',
+588 silly addNameRange     '2.2.0-beta.0',
+588 silly addNameRange     '2.1.1' ] ]
+589 silly addNamed @angular/http@2.1.1
+590 verbose addNamed "2.1.1" is a plain semver version for @angular/http
+591 silly mapToRegistry name @angular/http
+592 silly mapToRegistry scope (from package name) @angular
+593 verbose mapToRegistry no registry URL found in name for scope @angular
+594 silly mapToRegistry using default registry
+595 silly mapToRegistry registry https://registry.npmjs.org/
+596 silly mapToRegistry data Result {
+596 silly mapToRegistry   raw: '@angular/http',
+596 silly mapToRegistry   scope: '@angular',
+596 silly mapToRegistry   name: '@angular/http',
+596 silly mapToRegistry   rawSpec: '',
+596 silly mapToRegistry   spec: 'latest',
+596 silly mapToRegistry   type: 'tag' }
+597 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fhttp
+598 verbose addRemoteTarball https://registry.npmjs.org/@angular/http/-/http-2.1.1.tgz not in flight; adding
+599 verbose addRemoteTarball [ 'https://registry.npmjs.org/@angular/http/-/http-2.1.1.tgz',
+599 verbose addRemoteTarball   '6cec2c675aa0b8f8e7f809d617e4cde5b713437a' ]
+600 info retry fetch attempt 1 at 10:21:09 AM
+601 info attempt registry request try #1 at 10:21:09 AM
+602 http fetch GET https://registry.npmjs.org/@angular/http/-/http-2.1.1.tgz
+603 http 200 https://registry.npmjs.org/@angular%2fupgrade
+604 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+604 verbose headers   etag: '"10DBJX7Z3BTQSSV805BZGWJN2"',
+604 verbose headers   'content-type': 'application/json',
+604 verbose headers   'content-encoding': 'gzip',
+604 verbose headers   'cache-control': 'max-age=0',
+604 verbose headers   'transfer-encoding': 'chunked',
+604 verbose headers   'accept-ranges': 'bytes',
+604 verbose headers   date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+604 verbose headers   via: '1.1 varnish',
+604 verbose headers   age: '0',
+604 verbose headers   connection: 'keep-alive',
+604 verbose headers   'x-served-by': 'cache-lcy1136-LCY',
+604 verbose headers   'x-cache': 'MISS',
+604 verbose headers   'x-cache-hits': '0',
+604 verbose headers   'x-timer': 'S1477534866.958723,VS0,VE734',
+604 verbose headers   vary: 'Accept-Encoding' }
+605 silly get cb [ 200,
+605 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+605 silly get     etag: '"10DBJX7Z3BTQSSV805BZGWJN2"',
+605 silly get     'content-type': 'application/json',
+605 silly get     'content-encoding': 'gzip',
+605 silly get     'cache-control': 'max-age=0',
+605 silly get     'transfer-encoding': 'chunked',
+605 silly get     'accept-ranges': 'bytes',
+605 silly get     date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+605 silly get     via: '1.1 varnish',
+605 silly get     age: '0',
+605 silly get     connection: 'keep-alive',
+605 silly get     'x-served-by': 'cache-lcy1136-LCY',
+605 silly get     'x-cache': 'MISS',
+605 silly get     'x-cache-hits': '0',
+605 silly get     'x-timer': 'S1477534866.958723,VS0,VE734',
+605 silly get     vary: 'Accept-Encoding' } ]
+606 verbose get saving @angular/upgrade to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\_40angular_252fupgrade\.cache.json
+607 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+608 silly addNameRange number 2 { name: '@angular/upgrade',
+608 silly addNameRange   range: '>=2.1.1 <2.2.0',
+608 silly addNameRange   hasData: true }
+609 silly addNameRange versions [ '@angular/upgrade',
+609 silly addNameRange   [ '0.0.0-0',
+609 silly addNameRange     '0.0.0-2',
+609 silly addNameRange     '0.0.0-3',
+609 silly addNameRange     '0.0.0-4',
+609 silly addNameRange     '0.0.0-5',
+609 silly addNameRange     '0.0.0-6',
+609 silly addNameRange     '0.0.0-7',
+609 silly addNameRange     '2.0.0-rc.0',
+609 silly addNameRange     '2.0.0-rc.1',
+609 silly addNameRange     '2.0.0-rc.2',
+609 silly addNameRange     '2.0.0-rc.3',
+609 silly addNameRange     '2.0.0-rc.4',
+609 silly addNameRange     '2.0.0-rc.5',
+609 silly addNameRange     '2.0.0-rc.6',
+609 silly addNameRange     '2.0.0-rc.7',
+609 silly addNameRange     '2.0.0',
+609 silly addNameRange     '2.0.1',
+609 silly addNameRange     '2.1.0-beta.0',
+609 silly addNameRange     '2.0.2',
+609 silly addNameRange     '2.1.0-rc.0',
+609 silly addNameRange     '2.1.0',
+609 silly addNameRange     '2.2.0-beta.0',
+609 silly addNameRange     '2.1.1' ] ]
+610 silly addNamed @angular/upgrade@2.1.1
+611 verbose addNamed "2.1.1" is a plain semver version for @angular/upgrade
+612 silly mapToRegistry name @angular/upgrade
+613 silly mapToRegistry scope (from package name) @angular
+614 verbose mapToRegistry no registry URL found in name for scope @angular
+615 silly mapToRegistry using default registry
+616 silly mapToRegistry registry https://registry.npmjs.org/
+617 silly mapToRegistry data Result {
+617 silly mapToRegistry   raw: '@angular/upgrade',
+617 silly mapToRegistry   scope: '@angular',
+617 silly mapToRegistry   name: '@angular/upgrade',
+617 silly mapToRegistry   rawSpec: '',
+617 silly mapToRegistry   spec: 'latest',
+617 silly mapToRegistry   type: 'tag' }
+618 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fupgrade
+619 verbose addRemoteTarball https://registry.npmjs.org/@angular/upgrade/-/upgrade-2.1.1.tgz not in flight; adding
+620 verbose addRemoteTarball [ 'https://registry.npmjs.org/@angular/upgrade/-/upgrade-2.1.1.tgz',
+620 verbose addRemoteTarball   'bc3e6cf671f1e8d164de3660d41f6296ee3dc180' ]
+621 info retry fetch attempt 1 at 10:21:09 AM
+622 info attempt registry request try #1 at 10:21:09 AM
+623 http fetch GET https://registry.npmjs.org/@angular/upgrade/-/upgrade-2.1.1.tgz
+624 http 200 https://registry.npmjs.org/@angular%2fplatform-browser
+625 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+625 verbose headers   etag: '"7V211UY1D96TGI1T9396NJBW7"',
+625 verbose headers   'content-type': 'application/json',
+625 verbose headers   'content-encoding': 'gzip',
+625 verbose headers   'cache-control': 'max-age=0',
+625 verbose headers   'transfer-encoding': 'chunked',
+625 verbose headers   'accept-ranges': 'bytes',
+625 verbose headers   date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+625 verbose headers   via: '1.1 varnish',
+625 verbose headers   age: '0',
+625 verbose headers   connection: 'keep-alive',
+625 verbose headers   'x-served-by': 'cache-lcy1147-LCY',
+625 verbose headers   'x-cache': 'MISS',
+625 verbose headers   'x-cache-hits': '0',
+625 verbose headers   'x-timer': 'S1477534866.956077,VS0,VE744',
+625 verbose headers   vary: 'Accept-Encoding' }
+626 silly get cb [ 200,
+626 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+626 silly get     etag: '"7V211UY1D96TGI1T9396NJBW7"',
+626 silly get     'content-type': 'application/json',
+626 silly get     'content-encoding': 'gzip',
+626 silly get     'cache-control': 'max-age=0',
+626 silly get     'transfer-encoding': 'chunked',
+626 silly get     'accept-ranges': 'bytes',
+626 silly get     date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+626 silly get     via: '1.1 varnish',
+626 silly get     age: '0',
+626 silly get     connection: 'keep-alive',
+626 silly get     'x-served-by': 'cache-lcy1147-LCY',
+626 silly get     'x-cache': 'MISS',
+626 silly get     'x-cache-hits': '0',
+626 silly get     'x-timer': 'S1477534866.956077,VS0,VE744',
+626 silly get     vary: 'Accept-Encoding' } ]
+627 verbose get saving @angular/platform-browser to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\_40angular_252fplatform-browser\.cache.json
+628 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+629 silly addNameRange number 2 { name: '@angular/platform-browser',
+629 silly addNameRange   range: '>=2.1.1 <2.2.0',
+629 silly addNameRange   hasData: true }
+630 silly addNameRange versions [ '@angular/platform-browser',
+630 silly addNameRange   [ '0.0.0-0',
+630 silly addNameRange     '0.0.0-1',
+630 silly addNameRange     '0.0.0-2',
+630 silly addNameRange     '0.0.0-3',
+630 silly addNameRange     '0.0.0-4',
+630 silly addNameRange     '0.0.0-5',
+630 silly addNameRange     '0.0.0-6',
+630 silly addNameRange     '0.0.0-7',
+630 silly addNameRange     '2.0.0-rc.0',
+630 silly addNameRange     '2.0.0-rc.1',
+630 silly addNameRange     '2.0.0-rc.2',
+630 silly addNameRange     '2.0.0-rc.3',
+630 silly addNameRange     '2.0.0-rc.4',
+630 silly addNameRange     '2.0.0-rc.5',
+630 silly addNameRange     '2.0.0-rc.6',
+630 silly addNameRange     '2.0.0-rc.7',
+630 silly addNameRange     '2.0.0',
+630 silly addNameRange     '2.0.1',
+630 silly addNameRange     '2.1.0-beta.0',
+630 silly addNameRange     '2.0.2',
+630 silly addNameRange     '2.1.0-rc.0',
+630 silly addNameRange     '2.1.0',
+630 silly addNameRange     '2.2.0-beta.0',
+630 silly addNameRange     '2.1.1' ] ]
+631 silly addNamed @angular/platform-browser@2.1.1
+632 verbose addNamed "2.1.1" is a plain semver version for @angular/platform-browser
+633 silly mapToRegistry name @angular/platform-browser
+634 silly mapToRegistry scope (from package name) @angular
+635 verbose mapToRegistry no registry URL found in name for scope @angular
+636 silly mapToRegistry using default registry
+637 silly mapToRegistry registry https://registry.npmjs.org/
+638 silly mapToRegistry data Result {
+638 silly mapToRegistry   raw: '@angular/platform-browser',
+638 silly mapToRegistry   scope: '@angular',
+638 silly mapToRegistry   name: '@angular/platform-browser',
+638 silly mapToRegistry   rawSpec: '',
+638 silly mapToRegistry   spec: 'latest',
+638 silly mapToRegistry   type: 'tag' }
+639 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fplatform-browser
+640 verbose addRemoteTarball https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-2.1.1.tgz not in flight; adding
+641 verbose addRemoteTarball [ 'https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-2.1.1.tgz',
+641 verbose addRemoteTarball   '03687a14bb914b113d1068aa0a44b5820109c0c0' ]
+642 info retry fetch attempt 1 at 10:21:09 AM
+643 info attempt registry request try #1 at 10:21:09 AM
+644 http fetch GET https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-2.1.1.tgz
+645 http fetch 200 https://registry.npmjs.org/typescript/-/typescript-2.0.6.tgz
+646 silly fetchAndShaCheck shasum 72426d570b60776e3688968bd5ab9537a15cecf6
+647 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\reflect-metadata\-\reflect-metadata-0.1.8.tgz not in flight; adding
+648 verbose addTmpTarball already have metadata; skipping unpack for reflect-metadata@0.1.8
+649 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+650 silly cache afterAdd reflect-metadata@0.1.8
+651 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\reflect-metadata\0.1.8\package\package.json not in flight; writing
+652 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+653 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\reflect-metadata\0.1.8\package\package.json written
+654 http 200 https://registry.npmjs.org/@angular%2frouter
+655 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+655 verbose headers   etag: '"6C9QLPCIWS71O1RKNKJLMICC6"',
+655 verbose headers   'content-type': 'application/json',
+655 verbose headers   'content-encoding': 'gzip',
+655 verbose headers   'cache-control': 'max-age=0',
+655 verbose headers   'transfer-encoding': 'chunked',
+655 verbose headers   'accept-ranges': 'bytes',
+655 verbose headers   date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+655 verbose headers   via: '1.1 varnish',
+655 verbose headers   age: '0',
+655 verbose headers   connection: 'keep-alive',
+655 verbose headers   'x-served-by': 'cache-lcy1128-LCY',
+655 verbose headers   'x-cache': 'MISS',
+655 verbose headers   'x-cache-hits': '0',
+655 verbose headers   'x-timer': 'S1477534866.950147,VS0,VE791',
+655 verbose headers   vary: 'Accept-Encoding' }
+656 silly get cb [ 200,
+656 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+656 silly get     etag: '"6C9QLPCIWS71O1RKNKJLMICC6"',
+656 silly get     'content-type': 'application/json',
+656 silly get     'content-encoding': 'gzip',
+656 silly get     'cache-control': 'max-age=0',
+656 silly get     'transfer-encoding': 'chunked',
+656 silly get     'accept-ranges': 'bytes',
+656 silly get     date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+656 silly get     via: '1.1 varnish',
+656 silly get     age: '0',
+656 silly get     connection: 'keep-alive',
+656 silly get     'x-served-by': 'cache-lcy1128-LCY',
+656 silly get     'x-cache': 'MISS',
+656 silly get     'x-cache-hits': '0',
+656 silly get     'x-timer': 'S1477534866.950147,VS0,VE791',
+656 silly get     vary: 'Accept-Encoding' } ]
+657 verbose get saving @angular/router to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\_40angular_252frouter\.cache.json
+658 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+659 silly addNameRange number 2 { name: '@angular/router',
+659 silly addNameRange   range: '>=3.1.1 <3.2.0',
+659 silly addNameRange   hasData: true }
+660 silly addNameRange versions [ '@angular/router',
+660 silly addNameRange   [ '0.0.1',
+660 silly addNameRange     '0.1.0',
+660 silly addNameRange     '0.2.0',
+660 silly addNameRange     '0.0.0-0',
+660 silly addNameRange     '0.0.0-1',
+660 silly addNameRange     '0.0.0-2',
+660 silly addNameRange     '0.0.0-3',
+660 silly addNameRange     '0.0.0-4',
+660 silly addNameRange     '0.0.0-5',
+660 silly addNameRange     '0.0.0-6',
+660 silly addNameRange     '0.0.0-7',
+660 silly addNameRange     '2.0.0-rc.0',
+660 silly addNameRange     '2.0.0-rc.1',
+660 silly addNameRange     '3.0.0-alpha.0',
+660 silly addNameRange     '3.0.0-alpha.1',
+660 silly addNameRange     '3.0.0-alpha.2',
+660 silly addNameRange     '3.0.0-alpha.3',
+660 silly addNameRange     '3.0.0-alpha.4',
+660 silly addNameRange     '2.0.0-rc.2',
+660 silly addNameRange     '3.0.0-alpha.5',
+660 silly addNameRange     '3.0.0-alpha.6',
+660 silly addNameRange     '3.0.0-alpha.7',
+660 silly addNameRange     '3.0.0-alpha.8',
+660 silly addNameRange     '3.0.0-beta.1',
+660 silly addNameRange     '3.0.0-beta.2',
+660 silly addNameRange     '3.0.0-rc.1',
+660 silly addNameRange     '3.0.0-rc.2',
+660 silly addNameRange     '3.0.0-rc.3',
+660 silly addNameRange     '3.0.0',
+660 silly addNameRange     '3.0.1',
+660 silly addNameRange     '3.1.0-beta.0',
+660 silly addNameRange     '3.0.2',
+660 silly addNameRange     '3.1.0-rc.0',
+660 silly addNameRange     '3.1.0',
+660 silly addNameRange     '3.2.0-beta.0',
+660 silly addNameRange     '3.1.1' ] ]
+661 silly addNamed @angular/router@3.1.1
+662 verbose addNamed "3.1.1" is a plain semver version for @angular/router
+663 silly mapToRegistry name @angular/router
+664 silly mapToRegistry scope (from package name) @angular
+665 verbose mapToRegistry no registry URL found in name for scope @angular
+666 silly mapToRegistry using default registry
+667 silly mapToRegistry registry https://registry.npmjs.org/
+668 silly mapToRegistry data Result {
+668 silly mapToRegistry   raw: '@angular/router',
+668 silly mapToRegistry   scope: '@angular',
+668 silly mapToRegistry   name: '@angular/router',
+668 silly mapToRegistry   rawSpec: '',
+668 silly mapToRegistry   spec: 'latest',
+668 silly mapToRegistry   type: 'tag' }
+669 silly mapToRegistry uri https://registry.npmjs.org/@angular%2frouter
+670 verbose addRemoteTarball https://registry.npmjs.org/@angular/router/-/router-3.1.1.tgz not in flight; adding
+671 verbose addRemoteTarball [ 'https://registry.npmjs.org/@angular/router/-/router-3.1.1.tgz',
+671 verbose addRemoteTarball   '14c53e6789274e4cb6e0bb3f7269c82910c805fd' ]
+672 info retry fetch attempt 1 at 10:21:09 AM
+673 info attempt registry request try #1 at 10:21:09 AM
+674 http fetch GET https://registry.npmjs.org/@angular/router/-/router-3.1.1.tgz
+675 http 200 https://registry.npmjs.org/@angular%2fcompiler
+676 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+676 verbose headers   etag: '"DE7M28NNJPYL95CIZMNYADX4P"',
+676 verbose headers   'content-type': 'application/json',
+676 verbose headers   'content-encoding': 'gzip',
+676 verbose headers   'cache-control': 'max-age=0',
+676 verbose headers   'transfer-encoding': 'chunked',
+676 verbose headers   'accept-ranges': 'bytes',
+676 verbose headers   date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+676 verbose headers   via: '1.1 varnish',
+676 verbose headers   age: '0',
+676 verbose headers   connection: 'keep-alive',
+676 verbose headers   'x-served-by': 'cache-lcy1121-LCY',
+676 verbose headers   'x-cache': 'MISS',
+676 verbose headers   'x-cache-hits': '0',
+676 verbose headers   'x-timer': 'S1477534866.955878,VS0,VE969',
+676 verbose headers   vary: 'Accept-Encoding' }
+677 silly get cb [ 200,
+677 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+677 silly get     etag: '"DE7M28NNJPYL95CIZMNYADX4P"',
+677 silly get     'content-type': 'application/json',
+677 silly get     'content-encoding': 'gzip',
+677 silly get     'cache-control': 'max-age=0',
+677 silly get     'transfer-encoding': 'chunked',
+677 silly get     'accept-ranges': 'bytes',
+677 silly get     date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+677 silly get     via: '1.1 varnish',
+677 silly get     age: '0',
+677 silly get     connection: 'keep-alive',
+677 silly get     'x-served-by': 'cache-lcy1121-LCY',
+677 silly get     'x-cache': 'MISS',
+677 silly get     'x-cache-hits': '0',
+677 silly get     'x-timer': 'S1477534866.955878,VS0,VE969',
+677 silly get     vary: 'Accept-Encoding' } ]
+678 verbose get saving @angular/compiler to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\_40angular_252fcompiler\.cache.json
+679 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+680 silly addNameRange number 2 { name: '@angular/compiler',
+680 silly addNameRange   range: '>=2.1.1 <2.2.0',
+680 silly addNameRange   hasData: true }
+681 silly addNameRange versions [ '@angular/compiler',
+681 silly addNameRange   [ '0.0.0-0',
+681 silly addNameRange     '0.0.0-1',
+681 silly addNameRange     '0.0.0-2',
+681 silly addNameRange     '0.0.0-3',
+681 silly addNameRange     '0.0.0-4',
+681 silly addNameRange     '0.0.0-5',
+681 silly addNameRange     '0.0.0-6',
+681 silly addNameRange     '0.0.0-7',
+681 silly addNameRange     '2.0.0-rc.0',
+681 silly addNameRange     '2.0.0-rc.1',
+681 silly addNameRange     '2.0.0-rc.2',
+681 silly addNameRange     '2.0.0-rc.3',
+681 silly addNameRange     '2.0.0-rc.4',
+681 silly addNameRange     '2.0.0-rc.5',
+681 silly addNameRange     '2.0.0-rc.6',
+681 silly addNameRange     '2.0.0-rc.7',
+681 silly addNameRange     '2.0.0',
+681 silly addNameRange     '2.0.1',
+681 silly addNameRange     '2.1.0-beta.0',
+681 silly addNameRange     '2.0.2',
+681 silly addNameRange     '2.1.0-rc.0',
+681 silly addNameRange     '2.1.0',
+681 silly addNameRange     '2.2.0-beta.0',
+681 silly addNameRange     '2.1.1' ] ]
+682 silly addNamed @angular/compiler@2.1.1
+683 verbose addNamed "2.1.1" is a plain semver version for @angular/compiler
+684 silly mapToRegistry name @angular/compiler
+685 silly mapToRegistry scope (from package name) @angular
+686 verbose mapToRegistry no registry URL found in name for scope @angular
+687 silly mapToRegistry using default registry
+688 silly mapToRegistry registry https://registry.npmjs.org/
+689 silly mapToRegistry data Result {
+689 silly mapToRegistry   raw: '@angular/compiler',
+689 silly mapToRegistry   scope: '@angular',
+689 silly mapToRegistry   name: '@angular/compiler',
+689 silly mapToRegistry   rawSpec: '',
+689 silly mapToRegistry   spec: 'latest',
+689 silly mapToRegistry   type: 'tag' }
+690 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcompiler
+691 verbose addRemoteTarball https://registry.npmjs.org/@angular/compiler/-/compiler-2.1.1.tgz not in flight; adding
+692 verbose addRemoteTarball [ 'https://registry.npmjs.org/@angular/compiler/-/compiler-2.1.1.tgz',
+692 verbose addRemoteTarball   '41d04cdd121ab17d7e4d4e660512fe424949fbd6' ]
+693 info retry fetch attempt 1 at 10:21:10 AM
+694 info attempt registry request try #1 at 10:21:10 AM
+695 http fetch GET https://registry.npmjs.org/@angular/compiler/-/compiler-2.1.1.tgz
+696 http 200 https://registry.npmjs.org/@angular%2fforms
+697 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+697 verbose headers   etag: '"3SPQNIYY3N96G54FNYKR2RWWP"',
+697 verbose headers   'content-type': 'application/json',
+697 verbose headers   'content-encoding': 'gzip',
+697 verbose headers   'cache-control': 'max-age=0',
+697 verbose headers   'transfer-encoding': 'chunked',
+697 verbose headers   'accept-ranges': 'bytes',
+697 verbose headers   date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+697 verbose headers   via: '1.1 varnish',
+697 verbose headers   age: '0',
+697 verbose headers   connection: 'keep-alive',
+697 verbose headers   'x-served-by': 'cache-lcy1147-LCY',
+697 verbose headers   'x-cache': 'MISS',
+697 verbose headers   'x-cache-hits': '0',
+697 verbose headers   'x-timer': 'S1477534867.708100,VS0,VE226',
+697 verbose headers   vary: 'Accept-Encoding' }
+698 silly get cb [ 200,
+698 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+698 silly get     etag: '"3SPQNIYY3N96G54FNYKR2RWWP"',
+698 silly get     'content-type': 'application/json',
+698 silly get     'content-encoding': 'gzip',
+698 silly get     'cache-control': 'max-age=0',
+698 silly get     'transfer-encoding': 'chunked',
+698 silly get     'accept-ranges': 'bytes',
+698 silly get     date: 'Thu, 27 Oct 2016 02:21:07 GMT',
+698 silly get     via: '1.1 varnish',
+698 silly get     age: '0',
+698 silly get     connection: 'keep-alive',
+698 silly get     'x-served-by': 'cache-lcy1147-LCY',
+698 silly get     'x-cache': 'MISS',
+698 silly get     'x-cache-hits': '0',
+698 silly get     'x-timer': 'S1477534867.708100,VS0,VE226',
+698 silly get     vary: 'Accept-Encoding' } ]
+699 verbose get saving @angular/forms to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\_40angular_252fforms\.cache.json
+700 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+701 silly addNameRange number 2 { name: '@angular/forms',
+701 silly addNameRange   range: '>=2.1.1 <2.2.0',
+701 silly addNameRange   hasData: true }
+702 silly addNameRange versions [ '@angular/forms',
+702 silly addNameRange   [ '0.1.0',
+702 silly addNameRange     '0.1.1',
+702 silly addNameRange     '0.2.0',
+702 silly addNameRange     '0.3.0',
+702 silly addNameRange     '2.0.0-rc.6',
+702 silly addNameRange     '2.0.0-rc.7',
+702 silly addNameRange     '2.0.0',
+702 silly addNameRange     '2.0.1',
+702 silly addNameRange     '2.1.0-beta.0',
+702 silly addNameRange     '2.0.2',
+702 silly addNameRange     '2.1.0-rc.0',
+702 silly addNameRange     '2.1.0',
+702 silly addNameRange     '2.2.0-beta.0',
+702 silly addNameRange     '2.1.1' ] ]
+703 silly addNamed @angular/forms@2.1.1
+704 verbose addNamed "2.1.1" is a plain semver version for @angular/forms
+705 silly mapToRegistry name @angular/forms
+706 silly mapToRegistry scope (from package name) @angular
+707 verbose mapToRegistry no registry URL found in name for scope @angular
+708 silly mapToRegistry using default registry
+709 silly mapToRegistry registry https://registry.npmjs.org/
+710 silly mapToRegistry data Result {
+710 silly mapToRegistry   raw: '@angular/forms',
+710 silly mapToRegistry   scope: '@angular',
+710 silly mapToRegistry   name: '@angular/forms',
+710 silly mapToRegistry   rawSpec: '',
+710 silly mapToRegistry   spec: 'latest',
+710 silly mapToRegistry   type: 'tag' }
+711 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fforms
+712 verbose addRemoteTarball https://registry.npmjs.org/@angular/forms/-/forms-2.1.1.tgz not in flight; adding
+713 verbose addRemoteTarball [ 'https://registry.npmjs.org/@angular/forms/-/forms-2.1.1.tgz',
+713 verbose addRemoteTarball   'd7b79d8078cd30107d43666f4af3d7ac6600b083' ]
+714 info retry fetch attempt 1 at 10:21:10 AM
+715 info attempt registry request try #1 at 10:21:10 AM
+716 http fetch GET https://registry.npmjs.org/@angular/forms/-/forms-2.1.1.tgz
+717 http 200 https://registry.npmjs.org/lite-server
+718 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+718 verbose headers   etag: '"E6FZBQ0YWUGXQYJVAY5K4KX2B"',
+718 verbose headers   'content-type': 'application/json',
+718 verbose headers   'content-encoding': 'gzip',
+718 verbose headers   'cache-control': 'max-age=300',
+718 verbose headers   'content-length': '5822',
+718 verbose headers   'accept-ranges': 'bytes',
+718 verbose headers   date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+718 verbose headers   via: '1.1 varnish',
+718 verbose headers   age: '20',
+718 verbose headers   connection: 'keep-alive',
+718 verbose headers   'x-served-by': 'cache-lcy1138-LCY',
+718 verbose headers   'x-cache': 'HIT',
+718 verbose headers   'x-cache-hits': '1',
+718 verbose headers   'x-timer': 'S1477534866.959541,VS0,VE0',
+718 verbose headers   vary: 'Accept-Encoding' }
+719 silly get cb [ 200,
+719 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+719 silly get     etag: '"E6FZBQ0YWUGXQYJVAY5K4KX2B"',
+719 silly get     'content-type': 'application/json',
+719 silly get     'content-encoding': 'gzip',
+719 silly get     'cache-control': 'max-age=300',
+719 silly get     'content-length': '5822',
+719 silly get     'accept-ranges': 'bytes',
+719 silly get     date: 'Thu, 27 Oct 2016 02:21:06 GMT',
+719 silly get     via: '1.1 varnish',
+719 silly get     age: '20',
+719 silly get     connection: 'keep-alive',
+719 silly get     'x-served-by': 'cache-lcy1138-LCY',
+719 silly get     'x-cache': 'HIT',
+719 silly get     'x-cache-hits': '1',
+719 silly get     'x-timer': 'S1477534866.959541,VS0,VE0',
+719 silly get     vary: 'Accept-Encoding' } ]
+720 verbose get saving lite-server to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\lite-server\.cache.json
+721 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+722 silly addNameRange number 2 { name: 'lite-server', range: '>=2.2.2 <3.0.0', hasData: true }
+723 silly addNameRange versions [ 'lite-server',
+723 silly addNameRange   [ '1.0.0',
+723 silly addNameRange     '1.0.1',
+723 silly addNameRange     '1.0.3',
+723 silly addNameRange     '1.1.0',
+723 silly addNameRange     '1.2.0',
+723 silly addNameRange     '1.3.0',
+723 silly addNameRange     '1.3.1',
+723 silly addNameRange     '1.3.2',
+723 silly addNameRange     '1.3.3',
+723 silly addNameRange     '1.3.4',
+723 silly addNameRange     '2.0.0',
+723 silly addNameRange     '2.0.1',
+723 silly addNameRange     '2.1.0',
+723 silly addNameRange     '2.2.0',
+723 silly addNameRange     '2.2.2' ] ]
+724 silly addNamed lite-server@2.2.2
+725 verbose addNamed "2.2.2" is a plain semver version for lite-server
+726 silly mapToRegistry name lite-server
+727 silly mapToRegistry using default registry
+728 silly mapToRegistry registry https://registry.npmjs.org/
+729 silly mapToRegistry data Result {
+729 silly mapToRegistry   raw: 'lite-server',
+729 silly mapToRegistry   scope: null,
+729 silly mapToRegistry   name: 'lite-server',
+729 silly mapToRegistry   rawSpec: '',
+729 silly mapToRegistry   spec: 'latest',
+729 silly mapToRegistry   type: 'tag' }
+730 silly mapToRegistry uri https://registry.npmjs.org/lite-server
+731 verbose addRemoteTarball https://registry.npmjs.org/lite-server/-/lite-server-2.2.2.tgz not in flight; adding
+732 verbose addRemoteTarball [ 'https://registry.npmjs.org/lite-server/-/lite-server-2.2.2.tgz',
+732 verbose addRemoteTarball   '4644afe6c9146d850cfa0ad9a86a94f87156499e' ]
+733 info retry fetch attempt 1 at 10:21:10 AM
+734 info attempt registry request try #1 at 10:21:10 AM
+735 http fetch GET https://registry.npmjs.org/lite-server/-/lite-server-2.2.2.tgz
+736 http fetch 200 https://registry.npmjs.org/@types/node/-/node-6.0.46.tgz
+737 silly fetchAndShaCheck shasum e513e6f91a25a37b8b607c51c7989ee0d67b9356
+738 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\systemjs\-\systemjs-0.19.39.tgz not in flight; adding
+739 verbose addTmpTarball already have metadata; skipping unpack for systemjs@0.19.39
+740 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+741 http fetch 200 https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-2.1.1.tgz
+742 silly cache afterAdd systemjs@0.19.39
+743 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\systemjs\0.19.39\package\package.json not in flight; writing
+744 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+745 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\systemjs\0.19.39\package\package.json written
+746 silly fetchAndShaCheck shasum 8d9e48572831f05b11cc4c793754d43437219d62
+747 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\_40types\node\-\node-6.0.46.tgz not in flight; adding
+748 verbose addTmpTarball already have metadata; skipping unpack for @types/node@6.0.46
+749 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+750 silly cache afterAdd @types/node@6.0.46
+751 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@types\node\6.0.46\package\package.json not in flight; writing
+752 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+753 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@types\node\6.0.46\package\package.json written
+754 silly fetchAndShaCheck shasum d1e671abbc35c4c3dab01d266a239ebfb0ef8b6e
+755 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\_40angular\platform-browser-dynamic\-\platform-browser-dynamic-2.1.1.tgz not in flight; adding
+756 verbose addTmpTarball already have metadata; skipping unpack for @angular/platform-browser-dynamic@2.1.1
+757 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+758 silly cache afterAdd @angular/platform-browser-dynamic@2.1.1
+759 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\platform-browser-dynamic\2.1.1\package\package.json not in flight; writing
+760 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+761 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\platform-browser-dynamic\2.1.1\package\package.json written
+762 http fetch 200 https://registry.npmjs.org/lite-server/-/lite-server-2.2.2.tgz
+763 http fetch 200 https://registry.npmjs.org/@types/core-js/-/core-js-0.9.34.tgz
+764 http fetch 200 https://registry.npmjs.org/@angular/common/-/common-2.1.1.tgz
+765 http fetch 200 https://registry.npmjs.org/@angular/http/-/http-2.1.1.tgz
+766 http fetch 200 https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-2.1.1.tgz
+767 http fetch 200 https://registry.npmjs.org/@angular/upgrade/-/upgrade-2.1.1.tgz
+768 silly fetchAndShaCheck shasum 72c521d8e59fdaa8b65f76db71fa53c82c7c21c5
+769 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\_40types\core-js\-\core-js-0.9.34.tgz not in flight; adding
+770 verbose addTmpTarball already have metadata; skipping unpack for @types/core-js@0.9.34
+771 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+772 silly cache afterAdd @types/core-js@0.9.34
+773 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@types\core-js\0.9.34\package\package.json not in flight; writing
+774 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+775 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@types\core-js\0.9.34\package\package.json written
+776 http 200 https://registry.npmjs.org/angular2-fontawesome
+777 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+777 verbose headers   etag: '"FOBJ8VC3SVSJC811P4R38DZF"',
+777 verbose headers   'content-type': 'application/json',
+777 verbose headers   'content-encoding': 'gzip',
+777 verbose headers   'cache-control': 'max-age=300',
+777 verbose headers   'content-length': '5006',
+777 verbose headers   'accept-ranges': 'bytes',
+777 verbose headers   date: 'Thu, 27 Oct 2016 02:21:08 GMT',
+777 verbose headers   via: '1.1 varnish',
+777 verbose headers   age: '0',
+777 verbose headers   connection: 'keep-alive',
+777 verbose headers   'x-served-by': 'cache-lcy1120-LCY',
+777 verbose headers   'x-cache': 'MISS',
+777 verbose headers   'x-cache-hits': '0',
+777 verbose headers   'x-timer': 'S1477534868.486026,VS0,VE364',
+777 verbose headers   vary: 'Accept-Encoding' }
+778 silly get cb [ 200,
+778 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+778 silly get     etag: '"FOBJ8VC3SVSJC811P4R38DZF"',
+778 silly get     'content-type': 'application/json',
+778 silly get     'content-encoding': 'gzip',
+778 silly get     'cache-control': 'max-age=300',
+778 silly get     'content-length': '5006',
+778 silly get     'accept-ranges': 'bytes',
+778 silly get     date: 'Thu, 27 Oct 2016 02:21:08 GMT',
+778 silly get     via: '1.1 varnish',
+778 silly get     age: '0',
+778 silly get     connection: 'keep-alive',
+778 silly get     'x-served-by': 'cache-lcy1120-LCY',
+778 silly get     'x-cache': 'MISS',
+778 silly get     'x-cache-hits': '0',
+778 silly get     'x-timer': 'S1477534868.486026,VS0,VE364',
+778 silly get     vary: 'Accept-Encoding' } ]
+779 verbose get saving angular2-fontawesome to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\angular2-fontawesome\.cache.json
+780 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+781 silly addNameRange number 2 { name: 'angular2-fontawesome',
+781 silly addNameRange   range: '>=0.7.0 <0.8.0',
+781 silly addNameRange   hasData: true }
+782 silly addNameRange versions [ 'angular2-fontawesome',
+782 silly addNameRange   [ '0.1.0',
+782 silly addNameRange     '0.1.1',
+782 silly addNameRange     '0.1.2',
+782 silly addNameRange     '0.3.0',
+782 silly addNameRange     '0.4.0',
+782 silly addNameRange     '0.5.0',
+782 silly addNameRange     '0.5.1',
+782 silly addNameRange     '0.6.0',
+782 silly addNameRange     '0.7.0' ] ]
+783 silly addNamed angular2-fontawesome@0.7.0
+784 verbose addNamed "0.7.0" is a plain semver version for angular2-fontawesome
+785 silly mapToRegistry name angular2-fontawesome
+786 silly mapToRegistry using default registry
+787 silly mapToRegistry registry https://registry.npmjs.org/
+788 silly mapToRegistry data Result {
+788 silly mapToRegistry   raw: 'angular2-fontawesome',
+788 silly mapToRegistry   scope: null,
+788 silly mapToRegistry   name: 'angular2-fontawesome',
+788 silly mapToRegistry   rawSpec: '',
+788 silly mapToRegistry   spec: 'latest',
+788 silly mapToRegistry   type: 'tag' }
+789 silly mapToRegistry uri https://registry.npmjs.org/angular2-fontawesome
+790 verbose addRemoteTarball https://registry.npmjs.org/angular2-fontawesome/-/angular2-fontawesome-0.7.0.tgz not in flight; adding
+791 verbose addRemoteTarball [ 'https://registry.npmjs.org/angular2-fontawesome/-/angular2-fontawesome-0.7.0.tgz',
+791 verbose addRemoteTarball   '9ba236bc150424c4b5257c6c37d871d7068f52c4' ]
+792 info retry fetch attempt 1 at 10:21:10 AM
+793 info attempt registry request try #1 at 10:21:10 AM
+794 http fetch GET https://registry.npmjs.org/angular2-fontawesome/-/angular2-fontawesome-0.7.0.tgz
+795 http fetch 200 https://registry.npmjs.org/@angular/router/-/router-3.1.1.tgz
+796 http fetch 200 https://registry.npmjs.org/@angular/forms/-/forms-2.1.1.tgz
+797 http fetch 200 https://registry.npmjs.org/@angular/compiler/-/compiler-2.1.1.tgz
+798 silly fetchAndShaCheck shasum 4644afe6c9146d850cfa0ad9a86a94f87156499e
+799 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\lite-server\-\lite-server-2.2.2.tgz not in flight; adding
+800 verbose addTmpTarball already have metadata; skipping unpack for lite-server@2.2.2
+801 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+802 silly cache afterAdd lite-server@2.2.2
+803 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\lite-server\2.2.2\package\package.json not in flight; writing
+804 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+805 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\lite-server\2.2.2\package\package.json written
+806 silly fetchAndShaCheck shasum bc3e6cf671f1e8d164de3660d41f6296ee3dc180
+807 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\_40angular\upgrade\-\upgrade-2.1.1.tgz not in flight; adding
+808 verbose addTmpTarball already have metadata; skipping unpack for @angular/upgrade@2.1.1
+809 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+810 silly cache afterAdd @angular/upgrade@2.1.1
+811 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\upgrade\2.1.1\package\package.json not in flight; writing
+812 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+813 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\upgrade\2.1.1\package\package.json written
+814 http fetch 200 https://registry.npmjs.org/angular2-fontawesome/-/angular2-fontawesome-0.7.0.tgz
+815 silly fetchAndShaCheck shasum 4b28de02c07f1395fbbdb403983c82a47490f39e
+816 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\_40angular\common\-\common-2.1.1.tgz not in flight; adding
+817 verbose addTmpTarball already have metadata; skipping unpack for @angular/common@2.1.1
+818 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+819 silly cache afterAdd @angular/common@2.1.1
+820 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\common\2.1.1\package\package.json not in flight; writing
+821 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+822 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\common\2.1.1\package\package.json written
+823 silly fetchAndShaCheck shasum 9ba236bc150424c4b5257c6c37d871d7068f52c4
+824 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\angular2-fontawesome\-\angular2-fontawesome-0.7.0.tgz not in flight; adding
+825 verbose addTmpTarball already have metadata; skipping unpack for angular2-fontawesome@0.7.0
+826 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+827 silly cache afterAdd angular2-fontawesome@0.7.0
+828 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\angular2-fontawesome\0.7.0\package\package.json not in flight; writing
+829 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+830 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\angular2-fontawesome\0.7.0\package\package.json written
+831 http 200 https://registry.npmjs.org/angular-in-memory-web-api
+832 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+832 verbose headers   etag: '"DPRLCB3632C7STKKO5APMBNOQ"',
+832 verbose headers   'content-type': 'application/json',
+832 verbose headers   'content-encoding': 'gzip',
+832 verbose headers   'cache-control': 'max-age=300',
+832 verbose headers   'content-length': '7431',
+832 verbose headers   'accept-ranges': 'bytes',
+832 verbose headers   date: 'Thu, 27 Oct 2016 02:21:09 GMT',
+832 verbose headers   via: '1.1 varnish',
+832 verbose headers   age: '28',
+832 verbose headers   connection: 'keep-alive',
+832 verbose headers   'x-served-by': 'cache-lcy1143-LCY',
+832 verbose headers   'x-cache': 'HIT',
+832 verbose headers   'x-cache-hits': '1',
+832 verbose headers   'x-timer': 'S1477534869.543995,VS0,VE0',
+832 verbose headers   vary: 'Accept-Encoding' }
+833 silly get cb [ 200,
+833 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+833 silly get     etag: '"DPRLCB3632C7STKKO5APMBNOQ"',
+833 silly get     'content-type': 'application/json',
+833 silly get     'content-encoding': 'gzip',
+833 silly get     'cache-control': 'max-age=300',
+833 silly get     'content-length': '7431',
+833 silly get     'accept-ranges': 'bytes',
+833 silly get     date: 'Thu, 27 Oct 2016 02:21:09 GMT',
+833 silly get     via: '1.1 varnish',
+833 silly get     age: '28',
+833 silly get     connection: 'keep-alive',
+833 silly get     'x-served-by': 'cache-lcy1143-LCY',
+833 silly get     'x-cache': 'HIT',
+833 silly get     'x-cache-hits': '1',
+833 silly get     'x-timer': 'S1477534869.543995,VS0,VE0',
+833 silly get     vary: 'Accept-Encoding' } ]
+834 verbose get saving angular-in-memory-web-api to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\angular-in-memory-web-api\.cache.json
+835 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+836 silly addNameRange number 2 { name: 'angular-in-memory-web-api',
+836 silly addNameRange   range: '>=0.1.13 <0.2.0',
+836 silly addNameRange   hasData: true }
+837 silly addNameRange versions [ 'angular-in-memory-web-api',
+837 silly addNameRange   [ '0.1.0',
+837 silly addNameRange     '0.1.1',
+837 silly addNameRange     '0.1.2',
+837 silly addNameRange     '0.1.3',
+837 silly addNameRange     '0.1.4',
+837 silly addNameRange     '0.1.5',
+837 silly addNameRange     '0.1.6',
+837 silly addNameRange     '0.1.7',
+837 silly addNameRange     '0.1.8',
+837 silly addNameRange     '0.1.9',
+837 silly addNameRange     '0.1.10',
+837 silly addNameRange     '0.1.11',
+837 silly addNameRange     '0.1.12',
+837 silly addNameRange     '0.1.13' ] ]
+838 silly addNamed angular-in-memory-web-api@0.1.13
+839 verbose addNamed "0.1.13" is a plain semver version for angular-in-memory-web-api
+840 silly mapToRegistry name angular-in-memory-web-api
+841 silly mapToRegistry using default registry
+842 silly mapToRegistry registry https://registry.npmjs.org/
+843 silly mapToRegistry data Result {
+843 silly mapToRegistry   raw: 'angular-in-memory-web-api',
+843 silly mapToRegistry   scope: null,
+843 silly mapToRegistry   name: 'angular-in-memory-web-api',
+843 silly mapToRegistry   rawSpec: '',
+843 silly mapToRegistry   spec: 'latest',
+843 silly mapToRegistry   type: 'tag' }
+844 silly mapToRegistry uri https://registry.npmjs.org/angular-in-memory-web-api
+845 verbose addRemoteTarball https://registry.npmjs.org/angular-in-memory-web-api/-/angular-in-memory-web-api-0.1.13.tgz not in flight; adding
+846 verbose addRemoteTarball [ 'https://registry.npmjs.org/angular-in-memory-web-api/-/angular-in-memory-web-api-0.1.13.tgz',
+846 verbose addRemoteTarball   '24a8abafe8ec647f98ee3269be0832d307ab240f' ]
+847 info retry fetch attempt 1 at 10:21:11 AM
+848 info attempt registry request try #1 at 10:21:11 AM
+849 http fetch GET https://registry.npmjs.org/angular-in-memory-web-api/-/angular-in-memory-web-api-0.1.13.tgz
+850 silly fetchAndShaCheck shasum 6cec2c675aa0b8f8e7f809d617e4cde5b713437a
+851 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\_40angular\http\-\http-2.1.1.tgz not in flight; adding
+852 verbose addTmpTarball already have metadata; skipping unpack for @angular/http@2.1.1
+853 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+854 silly cache afterAdd @angular/http@2.1.1
+855 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\http\2.1.1\package\package.json not in flight; writing
+856 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+857 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\http\2.1.1\package\package.json written
+858 http 200 https://registry.npmjs.org/concurrently
+859 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+859 verbose headers   etag: '"197Y6PM6HF80M9CJZ4IUFEYEQ"',
+859 verbose headers   'content-type': 'application/json',
+859 verbose headers   'content-encoding': 'gzip',
+859 verbose headers   'cache-control': 'max-age=300',
+859 verbose headers   'content-length': '6011',
+859 verbose headers   'accept-ranges': 'bytes',
+859 verbose headers   date: 'Thu, 27 Oct 2016 02:21:09 GMT',
+859 verbose headers   via: '1.1 varnish',
+859 verbose headers   age: '177',
+859 verbose headers   connection: 'keep-alive',
+859 verbose headers   'x-served-by': 'cache-lcy1149-LCY',
+859 verbose headers   'x-cache': 'HIT',
+859 verbose headers   'x-cache-hits': '1',
+859 verbose headers   'x-timer': 'S1477534869.538004,VS0,VE0',
+859 verbose headers   vary: 'Accept-Encoding' }
+860 silly get cb [ 200,
+860 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+860 silly get     etag: '"197Y6PM6HF80M9CJZ4IUFEYEQ"',
+860 silly get     'content-type': 'application/json',
+860 silly get     'content-encoding': 'gzip',
+860 silly get     'cache-control': 'max-age=300',
+860 silly get     'content-length': '6011',
+860 silly get     'accept-ranges': 'bytes',
+860 silly get     date: 'Thu, 27 Oct 2016 02:21:09 GMT',
+860 silly get     via: '1.1 varnish',
+860 silly get     age: '177',
+860 silly get     connection: 'keep-alive',
+860 silly get     'x-served-by': 'cache-lcy1149-LCY',
+860 silly get     'x-cache': 'HIT',
+860 silly get     'x-cache-hits': '1',
+860 silly get     'x-timer': 'S1477534869.538004,VS0,VE0',
+860 silly get     vary: 'Accept-Encoding' } ]
+861 verbose get saving concurrently to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\concurrently\.cache.json
+862 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+863 silly addNameRange number 2 { name: 'concurrently', range: '>=3.0.0 <4.0.0', hasData: true }
+864 silly addNameRange versions [ 'concurrently',
+864 silly addNameRange   [ '0.0.2',
+864 silly addNameRange     '0.0.3',
+864 silly addNameRange     '0.0.4',
+864 silly addNameRange     '0.0.5',
+864 silly addNameRange     '0.1.0',
+864 silly addNameRange     '0.1.1',
+864 silly addNameRange     '1.0.0',
+864 silly addNameRange     '2.0.0',
+864 silly addNameRange     '2.1.0',
+864 silly addNameRange     '2.2.0',
+864 silly addNameRange     '3.0.0-dev',
+864 silly addNameRange     '3.0.0-rc1',
+864 silly addNameRange     '3.0.0',
+864 silly addNameRange     '3.1.0' ] ]
+865 silly addNamed concurrently@3.1.0
+866 verbose addNamed "3.1.0" is a plain semver version for concurrently
+867 silly mapToRegistry name concurrently
+868 silly mapToRegistry using default registry
+869 silly mapToRegistry registry https://registry.npmjs.org/
+870 silly mapToRegistry data Result {
+870 silly mapToRegistry   raw: 'concurrently',
+870 silly mapToRegistry   scope: null,
+870 silly mapToRegistry   name: 'concurrently',
+870 silly mapToRegistry   rawSpec: '',
+870 silly mapToRegistry   spec: 'latest',
+870 silly mapToRegistry   type: 'tag' }
+871 silly mapToRegistry uri https://registry.npmjs.org/concurrently
+872 verbose addRemoteTarball https://registry.npmjs.org/concurrently/-/concurrently-3.1.0.tgz not in flight; adding
+873 verbose addRemoteTarball [ 'https://registry.npmjs.org/concurrently/-/concurrently-3.1.0.tgz',
+873 verbose addRemoteTarball   'dc5ef0459090012604756668894c04b434ef90d1' ]
+874 info retry fetch attempt 1 at 10:21:11 AM
+875 info attempt registry request try #1 at 10:21:11 AM
+876 http fetch GET https://registry.npmjs.org/concurrently/-/concurrently-3.1.0.tgz
+877 http 200 https://registry.npmjs.org/zone.js
+878 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+878 verbose headers   etag: '"EI9E9CTMMG2QWIFW8R2O88G52"',
+878 verbose headers   'content-type': 'application/json',
+878 verbose headers   'content-encoding': 'gzip',
+878 verbose headers   'cache-control': 'max-age=300',
+878 verbose headers   'content-length': '13033',
+878 verbose headers   'accept-ranges': 'bytes',
+878 verbose headers   date: 'Thu, 27 Oct 2016 02:21:09 GMT',
+878 verbose headers   via: '1.1 varnish',
+878 verbose headers   age: '241',
+878 verbose headers   connection: 'keep-alive',
+878 verbose headers   'x-served-by': 'cache-lcy1130-LCY',
+878 verbose headers   'x-cache': 'HIT',
+878 verbose headers   'x-cache-hits': '1',
+878 verbose headers   'x-timer': 'S1477534869.604780,VS0,VE0',
+878 verbose headers   vary: 'Accept-Encoding' }
+879 silly get cb [ 200,
+879 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+879 silly get     etag: '"EI9E9CTMMG2QWIFW8R2O88G52"',
+879 silly get     'content-type': 'application/json',
+879 silly get     'content-encoding': 'gzip',
+879 silly get     'cache-control': 'max-age=300',
+879 silly get     'content-length': '13033',
+879 silly get     'accept-ranges': 'bytes',
+879 silly get     date: 'Thu, 27 Oct 2016 02:21:09 GMT',
+879 silly get     via: '1.1 varnish',
+879 silly get     age: '241',
+879 silly get     connection: 'keep-alive',
+879 silly get     'x-served-by': 'cache-lcy1130-LCY',
+879 silly get     'x-cache': 'HIT',
+879 silly get     'x-cache-hits': '1',
+879 silly get     'x-timer': 'S1477534869.604780,VS0,VE0',
+879 silly get     vary: 'Accept-Encoding' } ]
+880 verbose get saving zone.js to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\zone.js\.cache.json
+881 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+882 silly addNameRange number 2 { name: 'zone.js', range: '>=0.6.25 <0.7.0', hasData: true }
+883 silly addNameRange versions [ 'zone.js',
+883 silly addNameRange   [ '0.1.0',
+883 silly addNameRange     '0.1.1',
+883 silly addNameRange     '0.2.0',
+883 silly addNameRange     '0.2.1',
+883 silly addNameRange     '0.2.3',
+883 silly addNameRange     '0.2.2',
+883 silly addNameRange     '0.2.4',
+883 silly addNameRange     '0.3.0',
+883 silly addNameRange     '0.4.0',
+883 silly addNameRange     '0.4.1',
+883 silly addNameRange     '0.4.2',
+883 silly addNameRange     '0.4.3',
+883 silly addNameRange     '0.4.4',
+883 silly addNameRange     '0.5.0',
+883 silly addNameRange     '0.5.1',
+883 silly addNameRange     '0.5.2',
+883 silly addNameRange     '0.5.3',
+883 silly addNameRange     '0.5.4',
+883 silly addNameRange     '0.5.5',
+883 silly addNameRange     '0.5.6',
+883 silly addNameRange     '0.5.7',
+883 silly addNameRange     '0.5.8',
+883 silly addNameRange     '0.5.9',
+883 silly addNameRange     '0.5.10',
+883 silly addNameRange     '0.5.11',
+883 silly addNameRange     '0.5.12',
+883 silly addNameRange     '0.5.13',
+883 silly addNameRange     '0.5.14',
+883 silly addNameRange     '0.5.15',
+883 silly addNameRange     '0.6.0',
+883 silly addNameRange     '0.6.1',
+883 silly addNameRange     '0.6.2',
+883 silly addNameRange     '0.6.3',
+883 silly addNameRange     '0.6.4',
+883 silly addNameRange     '0.6.5',
+883 silly addNameRange     '0.6.6',
+883 silly addNameRange     '0.6.8',
+883 silly addNameRange     '0.6.9',
+883 silly addNameRange     '0.6.10',
+883 silly addNameRange     '0.6.11',
+883 silly addNameRange     '0.6.12',
+883 silly addNameRange     '0.6.13',
+883 silly addNameRange     '0.6.14',
+883 silly addNameRange     '0.6.15',
+883 silly addNameRange     '0.6.16',
+883 silly addNameRange     '0.6.17',
+883 silly addNameRange     '0.6.18',
+883 silly addNameRange     '0.6.19',
+883 silly addNameRange     '0.6.20',
+883 silly addNameRange     '0.6.21',
+883 silly addNameRange     '0.6.22',
+883 silly addNameRange     '0.6.23',
+883 silly addNameRange     '0.6.24',
+883 silly addNameRange     '0.6.25',
+883 silly addNameRange     '0.6.26' ] ]
+884 silly addNamed zone.js@0.6.26
+885 verbose addNamed "0.6.26" is a plain semver version for zone.js
+886 silly mapToRegistry name zone.js
+887 silly mapToRegistry using default registry
+888 silly mapToRegistry registry https://registry.npmjs.org/
+889 silly mapToRegistry data Result {
+889 silly mapToRegistry   raw: 'zone.js',
+889 silly mapToRegistry   scope: null,
+889 silly mapToRegistry   name: 'zone.js',
+889 silly mapToRegistry   rawSpec: '',
+889 silly mapToRegistry   spec: 'latest',
+889 silly mapToRegistry   type: 'tag' }
+890 silly mapToRegistry uri https://registry.npmjs.org/zone.js
+891 verbose addRemoteTarball https://registry.npmjs.org/zone.js/-/zone.js-0.6.26.tgz not in flight; adding
+892 verbose addRemoteTarball [ 'https://registry.npmjs.org/zone.js/-/zone.js-0.6.26.tgz',
+892 verbose addRemoteTarball   '067c13b8b80223a89b62e9dc82680f09762c4636' ]
+893 info retry fetch attempt 1 at 10:21:11 AM
+894 info attempt registry request try #1 at 10:21:11 AM
+895 http fetch GET https://registry.npmjs.org/zone.js/-/zone.js-0.6.26.tgz
+896 http fetch 200 https://registry.npmjs.org/angular-in-memory-web-api/-/angular-in-memory-web-api-0.1.13.tgz
+897 silly fetchAndShaCheck shasum 03687a14bb914b113d1068aa0a44b5820109c0c0
+898 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\_40angular\platform-browser\-\platform-browser-2.1.1.tgz not in flight; adding
+899 verbose addTmpTarball already have metadata; skipping unpack for @angular/platform-browser@2.1.1
+900 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+901 silly cache afterAdd @angular/platform-browser@2.1.1
+902 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\platform-browser\2.1.1\package\package.json not in flight; writing
+903 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+904 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\platform-browser\2.1.1\package\package.json written
+905 http fetch 200 https://registry.npmjs.org/zone.js/-/zone.js-0.6.26.tgz
+906 http fetch 200 https://registry.npmjs.org/concurrently/-/concurrently-3.1.0.tgz
+907 silly fetchAndShaCheck shasum 24a8abafe8ec647f98ee3269be0832d307ab240f
+908 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\angular-in-memory-web-api\-\angular-in-memory-web-api-0.1.13.tgz not in flight; adding
+909 verbose addTmpTarball already have metadata; skipping unpack for angular-in-memory-web-api@0.1.13
+910 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+911 silly cache afterAdd angular-in-memory-web-api@0.1.13
+912 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\angular-in-memory-web-api\0.1.13\package\package.json not in flight; writing
+913 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+914 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\angular-in-memory-web-api\0.1.13\package\package.json written
+915 silly fetchAndShaCheck shasum 14c53e6789274e4cb6e0bb3f7269c82910c805fd
+916 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\_40angular\router\-\router-3.1.1.tgz not in flight; adding
+917 verbose addTmpTarball already have metadata; skipping unpack for @angular/router@3.1.1
+918 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+919 silly cache afterAdd @angular/router@3.1.1
+920 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\router\3.1.1\package\package.json not in flight; writing
+921 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+922 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\router\3.1.1\package\package.json written
+923 http 200 https://registry.npmjs.org/@angular%2fcore
+924 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+924 verbose headers   etag: '"DJWPY4WLBEY80MFU1KXOXYYS7"',
+924 verbose headers   'content-type': 'application/json',
+924 verbose headers   'content-encoding': 'gzip',
+924 verbose headers   'cache-control': 'max-age=0',
+924 verbose headers   'transfer-encoding': 'chunked',
+924 verbose headers   'accept-ranges': 'bytes',
+924 verbose headers   date: 'Thu, 27 Oct 2016 02:21:10 GMT',
+924 verbose headers   via: '1.1 varnish',
+924 verbose headers   age: '0',
+924 verbose headers   connection: 'keep-alive',
+924 verbose headers   'x-served-by': 'cache-lcy1129-LCY',
+924 verbose headers   'x-cache': 'MISS',
+924 verbose headers   'x-cache-hits': '0',
+924 verbose headers   'x-timer': 'S1477534869.602849,VS0,VE685',
+924 verbose headers   vary: 'Accept-Encoding' }
+925 silly get cb [ 200,
+925 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+925 silly get     etag: '"DJWPY4WLBEY80MFU1KXOXYYS7"',
+925 silly get     'content-type': 'application/json',
+925 silly get     'content-encoding': 'gzip',
+925 silly get     'cache-control': 'max-age=0',
+925 silly get     'transfer-encoding': 'chunked',
+925 silly get     'accept-ranges': 'bytes',
+925 silly get     date: 'Thu, 27 Oct 2016 02:21:10 GMT',
+925 silly get     via: '1.1 varnish',
+925 silly get     age: '0',
+925 silly get     connection: 'keep-alive',
+925 silly get     'x-served-by': 'cache-lcy1129-LCY',
+925 silly get     'x-cache': 'MISS',
+925 silly get     'x-cache-hits': '0',
+925 silly get     'x-timer': 'S1477534869.602849,VS0,VE685',
+925 silly get     vary: 'Accept-Encoding' } ]
+926 verbose get saving @angular/core to C:\Users\eligfeg\AppData\Roaming\npm-cache\registry.npmjs.org\_40angular_252fcore\.cache.json
+927 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+928 silly addNameRange number 2 { name: '@angular/core', range: '>=2.1.1 <2.2.0', hasData: true }
+929 silly addNameRange versions [ '@angular/core',
+929 silly addNameRange   [ '0.0.0-0',
+929 silly addNameRange     '0.0.0-1',
+929 silly addNameRange     '0.0.0-2',
+929 silly addNameRange     '0.0.0-3',
+929 silly addNameRange     '0.0.0-4',
+929 silly addNameRange     '0.0.0-5',
+929 silly addNameRange     '0.0.0-6',
+929 silly addNameRange     '0.0.0-7',
+929 silly addNameRange     '2.0.0-rc.0',
+929 silly addNameRange     '2.0.0-rc.1',
+929 silly addNameRange     '2.0.0-rc.2',
+929 silly addNameRange     '2.0.0-rc.3',
+929 silly addNameRange     '2.0.0-rc.4',
+929 silly addNameRange     '2.0.0-rc.5',
+929 silly addNameRange     '2.0.0-rc.6',
+929 silly addNameRange     '2.0.0-rc.7',
+929 silly addNameRange     '2.0.0',
+929 silly addNameRange     '2.0.1',
+929 silly addNameRange     '2.1.0-beta.0',
+929 silly addNameRange     '2.0.2',
+929 silly addNameRange     '2.1.0-rc.0',
+929 silly addNameRange     '2.1.0',
+929 silly addNameRange     '2.2.0-beta.0',
+929 silly addNameRange     '2.1.1' ] ]
+930 silly addNamed @angular/core@2.1.1
+931 verbose addNamed "2.1.1" is a plain semver version for @angular/core
+932 silly mapToRegistry name @angular/core
+933 silly mapToRegistry scope (from package name) @angular
+934 verbose mapToRegistry no registry URL found in name for scope @angular
+935 silly mapToRegistry using default registry
+936 silly mapToRegistry registry https://registry.npmjs.org/
+937 silly mapToRegistry data Result {
+937 silly mapToRegistry   raw: '@angular/core',
+937 silly mapToRegistry   scope: '@angular',
+937 silly mapToRegistry   name: '@angular/core',
+937 silly mapToRegistry   rawSpec: '',
+937 silly mapToRegistry   spec: 'latest',
+937 silly mapToRegistry   type: 'tag' }
+938 silly mapToRegistry uri https://registry.npmjs.org/@angular%2fcore
+939 verbose addRemoteTarball https://registry.npmjs.org/@angular/core/-/core-2.1.1.tgz not in flight; adding
+940 verbose addRemoteTarball [ 'https://registry.npmjs.org/@angular/core/-/core-2.1.1.tgz',
+940 verbose addRemoteTarball   '2100ba90023c8184bd1ea7a63f194b15e8c2dfe1' ]
+941 info retry fetch attempt 1 at 10:21:12 AM
+942 info attempt registry request try #1 at 10:21:12 AM
+943 http fetch GET https://registry.npmjs.org/@angular/core/-/core-2.1.1.tgz
+944 silly fetchAndShaCheck shasum d7b79d8078cd30107d43666f4af3d7ac6600b083
+945 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\_40angular\forms\-\forms-2.1.1.tgz not in flight; adding
+946 verbose addTmpTarball already have metadata; skipping unpack for @angular/forms@2.1.1
+947 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+948 silly cache afterAdd @angular/forms@2.1.1
+949 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\forms\2.1.1\package\package.json not in flight; writing
+950 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+951 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\forms\2.1.1\package\package.json written
+952 silly fetchAndShaCheck shasum 067c13b8b80223a89b62e9dc82680f09762c4636
+953 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\zone.js\-\zone.js-0.6.26.tgz not in flight; adding
+954 verbose addTmpTarball already have metadata; skipping unpack for zone.js@0.6.26
+955 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+956 silly cache afterAdd zone.js@0.6.26
+957 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\zone.js\0.6.26\package\package.json not in flight; writing
+958 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+959 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\zone.js\0.6.26\package\package.json written
+960 http fetch 200 https://registry.npmjs.org/@angular/core/-/core-2.1.1.tgz
+961 silly fetchAndShaCheck shasum 4de911e667b0eae9124e34254b53aea6fc618d3e
+962 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\core-js\-\core-js-2.4.1.tgz not in flight; adding
+963 verbose addTmpTarball already have metadata; skipping unpack for core-js@2.4.1
+964 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+965 silly cache afterAdd core-js@2.4.1
+966 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\core-js\2.4.1\package\package.json not in flight; writing
+967 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+968 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\core-js\2.4.1\package\package.json written
+969 silly fetchAndShaCheck shasum cdfde2d8c4639d20ae7794bff8fddf32da7ad337
+970 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\rxjs\-\rxjs-5.0.0-beta.12.tgz not in flight; adding
+971 verbose addTmpTarball already have metadata; skipping unpack for rxjs@5.0.0-beta.12
+972 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+973 silly cache afterAdd rxjs@5.0.0-beta.12
+974 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\rxjs\5.0.0-beta.12\package\package.json not in flight; writing
+975 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+976 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\rxjs\5.0.0-beta.12\package\package.json written
+977 silly fetchAndShaCheck shasum dc5ef0459090012604756668894c04b434ef90d1
+978 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\concurrently\-\concurrently-3.1.0.tgz not in flight; adding
+979 verbose addTmpTarball already have metadata; skipping unpack for concurrently@3.1.0
+980 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+981 silly cache afterAdd concurrently@3.1.0
+982 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\concurrently\3.1.0\package\package.json not in flight; writing
+983 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+984 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\concurrently\3.1.0\package\package.json written
+985 silly fetchAndShaCheck shasum 2100ba90023c8184bd1ea7a63f194b15e8c2dfe1
+986 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\_40angular\core\-\core-2.1.1.tgz not in flight; adding
+987 verbose addTmpTarball already have metadata; skipping unpack for @angular/core@2.1.1
+988 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+989 silly cache afterAdd @angular/core@2.1.1
+990 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\core\2.1.1\package\package.json not in flight; writing
+991 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+992 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\core\2.1.1\package\package.json written
+993 silly fetchAndShaCheck shasum 41d04cdd121ab17d7e4d4e660512fe424949fbd6
+994 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\_40angular\compiler\-\compiler-2.1.1.tgz not in flight; adding
+995 verbose addTmpTarball already have metadata; skipping unpack for @angular/compiler@2.1.1
+996 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+997 silly cache afterAdd @angular/compiler@2.1.1
+998 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\compiler\2.1.1\package\package.json not in flight; writing
+999 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+1000 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\@angular\compiler\2.1.1\package\package.json written
+1001 silly fetchAndShaCheck shasum 5385499ac9811508c2c43e0ea07a1ddca435e111
+1002 verbose addTmpTarball C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\typescript\-\typescript-2.0.6.tgz not in flight; adding
+1003 verbose addTmpTarball already have metadata; skipping unpack for typescript@2.0.6
+1004 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+1005 silly cache afterAdd typescript@2.0.6
+1006 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\typescript\2.0.6\package\package.json not in flight; writing
+1007 verbose correctMkdir C:\Users\eligfeg\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+1008 verbose afterAdd C:\Users\eligfeg\AppData\Roaming\npm-cache\typescript\2.0.6\package\package.json written
+1009 http fetch 200 https://registry.npmjs.org/bootstrap/-/bootstrap-3.3.7.tgz
+1010 info retry will retry, error on last attempt: Error: read ECONNRESET
+1011 info retry will retry, error on last attempt: Error: read ECONNRESET
+1012 silly fetchAndShaCheck shasum 5a389394549f23330875a3b150656574f8a9eb71
+1013 verbose stack Error: shasum check failed for C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\bootstrap\-\bootstrap-3.3.7.tgz
+1013 verbose stack Expected: 5a389394549f23330875a3b150656574f8a9eb71
+1013 verbose stack Actual:   caed0a93a3c39943aaba641965ee9a0dcdaf4a82
+1013 verbose stack From:     https://registry.npmjs.org/bootstrap/-/bootstrap-3.3.7.tgz
+1013 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\sha\index.js:25:8
+1013 verbose stack     at ReadStream.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\sha\index.js:72:7)
+1013 verbose stack     at emitNone (events.js:72:20)
+1013 verbose stack     at ReadStream.emit (events.js:166:7)
+1013 verbose stack     at endReadableNT (_stream_readable.js:921:12)
+1013 verbose stack     at nextTickCallbackWith2Args (node.js:442:9)
+1013 verbose stack     at process._tickCallback (node.js:356:17)
+1014 verbose cwd C:\Users\eligfeg\Documents\Ericsson\Hackathon\testrat\console\static\console\frontend
+1015 error Windows_NT 6.1.7601
+1016 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+1017 error node v4.6.0
+1018 error npm  v2.15.9
+1019 error shasum check failed for C:\Users\eligfeg\AppData\Local\Temp\npm-15724-6c4cf263\registry.npmjs.org\bootstrap\-\bootstrap-3.3.7.tgz
+1019 error Expected: 5a389394549f23330875a3b150656574f8a9eb71
+1019 error Actual:   caed0a93a3c39943aaba641965ee9a0dcdaf4a82
+1019 error From:     https://registry.npmjs.org/bootstrap/-/bootstrap-3.3.7.tgz
+1020 error If you need help, you may report this error at:
+1020 error     <https://github.com/npm/npm/issues>
+1021 verbose exit [ 1, true ]
