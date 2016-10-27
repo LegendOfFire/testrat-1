@@ -3,3 +3,4 @@ console/static/console/frontend/node_modules/
 *.js
 *.pyc
 db.sqlite3
+console/migrations/*
