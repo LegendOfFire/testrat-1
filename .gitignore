@@ -1,3 +1,4 @@
 console/static/console/frontend/node_modules/
 *.map
 *.js
+db.sqlite3
