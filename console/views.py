@@ -47,7 +47,7 @@ def enb_detail(request, pk):
     """
 
     try:
-        enb = ENodeB.objects.get(pk=pk)
+        enb = ENodeB.objects.get(enbId=pk)
     except ENodeB.DoesNotExist:
         return HttpResponse(status=404)
 
