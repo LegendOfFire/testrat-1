@@ -8,5 +8,5 @@ import { FaDirective } from 'angular2-fontawesome/directives';
   templateUrl : 'app.component.html'
 })
 export class AppComponent {
-  title = 'Web RAT';
+  title = 'Test RAT';
 }

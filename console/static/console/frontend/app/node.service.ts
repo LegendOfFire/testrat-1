@@ -2,5469 +2,4178 @@
 import { Injectable } from '@angular/core';
 
 import { Node } from './node';
+import { Cell } from './cell';
+import { Board } from './board';
 
 const mockNodes : Node[] = 
 [
-{
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "5",
-   "Ip_Switch_Code" : "A1",
-   "OAM_IP" : "10.186.137.101",
-   "CellGroup_ID" : "1,2",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "CPRI_On_Shelf_Port" : "F01",
-   "SiteLan_IP" : "10.186.136.101",
-   "Position" : "103*LTE机架2*A1",
-   "Licence_Name" : "NJDUL20_225",
-   "Indoor_Test_Name" : "10.186.137.101",
-   "S1_mirror_port" : "23",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "1.1",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "1",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.1",
-   "wireshark_PC" : "10.186.135.150",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4001",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.2",
-   "S1_OAM_Port" : "1",
-   "Comments_MR_Project_" : "Multi DU configuraiton, 101 is master DU, and the physical slot of 102 and 103 working as slave DU.",
-   "User" : "Comets Wenyong Xu",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "7",
-   "eNB_ID" : "101",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1"
-}
-,{
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "4002",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.3",
-   "CellSub_ID" : "",
-   "S1_Gateway" : "10.186.30.1",
-   "Ip_Switch_Serial_Server_Port_" : "1",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "10.186.135.150",
-   "eNB_ID" : "102",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "User" : "Nemo Yanhong Su",
-   "S1_OAM_Port" : "2",
-   "Comments_MR_Project_" : "",
-   "SiteLan_Port" : "8",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "CellGroup_ID" : "",
-   "OAM_IP" : "10.186.137.102",
-   "Ip_Switch_Code" : "A1",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "5",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "S1_mirror_port" : "23",
-   "Indoor_Test_Name" : "10.186.137.102",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "1.2",
-   "CPRI_On_Shelf_Port" : "F02",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "Licence_Name" : "NJDUL20_226",
-   "SiteLan_IP" : "10.186.136.102",
-   "Position" : "LTE机架6A"
-}
-,{
-   "User" : "所有IP信息分给jia Chen",
-   "S1_OAM_Port" : "3",
-   "Comments_MR_Project_" : "wenyong使用这个槽位",
-   "SiteLan_Port" : "9",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "eNB_ID" : "103",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.1",
-   "Ip_Switch_Serial_Server_Port_" : "1",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "10.186.135.150",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4013",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.4",
-   "CPRI_On_Shelf_Port" : "F03",
-   "To_Catapult_port" : "21",
-   "Type" : "XMU03",
-   "Licence_Name" : "NJDUL20_228",
-   "SiteLan_IP" : "10.186.136.103",
-   "Position" : "103*LTE机架2*A3",
-   "S1_mirror_port" : "23",
-   "Indoor_Test_Name" : "10.186.137.103",
-   "Test_lineId_eNodeB_Id" : "2.1",
-   "MME_IP_2" : "N/A.",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "5",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_IP" : "10.186.137.103",
-   "Ip_Switch_Code" : "A1",
-   "CellGroup_ID" : "3,10"
-}
-,{
-   "wireshark_PC" : "10.186.135.150",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "1",
-   "S1_Gateway" : "10.186.30.1",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_IP" : "10.186.30.5",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "4014",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "10",
-   "Comments_MR_Project_" : "MR2722",
-   "S1_OAM_Port" : "4",
-   "User" : "Comets Wenyong Xu",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "104",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "5",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.104",
-   "CellGroup_ID" : "4",
-   "Ip_Switch_Code" : "A1",
-   "Position" : "103*LTE机架2*A4",
-   "SiteLan_IP" : "10.186.136.104",
-   "Licence_Name" : "NJDUL20_227",
-   "Type" : "DUS5216",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F04",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "2.2",
-   "Indoor_Test_Name" : "10.186.137.104",
-   "S1_mirror_port" : "23"
-}
-,{
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "5",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "CellGroup_ID" : "5",
-   "OAM_IP" : "10.186.137.105",
-   "Ip_Switch_Code" : "A1",
-   "CPRI_On_Shelf_Port" : "F05",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.105",
-   "Position" : "103*LTE机架2*A5",
-   "S1_mirror_port" : "23",
-   "Indoor_Test_Name" : "10.186.137.105",
-   "Test_lineId_eNodeB_Id" : "3.1",
-   "MME_IP_2" : "N/A.",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.1",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "1",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "10.186.135.150",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "5017",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.6",
-   "User" : "",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "",
-   "SiteLan_Port" : "11",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "To_Moshell_Server_Port" : "24",
-   "eNB_ID" : "105",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1"
-}
-,{
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.1",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "1",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "10.186.135.150",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5003",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.7",
-   "User" : "Comets Wenyong Xu",
-   "S1_OAM_Port" : "6",
-   "Comments_MR_Project_" : "MR2722",
-   "SiteLan_Port" : "12",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "eNB_ID" : "106",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "5",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "CellGroup_ID" : "6",
-   "Ip_Switch_Code" : "A1",
-   "OAM_IP" : "10.186.137.106",
-   "CPRI_On_Shelf_Port" : "F06",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS5216",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.106",
-   "Position" : "103*LTE机架2*A6",
-   "S1_mirror_port" : "23",
-   "Indoor_Test_Name" : "10.186.137.106",
-   "Test_lineId_eNodeB_Id" : "3.2",
-   "MME_IP_2" : "N/A."
-}
-,{
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Ip_Switch_Serial_Server_Port_" : "2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.81",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_IP" : "10.186.30.82",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6024",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "7",
-   "Comments_MR_Project_" : "大约一周",
-   "S1_OAM_Port" : "1",
-   "User" : "zhiyuan yang",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "107",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.107",
-   "CellGroup_ID" : "7",
-   "Ip_Switch_Code" : "A2",
-   "Position" : "103*LTE机架2*B1",
-   "SiteLan_IP" : "10.186.136.107",
-   "Licence_Name" : "",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F07",
-   "Test_lineId_eNodeB_Id" : "4.1",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.107",
-   "S1_mirror_port" : "13"
-}
-,{
-   "eNB_ID" : "108",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "User" : "Argus Haiming Bai/Liang Chen",
-   "S1_OAM_Port" : "2",
-   "Comments_MR_Project_" : "5G PLC testing",
-   "SiteLan_Port" : "8",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "6009",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.83",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.81",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "2",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "S1_mirror_port" : "14",
-   "Indoor_Test_Name" : "10.186.137.108",
-   "Test_lineId_eNodeB_Id" : "4.2",
-   "MME_IP_2" : "N/A.",
-   "CPRI_On_Shelf_Port" : "F08",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.108",
-   "Position" : "103*LTE机架2*B2",
-   "OAM_IP" : "10.186.137.108",
-   "Ip_Switch_Code" : "A2",
-   "CellGroup_ID" : "8",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24"
-}
-,{
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "109",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "9",
-   "S1_OAM_Port" : "3",
-   "Comments_MR_Project_" : "",
-   "User" : "shan li r 学习使用",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.84",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "4032",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "2",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.81",
-   "Test_lineId_eNodeB_Id" : "5.1",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.109",
-   "S1_mirror_port" : "15",
-   "SiteLan_IP" : "10.186.136.109",
-   "Position" : "103*LTE机架2*B3",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "CPRI_On_Shelf_Port" : "F09",
-   "CellGroup_ID" : "9",
-   "Ip_Switch_Code" : "A2",
-   "OAM_IP" : "10.186.137.109",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800"
-}
-,{
-   "Indoor_Test_Name" : "10.186.137.110",
-   "S1_mirror_port" : "16",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "5.2",
-   "To_Catapult_port" : "21",
-   "Type" : "DUL21",
-   "CPRI_On_Shelf_Port" : "F10",
-   "SiteLan_IP" : "10.186.136.110",
-   "Position" : "103*LTE机架2*B4",
-   "Licence_Name" : "",
-   "CellGroup_ID" : "10",
-   "OAM_IP" : "10.186.137.110",
-   "Ip_Switch_Code" : "A2",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "",
-   "eNB_ID" : "110",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_OAM_Port" : "4",
-   "Comments_MR_Project_" : "",
-   "User" : "ECUT",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "10",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.85",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "2",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.81",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255"
-}
-,{
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "111",
-   "SiteLan_Port" : "11",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "User" : "",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.86",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.81",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "2",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "6.1",
-   "S1_mirror_port" : "17",
-   "Indoor_Test_Name" : "10.186.137.111",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.111",
-   "Position" : "103*LTE机架2*B5",
-   "CPRI_On_Shelf_Port" : "F11",
-   "To_Catapult_port" : "21",
-   "Type" : "DUL21",
-   "OAM_IP" : "10.186.137.111",
-   "Ip_Switch_Code" : "A2",
-   "CellGroup_ID" : "11",
-   "3015_Port" : "",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800"
-}
-,{
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "12",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "6",
-   "User" : "",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "112",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Ip_Switch_Serial_Server_Port_" : "2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.81",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_IP" : "10.186.30.87",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "",
-   "Group_Mark" : "Indoor A",
-   "Position" : "103*LTE机架2*B6",
-   "SiteLan_IP" : "10.186.136.112",
-   "Licence_Name" : "",
-   "Type" : "DUL21",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F12",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "6.2",
-   "Indoor_Test_Name" : "10.186.137.112",
-   "S1_mirror_port" : "18",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800",
-   "CellGroup_ID" : "12",
-   "Ip_Switch_Code" : "A2",
-   "OAM_IP" : "10.186.137.112"
-}
-,{
-   "Licence_Name" : "",
-   "Position" : "102*LTE机架1*A1",
-   "SiteLan_IP" : "10.186.136.113",
-   "CPRI_On_Shelf_Port" : "F13",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "7.1",
-   "S1_mirror_port" : "13",
-   "Indoor_Test_Name" : "10.186.137.113",
-   "3015_Port" : "9",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800",
-   "Ip_Switch_Code" : "A3",
-   "CellGroup_ID" : "13",
-   "OAM_IP" : "10.186.137.113",
-   "SiteLan_Port" : "7",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "Argus weihua li",
-   "Comments_MR_Project_" : "MR2706",
-   "S1_OAM_Port" : "1",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "113",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.30.33",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "3",
-   "S1_IP" : "10.186.30.34",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "3600",
-   "Group_Mark" : "Indoor A"
-}
-,{
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.35",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "4006",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.33",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "3",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "114",
-   "SiteLan_Port" : "8",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "User" : "",
-   "S1_OAM_Port" : "2",
-   "Comments_MR_Project_" : "Fault:串口不稳定",
-   "Ip_Switch_Code" : "A3",
-   "OAM_IP" : "10.186.137.114",
-   "CellGroup_ID" : "14",
-   "3015_Port" : "9",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "7.2",
-   "S1_mirror_port" : "14",
-   "Indoor_Test_Name" : "10.186.137.114",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.114",
-   "Position" : "102*LTE机架1*A2",
-   "CPRI_On_Shelf_Port" : "F14",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41"
-}
-,{
-   "Ip_Switch_Serial_Server_Port_" : "3",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.33",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Board_Serial_Server_IP_Port" : "4008",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.36",
-   "Epc_port_" : "20",
-   "Comments_MR_Project_" : "MR2706",
-   "S1_OAM_Port" : "3",
-   "User" : "Argus weihua li",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "9",
-   "eNB_ID" : "115",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "9",
-   "Ip_Switch_Code" : "A3",
-   "CellGroup_ID" : "15",
-   "OAM_IP" : "10.186.137.115",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F15",
-   "Position" : "102*LTE机架1*A3",
-   "SiteLan_IP" : "10.186.136.115",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.115",
-   "S1_mirror_port" : "15",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "8.1"
-}
-,{
-   "User" : "ECUT",
-   "S1_OAM_Port" : "4",
-   "Comments_MR_Project_" : "",
-   "SiteLan_Port" : "10",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "eNB_ID" : "116",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.33",
-   "Ip_Switch_Serial_Server_Port_" : "3",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "4009",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.37",
-   "CPRI_On_Shelf_Port" : "F16",
-   "To_Catapult_port" : "21",
-   "Type" : "DUL21",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.116",
-   "Position" : "102*LTE机架1*A4",
-   "S1_mirror_port" : "16",
-   "Indoor_Test_Name" : "10.186.137.116",
-   "Test_lineId_eNodeB_Id" : "8.2",
-   "MME_IP_2" : "N/A.",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "9",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "CellGroup_ID" : "16",
-   "OAM_IP" : "10.186.137.116",
-   "Ip_Switch_Code" : "A3"
-}
-,{
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "11",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "5",
-   "User" : "",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "117",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Ip_Switch_Serial_Server_Port_" : "3",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.33",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_IP" : "10.186.30.38",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "Position" : "102*LTE机架1*A5",
-   "SiteLan_IP" : "10.186.136.117",
-   "Licence_Name" : "",
-   "Type" : "DUL21",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F17",
-   "Test_lineId_eNodeB_Id" : "9.1",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.117",
-   "S1_mirror_port" : "17",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "9",
-   "OAM_Vlan_ID" : "800",
-   "CellGroup_ID" : "17",
-   "OAM_IP" : "10.186.137.117",
-   "Ip_Switch_Code" : "A3"
-}
-,{
-   "Ip_Switch_Code" : "A3",
-   "OAM_IP" : "10.186.137.118",
-   "CellGroup_ID" : "18",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "9",
-   "Indoor_Test_Name" : "10.186.137.118",
-   "S1_mirror_port" : "18",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "9.2",
-   "Type" : "DUL21",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F18",
-   "Position" : "102*LTE机架1*A6",
-   "SiteLan_IP" : "10.186.136.118",
-   "Licence_Name" : "",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.39",
-   "Epc_port_" : "20",
-   "Ip_Switch_Serial_Server_Port_" : "3",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.33",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "eNB_ID" : "118",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "6",
-   "User" : "",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "12"
-}
-,{
-   "CellGroup_ID" : "19",
-   "OAM_IP" : "10.186.137.119",
-   "Ip_Switch_Code" : "A4",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "10.1",
-   "Indoor_Test_Name" : "10.186.137.119",
-   "S1_mirror_port" : "13",
-   "SiteLan_IP" : "10.186.136.119",
-   "Position" : "102*LTE机架1*B1",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "CPRI_On_Shelf_Port" : "F19",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.18",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "4015",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "4",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.17",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "119",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "7",
-   "S1_OAM_Port" : "1",
-   "Comments_MR_Project_" : "槽位空",
-   "User" : "板子给了jack zhu"
-}
-,{
-   "eNB_ID" : "120",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_OAM_Port" : "2",
-   "Comments_MR_Project_" : "",
-   "User" : "",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "8",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4012",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.19",
-   "Ip_Switch_Serial_Server_Port_" : "4",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.17",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Indoor_Test_Name" : "10.186.137.120",
-   "S1_mirror_port" : "14",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "10.2",
-   "To_Catapult_port" : "21",
-   "Type" : "XMU03",
-   "CPRI_On_Shelf_Port" : "F20",
-   "SiteLan_IP" : "10.186.136.120",
-   "Position" : "102*LTE机架1*B2",
-   "Licence_Name" : "",
-   "OAM_IP" : "10.186.137.120",
-   "CellGroup_ID" : "20",
-   "Ip_Switch_Code" : "A4",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : ""
-}
-,{
-   "eNB_ID" : "121",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "User" : "Argus Haiming BAI/Wei Ling",
-   "S1_OAM_Port" : "3",
-   "Comments_MR_Project_" : "5G wirelessbackhaul ",
-   "SiteLan_Port" : "9",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "To_Moshell_Server_Port" : "24",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "5004",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.20",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.17",
-   "Ip_Switch_Serial_Server_Port_" : "4",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "S1_mirror_port" : "15",
-   "Indoor_Test_Name" : "10.186.137.121",
-   "Test_lineId_eNodeB_Id" : "11.1",
-   "MME_IP_2" : "N/A.",
-   "CPRI_On_Shelf_Port" : "F21",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.121",
-   "Position" : "102*LTE机架1*B3",
-   "CellGroup_ID" : "21",
-   "OAM_IP" : "10.186.137.121",
-   "Ip_Switch_Code" : "A4",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24"
-}
-,{
-   "Ip_Switch_Serial_Server_Port_" : "4",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.17",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Board_Serial_Server_IP_Port" : "5002",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.21",
-   "Epc_port_" : "20",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "4",
-   "User" : "Tauren Alan zha",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "10",
-   "eNB_ID" : "122",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "",
-   "OAM_IP" : "10.186.137.122",
-   "CellGroup_ID" : "22",
-   "Ip_Switch_Code" : "A4",
-   "Type" : "DUS5216",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F22",
-   "Position" : "102*LTE机架1*B4",
-   "SiteLan_IP" : "10.186.136.122",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.122",
-   "S1_mirror_port" : "16",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "11.2"
-}
-,{
-   "3015_Port" : "",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800",
-   "Ip_Switch_Code" : "A4",
-   "CellGroup_ID" : "23",
-   "OAM_IP" : "10.186.137.123",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.123",
-   "Position" : "102*LTE机架1*B5",
-   "CPRI_On_Shelf_Port" : "F23",
-   "To_Catapult_port" : "21",
-   "Type" : "XMU03",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "12.1",
-   "S1_mirror_port" : "17",
-   "Indoor_Test_Name" : "10.186.137.123",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.17",
-   "Ip_Switch_Serial_Server_Port_" : "4",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.22",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "5005",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "SiteLan_Port" : "11",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "User" : "",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "123"
-}
-,{
-   "CPRI_On_Shelf_Port" : "F24",
-   "Type" : "DUL21",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "102*LTE机架1*B6",
-   "SiteLan_IP" : "10.186.136.124",
-   "S1_mirror_port" : "18",
-   "Indoor_Test_Name" : "10.186.137.124",
-   "Test_lineId_eNodeB_Id" : "12.2",
-   "MME_IP_2" : "N/A.",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "CellGroup_ID" : "24",
-   "OAM_IP" : "10.186.137.124",
-   "Ip_Switch_Code" : "A4",
-   "User" : "ECUT",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "6",
-   "SiteLan_Port" : "12",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "eNB_ID" : "124",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Gateway" : "10.186.30.17",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "4",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5001",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.23",
-   "Epc_port_" : "20"
-}
-,{
-   "Licence_Name" : "",
-   "Position" : "RBS18B",
-   "SiteLan_IP" : "10.186.136.125",
-   "CPRI_On_Shelf_Port" : "F25",
-   "Type" : "DUS5216",
-   "To_Catapult_port" : "21",
-   "Test_lineId_eNodeB_Id" : "13.1",
-   "MME_IP_2" : "N/A.",
-   "S1_mirror_port" : "13",
-   "Indoor_Test_Name" : "10.186.137.125",
-   "3015_Port" : "11",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800",
-   "CellGroup_ID" : "25",
-   "OAM_IP" : "10.186.137.125",
-   "Ip_Switch_Code" : "A5",
-   "SiteLan_Port" : "7",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "Phoenix Yan Hong",
-   "Comments_MR_Project_" : "MR3284",
-   "S1_OAM_Port" : "1",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "125",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.30.65",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "5",
-   "S1_IP" : "10.186.30.66",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5031",
-   "Group_Mark" : "Indoor A"
-}
-,{
-   "S1_mirror_port" : "14",
-   "Indoor_Test_Name" : "10.186.137.126",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "13.2",
-   "CPRI_On_Shelf_Port" : "F26",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "RBS18A",
-   "SiteLan_IP" : "10.186.136.126",
-   "Ip_Switch_Code" : "A5",
-   "OAM_IP" : "10.186.137.126",
-   "CellGroup_ID" : "26",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "11",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "eNB_ID" : "126",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "User" : "Zhaoguang Sun",
-   "Comments_MR_Project_" : "Lend  to GWMR",
-   "S1_OAM_Port" : "2",
-   "SiteLan_Port" : "8",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_Server_IP_Port" : "5032",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.67",
-   "Epc_port_" : "20",
-   "S1_Gateway" : "10.186.30.65",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "5",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : ""
-}
-,{
-   "Ip_Switch_Serial_Server_Port_" : "5",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.65",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5014",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.68",
-   "Epc_port_" : "20",
-   "Comments_MR_Project_" : "MR3393",
-   "S1_OAM_Port" : "3",
-   "User" : "Argus Lisa Wang",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "9",
-   "eNB_ID" : "127",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "11",
-   "OAM_IP" : "10.186.137.127",
-   "Ip_Switch_Code" : "A5",
-   "CellGroup_ID" : "27",
-   "Type" : "IDU5209",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F27",
-   "Position" : "RBS17B",
-   "SiteLan_IP" : "10.186.136.127",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.127",
-   "S1_mirror_port" : "15",
-   "Test_lineId_eNodeB_Id" : "14.1",
-   "MME_IP_2" : "N/A."
-}
-,{
-   "Test_lineId_eNodeB_Id" : "14.2",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.128",
-   "S1_mirror_port" : "16",
-   "SiteLan_IP" : "10.186.136.128",
-   "Position" : "RBS17A",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "CPRI_On_Shelf_Port" : "F28",
-   "Ip_Switch_Code" : "A5",
-   "CellGroup_ID" : "28",
-   "OAM_IP" : "10.186.137.128",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "11",
-   "OAM_Vlan_ID" : "800",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "128",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "SiteLan_Port" : "10",
-   "S1_OAM_Port" : "4",
-   "Comments_MR_Project_" : "",
-   "User" : "",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.69",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "5016",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "5",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.65"
-}
-,{
-   "User" : "Argus Haiming BAI/Wei Ling",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "5G wirelessbackhaul ",
-   "SiteLan_Port" : "11",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "eNB_ID" : "129",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.65",
-   "Ip_Switch_Serial_Server_Port_" : "5",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4028",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.70",
-   "CPRI_On_Shelf_Port" : "F29",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.129",
-   "Position" : "RBS16B",
-   "S1_mirror_port" : "17",
-   "Indoor_Test_Name" : "10.186.137.129",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "15.1",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "11",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_IP" : "10.186.137.129",
-   "CellGroup_ID" : "29",
-   "Ip_Switch_Code" : "A5"
-}
-,{
-   "CPRI_On_Shelf_Port" : "F30",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "RBS16A",
-   "SiteLan_IP" : "10.186.136.130",
-   "S1_mirror_port" : "18",
-   "Indoor_Test_Name" : "10.186.137.130",
-   "Test_lineId_eNodeB_Id" : "15.2",
-   "MME_IP_2" : "N/A.",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "11",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "Ip_Switch_Code" : "A5",
-   "CellGroup_ID" : "30",
-   "OAM_IP" : "10.186.137.130",
-   "User" : "Argus Haiming BAI/Wei Ling",
-   "Comments_MR_Project_" : "5G wirelessbackhaul ",
-   "S1_OAM_Port" : "6",
-   "SiteLan_Port" : "12",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "MME_IP_1" : "10.175.2.49",
-   "eNB_ID" : "130",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Gateway" : "10.186.30.65",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "5",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4027",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.71",
-   "Epc_port_" : "20"
-}
-,{
-   "3015_Port" : "14",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "Ip_Switch_Code" : "A6",
-   "CellGroup_ID" : "31",
-   "OAM_IP" : "10.186.137.131",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.131",
-   "Position" : "RBS15B",
-   "CPRI_On_Shelf_Port" : "F31",
-   "To_Catapult_port" : "21",
-   "Type" : "XMU03",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "16.1",
-   "S1_mirror_port" : "13",
-   "Indoor_Test_Name" : "10.186.137.131",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.113",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "6",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.114",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Port" : "7",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "User" : "Argus hongguo wei",
-   "S1_OAM_Port" : "1",
-   "Comments_MR_Project_" : "",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "131"
-}
-,{
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "16.2",
-   "Indoor_Test_Name" : "10.186.137.132",
-   "S1_mirror_port" : "14",
-   "Position" : "RBS15A",
-   "SiteLan_IP" : "10.186.136.132",
-   "Licence_Name" : "",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F32",
-   "CellGroup_ID" : "32",
-   "OAM_IP" : "10.186.137.132",
-   "Ip_Switch_Code" : "A6",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "14",
-   "OAM_Vlan_ID" : "800",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "132",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "8",
-   "Comments_MR_Project_" : "5G wirelessbackhaul ",
-   "S1_OAM_Port" : "2",
-   "User" : "Argus Haiming BAI/Wei Ling",
-   "S1_IP" : "10.186.30.115",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4031",
-   "Group_Mark" : "Indoor A",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Ip_Switch_Serial_Server_Port_" : "6",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.113",
-   "CellSub_ID" : "0, 1, 2"
-}
-,{
-   "3015_Port" : "14",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "CellGroup_ID" : "33",
-   "OAM_IP" : "10.186.137.133",
-   "Ip_Switch_Code" : "A6",
-   "Licence_Name" : "",
-   "Position" : "RBS14B",
-   "SiteLan_IP" : "10.186.136.133",
-   "CPRI_On_Shelf_Port" : "F33",
-   "Type" : "XMU03",
-   "To_Catapult_port" : "21",
-   "Test_lineId_eNodeB_Id" : "17.1",
-   "MME_IP_2" : "N/A.",
-   "S1_mirror_port" : "15",
-   "Indoor_Test_Name" : "10.186.137.133",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.30.113",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "6",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_IP" : "10.186.30.116",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4026",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Port" : "9",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "Radio xiaosun zhou",
-   "Comments_MR_Project_" : "借给RADIO，DUS41板子拿走",
-   "S1_OAM_Port" : "3",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "133"
-}
-,{
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "14",
-   "Ip_Switch_Code" : "A6",
-   "OAM_IP" : "10.186.137.134",
-   "CellGroup_ID" : "34",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS5216",
-   "CPRI_On_Shelf_Port" : "F34",
-   "SiteLan_IP" : "10.186.136.134",
-   "Position" : "RBS14A",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.134",
-   "S1_mirror_port" : "16",
-   "Test_lineId_eNodeB_Id" : "17.2",
-   "MME_IP_2" : "N/A.",
-   "Ip_Switch_Serial_Server_Port_" : "6",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.113",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4025",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.117",
-   "S1_OAM_Port" : "4",
-   "Comments_MR_Project_" : "MR2489(从RADIO借过来)",
-   "User" : "Argus Jack zhu",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "SiteLan_Port" : "10",
-   "eNB_ID" : "134",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1"
-}
-,{
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.118",
-   "Ip_Switch_Serial_Server_Port_" : "6",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.113",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "eNB_ID" : "135",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "未放线，无板子",
-   "User" : "",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "SiteLan_Port" : "11",
-   "OAM_IP" : "10.186.137.135",
-   "CellGroup_ID" : "35",
-   "Ip_Switch_Code" : "A6",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "14",
-   "Indoor_Test_Name" : "10.186.137.135",
-   "S1_mirror_port" : "17",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "18.1",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "CPRI_On_Shelf_Port" : "F35",
-   "SiteLan_IP" : "10.186.136.135",
-   "Position" : "RBS13B",
-   "Licence_Name" : ""
-}
-,{
-   "SiteLan_Port" : "12",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "User" : "Irat  Jackie WU",
-   "S1_OAM_Port" : "6",
-   "Comments_MR_Project_" : "",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "136",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.113",
-   "Ip_Switch_Serial_Server_Port_" : "6",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.119",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4017",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.136",
-   "Position" : "RBS13A",
-   "CPRI_On_Shelf_Port" : "F36",
-   "To_Catapult_port" : "21",
-   "Type" : "DUL20",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "18.2",
-   "S1_mirror_port" : "18",
-   "Indoor_Test_Name" : "10.186.137.136",
-   "3015_Port" : "14",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "CellGroup_ID" : "36",
-   "Ip_Switch_Code" : "A6",
-   "OAM_IP" : "10.186.137.136"
-}
-,{
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "7",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.129",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.130",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5009",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "7",
-   "S1_OAM_Port" : "1",
-   "Comments_MR_Project_" : "",
-   "User" : "ECUT",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "137",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "15",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.137",
-   "CellGroup_ID" : "37",
-   "Ip_Switch_Code" : "A7",
-   "SiteLan_IP" : "10.186.136.137",
-   "Position" : "RBS21B",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUL21",
-   "CPRI_On_Shelf_Port" : "F37",
-   "Test_lineId_eNodeB_Id" : "19.1",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.137",
-   "S1_mirror_port" : "13"
-}
-,{
-   "eNB_ID" : "138",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "User" : "ECUT",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "2",
-   "SiteLan_Port" : "8",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_Server_IP_Port" : "5008",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.131",
-   "Epc_port_" : "20",
-   "S1_Gateway" : "10.186.30.129",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "7",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_mirror_port" : "14",
-   "Indoor_Test_Name" : "10.186.137.138",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "19.2",
-   "CPRI_On_Shelf_Port" : "F38",
-   "Type" : "DUL21",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "RBS21A",
-   "SiteLan_IP" : "10.186.136.138",
-   "Ip_Switch_Code" : "A7",
-   "OAM_IP" : "10.186.137.138",
-   "CellGroup_ID" : "38",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "15",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24"
-}
-,{
-   "SiteLan_IP" : "10.186.136.139",
-   "Position" : "RBS20B",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUL21",
-   "CPRI_On_Shelf_Port" : "F39",
-   "Test_lineId_eNodeB_Id" : "20.1",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.139",
-   "S1_mirror_port" : "15",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "15",
-   "OAM_Vlan_ID" : "800",
-   "Ip_Switch_Code" : "A7",
-   "CellGroup_ID" : "39",
-   "OAM_IP" : "10.186.137.139",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "SiteLan_Port" : "9",
-   "S1_OAM_Port" : "3",
-   "Comments_MR_Project_" : "",
-   "User" : "ECUT",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "139",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "7",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.129",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.132",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5007"
-}
-,{
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "15",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.140",
-   "CellGroup_ID" : "40",
-   "Ip_Switch_Code" : "A7",
-   "SiteLan_IP" : "10.186.136.140",
-   "Position" : "RBS20A",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUL21",
-   "CPRI_On_Shelf_Port" : "F40",
-   "Test_lineId_eNodeB_Id" : "20.2",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.140",
-   "S1_mirror_port" : "16",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "7",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.129",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.133",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5006",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "10",
-   "S1_OAM_Port" : "4",
-   "Comments_MR_Project_" : "",
-   "User" : "",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "140"
-}
-,{
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "11",
-   "Comments_MR_Project_" : "For TR reproduce and verify.",
-   "S1_OAM_Port" : "5",
-   "User" : "Null Xiaojing Wang",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "141",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Ip_Switch_Serial_Server_Port_" : "7",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.129",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_IP" : "10.186.30.134",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5011",
-   "Group_Mark" : "Indoor A",
-   "Position" : "RBS19B",
-   "SiteLan_IP" : "10.186.136.141",
-   "Licence_Name" : "",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F41",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.141",
-   "S1_mirror_port" : "17",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "15",
-   "OAM_Vlan_ID" : "800",
-   "CellGroup_ID" : "41",
-   "Ip_Switch_Code" : "A7",
-   "OAM_IP" : "10.186.137.141"
-}
-,{
-   "S1_IP" : "10.186.30.135",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5010",
-   "Group_Mark" : "Indoor A",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.30.129",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "7",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "142",
-   "SiteLan_Port" : "12",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "Radio Hongli Wu",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "6",
-   "CellGroup_ID" : "42",
-   "OAM_IP" : "10.186.137.142",
-   "Ip_Switch_Code" : "A7",
-   "3015_Port" : "15",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "S1_mirror_port" : "18",
-   "Indoor_Test_Name" : "10.186.137.142",
-   "Licence_Name" : "",
-   "Position" : "RBS19A",
-   "SiteLan_IP" : "10.186.136.142",
-   "CPRI_On_Shelf_Port" : "F42",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21"
-}
-,{
-   "CellGroup_ID" : "43",
-   "Ip_Switch_Code" : "A8",
-   "OAM_IP" : "10.186.137.143",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "13",
-   "OAM_Vlan_ID" : "800",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.143",
-   "S1_mirror_port" : "13",
-   "Position" : "RBS3B",
-   "SiteLan_IP" : "10.186.136.143",
-   "Licence_Name" : "",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F43",
-   "S1_IP" : "10.186.30.98",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "4016",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "8",
-   "S1_Gateway" : "10.186.30.97",
-   "CellSub_ID" : "0, 1, 2",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "143",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "7",
-   "Comments_MR_Project_" : "For intern",
-   "S1_OAM_Port" : "1",
-   "User" : "Phoenix Song Liang"
-}
-,{
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.144",
-   "S1_mirror_port" : "14",
-   "Position" : "RBS3A",
-   "SiteLan_IP" : "10.186.136.144",
-   "Licence_Name" : "",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F44",
-   "Ip_Switch_Code" : "A8",
-   "CellGroup_ID" : "44",
-   "OAM_IP" : "10.186.137.144",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "13",
-   "OAM_Vlan_ID" : "800",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "144",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "8",
-   "Comments_MR_Project_" : "For TR reproduce and verify.",
-   "S1_OAM_Port" : "2",
-   "User" : "Null Xiaojing Wang",
-   "S1_IP" : "10.186.30.99",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "4020",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "8",
-   "S1_Gateway" : "10.186.30.97",
-   "CellSub_ID" : "0, 1, 2"
-}
-,{
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "SiteLan_Port" : "9",
-   "S1_OAM_Port" : "3",
-   "Comments_MR_Project_" : "For TR reproduce and verify.",
-   "User" : "Null Xiaojing Wang",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "145",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "8",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.97",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.100",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4021",
-   "SiteLan_IP" : "10.186.136.145",
-   "Position" : "RBS2B",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "CPRI_On_Shelf_Port" : "F45",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.145",
-   "S1_mirror_port" : "15",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "13",
-   "OAM_Vlan_ID" : "800",
-   "Ip_Switch_Code" : "A8",
-   "CellGroup_ID" : "45",
-   "OAM_IP" : "10.186.137.145"
-}
-,{
-   "S1_IP" : "10.186.30.101",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4022",
-   "Group_Mark" : "Indoor A",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.30.97",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "8",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "146",
-   "SiteLan_Port" : "10",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "Null Xiaojing Wang",
-   "Comments_MR_Project_" : "For TR reproduce and verify.",
-   "S1_OAM_Port" : "4",
-   "OAM_IP" : "10.186.137.146",
-   "CellGroup_ID" : "46",
-   "Ip_Switch_Code" : "A8",
-   "3015_Port" : "13",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "S1_mirror_port" : "16",
-   "Indoor_Test_Name" : "10.186.137.146",
-   "Licence_Name" : "",
-   "Position" : "RBS2A",
-   "SiteLan_IP" : "10.186.136.146",
-   "CPRI_On_Shelf_Port" : "F46",
-   "Type" : "DUS52",
-   "To_Catapult_port" : "21"
-}
-,{
-   "SiteLan_Port" : "11",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "User" : "Phoenix Song Liang",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "MR826",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "147",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.97",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "8",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.102",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "4018",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.147",
-   "Position" : "LTE08机柜",
-   "CPRI_On_Shelf_Port" : "F47",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS5216",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "S1_mirror_port" : "17",
-   "Indoor_Test_Name" : "10.186.137.147",
-   "3015_Port" : "13",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.147",
-   "CellGroup_ID" : "47",
-   "Ip_Switch_Code" : "A8"
-}
-,{
-   "S1_OAM_Port" : "6",
-   "Comments_MR_Project_" : "MR826",
-   "User" : "Phoenix Song Liang",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "12",
-   "eNB_ID" : "148",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "8",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.97",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "4019",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.103",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "CPRI_On_Shelf_Port" : "F48",
-   "SiteLan_IP" : "10.186.136.148",
-   "Position" : "LTE08机柜",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.148",
-   "S1_mirror_port" : "18",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "13",
-   "CellGroup_ID" : "48",
-   "Ip_Switch_Code" : "A8",
-   "OAM_IP" : "10.186.137.148"
-}
-,{
-   "CPRI_On_Shelf_Port" : "F49",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.149",
-   "Position" : "",
-   "S1_mirror_port" : "13",
-   "Indoor_Test_Name" : "10.186.137.149",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_IP" : "10.186.137.149",
-   "Ip_Switch_Code" : "A9",
-   "CellGroup_ID" : "49",
-   "User" : "",
-   "S1_OAM_Port" : "1",
-   "Comments_MR_Project_" : "",
-   "SiteLan_Port" : "7",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "To_Moshell_Server_Port" : "24",
-   "eNB_ID" : "149",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.161",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "9",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5029",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.162"
-}
-,{
-   "SiteLan_Port" : "",
-   "MME_IP_1" : "",
-   "Board_Serial_server_IP" : "",
-   "To_Moshell_Server_Port" : "",
-   "User" : "chunmei/weihua",
-   "S1_OAM_Port" : "",
-   "Comments_MR_Project_" : "RBS7A&&RBS7B位置放了DUW30",
-   "SiteLan_Netmask" : "",
-   "S1_Vlan_ID" : "",
-   "Sitlan_Router" : "",
-   "eNB_ID" : "",
-   "S1_Msk" : "",
-   "OAM_Broadcast" : "",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "",
-   "S1_Gateway" : "",
-   "Ip_Switch_Serial_Server_Port_" : "",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "",
-   "Epc_port_" : "",
-   "S1_IP" : "",
-   "Group_Mark" : "",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "",
-   "Position" : "RBS7A&&RBS7B",
-   "CPRI_On_Shelf_Port" : "",
-   "To_Catapult_port" : "",
-   "Type" : "DUW30",
-   "MME_IP_2" : "",
-   "Test_lineId_eNodeB_Id" : "",
-   "S1_mirror_port" : "",
-   "Indoor_Test_Name" : "",
-   "3015_Port" : "",
-   "OAM_Msk" : "",
-   "OAM_Gateway" : "",
-   "OAM_Vlan_ID" : "",
-   "Ip_Switch_Code" : "",
-   "OAM_IP" : "",
-   "CellGroup_ID" : ""
-}
-,{
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "8",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "2",
-   "User" : "",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "150",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "9",
-   "S1_Gateway" : "10.186.30.161",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_IP" : "10.186.30.163",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5022",
-   "Group_Mark" : "Indoor A",
-   "Position" : "RBS9A",
-   "SiteLan_IP" : "10.186.136.150",
-   "Licence_Name" : "",
-   "Type" : "DUL20",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F50",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.150",
-   "S1_mirror_port" : "14",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800",
-   "Ip_Switch_Code" : "A9",
-   "CellGroup_ID" : "50",
-   "OAM_IP" : "10.186.137.150"
-}
-,{
-   "S1_mirror_port" : "15",
-   "Indoor_Test_Name" : "10.186.137.151",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "CPRI_On_Shelf_Port" : "F51",
-   "Type" : "DUL20",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "RBS9B",
-   "SiteLan_IP" : "10.186.136.151",
-   "Ip_Switch_Code" : "A9",
-   "CellGroup_ID" : "51",
-   "OAM_IP" : "10.186.137.151",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "eNB_ID" : "151",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "User" : "",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "3",
-   "SiteLan_Port" : "9",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5025",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.164",
-   "Epc_port_" : "20",
-   "S1_Gateway" : "10.186.30.161",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "9",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : ""
-}
-,{
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.152",
-   "CellGroup_ID" : "52",
-   "Ip_Switch_Code" : "A9",
-   "SiteLan_IP" : "10.186.136.152",
-   "Position" : "RBS8B",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUG20",
-   "CPRI_On_Shelf_Port" : "F52",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.152",
-   "S1_mirror_port" : "16",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "9",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.161",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.165",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "5030",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "SiteLan_Port" : "10",
-   "S1_OAM_Port" : "4",
-   "Comments_MR_Project_" : "MR2657-2",
-   "User" : "Argus chanying chen",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "152"
-}
-,{
-   "eNB_ID" : "153",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "",
-   "User" : "未知待查",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "SiteLan_Port" : "11",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "5023",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.166",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "9",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.161",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Indoor_Test_Name" : "10.186.137.153",
-   "S1_mirror_port" : "17",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS5216",
-   "CPRI_On_Shelf_Port" : "F53",
-   "SiteLan_IP" : "10.186.136.153",
-   "Position" : "RBS8A",
-   "Licence_Name" : "",
-   "Ip_Switch_Code" : "A9",
-   "CellGroup_ID" : "53",
-   "OAM_IP" : "10.186.137.153",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : ""
-}
-,{
-   "eNB_ID" : "154",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "User" : "",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "6",
-   "SiteLan_Port" : "12",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6001",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.167",
-   "Epc_port_" : "20",
-   "S1_Gateway" : "10.186.30.161",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "9",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_mirror_port" : "18",
-   "Indoor_Test_Name" : "10.186.137.154",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "CPRI_On_Shelf_Port" : "F54",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "RBS7A",
-   "SiteLan_IP" : "10.186.136.154",
-   "OAM_IP" : "10.186.137.154",
-   "Ip_Switch_Code" : "A9",
-   "CellGroup_ID" : "54",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1"
-}
-,{
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "CellGroup_ID" : "55",
-   "OAM_IP" : "10.186.137.155",
-   "Ip_Switch_Code" : "A10",
-   "CPRI_On_Shelf_Port" : "F55",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "RBS6B",
-   "SiteLan_IP" : "10.186.136.155",
-   "S1_mirror_port" : "13",
-   "Indoor_Test_Name" : "10.186.137.155",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "S1_Gateway" : "10.186.30.241",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "10",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5013",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.242",
-   "Epc_port_" : "20",
-   "User" : "",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "1",
-   "SiteLan_Port" : "7",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "MME_IP_1" : "10.175.2.49",
-   "eNB_ID" : "155",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0"
-}
-,{
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "5012",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.243",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "10",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.241",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "eNB_ID" : "156",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_OAM_Port" : "2",
-   "Comments_MR_Project_" : "MR2236",
-   "User" : "Argus Mindy Wang",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "SiteLan_Port" : "8",
-   "Ip_Switch_Code" : "A10",
-   "OAM_IP" : "10.186.137.156",
-   "CellGroup_ID" : "56",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "24",
-   "Indoor_Test_Name" : "10.186.137.156",
-   "S1_mirror_port" : "14",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS5216",
-   "CPRI_On_Shelf_Port" : "F56",
-   "SiteLan_IP" : "10.186.136.156",
-   "Position" : "RBS6A",
-   "Licence_Name" : ""
-}
-,{
-   "CPRI_On_Shelf_Port" : "F57",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "RBS5B",
-   "SiteLan_IP" : "10.186.136.157",
-   "S1_mirror_port" : "15",
-   "Indoor_Test_Name" : "10.186.137.157",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_IP" : "10.186.137.157",
-   "CellGroup_ID" : "57,80",
-   "Ip_Switch_Code" : "A10",
-   "User" : "Argus hongguo wei",
-   "Comments_MR_Project_" : "MR2236",
-   "S1_OAM_Port" : "3",
-   "SiteLan_Port" : "9",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "MME_IP_1" : "10.175.2.49",
-   "eNB_ID" : "157",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "S1_Gateway" : "10.186.30.241",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "10",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4030",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.244",
-   "Epc_port_" : "20"
-}
-,{
-   "CellGroup_ID" : "58",
-   "OAM_IP" : "10.186.137.158",
-   "Ip_Switch_Code" : "A10",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "24",
-   "Indoor_Test_Name" : "10.186.137.158",
-   "S1_mirror_port" : "16",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F58",
-   "Position" : "LTE06机柜下半个(原RBS5A)",
-   "SiteLan_IP" : "10.186.136.158",
-   "Licence_Name" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4029",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.245",
-   "Epc_port_" : "20",
-   "Ip_Switch_Serial_Server_Port_" : "10",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.241",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "eNB_ID" : "158",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Comments_MR_Project_" : "RBS5A 标注为IP和串口占用，槽位空置",
-   "S1_OAM_Port" : "4",
-   "User" : "Sorsair Gong lei",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "10"
-}
-,{
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F59",
-   "Position" : "RBS4A",
-   "SiteLan_IP" : "10.186.136.159",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.159",
-   "S1_mirror_port" : "17",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "24",
-   "CellGroup_ID" : "59",
-   "OAM_IP" : "10.186.137.159",
-   "Ip_Switch_Code" : "A10",
-   "Comments_MR_Project_" : "RBS4A做为RBS3A的辅板，串口占用",
-   "S1_OAM_Port" : "5",
-   "User" : "Null Xiaojing Wang",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "11",
-   "eNB_ID" : "159",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Ip_Switch_Serial_Server_Port_" : "10",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.241",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Board_Serial_Server_IP_Port" : "4023",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.246",
-   "Epc_port_" : "20"
-}
-,{
-   "OAM_IP" : "10.186.137.160",
-   "CellGroup_ID" : "60,81",
-   "Ip_Switch_Code" : "A10",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "24",
-   "Indoor_Test_Name" : "10.186.137.160",
-   "S1_mirror_port" : "18",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Type" : "DUS5216",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F60",
-   "Position" : "RBS4B",
-   "SiteLan_IP" : "10.186.136.160",
-   "Licence_Name" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "4024",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.247",
-   "Epc_port_" : "20",
-   "Ip_Switch_Serial_Server_Port_" : "10",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.241",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "eNB_ID" : "160",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "6",
-   "User" : "",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.51",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "12"
-}
-,{
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "161",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "SiteLan_Port" : "7",
-   "S1_OAM_Port" : "1",
-   "Comments_MR_Project_" : "training and FV",
-   "User" : "",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.210",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5019",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "11",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.209",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.161",
-   "S1_mirror_port" : "13",
-   "SiteLan_IP" : "10.186.136.161",
-   "Position" : "RBS22A",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "CPRI_On_Shelf_Port" : "F61",
-   "CellGroup_ID" : "61",
-   "Ip_Switch_Code" : "A11",
-   "OAM_IP" : "10.186.137.161",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "22",
-   "OAM_Vlan_ID" : "800"
-}
-,{
-   "eNB_ID" : "162",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "User" : "ECUT",
-   "Comments_MR_Project_" : "training and FV",
-   "S1_OAM_Port" : "2",
-   "SiteLan_Port" : "8",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_Server_IP_Port" : "5021",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.211",
-   "Epc_port_" : "20",
-   "S1_Gateway" : "10.186.30.209",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "11",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_mirror_port" : "14",
-   "Indoor_Test_Name" : "10.186.137.162",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "CPRI_On_Shelf_Port" : "F62",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "RBS22B",
-   "SiteLan_IP" : "10.186.136.162",
-   "CellGroup_ID" : "62",
-   "OAM_IP" : "10.186.137.162",
-   "Ip_Switch_Code" : "A11",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "22",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1"
-}
-,{
-   "Licence_Name" : "",
-   "Position" : "RBS23A",
-   "SiteLan_IP" : "10.186.136.163",
-   "CPRI_On_Shelf_Port" : "F63",
-   "Type" : "XMU03",
-   "To_Catapult_port" : "21",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "S1_mirror_port" : "15",
-   "Indoor_Test_Name" : "10.186.137.163",
-   "3015_Port" : "22",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.163",
-   "CellGroup_ID" : "63",
-   "Ip_Switch_Code" : "A11",
-   "SiteLan_Port" : "9",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "3",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "163",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.30.209",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "11",
-   "S1_IP" : "10.186.30.212",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5020",
-   "Group_Mark" : "Indoor A"
-}
-,{
-   "CPRI_On_Shelf_Port" : "F64",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "RBS23B",
-   "SiteLan_IP" : "10.186.136.164",
-   "S1_mirror_port" : "16",
-   "Indoor_Test_Name" : "10.186.137.164",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "22",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "Ip_Switch_Code" : "A11",
-   "OAM_IP" : "10.186.137.164",
-   "CellGroup_ID" : "64",
-   "User" : "Argus Hongguo Wei",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "4",
-   "SiteLan_Port" : "10",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "MME_IP_1" : "10.175.2.49",
-   "eNB_ID" : "164",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Gateway" : "10.186.30.209",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "11",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "Board_Serial_Server_IP_Port" : "5018",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.213",
-   "Epc_port_" : "20"
-}
-,{
-   "CPRI_On_Shelf_Port" : "F65",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "",
-   "SiteLan_IP" : "10.186.136.165",
-   "S1_mirror_port" : "17",
-   "Indoor_Test_Name" : "10.186.137.165",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "CellGroup_ID" : "65",
-   "OAM_IP" : "10.186.137.165",
-   "Ip_Switch_Code" : "A11",
-   "User" : "",
-   "Comments_MR_Project_" : "无槽位",
-   "S1_OAM_Port" : "5",
-   "SiteLan_Port" : "11",
-   "Board_Serial_server_IP" : "",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "eNB_ID" : "",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Gateway" : "10.186.30.209",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "11",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "",
-   "Epc_port_" : "20"
-}
-,{
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Ip_Switch_Serial_Server_Port_" : "11",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.209",
-   "Epc_port_" : "20",
-   "S1_IP" : "",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "",
-   "SiteLan_Port" : "12",
-   "S1_OAM_Port" : "6",
-   "Comments_MR_Project_" : "无槽位",
-   "User" : "",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800",
-   "CellGroup_ID" : "66",
-   "OAM_IP" : "10.186.137.166",
-   "Ip_Switch_Code" : "A11",
-   "SiteLan_IP" : "10.186.136.166",
-   "Position" : "",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "CPRI_On_Shelf_Port" : "F66",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.166",
-   "S1_mirror_port" : "18"
-}
-,{
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "12",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.145",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5026",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.146",
-   "S1_OAM_Port" : "1",
-   "Comments_MR_Project_" : "被MR826拿走 ALEX ZHANG/SONG LIANG/",
-   "User" : "",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "7",
-   "eNB_ID" : "167",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "",
-   "OAM_IP" : "10.186.137.167",
-   "Ip_Switch_Code" : "A12",
-   "CellGroup_ID" : "67",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "CPRI_On_Shelf_Port" : "F67",
-   "SiteLan_IP" : "10.186.136.167",
-   "Position" : "RBS12A",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.167",
-   "S1_mirror_port" : "13",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A."
-}
-,{
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "CPRI_On_Shelf_Port" : "F68",
-   "SiteLan_IP" : "10.186.136.168",
-   "Position" : "RBS11A",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.168",
-   "S1_mirror_port" : "14",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "",
-   "CellGroup_ID" : "68",
-   "OAM_IP" : "10.186.137.168",
-   "Ip_Switch_Code" : "A12",
-   "S1_OAM_Port" : "2",
-   "Comments_MR_Project_" : "RBS6501 STP   借走IP  ",
-   "User" : "zhiyuan yang",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "SiteLan_Port" : "8",
-   "eNB_ID" : "168",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "Ip_Switch_Serial_Server_Port_" : "12",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.145",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "5028",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.147"
-}
-,{
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.145",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "12",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "5027",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.148",
-   "User" : "Radio Hongli Wu",
-   "S1_OAM_Port" : "3",
-   "Comments_MR_Project_" : "Lend to Radio",
-   "SiteLan_Port" : "9",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "To_Moshell_Server_Port" : "24",
-   "eNB_ID" : "169",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "CellGroup_ID" : "69",
-   "Ip_Switch_Code" : "A12",
-   "OAM_IP" : "10.186.137.169",
-   "CPRI_On_Shelf_Port" : "F69",
-   "To_Catapult_port" : "21",
-   "Type" : "DUL20",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.169",
-   "Position" : "RBS11B",
-   "S1_mirror_port" : "15",
-   "Indoor_Test_Name" : "10.186.137.169",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A."
-}
-,{
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.170",
-   "CellGroup_ID" : "70",
-   "Ip_Switch_Code" : "A12",
-   "Position" : "RBS10B",
-   "SiteLan_IP" : "10.186.136.170",
-   "Licence_Name" : "",
-   "Type" : "DUL20",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F70",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.170",
-   "S1_mirror_port" : "16",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Ip_Switch_Serial_Server_Port_" : "12",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.145",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_IP" : "10.186.30.149",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "5024",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.52",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "10",
-   "Comments_MR_Project_" : "DUL2001",
-   "S1_OAM_Port" : "4",
-   "User" : "Phoenix Zhiyuan Yang",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "170"
-}
-,{
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.145",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "12",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.150",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6002",
-   "SiteLan_Port" : "11",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "User" : "Argus chanying chen",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "MR2657-2",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "171",
-   "3015_Port" : "",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.171",
-   "CellGroup_ID" : "71",
-   "Ip_Switch_Code" : "A12",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.171",
-   "Position" : "RBS10A",
-   "CPRI_On_Shelf_Port" : "F71",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "S1_mirror_port" : "17",
-   "Indoor_Test_Name" : "10.186.137.171"
-}
-,{
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F72",
-   "Position" : "RBS12B",
-   "SiteLan_IP" : "10.186.136.172",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.172",
-   "S1_mirror_port" : "18",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "",
-   "CellGroup_ID" : "72",
-   "OAM_IP" : "10.186.137.172",
-   "Ip_Switch_Code" : "A12",
-   "Comments_MR_Project_" : "Lend to Radio",
-   "S1_OAM_Port" : "6",
-   "User" : "Radio Hongli Wu",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "12",
-   "eNB_ID" : "172",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "12",
-   "S1_Gateway" : "10.186.30.145",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Board_Serial_Server_IP_Port" : "6003",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "10.186.30.151",
-   "Epc_port_" : "20"
-}
-,{
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.226",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6006",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.225",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "13",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "173",
-   "SiteLan_Port" : "7",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "User" : "Argus chanying chen",
-   "S1_OAM_Port" : "1",
-   "Comments_MR_Project_" : "MR2657-2",
-   "OAM_IP" : "10.186.137.173",
-   "CellGroup_ID" : "73",
-   "Ip_Switch_Code" : "A13",
-   "3015_Port" : "27",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "S1_mirror_port" : "13",
-   "Indoor_Test_Name" : "10.186.137.173",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.173",
-   "Position" : "102*LTE机架3*B4",
-   "CPRI_On_Shelf_Port" : "F73",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41"
-}
-,{
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "27",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_IP" : "10.186.137.174",
-   "Ip_Switch_Code" : "A13",
-   "CellGroup_ID" : "74,82",
-   "CPRI_On_Shelf_Port" : "F74",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.174",
-   "Position" : "102*LTE机架3*B5",
-   "S1_mirror_port" : "14",
-   "Indoor_Test_Name" : "10.186.137.174",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.225",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "13",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "6018",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.227",
-   "User" : "",
-   "S1_OAM_Port" : "2",
-   "Comments_MR_Project_" : "DU fault",
-   "SiteLan_Port" : "8",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "eNB_ID" : "174",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1"
-}
-,{
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Ip_Switch_Serial_Server_Port_" : "13",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.30.225",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_IP" : "10.186.30.228",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "6020",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "9",
-   "Comments_MR_Project_" : "MR3345",
-   "S1_OAM_Port" : "3",
-   "User" : "Argus weihua li",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "175",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "27",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.175",
-   "CellGroup_ID" : "75,83",
-   "Ip_Switch_Code" : "A13",
-   "Position" : "102*LTE机架3*B6",
-   "SiteLan_IP" : "10.186.136.175",
-   "Licence_Name" : "",
-   "Type" : "DUS5216",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F75",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.175",
-   "S1_mirror_port" : "15"
-}
-,{
-   "S1_mirror_port" : "16",
-   "Indoor_Test_Name" : "10.186.137.176",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "CPRI_On_Shelf_Port" : "F76",
-   "To_Catapult_port" : "21",
-   "Type" : "DUW20",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.176",
-   "Position" : "102*LTE机架3*B1",
-   "CellGroup_ID" : "76",
-   "OAM_IP" : "10.186.137.176",
-   "Ip_Switch_Code" : "A13",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "27",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "eNB_ID" : "176",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "User" : "shiming(haiming release)",
-   "S1_OAM_Port" : "4",
-   "Comments_MR_Project_" : "DUW20 用的W的信息",
-   "SiteLan_Port" : "10",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "Group_Mark" : "Indoor A",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6021",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.229",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.225",
-   "Ip_Switch_Serial_Server_Port_" : "13",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : ""
-}
-,{
-   "SiteLan_Port" : "11",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "User" : "shiming(haiming release)",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "177",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.225",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "13",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.230",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "6007",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.177",
-   "Position" : "102*LTE机架3*B2",
-   "CPRI_On_Shelf_Port" : "F77",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "S1_mirror_port" : "17",
-   "Indoor_Test_Name" : "10.186.137.177",
-   "3015_Port" : "27",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800",
-   "Ip_Switch_Code" : "A13",
-   "CellGroup_ID" : "77",
-   "OAM_IP" : "10.186.137.177"
-}
-,{
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "12",
-   "S1_OAM_Port" : "6",
-   "Comments_MR_Project_" : "",
-   "User" : "Phoenix Song Liang",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "178",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Ip_Switch_Serial_Server_Port_" : "13",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.225",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.231",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "6004",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "SiteLan_IP" : "10.186.136.178",
-   "Position" : "102*LTE机架3*B3",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "CPRI_On_Shelf_Port" : "F78",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.178",
-   "S1_mirror_port" : "18",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "27",
-   "OAM_Vlan_ID" : "800",
-   "CellGroup_ID" : "78",
-   "OAM_IP" : "10.186.137.178",
-   "Ip_Switch_Code" : "A13"
-}
-,{
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor A",
-   "S1_IP" : "",
-   "Epc_port_" : "20",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "14",
-   "S1_Gateway" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "eNB_ID" : "179",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "1",
-   "User" : "",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "7",
-   "OAM_IP" : "10.186.137.179",
-   "Ip_Switch_Code" : "A14",
-   "CellGroup_ID" : "79",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "",
-   "Indoor_Test_Name" : "10.186.137.179",
-   "S1_mirror_port" : "13",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F79",
-   "Position" : "",
-   "SiteLan_IP" : "10.186.136.179",
-   "Licence_Name" : ""
-}
-,{
-   "OAM_IP" : "10.186.137.180",
-   "Ip_Switch_Code" : "A14",
-   "CellGroup_ID" : "80",
-   "3015_Port" : "",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "S1_mirror_port" : "14",
-   "Indoor_Test_Name" : "10.186.137.180",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.180",
-   "Position" : "",
-   "CPRI_On_Shelf_Port" : "F80",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "Epc_port_" : "20",
-   "S1_IP" : "",
-   "Group_Mark" : "Indoor A",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "14",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "180",
-   "SiteLan_Port" : "8",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "User" : "",
-   "S1_OAM_Port" : "2",
-   "Comments_MR_Project_" : "CellGroup ID, Do not use"
-}
-,{
-   "Ip_Switch_Serial_Server_Port_" : "14",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "",
-   "Group_Mark" : "Indoor B",
-   "S1_IP" : "",
-   "Epc_port_" : "20",
-   "Comments_MR_Project_" : "CellGroup ID, Do not use",
-   "S1_OAM_Port" : "3",
-   "User" : "",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "9",
-   "eNB_ID" : "181",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "",
-   "CellGroup_ID" : "81",
-   "Ip_Switch_Code" : "A14",
-   "OAM_IP" : "10.186.137.181",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F81",
-   "Position" : "",
-   "SiteLan_IP" : "10.186.136.181",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.181",
-   "S1_mirror_port" : "15",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A."
-}
-,{
-   "Ip_Switch_Code" : "A14",
-   "OAM_IP" : "10.186.137.182",
-   "CellGroup_ID" : "82",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "",
-   "Indoor_Test_Name" : "10.186.137.182",
-   "S1_mirror_port" : "16",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "CPRI_On_Shelf_Port" : "F82",
-   "SiteLan_IP" : "10.186.136.182",
-   "Position" : "",
-   "Licence_Name" : "",
-   "Group_Mark" : "Indoor B",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "14",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "eNB_ID" : "182",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_OAM_Port" : "4",
-   "Comments_MR_Project_" : "CellGroup ID, Do not use",
-   "User" : "分给174站",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "10"
-}
-,{
-   "SiteLan_Port" : "11",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "分给175站",
-   "Comments_MR_Project_" : "CellGroup ID, Do not use",
-   "S1_OAM_Port" : "5",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "183",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "14",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_IP" : "",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor B",
-   "Licence_Name" : "",
-   "Position" : "",
-   "SiteLan_IP" : "10.186.136.183",
-   "CPRI_On_Shelf_Port" : "F83",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "S1_mirror_port" : "17",
-   "Indoor_Test_Name" : "10.186.137.183",
-   "3015_Port" : "",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800",
-   "CellGroup_ID" : "83",
-   "Ip_Switch_Code" : "A14",
-   "OAM_IP" : "10.186.137.183"
-}
-,{
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "CPRI_On_Shelf_Port" : "F84",
-   "SiteLan_IP" : "10.186.136.184",
-   "Position" : "",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.184",
-   "S1_mirror_port" : "18",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "",
-   "Ip_Switch_Code" : "A14",
-   "CellGroup_ID" : "84",
-   "OAM_IP" : "10.186.137.184",
-   "S1_OAM_Port" : "6",
-   "Comments_MR_Project_" : "",
-   "User" : "",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "12",
-   "eNB_ID" : "184",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "14",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Group_Mark" : "Indoor B",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "",
-   "Epc_port_" : "20",
-   "S1_IP" : ""
-}
-,{
-   "User" : "",
-   "S1_OAM_Port" : "1",
-   "Comments_MR_Project_" : "",
-   "SiteLan_Port" : "7",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "eNB_ID" : "185",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.1",
-   "Ip_Switch_Serial_Server_Port_" : "15",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "Group_Mark" : "Indoor B",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6005",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.2",
-   "CPRI_On_Shelf_Port" : "F85",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.185",
-   "Position" : "102*LTE机架3*A5",
-   "S1_mirror_port" : "13",
-   "Indoor_Test_Name" : "10.186.137.185",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_IP" : "10.186.137.185",
-   "CellGroup_ID" : "85",
-   "Ip_Switch_Code" : "A15"
-}
-,{
-   "Licence_Name" : "",
-   "Position" : "102*LTE机架3*A6",
-   "SiteLan_IP" : "10.186.136.186",
-   "CPRI_On_Shelf_Port" : "F86",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "S1_mirror_port" : "14",
-   "Indoor_Test_Name" : "10.186.137.186",
-   "3015_Port" : "",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.186",
-   "CellGroup_ID" : "86",
-   "Ip_Switch_Code" : "A15",
-   "SiteLan_Port" : "8",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "DUS41板子给jackie  MR814",
-   "Comments_MR_Project_" : "地址被用掉(hongli wu)，该槽位不能用",
-   "S1_OAM_Port" : "2",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "186",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.138.1",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "15",
-   "S1_IP" : "10.186.138.3",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "6019",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor B"
-}
-,{
-   "S1_IP" : "10.186.138.4",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "6017",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor B",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Ip_Switch_Serial_Server_Port_" : "15",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.138.1",
-   "CellSub_ID" : "0, 1, 2",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "187",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "9",
-   "Comments_MR_Project_" : "For TR reproduce and verify.",
-   "S1_OAM_Port" : "3",
-   "User" : "Null Xiaojing Wang",
-   "CellGroup_ID" : "87",
-   "OAM_IP" : "10.186.137.187",
-   "Ip_Switch_Code" : "A15",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.187",
-   "S1_mirror_port" : "15",
-   "Position" : "102*LTE机架3*A3",
-   "SiteLan_IP" : "10.186.136.187",
-   "Licence_Name" : "",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F87"
-}
-,{
-   "eNB_ID" : "188",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Comments_MR_Project_" : "LU",
-   "S1_OAM_Port" : "4",
-   "User" : "Null Xiaojing Wang",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "10",
-   "Board_Serial_Server_IP_Port" : "6008",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor B",
-   "S1_IP" : "10.186.138.5",
-   "Epc_port_" : "20",
-   "Ip_Switch_Serial_Server_Port_" : "15",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.138.1",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Indoor_Test_Name" : "10.186.137.188",
-   "S1_mirror_port" : "16",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F88",
-   "Position" : "102*LTE机架3*A4",
-   "SiteLan_IP" : "10.186.136.188",
-   "Licence_Name" : "",
-   "Ip_Switch_Code" : "A15",
-   "OAM_IP" : "10.186.137.188",
-   "CellGroup_ID" : "88",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : ""
-}
-,{
-   "Position" : "102*LTE机架3*A1",
-   "SiteLan_IP" : "10.186.136.189",
-   "Licence_Name" : "",
-   "Type" : "DUS31",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F89",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.189",
-   "S1_mirror_port" : "17",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.189",
-   "CellGroup_ID" : "89",
-   "Ip_Switch_Code" : "A15",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "11",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "5",
-   "User" : "YANHONG SU",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "189",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "15",
-   "S1_Gateway" : "10.186.138.1",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_IP" : "10.186.138.6",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6022",
-   "Group_Mark" : "Indoor B"
-}
-,{
-   "Position" : "102*LTE机架3*A2",
-   "SiteLan_IP" : "10.186.136.190",
-   "Licence_Name" : "",
-   "Type" : "DUS31",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F90",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.190",
-   "S1_mirror_port" : "18",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.190",
-   "CellGroup_ID" : "90",
-   "Ip_Switch_Code" : "A15",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "12",
-   "Comments_MR_Project_" : "Lend  to GWMR",
-   "S1_OAM_Port" : "6",
-   "User" : "Sean LIU",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "190",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "15",
-   "S1_Gateway" : "10.186.138.1",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_IP" : "10.186.138.7",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6027",
-   "Group_Mark" : "Indoor B"
-}
-,{
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "28",
-   "OAM_Vlan_ID" : "800",
-   "CellGroup_ID" : "91",
-   "OAM_IP" : "10.186.137.191",
-   "Ip_Switch_Code" : "A16",
-   "Position" : "102*LTE机架4*A1",
-   "SiteLan_IP" : "10.186.136.191",
-   "Licence_Name" : "",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F91",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.191",
-   "S1_mirror_port" : "13",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "16",
-   "S1_Gateway" : "10.186.138.17",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_IP" : "10.186.138.18",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6014",
-   "Group_Mark" : "Indoor C",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "7",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "1",
-   "User" : "",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "191"
-}
-,{
-   "OAM_IP" : "10.186.137.192",
-   "Ip_Switch_Code" : "A16",
-   "CellGroup_ID" : "92",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "28",
-   "OAM_Vlan_ID" : "800",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.192",
-   "S1_mirror_port" : "14",
-   "Position" : "102*LTE机架4*A2",
-   "SiteLan_IP" : "10.186.136.192",
-   "Licence_Name" : "",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F92",
-   "S1_IP" : "10.186.138.19",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "6030",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor C",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Ip_Switch_Serial_Server_Port_" : "16",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.138.17",
-   "CellSub_ID" : "0, 1, 2",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "192",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "8",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "2",
-   "User" : "OTA(外场测试)"
-}
-,{
-   "eNB_ID" : "193",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_OAM_Port" : "3",
-   "Comments_MR_Project_" : "",
-   "User" : "OTA",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "SiteLan_Port" : "9",
-   "Group_Mark" : "Indoor C",
-   "Board_Serial_Server_IP_Port" : "6029",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.20",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "16",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.17",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Indoor_Test_Name" : "10.186.137.193",
-   "S1_mirror_port" : "15",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "CPRI_On_Shelf_Port" : "F93",
-   "SiteLan_IP" : "10.186.136.193",
-   "Position" : "102*LTE机架4*A3",
-   "Licence_Name" : "",
-   "CellGroup_ID" : "93",
-   "OAM_IP" : "10.186.137.193",
-   "Ip_Switch_Code" : "A16",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "28"
-}
-,{
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.21",
-   "Group_Mark" : "Indoor C",
-   "Board_Serial_Server_IP_Port" : "6032",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "16",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.17",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "194",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "10",
-   "S1_OAM_Port" : "4",
-   "Comments_MR_Project_" : "",
-   "User" : "OTA",
-   "Ip_Switch_Code" : "A16",
-   "OAM_IP" : "10.186.137.194",
-   "CellGroup_ID" : "94",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "28",
-   "OAM_Vlan_ID" : "800",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.194",
-   "S1_mirror_port" : "16",
-   "SiteLan_IP" : "10.186.136.194",
-   "Position" : "102*LTE机架4*A4",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "CPRI_On_Shelf_Port" : "F94"
-}
-,{
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "S1_mirror_port" : "17",
-   "Indoor_Test_Name" : "10.186.137.195",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.195",
-   "Position" : "102*LTE机架4*A5",
-   "CPRI_On_Shelf_Port" : "F95",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "OAM_IP" : "10.186.137.195",
-   "CellGroup_ID" : "95",
-   "Ip_Switch_Code" : "A16",
-   "3015_Port" : "28",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "195",
-   "SiteLan_Port" : "11",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "User" : "OTA",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.22",
-   "Group_Mark" : "Indoor C",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6013",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.17",
-   "Ip_Switch_Serial_Server_Port_" : "16",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56"
-}
-,{
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "196",
-   "SiteLan_Port" : "12",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "OTA",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "6",
-   "S1_IP" : "10.186.138.23",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "6011",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor C",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.138.17",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "16",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "S1_mirror_port" : "18",
-   "Indoor_Test_Name" : "10.186.137.196",
-   "Licence_Name" : "",
-   "Position" : "102*LTE机架4*A6",
-   "SiteLan_IP" : "10.186.136.196",
-   "CPRI_On_Shelf_Port" : "F96",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "CellGroup_ID" : "96",
-   "OAM_IP" : "10.186.137.196",
-   "Ip_Switch_Code" : "A16",
-   "3015_Port" : "28",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800"
-}
-,{
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.34",
-   "Group_Mark" : "Indoor C",
-   "Board_Serial_Server_IP_Port" : "6012",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "17",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.33",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "197",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "SiteLan_Port" : "7",
-   "S1_OAM_Port" : "1",
-   "Comments_MR_Project_" : "",
-   "User" : "OTA",
-   "Ip_Switch_Code" : "A17",
-   "CellGroup_ID" : "97",
-   "OAM_IP" : "10.186.137.197",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "29",
-   "OAM_Vlan_ID" : "800",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.197",
-   "S1_mirror_port" : "13",
-   "SiteLan_IP" : "10.186.136.197",
-   "Position" : "102*LTE机架4*B1",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "CPRI_On_Shelf_Port" : "F97"
-}
-,{
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "8",
-   "S1_OAM_Port" : "2",
-   "Comments_MR_Project_" : "",
-   "User" : "OTA",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "198",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "17",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.33",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.35",
-   "Group_Mark" : "Indoor C",
-   "Board_Serial_Server_IP_Port" : "6028",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "SiteLan_IP" : "10.186.136.198",
-   "Position" : "102*LTE机架4*B2",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "CPRI_On_Shelf_Port" : "F98",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.198",
-   "S1_mirror_port" : "14",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "29",
-   "OAM_Vlan_ID" : "800",
-   "Ip_Switch_Code" : "A17",
-   "CellGroup_ID" : "98",
-   "OAM_IP" : "10.186.137.198"
-}
-,{
-   "Licence_Name" : "",
-   "Position" : "102*LTE机架4*B3",
-   "SiteLan_IP" : "10.186.136.199",
-   "CPRI_On_Shelf_Port" : "F99",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "S1_mirror_port" : "15",
-   "Indoor_Test_Name" : "10.186.137.199",
-   "3015_Port" : "29",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.199",
-   "CellGroup_ID" : "99",
-   "Ip_Switch_Code" : "A17",
-   "SiteLan_Port" : "9",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "OTA",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "3",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "199",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.138.33",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "17",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_IP" : "10.186.138.36",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "6010",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor C"
-}
-,{
-   "eNB_ID" : "200",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "User" : "OTA",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "4",
-   "SiteLan_Port" : "10",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6015",
-   "Group_Mark" : "Indoor C",
-   "S1_IP" : "10.186.138.37",
-   "Epc_port_" : "20",
-   "S1_Gateway" : "10.186.138.33",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "17",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_mirror_port" : "16",
-   "Indoor_Test_Name" : "10.186.137.200",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "CPRI_On_Shelf_Port" : "F100",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "102*LTE机架4*B4",
-   "SiteLan_IP" : "10.186.136.200",
-   "OAM_IP" : "10.186.137.200",
-   "Ip_Switch_Code" : "A17",
-   "CellGroup_ID" : "100",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "29",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1"
-}
-,{
-   "eNB_ID" : "201",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "1",
-   "User" : "OTA",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "7",
-   "Board_Serial_Server_IP_Port" : "6016",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor D",
-   "S1_IP" : "10.186.138.38",
-   "Epc_port_" : "20",
-   "Ip_Switch_Serial_Server_Port_" : "18",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.138.33",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Indoor_Test_Name" : "10.186.137.201",
-   "S1_mirror_port" : "13",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F101",
-   "Position" : "102*LTE机架4*B5",
-   "SiteLan_IP" : "10.186.136.201",
-   "Licence_Name" : "",
-   "CellGroup_ID" : "101",
-   "OAM_IP" : "10.186.137.201",
-   "Ip_Switch_Code" : "A18",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "29"
-}
-,{
-   "Group_Mark" : "Indoor D",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6031",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.39",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "18",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.33",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "eNB_ID" : "202",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_OAM_Port" : "2",
-   "Comments_MR_Project_" : "",
-   "User" : "",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.53",
-   "SiteLan_Port" : "8",
-   "CellGroup_ID" : "102",
-   "OAM_IP" : "10.186.137.202",
-   "Ip_Switch_Code" : "A18",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "29",
-   "Indoor_Test_Name" : "10.186.137.202",
-   "S1_mirror_port" : "14",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUL21",
-   "CPRI_On_Shelf_Port" : "F102",
-   "SiteLan_IP" : "10.186.136.202",
-   "Position" : "102*LTE机架4*B6",
-   "Licence_Name" : ""
-}
-,{
-   "Group_Mark" : "Indoor D",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.30.178",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.177",
-   "Ip_Switch_Serial_Server_Port_" : "18",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "eNB_ID" : "203",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "User" : "",
-   "S1_OAM_Port" : "3",
-   "Comments_MR_Project_" : "",
-   "SiteLan_Port" : "9",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "",
-   "To_Moshell_Server_Port" : "24",
-   "OAM_IP" : "10.186.137.203",
-   "Ip_Switch_Code" : "A18",
-   "CellGroup_ID" : "103",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "21",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "S1_mirror_port" : "15",
-   "Indoor_Test_Name" : "10.186.137.203",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "CPRI_On_Shelf_Port" : "F103",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.203",
-   "Position" : ""
-}
-,{
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "S1_mirror_port" : "16",
-   "Indoor_Test_Name" : "10.186.137.204",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.204",
-   "Position" : "101*LTE RBS-204",
-   "CPRI_On_Shelf_Port" : "F104",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS4101",
-   "Ip_Switch_Code" : "A18",
-   "CellGroup_ID" : "104",
-   "OAM_IP" : "10.186.137.204",
-   "3015_Port" : "21",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "204",
-   "SiteLan_Port" : "10",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.55",
-   "User" : "Phoenix Song Liang",
-   "S1_OAM_Port" : "4",
-   "Comments_MR_Project_" : "MR2657-1",
-   "Epc_port_" : "20",
-   "S1_IP" : "",
-   "Group_Mark" : "Indoor D",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.177",
-   "Ip_Switch_Serial_Server_Port_" : "18",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56"
-}
-,{
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "205",
-   "Board_Serial_server_IP" : "10.186.135.55",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "11",
-   "Comments_MR_Project_" : "MR2657-1",
-   "S1_OAM_Port" : "5",
-   "User" : "Phoenix Song Liang",
-   "S1_IP" : "",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor D",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "18",
-   "S1_Gateway" : "10.186.30.177",
-   "CellSub_ID" : "0, 1, 2",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Indoor_Test_Name" : "10.186.137.205",
-   "S1_mirror_port" : "17",
-   "Position" : "101*LTE RBS-205",
-   "SiteLan_IP" : "10.186.136.205",
-   "Licence_Name" : "",
-   "Type" : "DUS4102",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F105",
-   "Ip_Switch_Code" : "A18",
-   "OAM_IP" : "10.186.137.205",
-   "CellGroup_ID" : "105",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "21",
-   "OAM_Vlan_ID" : "800"
-}
-,{
-   "CPRI_On_Shelf_Port" : "F106",
-   "Type" : "DUS5216",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "102*LTE机架11",
-   "SiteLan_IP" : "10.186.136.206",
-   "S1_mirror_port" : "18",
-   "Indoor_Test_Name" : "10.186.137.206",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "21",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "CellGroup_ID" : "106",
-   "OAM_IP" : "10.186.137.206",
-   "Ip_Switch_Code" : "A18",
-   "User" : "",
-   "Comments_MR_Project_" : "MR2903",
-   "S1_OAM_Port" : "6",
-   "SiteLan_Port" : "12",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.55",
-   "MME_IP_1" : "10.175.2.49",
-   "eNB_ID" : "206",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "S1_Gateway" : "10.186.30.177",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "18",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor D",
-   "S1_IP" : "",
-   "Epc_port_" : "20"
-}
-,{
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.207",
-   "S1_mirror_port" : "13",
-   "SiteLan_IP" : "10.186.136.207",
-   "Position" : "102*LTE机架11",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS4101",
-   "CPRI_On_Shelf_Port" : "F107",
-   "CellGroup_ID" : "107",
-   "OAM_IP" : "10.186.137.207",
-   "Ip_Switch_Code" : "A19",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "207",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.55",
-   "SiteLan_Port" : "7",
-   "S1_OAM_Port" : "1",
-   "Comments_MR_Project_" : "MR773",
-   "User" : "",
-   "Epc_port_" : "20",
-   "S1_IP" : "",
-   "Group_Mark" : "Indoor D",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Ip_Switch_Serial_Server_Port_" : "19",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.30.177"
-}
-,{
-   "Ip_Switch_Code" : "A19",
-   "CellGroup_ID" : "108",
-   "OAM_IP" : "10.186.137.208",
-   "3015_Port" : "",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "S1_mirror_port" : "14",
-   "Indoor_Test_Name" : "10.186.137.208",
-   "Licence_Name" : "",
-   "Position" : "102*LTE机架9",
-   "SiteLan_IP" : "10.186.136.208",
-   "CPRI_On_Shelf_Port" : "F108",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "S1_IP" : "",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Indoor D",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.30.177",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "19",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "208",
-   "SiteLan_Port" : "8",
-   "Board_Serial_server_IP" : "10.186.135.55",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "2"
-}
-,{
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "2300",
-   "Group_Mark" : "Indoor D",
-   "S1_IP" : "10.186.138.50",
-   "Epc_port_" : "20",
-   "S1_Gateway" : "10.186.138.49",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "19",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "eNB_ID" : "209",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "User" : "未知待查",
-   "Comments_MR_Project_" : "For IP allocation",
-   "S1_OAM_Port" : "1",
-   "SiteLan_Port" : "7",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "CellGroup_ID" : "109",
-   "Ip_Switch_Code" : "A19",
-   "OAM_IP" : "10.186.137.209",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "41",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "S1_mirror_port" : "13",
-   "Indoor_Test_Name" : "10.186.137.209",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "CPRI_On_Shelf_Port" : "F109",
-   "Type" : "DUS5216",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "RBS209",
-   "SiteLan_IP" : "10.186.136.209"
-}
-,{
-   "SiteLan_Port" : "11",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "User" : "Radio Laiyuan Yang",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "For IP allocation",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "210",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.49",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "20",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.51",
-   "Group_Mark" : "Indoor D",
-   "Board_Serial_Server_IP_Port" : "3300",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.210",
-   "Position" : "RBS479",
-   "CPRI_On_Shelf_Port" : "F110",
-   "To_Catapult_port" : "21",
-   "Type" : "DUL20",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "S1_mirror_port" : "14",
-   "Indoor_Test_Name" : "10.186.137.210",
-   "3015_Port" : "41",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.210",
-   "CellGroup_ID" : "110",
-   "Ip_Switch_Code" : "A19"
-}
-,{
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "41",
-   "Ip_Switch_Code" : "A20",
-   "CellGroup_ID" : "111",
-   "OAM_IP" : "10.186.137.211",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS5216",
-   "CPRI_On_Shelf_Port" : "F121",
-   "SiteLan_IP" : "10.186.136.211",
-   "Position" : "RBS211",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.211",
-   "S1_mirror_port" : "",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Ip_Switch_Serial_Server_Port_" : "20",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.49",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Group_Mark" : "Outdoor",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "2400",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.52",
-   "S1_OAM_Port" : "2",
-   "Comments_MR_Project_" : "",
-   "User" : "Phoenix Yan Hong",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "8",
-   "eNB_ID" : "211",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1"
-}
-,{
-   "S1_Gateway" : "10.186.138.49",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "20",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "2100",
-   "Group_Mark" : "Outdoor",
-   "S1_IP" : "10.186.138.53",
-   "Epc_port_" : "20",
-   "User" : "Phoenix(Release to Serena Li for MR2959)",
-   "Comments_MR_Project_" : "原位置放入DUS41",
-   "S1_OAM_Port" : "4",
-   "SiteLan_Port" : "10",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "eNB_ID" : "212",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "41",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_IP" : "10.186.137.212",
-   "CellGroup_ID" : "112",
-   "Ip_Switch_Code" : "A20",
-   "CPRI_On_Shelf_Port" : "F122",
-   "Type" : "DUS5216",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "LTE机架5-2",
-   "SiteLan_IP" : "10.186.136.212",
-   "S1_mirror_port" : "",
-   "Indoor_Test_Name" : "10.186.137.212",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A."
-}
-,{
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "S1_mirror_port" : "",
-   "Indoor_Test_Name" : "10.186.137.213",
-   "Licence_Name" : "",
-   "Position" : "LTE机架5-1",
-   "SiteLan_IP" : "10.186.136.213",
-   "CPRI_On_Shelf_Port" : "F123",
-   "Type" : "DUS5212",
-   "To_Catapult_port" : "21",
-   "Ip_Switch_Code" : "A20",
-   "CellGroup_ID" : "113",
-   "OAM_IP" : "10.186.137.213",
-   "3015_Port" : "41",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "213",
-   "SiteLan_Port" : "9",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "Phoenix Song Liang",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "3",
-   "S1_IP" : "10.186.138.54",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "2200",
-   "Group_Mark" : "Outdoor",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.138.49",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "20",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56"
-}
-,{
-   "Indoor_Test_Name" : "10.186.137.214",
-   "S1_mirror_port" : "",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "CPRI_On_Shelf_Port" : "F124",
-   "SiteLan_IP" : "10.186.136.214",
-   "Position" : "借用175站的DUS41",
-   "Licence_Name" : "",
-   "Ip_Switch_Code" : "A20",
-   "OAM_IP" : "10.186.137.214",
-   "CellGroup_ID" : "114",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "41",
-   "eNB_ID" : "214",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_OAM_Port" : "6",
-   "Comments_MR_Project_" : "For IP allocation",
-   "User" : "GWMR Zhaoguang Sun",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "12",
-   "Group_Mark" : "Outdoor",
-   "Board_Serial_Server_IP_Port" : "2700",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.55",
-   "Ip_Switch_Serial_Server_Port_" : "20",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.49",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255"
-}
-,{
-   "OAM_IP" : "10.186.137.215",
-   "CellGroup_ID" : "115",
-   "Ip_Switch_Code" : "A20",
-   "3015_Port" : "42",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "OAM_Vlan_ID" : "800",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "S1_mirror_port" : "",
-   "Indoor_Test_Name" : "10.186.137.215",
-   "Licence_Name" : "",
-   "Position" : "LTE机架10",
-   "SiteLan_IP" : "10.186.136.215",
-   "CPRI_On_Shelf_Port" : "F125",
-   "Type" : "DUS5216",
-   "To_Catapult_port" : "21",
-   "S1_IP" : "10.186.138.66",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "2500",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Outdoor",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.138.65",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "20",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "eNB_ID" : "215",
-   "SiteLan_Port" : "8",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "未知待查",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "1"
-}
-,{
-   "Indoor_Test_Name" : "10.186.137.216",
-   "S1_mirror_port" : "",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Type" : "DUS5216",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F126",
-   "Position" : "LTE机架6A",
-   "SiteLan_IP" : "10.186.136.216",
-   "Licence_Name" : "",
-   "CellGroup_ID" : "116",
-   "OAM_IP" : "10.186.137.216",
-   "Ip_Switch_Code" : "A20",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "42",
-   "eNB_ID" : "216",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Comments_MR_Project_" : "For IP allocation",
-   "S1_OAM_Port" : "3",
-   "User" : "Nemo Yanhong Su",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "9",
-   "Board_Serial_Server_IP_Port" : "3200",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Outdoor",
-   "S1_IP" : "10.186.138.67",
-   "Epc_port_" : "20",
-   "Ip_Switch_Serial_Server_Port_" : "20",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Gateway" : "10.186.138.65",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28"
-}
-,{
-   "3015_Port" : "42",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.217",
-   "CellGroup_ID" : "117",
-   "Ip_Switch_Code" : "A21",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.217",
-   "Position" : "用radio 自己的机架",
-   "CPRI_On_Shelf_Port" : "F127",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "S1_mirror_port" : "",
-   "Indoor_Test_Name" : "10.186.137.217",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.65",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "21",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.68",
-   "Group_Mark" : "Outdoor",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "3400",
-   "SiteLan_Port" : "10",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "User" : "Lijuan Feng A",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "IP 分给raido, 板子他们自己解决",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "217"
-}
-,{
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "2800",
-   "Group_Mark" : "Outdoor",
-   "S1_IP" : "10.186.138.69",
-   "Epc_port_" : "20",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "21",
-   "S1_Gateway" : "10.186.138.65",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "eNB_ID" : "218",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Comments_MR_Project_" : "IP 分给raido, 板子他们自己解决",
-   "S1_OAM_Port" : "4",
-   "User" : "Lijuan Feng A",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "11",
-   "CellGroup_ID" : "118",
-   "Ip_Switch_Code" : "A21",
-   "OAM_IP" : "10.186.137.218",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "42",
-   "Indoor_Test_Name" : "10.186.137.218",
-   "S1_mirror_port" : "",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F128",
-   "Position" : "用radio 自己的机架",
-   "SiteLan_IP" : "10.186.136.218",
-   "Licence_Name" : ""
-}
-,{
-   "CPRI_On_Shelf_Port" : "F129",
-   "Type" : "",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "",
-   "SiteLan_IP" : "10.186.136.219",
-   "S1_mirror_port" : "",
-   "Indoor_Test_Name" : "10.186.137.219",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "42",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "Ip_Switch_Code" : "A21",
-   "OAM_IP" : "10.186.137.219",
-   "CellGroup_ID" : "119",
-   "User" : "",
-   "Comments_MR_Project_" : "For IP allocation",
-   "S1_OAM_Port" : "",
-   "SiteLan_Port" : "",
-   "Board_Serial_server_IP" : "",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "eNB_ID" : "219",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Gateway" : "10.186.138.65",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "21",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "",
-   "Group_Mark" : "Outdoor",
-   "S1_IP" : "10.186.138.70",
-   "Epc_port_" : "20"
-}
-,{
-   "eNB_ID" : "220",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_OAM_Port" : "",
-   "Comments_MR_Project_" : "For IP allocation",
-   "User" : "",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "",
-   "Group_Mark" : "Outdoor",
-   "Board_Serial_Server_IP_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.71",
-   "Ip_Switch_Serial_Server_Port_" : "21",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.65",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Indoor_Test_Name" : "10.186.137.220",
-   "S1_mirror_port" : "",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "",
-   "CPRI_On_Shelf_Port" : "F130",
-   "SiteLan_IP" : "10.186.136.220",
-   "Position" : "",
-   "Licence_Name" : "",
-   "OAM_IP" : "10.186.137.220",
-   "CellGroup_ID" : "120",
-   "Ip_Switch_Code" : "A21",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "42"
-}
-,{
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "eNB_ID" : "221",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "SiteLan_Port" : "11",
-   "S1_OAM_Port" : "5",
-   "Comments_MR_Project_" : "training and FV",
-   "User" : "",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.82",
-   "Group_Mark" : "Outdoor",
-   "Board_Serial_Server_IP_Port" : "5700",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "wireshark_PC" : "",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "Ip_Switch_Serial_Server_Port_" : "21",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.81",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.221",
-   "S1_mirror_port" : "17",
-   "SiteLan_IP" : "10.186.136.221",
-   "Position" : "102*LTE机架7*A1",
-   "Licence_Name" : "",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS31",
-   "CPRI_On_Shelf_Port" : "F131",
-   "CellGroup_ID" : "121",
-   "OAM_IP" : "10.186.137.221",
-   "Ip_Switch_Code" : "A21",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "43",
-   "OAM_Vlan_ID" : "800"
-}
-,{
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.81",
-   "Ip_Switch_Serial_Server_Port_" : "21",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "Group_Mark" : "Outdoor",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6500",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.83",
-   "User" : "",
-   "S1_OAM_Port" : "6",
-   "Comments_MR_Project_" : "",
-   "SiteLan_Port" : "12",
-   "MME_IP_1" : "10.175.2.49",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "eNB_ID" : "222",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Sitlan_Router" : "10.186.136.1",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "43",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "Ip_Switch_Code" : "A21",
-   "OAM_IP" : "10.186.137.222",
-   "CellGroup_ID" : "122",
-   "CPRI_On_Shelf_Port" : "F132",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS31",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.222",
-   "Position" : "102*LTE机架7*A2",
-   "S1_mirror_port" : "18",
-   "Indoor_Test_Name" : "10.186.137.222",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : ""
-}
-,{
-   "Board_Serial_Server_IP_Port" : "5600",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Outdoor",
-   "S1_IP" : "10.186.138.84",
-   "Epc_port_" : "20",
-   "S1_Gateway" : "10.186.138.81",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "22",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "eNB_ID" : "223",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "User" : "",
-   "Comments_MR_Project_" : "training and FV",
-   "S1_OAM_Port" : "1",
-   "SiteLan_Port" : "7",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "OAM_IP" : "10.186.137.223",
-   "Ip_Switch_Code" : "A22",
-   "CellGroup_ID" : "123",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "43",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "S1_mirror_port" : "13",
-   "Indoor_Test_Name" : "10.186.137.223",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "CPRI_On_Shelf_Port" : "F133",
-   "Type" : "DUS31",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "102*LTE机架7*A3",
-   "SiteLan_IP" : "10.186.136.223"
-}
-,{
-   "CPRI_On_Shelf_Port" : "F134",
-   "To_Catapult_port" : "21",
-   "Type" : "DUS41",
-   "Licence_Name" : "",
-   "SiteLan_IP" : "10.186.136.224",
-   "Position" : "102*LTE机架7*A4",
-   "S1_mirror_port" : "14",
-   "Indoor_Test_Name" : "10.186.137.224",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "43",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "CellGroup_ID" : "124",
-   "OAM_IP" : "10.186.137.224",
-   "Ip_Switch_Code" : "A22",
-   "User" : "Argus Haiming Bai/lLiang Chen",
-   "S1_OAM_Port" : "2",
-   "Comments_MR_Project_" : "5G PLC testing",
-   "SiteLan_Port" : "8",
-   "MME_IP_1" : "10.175.2.49",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "eNB_ID" : "224",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "Sitlan_Router" : "10.186.136.1",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_Gateway" : "10.186.138.81",
-   "Ip_Switch_Serial_Server_Port_" : "22",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "S1_Msk" : "28",
-   "OAM_Broadcast" : "10.186.137.255",
-   "wireshark_PC" : "",
-   "Group_Mark" : "Outdoor",
-   "Board_Serial_Server_IP_Port" : "5900",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Epc_port_" : "20",
-   "S1_IP" : "10.186.138.85"
-}
-,{
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "S1_mirror_port" : "15",
-   "Indoor_Test_Name" : "10.186.137.225",
-   "Licence_Name" : "",
-   "Position" : "102*LTE机架7*A5",
-   "SiteLan_IP" : "10.186.136.225",
-   "CPRI_On_Shelf_Port" : "F135",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "Ip_Switch_Code" : "A22",
-   "OAM_IP" : "10.186.137.225",
-   "CellGroup_ID" : "125",
-   "3015_Port" : "43",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Vlan_ID" : "800",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "225",
-   "SiteLan_Port" : "9",
-   "To_Moshell_Server_Port" : "24",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "MME_IP_1" : "10.175.2.49",
-   "User" : "",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "3",
-   "S1_IP" : "10.186.138.86",
-   "Epc_port_" : "20",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "5400",
-   "Group_Mark" : "Outdoor",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "S1_Gateway" : "10.186.138.81",
-   "CellSub_ID" : "0, 1, 2",
-   "Ip_Switch_Serial_Server_Port_" : "22",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56"
-}
-,{
-   "OAM_Vlan_ID" : "800",
-   "3015_Port" : "43",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "Ip_Switch_Code" : "A22",
-   "CellGroup_ID" : "126",
-   "OAM_IP" : "10.186.137.226",
-   "CPRI_On_Shelf_Port" : "F136",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "Licence_Name" : "",
-   "Position" : "102*LTE机架7*A6",
-   "SiteLan_IP" : "10.186.136.226",
-   "S1_mirror_port" : "16",
-   "Indoor_Test_Name" : "10.186.137.226",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "S1_Gateway" : "10.186.138.81",
-   "CellSub_ID" : "0, 1, 2",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "22",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "wireshark_PC" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6000",
-   "Group_Mark" : "Outdoor",
-   "S1_IP" : "10.186.138.87",
-   "Epc_port_" : "20",
-   "User" : "ECUT",
-   "Comments_MR_Project_" : "",
-   "S1_OAM_Port" : "4",
-   "SiteLan_Port" : "10",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "eNB_ID" : "226",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0"
-}
-,{
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "10.186.135.56",
-   "Ip_Switch_Serial_Server_Port_" : "22",
-   "S1_Gateway" : "10.186.138.97",
-   "CellSub_ID" : "0, 1, 2",
-   "S1_IP" : "10.186.138.98",
-   "Epc_port_" : "20",
-   "Board_Serial_Server_IP_Port" : "5300",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "Outdoor",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "24",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "11",
-   "Comments_MR_Project_" : "5G测试 Smart RAN",
-   "S1_OAM_Port" : "5",
-   "User" : "Argus Haiming BAI/Wei Ling",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "eNB_ID" : "227",
-   "OAM_Gateway" : "10.186.137.1",
-   "OAM_Msk" : "24",
-   "3015_Port" : "",
-   "OAM_Vlan_ID" : "800",
-   "OAM_IP" : "10.186.137.227",
-   "CellGroup_ID" : "127",
-   "Ip_Switch_Code" : "A22",
-   "Position" : "102*LTE机架7*B1",
-   "SiteLan_IP" : "10.186.136.227",
-   "Licence_Name" : "",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "21",
-   "CPRI_On_Shelf_Port" : "F137",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : "",
-   "Indoor_Test_Name" : "10.186.137.227",
-   "S1_mirror_port" : "17"
-}
-,{
-   "Indoor_Test_Name" : "10.186.137.228",
-   "S1_mirror_port" : "",
-   "Test_lineId_eNodeB_Id" : "",
-   "MME_IP_2" : "N/A.",
-   "Type" : "DUS41",
-   "To_Catapult_port" : "",
-   "CPRI_On_Shelf_Port" : "",
-   "Position" : "102*LTE机架7*B2",
-   "SiteLan_IP" : "10.186.136.228",
-   "Licence_Name" : "",
-   "CellGroup_ID" : "128",
-   "OAM_IP" : "10.186.137.228",
-   "Ip_Switch_Code" : "",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "",
-   "eNB_ID" : "228",
-   "Sitlan_Router" : "10.186.136.1",
-   "S1_Vlan_ID" : "1240",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "Comments_MR_Project_" : "5G测试 Smart RAN",
-   "S1_OAM_Port" : "",
-   "User" : "Argus Haiming BAI /wei ling",
-   "To_Moshell_Server_Port" : "",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Board_Serial_Server_IP_Port" : "6300",
-   "Group_Mark" : "",
-   "S1_IP" : "10.186.138.99",
-   "Epc_port_" : "",
-   "Ip_Switch_Serial_Server_Port_" : "",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "",
-   "S1_Gateway" : "10.186.138.97",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28"
-}
-,{
-   "Ip_Switch_Serial_Server_Port_" : "",
-   "H3C_Ip_Switfh_Serial_Server_IP" : "",
-   "S1_Gateway" : "10.186.138.97",
-   "CellSub_ID" : "0, 1, 2",
-   "wireshark_PC" : "",
-   "OAM_Broadcast" : "10.186.137.255",
-   "S1_Msk" : "28",
-   "Board_Serial_Server_IP_Port" : "4400",
-   "SiteLan_Boradcast_IP" : "10.186.136.255",
-   "Group_Mark" : "",
-   "S1_IP" : "10.186.138.100",
-   "Epc_port_" : "",
-   "Comments_MR_Project_" : "training and FV",
-   "S1_OAM_Port" : "",
-   "User" : "ECUT",
-   "Board_Serial_server_IP" : "10.186.135.54",
-   "To_Moshell_Server_Port" : "",
-   "MME_IP_1" : "10.175.2.49",
-   "SiteLan_Port" : "",
-   "eNB_ID" : "229",
-   "Sitlan_Router" : "10.186.136.1",
-   "SiteLan_Netmask" : "255.255.255.0",
-   "S1_Vlan_ID" : "1240",
-   "OAM_Vlan_ID" : "800",
-   "OAM_Msk" : "24",
-   "OAM_Gateway" : "10.186.137.1",
-   "3015_Port" : "",
-   "OAM_IP" : "10.186.137.229",
-   "CellGroup_ID" : "129",
-   "Ip_Switch_Code" : "",
-   "Type" : "DUS31",
-   "To_Catapult_port" : "",
-   "CPRI_On_Shelf_Port" : "",
-   "Position" : "102*LTE机架7*B3",
-   "SiteLan_IP" : "10.186.136.229",
-   "Licence_Name" : "",
-   "Indoor_Test_Name" : "10.186.137.229",
-   "S1_mirror_port" : "",
-   "MME_IP_2" : "N/A.",
-   "Test_lineId_eNodeB_Id" : ""
-}
+   {
+      "oamIp" : "10.186.137.101",
+      "datetime" : "2016-10-27T02:44:12",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "CB4N727611",
+            "faultLED" : "OFF",
+            "date" : "20120907",
+            "boardType" : "RRUS11B1"
+         },
+         {
+            "date" : "20121025",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "A401956770"
+         },
+         {
+            "date" : "20130628",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "D168369545",
+            "faultLED" : "OFF"
+         },
+         {
+            "date" : "20130920",
+            "boardType" : "RRUS11B1",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D16A069863"
+         },
+         {
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "CD3D798873",
+            "operLED" : "ON",
+            "date" : "20150512",
+            "boardType" : "DUS4102"
+         },
+         {
+            "date" : "20110819",
+            "boardType" : "RRUS11",
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "CB4K131571",
+            "operLED" : "ON"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=2"
+         },
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=4"
+         },
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=1"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=3",
+            "opState" : "DISABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "description" : "RiLink=1 (No SFP plugged in, additionalData: id 1, unitId 2, portNo 0(NOT_SET))",
+            "severity" : "Min",
+            "problem" : "Link Failure"
+         },
+         {
+            "problem" : "NTP System Time Sync Problem",
+            "severity" : "Min",
+            "description" : "ManagedElementData=1 (NTP step alarm ManagedElementData Message: Ntp step outside valid range.)"
+         }
+      ],
+      "enbId" : "101"
+   },
+   {
+      "enbId" : "102",
+      "alarm" : [
+         {
+            "severity" : "Min",
+            "problem" : "NTP System Time Sync Problem",
+            "description" : "TimeSetting=1,NtpServer=1 (NTP step alarm Message: Ntp step outside valid range.)"
+         }
+      ],
+      "cell" : [
+         {
+            "id" : "EUtranCellFDD=4",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "id" : "EUtranCellFDD=1",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=3",
+            "admState" : "LOCKED"
+         }
+      ],
+      "datetime" : "2016-10-27T02:44:54",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "D820250366",
+            "faultLED" : "OFF",
+            "date" : "20141211",
+            "boardType" : "RUS02B3"
+         },
+         {
+            "maintLED" : "OFF",
+            "serial" : "D821331615",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "date" : "20150625",
+            "boardType" : "RRUS13B3"
+         },
+         {
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "A402057933",
+            "operLED" : "ON",
+            "date" : "20130524",
+            "boardType" : "DUS4101"
+         },
+         {
+            "faultLED" : "OFF",
+            "serial" : "D822518794",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "RRU2217B20",
+            "date" : "20151214"
+         }
+      ],
+      "oamIp" : "10.186.137.102"
+   },
+   {
+      "datetime" : "2016-10-27T02:45:29",
+      "board" : [
+         {
+            "boardType" : "DUS4102",
+            "date" : "20150109",
+            "serial" : "CD3C350001",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         }
+      ],
+      "alarm" : [
+         {
+            "problem" : "Disconnected",
+            "severity" : "Maj",
+            "description" : "EquipmentSupportFunction=1 (Lost contact with the node that controls external alarms, power and climate HW, cabinetIdentifier:)"
+         },
+         {
+            "description" : "ng Licensing=1 (Emergency Unlock has been activated and the alarm will remain till a new Emergency reset key is installed)",
+            "problem" : "Emergency Unlock of Software Licensi",
+            "severity" : "Maj"
+         },
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "Service Unavailable",
+            "description" : "EUtranCellFDD=1 (underlying_resource_unavailable)"
+         },
+         {
+            "description" : "EUtranCellFDD=2 (underlying_resource_unavailable)",
+            "severity" : "Maj",
+            "problem" : "Service Unavailable"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Link Failure",
+            "description" : "RiLink=1 (No signal detected, additionalData: id 1, unitId 1, portNo 0)"
+         }
+      ],
+      "cell" : [
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=2",
+            "opState" : "DISABLED"
+         },
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=1",
+            "opState" : "DISABLED"
+         }
+      ],
+      "enbId" : "103",
+      "oamIp" : "10.186.137.103"
+   },
+   {
+      "oamIp" : "10.186.137.104",
+      "enbId" : "104",
+      "alarm" : [
+         {
+            "problem" : "Inconsistent Configuration",
+            "severity" : "Maj",
+            "description" : "FieldReplaceableUnit=RU-1 (No hardware detected for the configured FieldReplaceableUnit)"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "Inconsistent Configuration",
+            "description" : "FieldReplaceableUnit=RU-2 (No hardware detected for the configured FieldReplaceableUnit)"
+         },
+         {
+            "problem" : "SFP Not Present",
+            "severity" : "Min",
+            "description" : "FieldReplaceableUnit=DU-1,SfpModule=A (No SFP plugged in, additionalData: id 1, unitId 1, portNo 0)"
+         }
+      ],
+      "cell" : [],
+      "board" : [
+         {
+            "serial" : "D16R007439",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "DUS5201",
+            "date" : "20150921"
+         }
+      ],
+      "datetime" : "2016-10-27T02:46:04"
+   },
+   {
+      "enbId" : "105",
+      "datetime" : "2016-10-27T02:46:15",
+      "board" : [],
+      "alarm" : [],
+      "cell" : [],
+      "oamIp" : "10.186.137.105"
+   },
+   {
+      "enbId" : "106",
+      "board" : [
+         {
+            "faultLED" : "OFF",
+            "serial" : "D16A068805",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "RRUS11B1",
+            "date" : "20130920"
+         },
+         {
+            "boardType" : "XMU0301",
+            "date" : "20150521",
+            "serial" : "D16Q218919",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D16P654930",
+            "date" : "20150424",
+            "boardType" : "DUS5201"
+         }
+      ],
+      "datetime" : "2016-10-27T02:47:13",
+      "alarm" : [],
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=1",
+            "admState" : "LOCKED"
+         }
+      ],
+      "oamIp" : "10.186.137.106"
+   },
+   {
+      "oamIp" : "10.186.137.107",
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj"
+         },
+         {
+            "problem" : "PLMN Service Unavailable",
+            "severity" : "Maj",
+            "description" : "EUtranCellFDD=2 (PLMN mcc:460 mnc:99)"
+         },
+         {
+            "problem" : "PLMN Service Unavailable",
+            "severity" : "Maj",
+            "description" : "EUtranCellFDD=3 (PLMN mcc:460 mnc:99)"
+         },
+         {
+            "description" : "EUtranCellFDD=1 (underlying_resource_unavailable)",
+            "problem" : "Service Unavailable",
+            "severity" : "Maj"
+         },
+         {
+            "problem" : "Link Failure",
+            "severity" : "Min",
+            "description" : "RiLink=1 (No signal detected, additionalData: id 1, unitId 1, portNo 0(Mixed Mode))"
+         }
+      ],
+      "cell" : [
+         {
+            "id" : "EUtranCellFDD=2",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=1",
+            "opState" : "DISABLED"
+         },
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=3",
+            "opState" : "DISABLED"
+         }
+      ],
+      "board" : [
+         {
+            "date" : "20130116",
+            "boardType" : "RRUS0ZB2",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D164963434"
+         },
+         {
+            "date" : "20130116",
+            "boardType" : "RRUS0ZB2",
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "D164963435",
+            "operLED" : "ON"
+         },
+         {
+            "operLED" : "ON",
+            "serial" : "D168382225",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF",
+            "boardType" : "DUS4101",
+            "date" : "20130629"
+         },
+         {
+            "date" : "20150205",
+            "boardType" : "RRUS0ZB2",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "D16M738492",
+            "faultLED" : "OFF"
+         },
+         {
+            "maintLED" : "OFF",
+            "serial" : "D16M738491",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "date" : "20150205",
+            "boardType" : "RRUS0ZB2"
+         }
+      ],
+      "datetime" : "2016-10-27T02:48:03",
+      "enbId" : "107"
+   },
+   {
+      "oamIp" : "10.186.137.108",
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=NJ_smartran_108_B3_2"
+         },
+         {
+            "id" : "EUtranCellFDD=NJ_smartran_108_B7",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "id" : "EUtranCellFDD=NJ_smartran_108",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=NJ_smartran_108_B3"
+         }
+      ],
+      "datetime" : "2016-10-27T02:48:46",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "serial" : "D820100336",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "date" : "20141114",
+            "boardType" : "RRUS12B3"
+         },
+         {
+            "serial" : "D16N698008",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "RRUS12B1",
+            "date" : "20150314"
+         },
+         {
+            "faultLED" : "OFF",
+            "serial" : "D821322483",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "RRUS13B7",
+            "date" : "20150619"
+         },
+         {
+            "date" : "20130629",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "D168396498",
+            "operLED" : "ON"
+         }
+      ],
+      "enbId" : "108"
+   },
+   {
+      "oamIp" : "10.186.137.109",
+      "datetime" : "2016-10-27T02:49:15",
+      "board" : [],
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "problem" : "GeneralSwError",
+            "severity" : "Min",
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1,DeviceGroup=dul (Loading was rejected)"
+         },
+         {
+            "description" : "RiLink=1 (No signal detected, additionalData: id 1, unitId 1, portNo 0)",
+            "problem" : "Link Failure",
+            "severity" : "Min"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=1"
+         }
+      ],
+      "enbId" : "109"
+   },
+   {
+      "datetime" : "2016-10-27T02:49:27",
+      "board" : [],
+      "alarm" : [],
+      "cell" : [],
+      "enbId" : "110",
+      "oamIp" : "10.186.137.110"
+   },
+   {
+      "enbId" : "111",
+      "datetime" : "2016-10-27T02:49:38",
+      "board" : [],
+      "cell" : [],
+      "alarm" : [],
+      "oamIp" : "10.186.137.111"
+   },
+   {
+      "oamIp" : "10.186.137.112",
+      "enbId" : "112",
+      "datetime" : "2016-10-27T02:49:49",
+      "board" : [],
+      "alarm" : [],
+      "cell" : []
+   },
+   {
+      "enbId" : "113",
+      "alarm" : [],
+      "cell" : [],
+      "datetime" : "2016-10-27T02:49:57",
+      "board" : [],
+      "oamIp" : "10.186.137.113"
+   },
+   {
+      "oamIp" : "10.186.137.114",
+      "datetime" : "2016-10-27T02:50:10",
+      "board" : [],
+      "alarm" : [],
+      "cell" : [],
+      "enbId" : "114"
+   },
+   {
+      "board" : [],
+      "datetime" : "2016-10-27T02:50:21",
+      "alarm" : [],
+      "cell" : [],
+      "enbId" : "115",
+      "oamIp" : "10.186.137.115"
+   },
+   {
+      "oamIp" : "10.186.137.116",
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault",
+            "description" : "ManagedElementData=1 (additionalInfo: NTP general problem)"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Password File Fault",
+            "description" : "Security=1 (configuration_or_customizing_error)"
+         }
+      ],
+      "cell" : [
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellTDD=1",
+            "opState" : "DISABLED"
+         }
+      ],
+      "datetime" : "2016-10-27T02:50:52",
+      "board" : [
+         {
+            "date" : "31C",
+            "boardType" : "DUL2101",
+            "maintLED" : "OFF",
+            "serial" : "20120903",
+            "faultLED" : "OFF",
+            "operLED" : "ON"
+         }
+      ],
+      "enbId" : "116"
+   },
+   {
+      "oamIp" : "10.186.137.117",
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=3"
+         },
+         {
+            "id" : "EUtranCellFDD=2",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "id" : "EUtranCellFDD=4",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=1"
+         }
+      ],
+      "alarm" : [
+         {
+            "problem" : "Inter-PIU Link Fault",
+            "severity" : "Maj",
+            "description" : "InterPiuLink=1 (Cable fault Message: No connection)"
+         },
+         {
+            "description" : "Licensing=1,OptionalFeatureLicense=CoverageForLowComplexityUE (configuration_or_customizing_error)",
+            "severity" : "Maj",
+            "problem" : "License Key Missing"
+         },
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj"
+         }
+      ],
+      "board" : [
+         {
+            "boardType" : "RRUS12B1",
+            "date" : "20150228",
+            "operLED" : "ON",
+            "serial" : "D16N349140",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF"
+         },
+         {
+            "date" : "20120726",
+            "boardType" : "RRUS11B1",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "CB4N370848"
+         },
+         {
+            "date" : "20150408",
+            "boardType" : "RRUS13B1",
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "D821037672",
+            "operLED" : "ON"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "CF82988712",
+            "faultLED" : "OFF",
+            "date" : "20160114",
+            "boardType" : "RRUS12B2"
+         },
+         {
+            "date" : "20120703",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "serial" : "C826152204",
+            "faultLED" : "OFF",
+            "operLED" : "ON"
+         }
+      ],
+      "datetime" : "2016-10-27T02:51:41",
+      "enbId" : "117"
+   },
+   {
+      "datetime" : "2016-10-27T02:51:53",
+      "board" : [],
+      "cell" : [],
+      "alarm" : [],
+      "enbId" : "118",
+      "oamIp" : "10.186.137.118"
+   },
+   {
+      "oamIp" : "10.186.137.119",
+      "enbId" : "119",
+      "alarm" : [],
+      "cell" : [],
+      "datetime" : "2016-10-27T02:52:05",
+      "board" : []
+   },
+   {
+      "oamIp" : "10.186.137.120",
+      "enbId" : "120",
+      "datetime" : "2016-10-27T02:52:16",
+      "board" : [],
+      "alarm" : [],
+      "cell" : []
+   },
+   {
+      "oamIp" : "10.186.137.121",
+      "alarm" : [
+         {
+            "problem" : "Disk Volume D Full",
+            "severity" : "Maj",
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1 (Disk almost full Total space: 976 MB Volume free space limit: 100 MB)"
+         },
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "problem" : "Password File Fault",
+            "severity" : "Min",
+            "description" : "Security=1 (configuration_or_customizing_error)"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellTDD=2"
+         }
+      ],
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "operLED" : "16HZ",
+            "faultLED" : "OFF",
+            "serial" : "A401956243",
+            "date" : "20121024",
+            "boardType" : "DUS4101"
+         },
+         {
+            "date" : "20120910",
+            "boardType" : "TRANSCEIVER",
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "CB4N757626",
+            "operLED" : "ON"
+         }
+      ],
+      "datetime" : "2016-10-27T02:52:50",
+      "enbId" : "121"
+   },
+   {
+      "oamIp" : "10.186.137.122",
+      "alarm" : [],
+      "cell" : [],
+      "datetime" : "2016-10-27T02:53:01",
+      "board" : [],
+      "enbId" : "122"
+   },
+   {
+      "enbId" : "123",
+      "board" : [],
+      "datetime" : "2016-10-27T02:53:12",
+      "cell" : [],
+      "alarm" : [],
+      "oamIp" : "10.186.137.123"
+   },
+   {
+      "enbId" : "124",
+      "alarm" : [
+         {
+            "description" : "EUtranCellTDD=1 (Configuration not valid due to Channel Bandwidth license shortage)",
+            "severity" : "Maj",
+            "problem" : "ResourceAllocationFailure"
+         },
+         {
+            "problem" : "Password File Fault",
+            "severity" : "Min",
+            "description" : "Security=1 (configuration_or_customizing_error)"
+         }
+      ],
+      "cell" : [
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellTDD=1",
+            "opState" : "DISABLED"
+         }
+      ],
+      "datetime" : "2016-10-27T02:53:50",
+      "board" : [
+         {
+            "date" : "25C",
+            "boardType" : "DUL2101",
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "20120730",
+            "operLED" : "ON"
+         }
+      ],
+      "oamIp" : "10.186.137.124"
+   },
+   {
+      "oamIp" : "10.186.137.125",
+      "enbId" : "125",
+      "cell" : [],
+      "alarm" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T02:54:02"
+   },
+   {
+      "oamIp" : "10.186.137.126",
+      "cell" : [],
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Password File Fault",
+            "description" : "Security=1 (configuration_or_customizing_error)"
+         }
+      ],
+      "datetime" : "2016-10-27T02:54:35",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "serial" : "A402057912",
+            "faultLED" : "OFF",
+            "operLED" : "05HZ",
+            "date" : "20130524",
+            "boardType" : "DUS4101"
+         }
+      ],
+      "enbId" : "126"
+   },
+   {
+      "datetime" : "2016-10-27T02:54:48",
+      "board" : [],
+      "cell" : [],
+      "alarm" : [],
+      "enbId" : "127",
+      "oamIp" : "10.186.137.127"
+   },
+   {
+      "enbId" : "128",
+      "board" : [
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "CB4P676091",
+            "maintLED" : "OFF",
+            "boardType" : "RRUS11B1",
+            "date" : "20121226"
+         },
+         {
+            "date" : "20120822",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "C826307264",
+            "operLED" : "ON"
+         }
+      ],
+      "datetime" : "2016-10-27T02:55:27",
+      "cell" : [
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=1",
+            "opState" : "DISABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "problem" : "Gigabit Ethernet Link Fault",
+            "severity" : "Maj",
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1,ExchangeTerminalIp=1,GigaBitEthernet=gbe-1 (Autonegotiation Failed to Meet Minimum Requirements.)"
+         },
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault"
+         }
+      ],
+      "oamIp" : "10.186.137.128"
+   },
+   {
+      "oamIp" : "10.186.137.129",
+      "cell" : [
+         {
+            "opState" : "ENABLED",
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=1"
+         }
+      ],
+      "alarm" : [
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "problem" : "Password File Fault",
+            "severity" : "Min"
+         }
+      ],
+      "datetime" : "2016-10-27T02:56:01",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "CA72329412",
+            "operLED" : "ON",
+            "date" : "20150121",
+            "boardType" : "RRUS12B7"
+         },
+         {
+            "date" : "20121025",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "A401956328"
+         }
+      ],
+      "enbId" : "129"
+   },
+   {
+      "oamIp" : "10.186.137.130",
+      "cell" : [
+         {
+            "opState" : "ENABLED",
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellTDD=4"
+         }
+      ],
+      "alarm" : [
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "description" : "RiLink=3 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 1)",
+            "severity" : "Min",
+            "problem" : "Link Failure"
+         },
+         {
+            "problem" : "Password File Fault",
+            "severity" : "Min",
+            "description" : "Security=1 (configuration_or_customizing_error)"
+         }
+      ],
+      "datetime" : "2016-10-27T02:56:27",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "CB4N712367",
+            "date" : "20120906",
+            "boardType" : "TRANSCEIVER"
+         },
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "A401956244",
+            "maintLED" : "OFF",
+            "boardType" : "DUS4101",
+            "date" : "20121024"
+         }
+      ],
+      "enbId" : "130"
+   },
+   {
+      "oamIp" : "10.186.137.131",
+      "enbId" : "131",
+      "cell" : [],
+      "alarm" : [],
+      "datetime" : "2016-10-27T02:56:39",
+      "board" : []
+   },
+   {
+      "oamIp" : "10.186.137.132",
+      "enbId" : "132",
+      "board" : [],
+      "datetime" : "2016-10-27T02:56:50",
+      "alarm" : [],
+      "cell" : []
+   },
+   {
+      "enbId" : "133",
+      "alarm" : [],
+      "cell" : [],
+      "datetime" : "2016-10-27T02:57:01",
+      "board" : [],
+      "oamIp" : "10.186.137.133"
+   },
+   {
+      "oamIp" : "10.186.137.134",
+      "alarm" : [],
+      "cell" : [],
+      "datetime" : "2016-10-27T02:57:12",
+      "board" : [],
+      "enbId" : "134"
+   },
+   {
+      "enbId" : "135",
+      "cell" : [],
+      "alarm" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T02:57:23",
+      "oamIp" : "10.186.137.135"
+   },
+   {
+      "enbId" : "136",
+      "board" : [
+         {
+            "date" : "33C",
+            "boardType" : "DUL2001",
+            "maintLED" : "OFF",
+            "serial" : "20110817",
+            "faultLED" : "OFF",
+            "operLED" : "ON"
+         },
+         {
+            "serial" : "D169898228",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "RRUS11B1",
+            "date" : "20130912"
+         }
+      ],
+      "datetime" : "2016-10-27T02:57:58",
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "LicenseKeyMissing",
+            "description" : "Licensing=1,OptionalFeatureLicense=MockBasicTestLicense0 (configuration_or_customizing_error)"
+         },
+         {
+            "description" : "Licensing=1,OptionalFeatureLicense=MockBasicTestLicense1 (configuration_or_customizing_error)",
+            "severity" : "Maj",
+            "problem" : "LicenseKeyMissing"
+         },
+         {
+            "description" : "Licensing=1,OptionalFeatureLicense=MockBasicTestLicense2 (configuration_or_customizing_error)",
+            "severity" : "Maj",
+            "problem" : "LicenseKeyMissing"
+         },
+         {
+            "problem" : "LicenseKeyMissing",
+            "severity" : "Maj",
+            "description" : "Licensing=1,OptionalFeatureLicense=MockBasicTestLicense3 (configuration_or_customizing_error)"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault",
+            "description" : "ManagedElementData=1 (additionalInfo: NTP general problem)"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=1",
+            "admState" : "LOCKED"
+         }
+      ],
+      "oamIp" : "10.186.137.136"
+   },
+   {
+      "oamIp" : "10.186.137.137",
+      "enbId" : "137",
+      "cell" : [
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellTDD=1",
+            "opState" : "DISABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "ManagedElementData=1 (additionalInfo: NTP general problem)"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Password File Fault",
+            "description" : "Security=1 (configuration_or_customizing_error)"
+         }
+      ],
+      "datetime" : "2016-10-27T02:58:27",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "20120215",
+            "faultLED" : "OFF",
+            "date" : "39C",
+            "boardType" : "DUL2101"
+         }
+      ]
+   },
+   {
+      "oamIp" : "10.186.137.138",
+      "enbId" : "138",
+      "datetime" : "2016-10-27T02:58:58",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "operLED" : "05HZ",
+            "faultLED" : "OFF",
+            "serial" : "20120215",
+            "date" : "Active*",
+            "boardType" : "DUL2101"
+         }
+      ],
+      "cell" : [],
+      "alarm" : [
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "ManagedElementData=1 (additionalInfo: NTP general problem)"
+         }
+      ]
+   },
+   {
+      "oamIp" : "10.186.137.139",
+      "enbId" : "139",
+      "alarm" : [
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "ManagedElementData=1 (additionalInfo: NTP general problem)"
+         },
+         {
+            "description" : "EUtranCellTDD=1 (Configuration not valid due to Channel Bandwidth license shortage)",
+            "problem" : "ResourceAllocationFailure",
+            "severity" : "Maj"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "LinkFailure",
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1,RiPort=D (No SFP plugged in, id 1, port 4, cascadeNo 0, ruPortNo 0)"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "problem" : "Password File Fault",
+            "severity" : "Min"
+         }
+      ],
+      "cell" : [
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellTDD=1",
+            "opState" : "DISABLED"
+         }
+      ],
+      "datetime" : "2016-10-27T02:59:23",
+      "board" : [
+         {
+            "faultLED" : "OFF",
+            "serial" : "20121005",
+            "operLED" : "05HZ",
+            "maintLED" : "OFF",
+            "boardType" : "DUL2101",
+            "date" : "38C"
+         }
+      ]
+   },
+   {
+      "datetime" : "2016-10-27T02:59:48",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "operLED" : "05HZ",
+            "serial" : "20120802",
+            "faultLED" : "OFF",
+            "date" : "36C",
+            "boardType" : "DUL2101"
+         }
+      ],
+      "alarm" : [
+         {
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1,ExchangeTerminalIp=1,GigaBitEthernet=gbe-1 (Autonegotiation Failed to Meet Minimum Requirements.)",
+            "problem" : "Gigabit Ethernet Link Fault",
+            "severity" : "Maj"
+         },
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "ManagedElementData=1 (additionalInfo: NTP general problem)"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "ResourceAllocationFailure",
+            "description" : "EUtranCellTDD=1 (Configuration not valid due to Channel Bandwidth license shortage)"
+         },
+         {
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1,RiPort=D (No SFP plugged in, id 1, port 4, cascadeNo 0, ruPortNo 0)",
+            "severity" : "Min",
+            "problem" : "LinkFailure"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "severity" : "Min",
+            "problem" : "Password File Fault"
+         }
+      ],
+      "cell" : [
+         {
+            "id" : "EUtranCellTDD=1",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         }
+      ],
+      "enbId" : "140",
+      "oamIp" : "10.186.137.140"
+   },
+   {
+      "oamIp" : "10.186.137.141",
+      "enbId" : "141",
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "description" : "EUtranCellTDD=1 (PLMN mcc:460 mnc:99)",
+            "severity" : "Maj",
+            "problem" : "PLMN Service Unavailable"
+         },
+         {
+            "description" : "EUtranCellTDD=2 (PLMN mcc:460 mnc:99)",
+            "problem" : "PLMN Service Unavailable",
+            "severity" : "Maj"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellTDD=1"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellTDD=2",
+            "admState" : "UNLOCKED"
+         }
+      ],
+      "datetime" : "2016-10-27T03:00:27",
+      "board" : [
+         {
+            "boardType" : "RRUS82B41",
+            "date" : "20150611",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D821307711",
+            "maintLED" : "OFF"
+         },
+         {
+            "boardType" : "DUS4101",
+            "date" : "20121025",
+            "serial" : "A401956326",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         }
+      ]
+   },
+   {
+      "oamIp" : "10.186.137.142",
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "Disk Volume D Full",
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1 (Disk almost full Total space: 976 MB Volume free space limit: 100 MB)"
+         },
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj"
+         },
+         {
+            "problem" : "Fan Disconnected",
+            "severity" : "Min",
+            "description" : "AuxPlugInUnit=RRU-1 (Replaceable fan module, part of AIR 32 B2A B66AA 1.4 with product number KRD 901 146/1 and serial number TM30010743 (Mixed Mode Radio with external ME).)"
+         },
+         {
+            "problem" : "Inconsistent Configuration",
+            "severity" : "Min",
+            "description" : "AntennaUnitGroup=1,AntennaNearUnit=1 (Antenna Near Unit ManagedElement=1,Equipment=1,AntennaUnitGroup=1,AntennaNearUnit=1 is controlled by other RAN (Mixed Mode Radio with external ME).)"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=2"
+         },
+         {
+            "id" : "EUtranCellFDD=1",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         }
+      ],
+      "board" : [
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "A401956236",
+            "maintLED" : "OFF",
+            "boardType" : "DUS4101",
+            "date" : "20121024"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D16Q445576",
+            "date" : "20150629",
+            "boardType" : "RRUS32AB2"
+         }
+      ],
+      "datetime" : "2016-10-27T03:01:04",
+      "enbId" : "142"
+   },
+   {
+      "enbId" : "143",
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault"
+         },
+         {
+            "description" : "EUtranCellFDD=1 (InconsistentConfiguration)",
+            "severity" : "Maj",
+            "problem" : "Service Unavailable"
+         },
+         {
+            "description" : "RiLink=1 (No signal detected, additionalData: id 1, unitId 1, portNo 0)",
+            "severity" : "Min",
+            "problem" : "Link Failure"
+         }
+      ],
+      "cell" : [
+         {
+            "id" : "EUtranCellFDD=1",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         }
+      ],
+      "datetime" : "2016-10-27T03:01:29",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "serial" : "A401956782",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "date" : "20121025",
+            "boardType" : "DUS4101"
+         }
+      ],
+      "oamIp" : "10.186.137.143"
+   },
+   {
+      "datetime" : "2016-10-27T03:02:03",
+      "board" : [
+         {
+            "boardType" : "RRUL62B40A",
+            "date" : "20121017",
+            "serial" : "CB4P056740",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "ON"
+         },
+         {
+            "serial" : "CB4M483728",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "ON",
+            "boardType" : "RRUL62B40A",
+            "date" : "20120418"
+         },
+         {
+            "date" : "20120815",
+            "boardType" : "TRANSCEIVER",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "CB4N520285"
+         },
+         {
+            "maintLED" : "OFF",
+            "serial" : "C826207826",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "date" : "20120717",
+            "boardType" : "DUS4101"
+         },
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "C826207848",
+            "maintLED" : "OFF",
+            "boardType" : "DUS4101",
+            "date" : "20120717"
+         },
+         {
+            "date" : "20120503",
+            "boardType" : "RRUL62B40A",
+            "maintLED" : "ON",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "CB4M622811"
+         },
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "CB4P056741",
+            "maintLED" : "ON",
+            "boardType" : "RRUL62B40A",
+            "date" : "20121017"
+         },
+         {
+            "date" : "20120412",
+            "boardType" : "RRUL62B40A",
+            "maintLED" : "ON",
+            "operLED" : "ON",
+            "serial" : "CB4M448943",
+            "faultLED" : "OFF"
+         },
+         {
+            "faultLED" : "OFF",
+            "serial" : "CB4P363038",
+            "operLED" : "ON",
+            "maintLED" : "ON",
+            "boardType" : "RRUL62B40A",
+            "date" : "20121116"
+         },
+         {
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "CB4P362993",
+            "operLED" : "ON",
+            "date" : "20121116",
+            "boardType" : "RRUL62B40A"
+         },
+         {
+            "boardType" : "TRANSCEIVER",
+            "date" : "20120710",
+            "operLED" : "ON",
+            "serial" : "CB4N240038",
+            "faultLED" : "OFF",
+            "maintLED" : "ON"
+         },
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "CB4N300318",
+            "maintLED" : "OFF",
+            "boardType" : "TRANSCEIVER",
+            "date" : "20120717"
+         }
+      ],
+      "cell" : [
+         {
+            "id" : "EUtranCellTDD=2",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellTDD=4",
+            "admState" : "LOCKED"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellTDD=3",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellTDD=8",
+            "admState" : "LOCKED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellTDD=11",
+            "admState" : "LOCKED"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellTDD=9",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellTDD=12"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellTDD=6",
+            "opState" : "DISABLED"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellTDD=1",
+            "opState" : "DISABLED"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellTDD=7",
+            "opState" : "DISABLED"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellTDD=10",
+            "opState" : "DISABLED"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellTDD=5",
+            "opState" : "DISABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj"
+         },
+         {
+            "description" : "RiLink=9 (Not in operation, additionalData: id 1, unitId 2, portNo 2(NOT_SET))",
+            "severity" : "Min",
+            "problem" : "Link Failure"
+         },
+         {
+            "problem" : "Password File Fault",
+            "severity" : "Min",
+            "description" : "Security=1 (configuration_or_customizing_error)"
+         }
+      ],
+      "enbId" : "144",
+      "oamIp" : "10.186.137.144"
+   },
+   {
+      "oamIp" : "10.186.137.145",
+      "enbId" : "145",
+      "datetime" : "2016-10-27T03:02:42",
+      "board" : [
+         {
+            "date" : "20121018",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "serial" : "A401952963",
+            "faultLED" : "OFF",
+            "operLED" : "ON"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "CB4N711718",
+            "date" : "20120905",
+            "boardType" : "RRUL62B40A"
+         },
+         {
+            "date" : "20120418",
+            "boardType" : "RRUL62B40A",
+            "maintLED" : "OFF",
+            "serial" : "CB4M483726",
+            "faultLED" : "ON",
+            "operLED" : "ON"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "CB4M451452",
+            "faultLED" : "OFF",
+            "date" : "20120413",
+            "boardType" : "RRUL62B40A"
+         },
+         {
+            "maintLED" : "OFF",
+            "serial" : "CB4M475497",
+            "faultLED" : "ON",
+            "operLED" : "ON",
+            "date" : "20120417",
+            "boardType" : "RRUL62B40A"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellTDD=1",
+            "admState" : "LOCKED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellTDD=3",
+            "admState" : "LOCKED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellTDD=4",
+            "admState" : "LOCKED"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellTDD=2",
+            "opState" : "DISABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP synchronize time failure (changed server/step))"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "severity" : "Min",
+            "problem" : "Password File Fault"
+         }
+      ]
+   },
+   {
+      "datetime" : "2016-10-27T03:02:54",
+      "board" : [],
+      "alarm" : [],
+      "cell" : [],
+      "enbId" : "146",
+      "oamIp" : "10.186.137.146"
+   },
+   {
+      "cell" : [],
+      "alarm" : [],
+      "datetime" : "2016-10-27T03:03:05",
+      "board" : [],
+      "enbId" : "147",
+      "oamIp" : "10.186.137.147"
+   },
+   {
+      "oamIp" : "10.186.137.148",
+      "enbId" : "148",
+      "board" : [
+         {
+            "operLED" : "ON",
+            "serial" : "D16F306849",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF",
+            "boardType" : "XMU0301",
+            "date" : "20140610"
+         },
+         {
+            "boardType" : "RRUS0ZB2",
+            "date" : "20150205",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D16M738406",
+            "maintLED" : "OFF"
+         },
+         {
+            "boardType" : "XMU0301",
+            "date" : "20150217",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D16N036457",
+            "maintLED" : "OFF"
+         },
+         {
+            "operLED" : "ON",
+            "serial" : "CB4J000393",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF",
+            "boardType" : "RUS01B2",
+            "date" : "20110608"
+         },
+         {
+            "boardType" : "RRUS0ZB7",
+            "date" : "20130528",
+            "serial" : "C827046028",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         },
+         {
+            "boardType" : "RUS02B2",
+            "date" : "20131017",
+            "serial" : "CB4R913676",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         },
+         {
+            "operLED" : "ON",
+            "serial" : "D16J003276",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF",
+            "boardType" : "DUS4102",
+            "date" : "20140920"
+         },
+         {
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "C828067706",
+            "operLED" : "ON",
+            "date" : "20140529",
+            "boardType" : "RRUS12B8"
+         },
+         {
+            "faultLED" : "OFF",
+            "serial" : "20140721",
+            "operLED" : "OFF",
+            "maintLED" : "KRC161321/2",
+            "boardType" : "RRUS12B5",
+            "date" : "31.6"
+         },
+         {
+            "date" : "20150205",
+            "boardType" : "RRUS0ZB2",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "D16M738405",
+            "faultLED" : "OFF"
+         },
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "CB4J542320",
+            "maintLED" : "OFF",
+            "boardType" : "RUS01B2",
+            "date" : "20110713"
+         },
+         {
+            "boardType" : "RUS02B2",
+            "date" : "20130225",
+            "serial" : "CB4Q073827",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         },
+         {
+            "boardType" : "DUS4102",
+            "date" : "20140802",
+            "serial" : "CB4U683609",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "CB4Q907580",
+            "faultLED" : "OFF",
+            "date" : "20130609",
+            "boardType" : "RRUS12B3"
+         },
+         {
+            "boardType" : "RRUS0ZB7",
+            "date" : "20130528",
+            "faultLED" : "OFF",
+            "serial" : "C827046029",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         }
+      ],
+      "datetime" : "2016-10-27T03:04:11",
+      "alarm" : [],
+      "cell" : [
+         {
+            "opState" : "ENABLED",
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=sE1"
+         },
+         {
+            "opState" : "ENABLED",
+            "id" : "EUtranCellFDD=pA1",
+            "admState" : "UNLOCKED"
+         },
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=pA2",
+            "opState" : "ENABLED"
+         },
+         {
+            "opState" : "ENABLED",
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=sB1"
+         },
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=sA1",
+            "opState" : "ENABLED"
+         },
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=sC1D1",
+            "opState" : "ENABLED"
+         },
+         {
+            "id" : "EUtranCellFDD=pD1",
+            "admState" : "UNLOCKED",
+            "opState" : "ENABLED"
+         }
+      ]
+   },
+   {
+      "datetime" : "2016-10-27T03:04:22",
+      "board" : [],
+      "cell" : [],
+      "alarm" : [],
+      "enbId" : "149",
+      "oamIp" : "10.186.137.149"
+   },
+   {
+      "enbId" : "150",
+      "datetime" : "2016-10-27T03:04:59",
+      "board" : [
+         {
+            "boardType" : "DUL2001",
+            "date" : "42C",
+            "serial" : "20110817",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         }
+      ],
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault"
+         },
+         {
+            "description" : "RiLink=1 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 0(NOT_SET))",
+            "severity" : "Min",
+            "problem" : "Link Failure"
+         }
+      ],
+      "cell" : [
+         {
+            "id" : "EUtranCellFDD=1",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         }
+      ],
+      "oamIp" : "10.186.137.150"
+   },
+   {
+      "oamIp" : "10.186.137.151",
+      "cell" : [],
+      "alarm" : [],
+      "datetime" : "2016-10-27T03:05:10",
+      "board" : [],
+      "enbId" : "151"
+   },
+   {
+      "oamIp" : "10.186.137.152",
+      "datetime" : "2016-10-27T03:05:21",
+      "board" : [],
+      "cell" : [],
+      "alarm" : [],
+      "enbId" : "152"
+   },
+   {
+      "enbId" : "153",
+      "datetime" : "2016-10-27T03:05:32",
+      "board" : [],
+      "alarm" : [],
+      "cell" : [],
+      "oamIp" : "10.186.137.153"
+   },
+   {
+      "oamIp" : "10.186.137.154",
+      "alarm" : [],
+      "cell" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:05:43",
+      "enbId" : "154"
+   },
+   {
+      "cell" : [],
+      "alarm" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:05:54",
+      "enbId" : "155",
+      "oamIp" : "10.186.137.155"
+   },
+   {
+      "cell" : [],
+      "alarm" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:06:05",
+      "enbId" : "156",
+      "oamIp" : "10.186.137.156"
+   },
+   {
+      "oamIp" : "10.186.137.157",
+      "enbId" : "157",
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "NTP Server Reachability Fault",
+            "description" : "IpAccessHostEt=1,IpSyncRef=7 (unavailable)"
+         },
+         {
+            "description" : "Subrack=1,Slot=2,PlugInUnit=1 (PIU is missing.)",
+            "problem" : "Plug-In Unit General Problem",
+            "severity" : "Maj"
+         },
+         {
+            "description" : "EUtranCellFDD=1 (underlying_resource_unavailable)",
+            "severity" : "Maj",
+            "problem" : "Service Unavailable"
+         },
+         {
+            "description" : "EUtranCellFDD=3 (underlying_resource_unavailable)",
+            "problem" : "Service Unavailable",
+            "severity" : "Maj"
+         },
+         {
+            "description" : "EUtranCellFDD=4 (underlying_resource_unavailable)",
+            "severity" : "Maj",
+            "problem" : "Service Unavailable"
+         },
+         {
+            "description" : "EUtranCellFDD=5 (underlying_resource_unavailable)",
+            "problem" : "Service Unavailable",
+            "severity" : "Maj"
+         },
+         {
+            "problem" : "Service Unavailable",
+            "severity" : "Maj",
+            "description" : "EUtranCellFDD=6 (underlying_resource_unavailable)"
+         },
+         {
+            "description" : "RiLink=1 (No signal detected, additionalData: id 1, unitId 1, portNo 0(Mixed Mode))",
+            "severity" : "Min",
+            "problem" : "Link Failure"
+         },
+         {
+            "description" : "ManagedElementData=1 (NTP step alarm ManagedElementData Message: Ntp step outside valid range.)",
+            "severity" : "Min",
+            "problem" : "NTP System Time Sync Problem"
+         }
+      ],
+      "cell" : [
+         {
+            "id" : "EUtranCellFDD=6",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=3",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=5"
+         },
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=1",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=4",
+            "admState" : "UNLOCKED"
+         }
+      ],
+      "datetime" : "2016-10-27T03:06:31",
+      "board" : [
+         {
+            "operLED" : "ON",
+            "serial" : "C826223850",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF",
+            "boardType" : "DUS4101",
+            "date" : "20120720"
+         }
+      ]
+   },
+   {
+      "oamIp" : "10.186.137.158",
+      "enbId" : "158",
+      "board" : [
+         {
+            "date" : "20120720",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "C826223836",
+            "faultLED" : "OFF"
+         },
+         {
+            "boardType" : "RRUS13B3",
+            "date" : "20150804",
+            "operLED" : "ON",
+            "serial" : "D16Q687416",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF"
+         }
+      ],
+      "datetime" : "2016-10-27T03:07:00",
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=1",
+            "admState" : "LOCKED"
+         }
+      ],
+      "alarm" : [
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "problem" : "HW Fault",
+            "severity" : "Min",
+            "description" : "AntennaUnitGroup=1,AntennaNearUnit=TMF2 (Parameter out of range)"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "HW Fault",
+            "description" : "AntennaUnitGroup=1,AntennaNearUnit=TMF3 (Parameter out of range)"
+         },
+         {
+            "description" : "AntennaUnitGroup=1,AntennaNearUnit=TMF1 (Timeout: Failed to get anuConnectIndication)",
+            "severity" : "Min",
+            "problem" : "No Connection"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "problem" : "Password File Fault",
+            "severity" : "Min"
+         }
+      ]
+   },
+   {
+      "enbId" : "159",
+      "alarm" : [],
+      "cell" : [],
+      "datetime" : "2016-10-27T03:07:11",
+      "board" : [],
+      "oamIp" : "10.186.137.159"
+   },
+   {
+      "oamIp" : "10.186.137.160",
+      "enbId" : "160",
+      "datetime" : "2016-10-27T03:07:23",
+      "board" : [],
+      "cell" : [],
+      "alarm" : []
+   },
+   {
+      "enbId" : "161",
+      "cell" : [],
+      "alarm" : [],
+      "datetime" : "2016-10-27T03:07:35",
+      "board" : [],
+      "oamIp" : "10.186.137.161"
+   },
+   {
+      "enbId" : "162",
+      "board" : [
+         {
+            "boardType" : "RRUS11B1",
+            "date" : "20130222",
+            "faultLED" : "OFF",
+            "serial" : "CB4Q043639",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         },
+         {
+            "date" : "20130409",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "A402035898",
+            "faultLED" : "OFF"
+         }
+      ],
+      "datetime" : "2016-10-27T03:08:06",
+      "alarm" : [
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "severity" : "Min",
+            "problem" : "Password File Fault"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "ENABLED",
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=1"
+         }
+      ],
+      "oamIp" : "10.186.137.162"
+   },
+   {
+      "oamIp" : "10.186.137.163",
+      "datetime" : "2016-10-27T03:08:17",
+      "board" : [],
+      "alarm" : [],
+      "cell" : [],
+      "enbId" : "163"
+   },
+   {
+      "enbId" : "164",
+      "cell" : [
+         {
+            "id" : "EUtranCellFDD=3",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=4",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=1"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=2",
+            "admState" : "LOCKED"
+         }
+      ],
+      "alarm" : [
+         {
+            "problem" : "Disk Volume D Full",
+            "severity" : "Maj",
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1 (Disk almost full Total space: 976 MB Volume free space limit: 100 MB)"
+         },
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1,TimingUnit=1,GpsSyncRef=gps (Cause: Loss of signal)",
+            "severity" : "Maj",
+            "problem" : "Network Synch Time from GPS Missing"
+         }
+      ],
+      "board" : [
+         {
+            "date" : "20150112",
+            "boardType" : "RRUS13B1",
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "C829143219",
+            "operLED" : "ON"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D168111565",
+            "date" : "20130616",
+            "boardType" : "DUS4101"
+         },
+         {
+            "boardType" : "RRUS13B1",
+            "date" : "20150123",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D820493296",
+            "maintLED" : "OFF"
+         }
+      ],
+      "datetime" : "2016-10-27T03:08:59",
+      "oamIp" : "10.186.137.164"
+   },
+   {
+      "oamIp" : "10.186.137.165",
+      "enbId" : "",
+      "cell" : [],
+      "alarm" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:09:10"
+   },
+   {
+      "oamIp" : "10.186.137.166",
+      "enbId" : "",
+      "board" : [],
+      "datetime" : "2016-10-27T03:09:21",
+      "cell" : [],
+      "alarm" : []
+   },
+   {
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "Loss of Sync over CPRI Connections",
+            "description" : "Synchronization=1,NodeGroupSyncMember=1 (clock_synchronisation_problem)"
+         },
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "ENABLED",
+            "id" : "EUtranCellFDD=3",
+            "admState" : "UNLOCKED"
+         }
+      ],
+      "datetime" : "2016-10-27T03:09:54",
+      "board" : [
+         {
+            "boardType" : "DUS4101",
+            "date" : "20121018",
+            "operLED" : "ON",
+            "serial" : "A401952965",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF"
+         },
+         {
+            "serial" : "CB4R989664",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "RRUS12B8",
+            "date" : "20131027"
+         }
+      ],
+      "enbId" : "167",
+      "oamIp" : "10.186.137.167"
+   },
+   {
+      "board" : [
+         {
+            "boardType" : "RRU2203B1",
+            "date" : "20150525",
+            "operLED" : "ON",
+            "serial" : "C829919838",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF"
+         },
+         {
+            "date" : "20150525",
+            "boardType" : "RRU2203B1",
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "C829919845",
+            "operLED" : "ON"
+         },
+         {
+            "date" : "20131127",
+            "boardType" : "ODS11m01",
+            "maintLED" : "OFF",
+            "serial" : "CB4S215242",
+            "faultLED" : "OFF",
+            "operLED" : "ON"
+         },
+         {
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "CB4S271881",
+            "operLED" : "ON",
+            "date" : "20131205",
+            "boardType" : "RUS12mB1"
+         }
+      ],
+      "datetime" : "2016-10-27T03:10:22",
+      "cell" : [
+         {
+            "id" : "EUtranCellFDD=3",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=1",
+            "admState" : "LOCKED"
+         },
+         {
+            "id" : "EUtranCellFDD=2",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "problem" : "NTP System Time Sync Problem",
+            "severity" : "Min",
+            "description" : "ManagedElementData=1 (NTP step alarm Message: Ntp step outside valid range.)"
+         }
+      ],
+      "enbId" : "168",
+      "oamIp" : "10.186.137.168"
+   },
+   {
+      "oamIp" : "10.186.137.169",
+      "datetime" : "2016-10-27T03:10:55",
+      "board" : [
+         {
+            "operLED" : "ON",
+            "serial" : "20120524",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF",
+            "boardType" : "DUL2001",
+            "date" : "37C"
+         }
+      ],
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault"
+         },
+         {
+            "problem" : "Resource Allocation Failure",
+            "severity" : "Maj",
+            "description" : "EUtranCellFDD=1 (Configuration not valid due to Channel Bandwidth license shortage)"
+         },
+         {
+            "description" : "RiLink=1 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 0)",
+            "severity" : "Min",
+            "problem" : "Link Failure"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Password File Fault",
+            "description" : "Security=1 (configuration_or_customizing_error)"
+         }
+      ],
+      "cell" : [
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=1",
+            "opState" : "DISABLED"
+         }
+      ],
+      "enbId" : "169"
+   },
+   {
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=1",
+            "admState" : "UNLOCKED"
+         },
+         {
+            "id" : "EUtranCellFDD=2",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "id" : "EUtranCellFDD=3",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "description" : "EUtranCellFDD=1 (underlying_resource_unavailable)",
+            "problem" : "Service Unavailable",
+            "severity" : "Maj"
+         },
+         {
+            "problem" : "Service Unavailable",
+            "severity" : "Maj",
+            "description" : "EUtranCellFDD=2 (underlying_resource_unavailable)"
+         },
+         {
+            "problem" : "Service Unavailable",
+            "severity" : "Maj",
+            "description" : "EUtranCellFDD=3 (underlying_resource_unavailable)"
+         },
+         {
+            "description" : "RiLink=1 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 0)",
+            "problem" : "Link Failure",
+            "severity" : "Min"
+         },
+         {
+            "problem" : "Link Failure",
+            "severity" : "Min",
+            "description" : "RiLink=2 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 1)"
+         },
+         {
+            "description" : "RiLink=3 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 2)",
+            "severity" : "Min",
+            "problem" : "Link Failure"
+         }
+      ],
+      "datetime" : "2016-10-27T03:11:21",
+      "board" : [
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "20110408",
+            "maintLED" : "OFF",
+            "boardType" : "DUL2001",
+            "date" : "49C"
+         }
+      ],
+      "enbId" : "170",
+      "oamIp" : "10.186.137.170"
+   },
+   {
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=2"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=1",
+            "opState" : "DISABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1,TimingUnit=1,GpsSyncRef=gps (Cause: Loss of signal)",
+            "severity" : "Maj",
+            "problem" : "Network Synch Time from GPS Missing"
+         },
+         {
+            "description" : "ManagedElementData=1 (NTP step alarm ManagedElementData Message: Ntp step outside valid range.)",
+            "problem" : "NTP System Time Sync Problem",
+            "severity" : "Min"
+         }
+      ],
+      "datetime" : "2016-10-27T03:11:49",
+      "board" : [
+         {
+            "date" : "20150319",
+            "boardType" : "RRU2217B1",
+            "maintLED" : "OFF",
+            "serial" : "C829697088",
+            "faultLED" : "OFF",
+            "operLED" : "ON"
+         },
+         {
+            "date" : "20130629",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "operLED" : "16HZ",
+            "faultLED" : "OFF",
+            "serial" : "D168382239"
+         },
+         {
+            "faultLED" : "OFF",
+            "serial" : "D820838430",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "RRUS13B3",
+            "date" : "20150305"
+         }
+      ],
+      "enbId" : "171",
+      "oamIp" : "10.186.137.171"
+   },
+   {
+      "oamIp" : "10.186.137.172",
+      "enbId" : "172",
+      "alarm" : [
+         {
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1 (Disk almost full Total space: 976 MB Volume free space limit: 100 MB)",
+            "severity" : "Maj",
+            "problem" : "Disk Volume D Full"
+         },
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "description" : "EUtranCellFDD=1 (PLMN mcc:555 mnc:1)",
+            "problem" : "PLMN Service Unavailable",
+            "severity" : "Maj"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "PLMN Service Unavailable",
+            "description" : "EUtranCellFDD=2 (PLMN mcc:555 mnc:1)"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Resource Allocation Failure Service",
+            "description" : "Degraded SectorCarrier=1 (Insufficient RF power in radio equipment)"
+         },
+         {
+            "description" : "Degraded SectorCarrier=2 (Insufficient RF power in radio equipment)",
+            "problem" : "Resource Allocation Failure Service",
+            "severity" : "Min"
+         }
+      ],
+      "cell" : [
+         {
+            "id" : "EUtranCellFDD=2",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=1",
+            "opState" : "DISABLED"
+         }
+      ],
+      "datetime" : "2016-10-27T03:12:27",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "A401954815",
+            "faultLED" : "OFF",
+            "date" : "20121022",
+            "boardType" : "DUS4101"
+         },
+         {
+            "operLED" : "ON",
+            "serial" : "D16P909569",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF",
+            "boardType" : "RRUS12mB2",
+            "date" : "20150505"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "C829932267",
+            "date" : "20150604",
+            "boardType" : "RRU2203B66A"
+         }
+      ]
+   },
+   {
+      "datetime" : "2016-10-27T03:13:06",
+      "board" : [
+         {
+            "date" : "20130524",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "A402057934",
+            "faultLED" : "OFF"
+         },
+         {
+            "operLED" : "0.5HZ",
+            "serial" : "D820838431",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF",
+            "boardType" : "RRUS13B3",
+            "date" : "20150305"
+         }
+      ],
+      "alarm" : [
+         {
+            "description" : "SectorEquipmentFunction=1 (Optional license Multistandard RBS - Basic Mixed Mode (LTE) missing)",
+            "problem" : "Feature Resource Missing",
+            "severity" : "Maj"
+         },
+         {
+            "description" : "EUtranCellFDD=1 (underlying_resource_unavailable)",
+            "problem" : "Service Unavailable",
+            "severity" : "Maj"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "NTP System Time Sync Problem",
+            "description" : "TimeSetting=1,NtpServer=1 (NTP step alarm Message: Ntp step outside valid range.)"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "problem" : "Password File Fault",
+            "severity" : "Min"
+         }
+      ],
+      "cell" : [
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=1",
+            "opState" : "DISABLED"
+         }
+      ],
+      "enbId" : "173",
+      "oamIp" : "10.186.137.173"
+   },
+   {
+      "oamIp" : "10.186.137.174",
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault"
+         },
+         {
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1,TimingUnit=1,GpsSyncRef=1 (Cause: Loss of signal)",
+            "severity" : "Maj",
+            "problem" : "Network Synch Time from GPS Missing"
+         },
+         {
+            "description" : "EUtranCellTDD=1 (Configuration not valid due to Channel Bandwidth license shortage)",
+            "severity" : "Maj",
+            "problem" : "Resource Allocation Failure"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Password File Fault",
+            "description" : "Security=1 (configuration_or_customizing_error)"
+         }
+      ],
+      "cell" : [
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellTDD=1",
+            "opState" : "DISABLED"
+         }
+      ],
+      "datetime" : "2016-10-27T03:13:31",
+      "board" : [
+         {
+            "boardType" : "DUS4101",
+            "date" : "20130524",
+            "faultLED" : "OFF",
+            "serial" : "A402057928",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         }
+      ],
+      "enbId" : "174"
+   },
+   {
+      "oamIp" : "10.186.137.175",
+      "datetime" : "2016-10-27T03:13:42",
+      "board" : [],
+      "alarm" : [],
+      "cell" : [],
+      "enbId" : "175"
+   },
+   {
+      "oamIp" : "10.186.137.176",
+      "enbId" : "176",
+      "alarm" : [],
+      "cell" : [],
+      "datetime" : "2016-10-27T03:13:53",
+      "board" : []
+   },
+   {
+      "cell" : [],
+      "alarm" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:14:07",
+      "enbId" : "177",
+      "oamIp" : "10.186.137.177"
+   },
+   {
+      "oamIp" : "10.186.137.178",
+      "cell" : [
+         {
+            "id" : "EUtranCellFDD=1",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "problem" : "Disk Volume D Full",
+            "severity" : "Maj",
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1 (Disk almost full Total space: 976 MB Volume free space limit: 100 MB)"
+         },
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "problem" : "PLMN Service Unavailable",
+            "severity" : "Maj",
+            "description" : "EUtranCellFDD=1 (PLMN mcc:460 mnc:99)"
+         }
+      ],
+      "datetime" : "2016-10-27T03:14:37",
+      "board" : [
+         {
+            "date" : "20150228",
+            "boardType" : "RRUS12B1",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D16N347845"
+         },
+         {
+            "date" : "20130629",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "serial" : "D168382203",
+            "faultLED" : "OFF",
+            "operLED" : "ON"
+         }
+      ],
+      "enbId" : "178"
+   },
+   {
+      "cell" : [],
+      "alarm" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:14:48",
+      "enbId" : "179",
+      "oamIp" : "10.186.137.179"
+   },
+   {
+      "enbId" : "180",
+      "cell" : [],
+      "alarm" : [],
+      "datetime" : "2016-10-27T03:14:59",
+      "board" : [],
+      "oamIp" : "10.186.137.180"
+   },
+   {
+      "oamIp" : "10.186.137.181",
+      "enbId" : "181",
+      "cell" : [],
+      "alarm" : [],
+      "datetime" : "2016-10-27T03:15:10",
+      "board" : []
+   },
+   {
+      "oamIp" : "10.186.137.182",
+      "alarm" : [],
+      "cell" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:15:22",
+      "enbId" : "182"
+   },
+   {
+      "oamIp" : "10.186.137.183",
+      "enbId" : "183",
+      "datetime" : "2016-10-27T03:15:33",
+      "board" : [],
+      "alarm" : [],
+      "cell" : []
+   },
+   {
+      "datetime" : "2016-10-27T03:15:44",
+      "board" : [],
+      "alarm" : [],
+      "cell" : [],
+      "enbId" : "184",
+      "oamIp" : "10.186.137.184"
+   },
+   {
+      "oamIp" : "10.186.137.185",
+      "enbId" : "185",
+      "alarm" : [],
+      "cell" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:15:56"
+   },
+   {
+      "enbId" : "186",
+      "cell" : [],
+      "alarm" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:16:07",
+      "oamIp" : "10.186.137.186"
+   },
+   {
+      "oamIp" : "10.186.137.187",
+      "enbId" : "187",
+      "board" : [
+         {
+            "boardType" : "RRUS13B3A",
+            "date" : "20150402",
+            "serial" : "D821025450",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         },
+         {
+            "boardType" : "DUS4101",
+            "date" : "20130629",
+            "operLED" : "ON",
+            "serial" : "D168382235",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF"
+         }
+      ],
+      "datetime" : "2016-10-27T03:16:36",
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "description" : "ENodeBFunction=1 (X2 link problem to one or several neighbouring eNodeBs. PLMN ID-eNB ID 1 :  5551-188)",
+            "problem" : "External Link Failure",
+            "severity" : "Min"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Password File Fault",
+            "description" : "Security=1 (configuration_or_customizing_error)"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "ENABLED",
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=1"
+         }
+      ]
+   },
+   {
+      "enbId" : "188",
+      "cell" : [
+         {
+            "opState" : "ENABLED",
+            "id" : "EUtranCellFDD=1",
+            "admState" : "UNLOCKED"
+         }
+      ],
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "External Link Failure",
+            "description" : "ENodeBFunction=1 (X2 link problem to one or several neighbouring eNodeBs. PLMN ID-eNB ID 1 :  5551-187)"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Password File Fault",
+            "description" : "Security=1 (configuration_or_customizing_error)"
+         },
+         {
+            "description" : "AuxPlugInUnit=RRU-1,DeviceGroup=ru,RfPort=B (Reflected power too high [ B ])",
+            "severity" : "Min",
+            "problem" : "RF Reflected Power High"
+         },
+         {
+            "problem" : "Service Degraded",
+            "severity" : "Min",
+            "description" : "EUtranCellFDD=1 (performance_degraded)"
+         }
+      ],
+      "datetime" : "2016-10-27T03:17:15",
+      "board" : [
+         {
+            "date" : "20150408",
+            "boardType" : "RRUS13B1",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "D821037685",
+            "faultLED" : "OFF"
+         },
+         {
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "D168382134",
+            "operLED" : "ON",
+            "date" : "20130629",
+            "boardType" : "DUS4101"
+         }
+      ],
+      "oamIp" : "10.186.137.188"
+   },
+   {
+      "oamIp" : "10.186.137.189",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "D169176215",
+            "faultLED" : "OFF",
+            "date" : "20130806",
+            "boardType" : "DUS3101"
+         },
+         {
+            "maintLED" : "OFF",
+            "serial" : "CB4P345366",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "date" : "20121114",
+            "boardType" : "RRUS11B5"
+         }
+      ],
+      "datetime" : "2016-10-27T03:17:45",
+      "alarm" : [
+         {
+            "description" : "RiLink=2 (No signal detected, additionalData: id 1, unitId 1, portNo 1(NOT_SET))",
+            "severity" : "Min",
+            "problem" : "Link Failure"
+         },
+         {
+            "description" : "ManagedElementData=1 (NTP step alarm ManagedElementData Message: Ntp step outside valid range.)",
+            "problem" : "NTP System Time Sync Problem",
+            "severity" : "Min"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=1",
+            "admState" : "LOCKED"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=2",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=3"
+         }
+      ],
+      "enbId" : "189"
+   },
+   {
+      "oamIp" : "10.186.137.190",
+      "cell" : [],
+      "alarm" : [
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Link Failure",
+            "description" : "RiLink=1 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 0)"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "problem" : "Password File Fault",
+            "severity" : "Min"
+         }
+      ],
+      "datetime" : "2016-10-27T03:18:21",
+      "board" : [
+         {
+            "serial" : "D169186040",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "DUS3101",
+            "date" : "20130806"
+         }
+      ],
+      "enbId" : "190"
+   },
+   {
+      "enbId" : "191",
+      "cell" : [],
+      "alarm" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:18:33",
+      "oamIp" : "10.186.137.191"
+   },
+   {
+      "enbId" : "192",
+      "board" : [],
+      "datetime" : "2016-10-27T03:18:44",
+      "cell" : [],
+      "alarm" : [],
+      "oamIp" : "10.186.137.192"
+   },
+   {
+      "alarm" : [],
+      "cell" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:18:56",
+      "enbId" : "193",
+      "oamIp" : "10.186.137.193"
+   },
+   {
+      "oamIp" : "10.186.137.194",
+      "enbId" : "194",
+      "board" : [],
+      "datetime" : "2016-10-27T03:19:07",
+      "cell" : [],
+      "alarm" : []
+   },
+   {
+      "oamIp" : "10.186.137.195",
+      "datetime" : "2016-10-27T03:19:21",
+      "board" : [],
+      "alarm" : [],
+      "cell" : [],
+      "enbId" : "195"
+   },
+   {
+      "datetime" : "2016-10-27T03:19:32",
+      "board" : [],
+      "cell" : [],
+      "alarm" : [],
+      "enbId" : "196",
+      "oamIp" : "10.186.137.196"
+   },
+   {
+      "oamIp" : "10.186.137.197",
+      "enbId" : "197",
+      "alarm" : [],
+      "cell" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:19:44"
+   },
+   {
+      "enbId" : "198",
+      "alarm" : [],
+      "cell" : [],
+      "datetime" : "2016-10-27T03:19:55",
+      "board" : [],
+      "oamIp" : "10.186.137.198"
+   },
+   {
+      "oamIp" : "10.186.137.199",
+      "enbId" : "199",
+      "datetime" : "2016-10-27T03:20:16",
+      "board" : [],
+      "alarm" : [],
+      "cell" : []
+   },
+   {
+      "oamIp" : "10.186.137.200",
+      "alarm" : [],
+      "cell" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:20:29",
+      "enbId" : "200"
+   },
+   {
+      "enbId" : "201",
+      "datetime" : "2016-10-27T03:20:40",
+      "board" : [],
+      "alarm" : [],
+      "cell" : [],
+      "oamIp" : "10.186.137.201"
+   },
+   {
+      "oamIp" : "10.186.137.202",
+      "cell" : [],
+      "alarm" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:20:52",
+      "enbId" : "202"
+   },
+   {
+      "enbId" : "203",
+      "cell" : [],
+      "alarm" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:21:04",
+      "oamIp" : "10.186.137.203"
+   },
+   {
+      "oamIp" : "10.186.137.204",
+      "enbId" : "204",
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP server configuration problem)"
+         }
+      ],
+      "cell" : [
+         {
+            "id" : "EUtranCellFDD=2",
+            "admState" : "UNLOCKED",
+            "opState" : "ENABLED"
+         },
+         {
+            "opState" : "ENABLED",
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=1"
+         }
+      ],
+      "board" : [
+         {
+            "boardType" : "DUS4101",
+            "date" : "20120823",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "C826308481",
+            "maintLED" : "OFF"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "C826211229",
+            "faultLED" : "OFF",
+            "date" : "20120718",
+            "boardType" : "DUS4101"
+         },
+         {
+            "date" : "20130920",
+            "boardType" : "RRUS11B1",
+            "maintLED" : "OFF",
+            "serial" : "D16A068802",
+            "faultLED" : "OFF",
+            "operLED" : "ON"
+         },
+         {
+            "serial" : "D169148152",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "RUS01B4",
+            "date" : "20130804"
+         }
+      ],
+      "datetime" : "2016-10-27T03:21:48"
+   },
+   {
+      "cell" : [],
+      "alarm" : [],
+      "datetime" : "2016-10-27T03:22:00",
+      "board" : [],
+      "enbId" : "205",
+      "oamIp" : "10.186.137.205"
+   },
+   {
+      "oamIp" : "10.186.137.206",
+      "cell" : [],
+      "alarm" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:22:11",
+      "enbId" : "206"
+   },
+   {
+      "alarm" : [
+         {
+            "description" : "EquipmentSupportFunction=1 (Lost contact with the node that controls external alarms, power and climate HW, cabinetIdentifier:)",
+            "severity" : "Maj",
+            "problem" : "Disconnected"
+         },
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "problem" : "PLMN Service Unavailable",
+            "severity" : "Maj",
+            "description" : "EUtranCellFDD=1 (PLMN mcc:555 mnc:1)"
+         }
+      ],
+      "cell" : [
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=4",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=1",
+            "admState" : "UNLOCKED"
+         },
+         {
+            "id" : "EUtranCellFDD=5",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=3"
+         }
+      ],
+      "board" : [
+         {
+            "date" : "20130629",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "serial" : "D168382191",
+            "faultLED" : "OFF",
+            "operLED" : "ON"
+         },
+         {
+            "faultLED" : "OFF",
+            "serial" : "CB4J975527",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "RUS01B2",
+            "date" : "20110808"
+         }
+      ],
+      "datetime" : "2016-10-27T03:22:49",
+      "enbId" : "207",
+      "oamIp" : "10.186.137.207"
+   },
+   {
+      "enbId" : "208",
+      "datetime" : "2016-10-27T03:23:01",
+      "board" : [],
+      "alarm" : [],
+      "cell" : [],
+      "oamIp" : "10.186.137.208"
+   },
+   {
+      "enbId" : "209",
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "Disconnected",
+            "description" : "ExternalNode=1 (hubPosition: C)"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "Disconnected",
+            "description" : "HwUnit=PDU-1 (equipment_malfunction)"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "Disconnected",
+            "description" : "HwUnit=PDU-2 (equipment_malfunction)"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "Disconnected",
+            "description" : "HwUnit=SCU-1 (equipment_malfunction)"
+         },
+         {
+            "description" : "HwUnit=SCU-2 (equipment_malfunction)",
+            "problem" : "Disconnected",
+            "severity" : "Maj"
+         },
+         {
+            "description" : "HwUnit=SUP-1 (equipment_malfunction)",
+            "severity" : "Maj",
+            "problem" : "Disconnected"
+         },
+         {
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1 (Disk almost full Total space: 976 MB Volume free space limit: 100 MB)",
+            "severity" : "Maj",
+            "problem" : "Disk Volume D Full"
+         },
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault"
+         },
+         {
+            "description" : "EUtranCellFDD=1 (Configuration not valid due to Channel Bandwidth license shortage)",
+            "severity" : "Maj",
+            "problem" : "Resource Allocation Failure"
+         },
+         {
+            "description" : "EUtranCellFDD=2 (Configuration not valid due to Channel Bandwidth license shortage)",
+            "problem" : "Resource Allocation Failure",
+            "severity" : "Maj"
+         },
+         {
+            "description" : "EUtranCellFDD=3 (Configuration not valid due to Channel Bandwidth license shortage)",
+            "severity" : "Maj",
+            "problem" : "Resource Allocation Failure"
+         },
+         {
+            "problem" : "Service Unavailable",
+            "severity" : "Maj",
+            "description" : "EUtranCellTDD=1 (underlying_resource_unavailable)"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "Service Unavailable",
+            "description" : "EUtranCellTDD=2 (underlying_resource_unavailable)"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "Service Unavailable",
+            "description" : "EUtranCellTDD=3 (underlying_resource_unavailable)"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Link Failure",
+            "description" : "RiLink=1 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 1)"
+         },
+         {
+            "problem" : "Link Failure",
+            "severity" : "Min",
+            "description" : "RiLink=2 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 0)"
+         },
+         {
+            "description" : "RiLink=3 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 2)",
+            "severity" : "Min",
+            "problem" : "Link Failure"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Link Failure",
+            "description" : "RiLink=4 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 3)"
+         },
+         {
+            "problem" : "Link Failure",
+            "severity" : "Min",
+            "description" : "RiLink=5 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 5)"
+         },
+         {
+            "description" : "RiLink=6 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 4)",
+            "problem" : "Link Failure",
+            "severity" : "Min"
+         }
+      ],
+      "cell" : [
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=3",
+            "opState" : "DISABLED"
+         },
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellTDD=2",
+            "opState" : "DISABLED"
+         },
+         {
+            "id" : "EUtranCellFDD=1",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellTDD=1"
+         },
+         {
+            "id" : "EUtranCellTDD=3",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "id" : "EUtranCellFDD=2",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         }
+      ],
+      "board" : [],
+      "datetime" : "2016-10-27T03:23:17",
+      "oamIp" : "10.186.137.209"
+   },
+   {
+      "enbId" : "210",
+      "datetime" : "2016-10-27T03:23:38",
+      "board" : [],
+      "cell" : [],
+      "alarm" : [],
+      "oamIp" : "10.186.137.210"
+   },
+   {
+      "enbId" : "211",
+      "board" : [],
+      "datetime" : "2016-10-27T03:23:49",
+      "cell" : [],
+      "alarm" : [],
+      "oamIp" : "10.186.137.211"
+   },
+   {
+      "enbId" : "212",
+      "datetime" : "2016-10-27T03:24:30",
+      "board" : [
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "A401957008",
+            "maintLED" : "OFF",
+            "boardType" : "DUS4101",
+            "date" : "20121025"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D16K238672",
+            "date" : "20141107",
+            "boardType" : "XMU0301"
+         },
+         {
+            "date" : "20150115",
+            "boardType" : "RRUS0ZB2",
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "D16M138012",
+            "operLED" : "ON"
+         },
+         {
+            "date" : "20150115",
+            "boardType" : "RRUS0ZB2",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "D16M138011",
+            "faultLED" : "OFF"
+         },
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D165156164",
+            "maintLED" : "OFF",
+            "boardType" : "RUS02B8",
+            "date" : "20130126"
+         },
+         {
+            "date" : "20120717",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "serial" : "C826207781",
+            "faultLED" : "OFF",
+            "operLED" : "ON"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D165156177",
+            "date" : "20130126",
+            "boardType" : "RUS02B8"
+         }
+      ],
+      "cell" : [
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=1",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=2",
+            "admState" : "LOCKED"
+         }
+      ],
+      "alarm" : [
+         {
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1 (Disk almost full Total space: 976 MB Volume free space limit: 100 MB)",
+            "severity" : "Maj",
+            "problem" : "Disk Volume D Full"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP server configuration problem)"
+         }
+      ],
+      "oamIp" : "10.186.137.212"
+   },
+   {
+      "oamIp" : "10.186.137.213",
+      "enbId" : "213",
+      "alarm" : [],
+      "cell" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:24:42"
+   },
+   {
+      "enbId" : "214",
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D169507302",
+            "date" : "20130824",
+            "boardType" : "RRUS0ZB2"
+         },
+         {
+            "faultLED" : "OFF",
+            "serial" : "CB4P452734",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "RUS02B8",
+            "date" : "20121126"
+         },
+         {
+            "boardType" : "DUS4101",
+            "date" : "20130216",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D165589694",
+            "maintLED" : "OFF"
+         },
+         {
+            "date" : "20150610",
+            "boardType" : "RRUS32B3",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "D16Q358509",
+            "faultLED" : "OFF"
+         },
+         {
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "D169507301",
+            "operLED" : "ON",
+            "date" : "20130824",
+            "boardType" : "RRUS0ZB2"
+         }
+      ],
+      "datetime" : "2016-10-27T03:25:21",
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP server configuration problem)",
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "Password File Fault",
+            "description" : "Security=1 (configuration_or_customizing_error)"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "ENABLED",
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=3"
+         },
+         {
+            "opState" : "ENABLED",
+            "id" : "EUtranCellFDD=2",
+            "admState" : "UNLOCKED"
+         },
+         {
+            "opState" : "ENABLED",
+            "id" : "EUtranCellFDD=1",
+            "admState" : "UNLOCKED"
+         },
+         {
+            "opState" : "ENABLED",
+            "id" : "EUtranCellFDD=4",
+            "admState" : "UNLOCKED"
+         }
+      ],
+      "oamIp" : "10.186.137.214"
+   },
+   {
+      "cell" : [],
+      "alarm" : [],
+      "datetime" : "2016-10-27T03:25:33",
+      "board" : [],
+      "enbId" : "215",
+      "oamIp" : "10.186.137.215"
+   },
+   {
+      "oamIp" : "10.186.137.216",
+      "alarm" : [],
+      "cell" : [],
+      "datetime" : "2016-10-27T03:25:45",
+      "board" : [],
+      "enbId" : "216"
+   },
+   {
+      "cell" : [],
+      "alarm" : [
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         }
+      ],
+      "datetime" : "2016-10-27T03:26:21",
+      "board" : [
+         {
+            "date" : "20121024",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "A401956226",
+            "faultLED" : "OFF"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D16Q786364",
+            "date" : "20150819",
+            "boardType" : "RRUS32B2"
+         }
+      ],
+      "enbId" : "217",
+      "oamIp" : "10.186.137.217"
+   },
+   {
+      "oamIp" : "10.186.137.218",
+      "enbId" : "218",
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP synchronize time failure (changed server/step))",
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "HW Fault",
+            "description" : "AuxPlugInUnit=RRU-1,DeviceGroup=ru (Fault from antsys, evaluated as fault on ruDG. Voltage out of range [ A B C D RET ])"
+         },
+         {
+            "severity" : "Min",
+            "problem" : "No Connection",
+            "description" : "AntennaUnitGroup=1,AntennaNearUnit=1 (Timeout: Failed to get anuConnectIndication)"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "severity" : "Min",
+            "problem" : "Password File Fault"
+         }
+      ],
+      "cell" : [
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellFDD=2",
+            "opState" : "ENABLED"
+         },
+         {
+            "opState" : "ENABLED",
+            "id" : "EUtranCellFDD=1",
+            "admState" : "UNLOCKED"
+         }
+      ],
+      "board" : [
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "A401956232",
+            "date" : "20121024",
+            "boardType" : "DUS4101"
+         }
+      ],
+      "datetime" : "2016-10-27T03:27:35"
+   },
+   {
+      "oamIp" : "10.186.137.219",
+      "alarm" : [],
+      "cell" : [],
+      "board" : [],
+      "datetime" : "2016-10-27T03:27:48",
+      "enbId" : "219"
+   },
+   {
+      "board" : [],
+      "datetime" : "2016-10-27T03:28:03",
+      "cell" : [],
+      "alarm" : [],
+      "enbId" : "220",
+      "oamIp" : "10.186.137.220"
+   },
+   {
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=2",
+            "admState" : "UNLOCKED"
+         },
+         {
+            "id" : "EUtranCellFDD=1",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "Resource Allocation Failure",
+            "description" : "EUtranCellFDD=1 (Configuration not valid due to Channel Bandwidth license shortage)"
+         },
+         {
+            "description" : "EUtranCellFDD=2 (Configuration not valid due to Channel Bandwidth license shortage)",
+            "severity" : "Maj",
+            "problem" : "Resource Allocation Failure"
+         }
+      ],
+      "board" : [
+         {
+            "date" : "20130803",
+            "boardType" : "DUS3101",
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "D169102939",
+            "operLED" : "ON"
+         },
+         {
+            "date" : "20150309",
+            "boardType" : "RRUS12B1",
+            "maintLED" : "OFF",
+            "serial" : "D16N582519",
+            "faultLED" : "OFF",
+            "operLED" : "ON"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D16N582517",
+            "date" : "20150309",
+            "boardType" : "RRUS12B1"
+         }
+      ],
+      "datetime" : "2016-10-27T03:28:45",
+      "enbId" : "221",
+      "oamIp" : "10.186.137.221"
+   },
+   {
+      "oamIp" : "10.186.137.222",
+      "enbId" : "222",
+      "board" : [
+         {
+            "boardType" : "RRUS02B0",
+            "date" : "20120113",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "C825618554",
+            "maintLED" : "OFF"
+         },
+         {
+            "boardType" : "RRUS02B0",
+            "date" : "20120410",
+            "faultLED" : "OFF",
+            "serial" : "C826005440",
+            "operLED" : "ON",
+            "maintLED" : "OFF"
+         },
+         {
+            "operLED" : "ON",
+            "serial" : "D169102941",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF",
+            "boardType" : "DUS3101",
+            "date" : "20130803"
+         },
+         {
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "C825851825",
+            "operLED" : "ON",
+            "date" : "20120307",
+            "boardType" : "RRUS02B0"
+         },
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "C826121523",
+            "maintLED" : "OFF",
+            "boardType" : "RRUS02B0",
+            "date" : "20120614"
+         },
+         {
+            "boardType" : "RRUS02B0",
+            "date" : "20120307",
+            "operLED" : "ON",
+            "serial" : "C825851832",
+            "faultLED" : "OFF",
+            "maintLED" : "OFF"
+         },
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D821337183",
+            "maintLED" : "OFF",
+            "boardType" : "RRUS13B7",
+            "date" : "20150701"
+         },
+         {
+            "date" : "20120423",
+            "boardType" : "RRUS02B0",
+            "maintLED" : "OFF",
+            "faultLED" : "OFF",
+            "serial" : "C826021231",
+            "operLED" : "ON"
+         },
+         {
+            "maintLED" : "OFF",
+            "serial" : "CA72329396",
+            "faultLED" : "OFF",
+            "operLED" : "ON",
+            "date" : "20150121",
+            "boardType" : "RRUS12B7"
+         },
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "CA72329415",
+            "maintLED" : "OFF",
+            "boardType" : "RRUS12B7",
+            "date" : "20150121"
+         }
+      ],
+      "datetime" : "2016-10-27T03:29:36",
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "Clock Calibration Expiry Soon",
+            "description" : "Synchronization=1 (Cause: 2016-09-17)"
+         },
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "problem" : "Network Synch Time from GPS Missing",
+            "severity" : "Maj",
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1,TimingUnit=1,GpsSyncRef=gps (Cause: No messages received from the GPS antenna)"
+         },
+         {
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1,DeviceGroup=dul (System clock not locked to RAN time)",
+            "problem" : "TimingSyncFault",
+            "severity" : "Maj"
+         }
+      ],
+      "cell" : [
+         {
+            "id" : "EUtranCellFDD=9",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "id" : "EUtranCellFDD=8",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "id" : "EUtranCellTDD=2",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=4",
+            "opState" : "DISABLED"
+         },
+         {
+            "id" : "EUtranCellTDD=3",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=5",
+            "admState" : "LOCKED"
+         },
+         {
+            "id" : "EUtranCellFDD=6",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellTDD=1",
+            "admState" : "LOCKED"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=7",
+            "opState" : "DISABLED"
+         }
+      ]
+   },
+   {
+      "oamIp" : "10.186.137.223",
+      "datetime" : "2016-10-27T03:30:12",
+      "board" : [
+         {
+            "faultLED" : "OFF",
+            "serial" : "D169160146",
+            "operLED" : "05HZ",
+            "maintLED" : "OFF",
+            "boardType" : "DUS3101",
+            "date" : "20130805"
+         }
+      ],
+      "alarm" : [
+         {
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1 (Disk almost full Total space: 976 MB Volume free space limit: 100 MB)",
+            "problem" : "Disk Volume D Full",
+            "severity" : "Maj"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault",
+            "description" : "ManagedElementData=1 (additionalInfo: NTP general problem)"
+         },
+         {
+            "problem" : "ResourceAllocationFailure",
+            "severity" : "Maj",
+            "description" : "EUtranCellTDD=1 (Configuration not valid due to Channel Bandwidth license shortage)"
+         },
+         {
+            "problem" : "LinkFailure",
+            "severity" : "Min",
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1,RiPort=A (No signal detected, id 1, unitId 1, ruPortNo 0)"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "problem" : "Password File Fault",
+            "severity" : "Min"
+         }
+      ],
+      "cell" : [
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellTDD=1",
+            "opState" : "DISABLED"
+         }
+      ],
+      "enbId" : "223"
+   },
+   {
+      "cell" : [
+         {
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellTDD=1",
+            "opState" : "ENABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj"
+         }
+      ],
+      "datetime" : "2016-10-27T03:30:38",
+      "board" : [
+         {
+            "date" : "20120822",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "C826307262",
+            "faultLED" : "OFF"
+         },
+         {
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "CB4N995651",
+            "maintLED" : "OFF",
+            "boardType" : "RRUL62B40A",
+            "date" : "20121010"
+         }
+      ],
+      "enbId" : "224",
+      "oamIp" : "10.186.137.224"
+   },
+   {
+      "enbId" : "225",
+      "alarm" : [],
+      "cell" : [],
+      "datetime" : "2016-10-27T03:30:50",
+      "board" : [],
+      "oamIp" : "10.186.137.225"
+   },
+   {
+      "oamIp" : "10.186.137.226",
+      "enbId" : "226",
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "Inter-PIU Link Fault",
+            "description" : "InterPiuLink=1 (Cable fault Message: No connection)"
+         },
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj"
+         }
+      ],
+      "cell" : [
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=6",
+            "admState" : "LOCKED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=5",
+            "admState" : "LOCKED"
+         },
+         {
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=3",
+            "opState" : "DISABLED"
+         },
+         {
+            "id" : "EUtranCellFDD=2",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         },
+         {
+            "opState" : "DISABLED",
+            "admState" : "LOCKED",
+            "id" : "EUtranCellFDD=4"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=1",
+            "admState" : "LOCKED"
+         }
+      ],
+      "datetime" : "2016-10-27T03:31:25",
+      "board" : [
+         {
+            "date" : "20130524",
+            "boardType" : "DUS4101",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "A402057910",
+            "faultLED" : "OFF"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "D169793573",
+            "faultLED" : "OFF",
+            "date" : "20130907",
+            "boardType" : "RRUS11B1"
+         }
+      ]
+   },
+   {
+      "cell" : [
+         {
+            "opState" : "ENABLED",
+            "admState" : "UNLOCKED",
+            "id" : "EUtranCellTDD=1"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellTDD=3",
+            "admState" : "LOCKED"
+         },
+         {
+            "opState" : "DISABLED",
+            "id" : "EUtranCellFDD=2",
+            "admState" : "LOCKED"
+         }
+      ],
+      "alarm" : [
+         {
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "problem" : "Link Failure",
+            "severity" : "Min",
+            "description" : "RiLink=3 (No SFP plugged in, additionalData: id 1, unitId 1, portNo 2)"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "severity" : "Min",
+            "problem" : "Password File Fault"
+         }
+      ],
+      "board" : [
+         {
+            "boardType" : "DUS4101",
+            "date" : "20130629",
+            "operLED" : "ON",
+            "faultLED" : "OFF",
+            "serial" : "D168382200",
+            "maintLED" : "OFF"
+         },
+         {
+            "date" : "20120815",
+            "boardType" : "TRANSCEIVER",
+            "maintLED" : "OFF",
+            "serial" : "CB4N520287",
+            "faultLED" : "OFF",
+            "operLED" : "ON"
+         },
+         {
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "D820316387",
+            "faultLED" : "OFF",
+            "date" : "20141221",
+            "boardType" : "RRUS12B1"
+         }
+      ],
+      "datetime" : "2016-10-27T03:31:56",
+      "enbId" : "227",
+      "oamIp" : "10.186.137.227"
+   },
+   {
+      "oamIp" : "10.186.137.228",
+      "enbId" : "228",
+      "cell" : [
+         {
+            "id" : "EUtranCellTDD=1",
+            "admState" : "LOCKED",
+            "opState" : "DISABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "problem" : "NTP System Time Sync Fault",
+            "severity" : "Maj",
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "severity" : "Min",
+            "problem" : "Password File Fault"
+         }
+      ],
+      "board" : [
+         {
+            "date" : "20121122",
+            "boardType" : "RRUL62B40A",
+            "maintLED" : "OFF",
+            "operLED" : "ON",
+            "serial" : "CB4P420479",
+            "faultLED" : "OFF"
+         },
+         {
+            "faultLED" : "OFF",
+            "serial" : "D168382206",
+            "operLED" : "ON",
+            "maintLED" : "OFF",
+            "boardType" : "DUS4101",
+            "date" : "20130629"
+         }
+      ],
+      "datetime" : "2016-10-27T03:32:23"
+   },
+   {
+      "oamIp" : "10.186.137.229",
+      "cell" : [
+         {
+            "id" : "EUtranCellTDD=1",
+            "admState" : "UNLOCKED",
+            "opState" : "DISABLED"
+         }
+      ],
+      "alarm" : [
+         {
+            "description" : "TimeSetting=1 (NTP sync alarm Message: NTP general problem)",
+            "severity" : "Maj",
+            "problem" : "NTP System Time Sync Fault"
+         },
+         {
+            "severity" : "Maj",
+            "problem" : "ResourceAllocationFailure",
+            "description" : "EUtranCellTDD=1 (Configuration not valid due to Channel Bandwidth license shortage)"
+         },
+         {
+            "description" : "Subrack=1,Slot=1,PlugInUnit=1,RiPort=A (No signal detected, id 1, unitId 1, ruPortNo 0)",
+            "problem" : "LinkFailure",
+            "severity" : "Min"
+         },
+         {
+            "description" : "Security=1 (configuration_or_customizing_error)",
+            "severity" : "Min",
+            "problem" : "Password File Fault"
+         }
+      ],
+      "board" : [
+         {
+            "serial" : "D16A842779",
+            "faultLED" : "OFF",
+            "operLED" : "05HZ",
+            "maintLED" : "OFF",
+            "boardType" : "DUS3101",
+            "date" : "20131031"
+         }
+      ],
+      "datetime" : "2016-10-27T03:32:56",
+      "enbId" : "229"
+   }
 ];
 
 @Injectable()
