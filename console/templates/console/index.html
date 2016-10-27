@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <html>
 <head>
   <title>Test RAT</title>
@@ -16,9 +17,9 @@
   <link rel="stylesheet" href="{% static 'console/frontend/node_modules/font-awesome/css/font-awesome.min.css' %}">
 
   <script src="{% static 'console/frontend/node_modules/core-js/client/shim.min.js' %}"></script>
-  <script src="{% static 'console/frontend/node_modules/zone.js/dist/zone.js' %"></script>
-  <script src="{% static 'console/frontend/node_modules/reflect-metadata/Reflect.js' %"></script>
-  <script src="{% static 'console/frontend/node_modules/systemjs/dist/system.src.js' %"></script>
+  <script src="{% static 'console/frontend/node_modules/zone.js/dist/zone.js' %}"></script>
+  <script src="{% static 'console/frontend/node_modules/reflect-metadata/Reflect.js' %}"></script>
+  <script src="{% static 'console/frontend/node_modules/systemjs/dist/system.src.js' %}"></script>
 
   <script src="{% static 'console/frontend/systemjs.config.js' %}"></script>
   <script>
