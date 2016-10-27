@@ -1,11 +1,14 @@
 
 import { Injectable } from '@angular/core';
+import { Headers, Http } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
 import { Node } from './node';
 import { Cell } from './cell';
 import { Board } from './board';
 
-const mockNodes : Node[] = 
+const mockNodes : Node[] = [];
+/*
 [
    {
       "oamIp" : "10.186.137.101",
@@ -4175,10 +4178,40 @@ const mockNodes : Node[] =
       "enbId" : "229"
    }
 ];
+*/
 
 @Injectable()
 export class NodeService {
+  private enbUrl = '/testrat/enblist';
+
+  constructor(private http : Http) {
+  }
+
   getNodes() : Promise<Node[]> {
-    return Promise.resolve(mockNodes);
+    //return Promise.resolve(mockNodes);
+    console.log('getNodes', this.enbUrl);
+    return this.http.get(this.enbUrl)
+           .toPromise()
+           //.then(response => response.json() as Node[])
+           .then(response => this.validate(response.json()))
+           .catch(this.handleError);
+  }
+
+  private handleError(error : any) : Promise<any> {
+    console.error('NodeService.error', error);
+    return Promise.reject(error.message || error);
+  }
+
+  private validate(data) : Node[] {
+    var r : Node[] = [];
+    for (var x in data) {
+      var n = new Node();
+      console.log(data[x], n);
+      for (var k in data[x]) {
+        n[k] = data[x][k];
+      }
+      r.push(n);
+    }
+    return r;
   }
 }

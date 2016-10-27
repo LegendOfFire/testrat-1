@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FaDirective } from 'angular2-fontawesome/directives';
 
 import { Node } from './node';
+import { Alarm } from './alarm';
 import { Cell } from './cell';
 import { Board } from './board';
 import { NodeService } from './node.service';
