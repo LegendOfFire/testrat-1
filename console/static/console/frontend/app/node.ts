@@ -17,5 +17,4 @@ export class Node {
   match(query : string) : boolean {
     return true;
   }
-
 }
