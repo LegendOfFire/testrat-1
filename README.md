@@ -43,7 +43,7 @@ Start `shellinabox` in another terminal, note that you many want to use your own
 ```
 cd utils
 eval `./startsshagent`
-shellinaboxd -dt -s '/:yy:wheel:HOME/home/yy/w/ericsson/testrat/utils/moshellproxy.sh ${url}'
+shellinaboxd -dt -s '/:yy:wheel:HOME:/home/yy/w/ericsson/testrat/utils/moshellproxy.sh ${url}'
 ```
 
 Launch browser and go to `localhost:3000`.
