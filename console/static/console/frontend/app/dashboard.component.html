@@ -1,9 +1,10 @@
 
-<div class="grid grid-pad">
+<input placeholder="Search..." style="width:100%">
+<div>
   <div *ngFor="let node of nodes"
-		class="col-1-4"
+    class="module"
     (click)="onSelect(node)">
-    <div class="module">
+    <div>
       <table width="100%">
         <tr>
           <td>
@@ -16,12 +17,65 @@
         </tr>
         <tr>
           <td>
-            <a href="http://147.128.83.29:4200/?{{node.oamIp}}" target="_blank">
+            <a href="http://147.128.86.79:4200/?{{node.oamIp}}" target="_blank">
               <i fa [name]="'tty'"></i>
             </a>
           </td>
           <td>
             {{node.oamIp}}
+          </td>
+        </tr>
+        <tr *ngIf="node.cell.length > 0">
+          <th colspan=2
+            (click)="toggleCellVisible(node)">
+            Cells:
+          </th>
+        </tr>
+        <tr *ngFor="let cell of visibleCells(node)">
+          <td>
+            {{cell.id}}
+          </td>
+          <td>
+            {{cell.admState}}
+          </td>
+          <td>
+            {{cell.opState}}
+          </td>
+        </tr>
+
+        <tr *ngIf="node.alarm.length > 0">
+          <th colspan=2
+            (click)="toggleAlarmVisible(node)">
+            Alarms:
+          </th>
+        </tr>
+        <tr *ngFor="let alarm of visibleAlarms(node)">
+          <td>
+            {{alarm.severity}}
+          </td>
+          <td>
+            {{alarm.problem}}
+          </td>
+          <td>
+            {{alarm.description}}
+          </td>
+        </tr>
+
+        <tr *ngIf="node.board.length > 0">
+          <th colspan=2
+            (click)="toggleBoardVisible(node)">
+            Boards:
+          </th>
+        </tr>
+        <tr *ngFor="let board of visibleBoards(node)">
+          <td>
+            {{board.boardType}}
+          </td>
+          <td>
+            {{board.serial}}
+          </td>
+          <td>
+            {{board.date}}
           </td>
         </tr>
       </table>
