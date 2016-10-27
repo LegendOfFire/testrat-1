@@ -1,4 +1,5 @@
 console/static/console/frontend/node_modules/
 *.map
 *.js
+*.pyc
 db.sqlite3
