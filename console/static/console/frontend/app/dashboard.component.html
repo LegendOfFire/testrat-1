@@ -10,26 +10,18 @@
             <i fa [name]="'building'"></i>
           </td>
           <td>
-            {{node.eNB_ID}}
+            {{node.enbId}}
             <span class="node-type">{{node.Type}}</span>
           </td>
         </tr>
         <tr>
           <td>
-            <a href="http://147.128.83.29:4200/?{{node.OAM_IP}}" target="_blank">
+            <a href="http://147.128.83.29:4200/?{{node.oamIp}}" target="_blank">
               <i fa [name]="'tty'"></i>
             </a>
           </td>
           <td>
-            {{node.OAM_IP}}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <i fa [name]="'newspaper-o'"></i>
-          </td>
-          <td>
-            {{node.Position}}
+            {{node.oamIp}}
           </td>
         </tr>
       </table>
