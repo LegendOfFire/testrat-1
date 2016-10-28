@@ -1,21 +1,36 @@
+<div class="row" style="padding-left:10px; padding-right:10px">
+    <div class="col-sm-4 col-md-3">
+        <div class="thumbnail" style="background-color: black; border-radius: 8px;">
+            <!-- <div class="caption" style="color: white">
+                <h4>ENodeB ID - </h4>
+                <h4>OAM IP - </h4>
+            </div>
+            <div class="list-group">
+                <a href="#" class="list-group-item">Cell Information</a>
+                <a href="#" class="list-group-item">Board Information</a>
+                <a href="#" class="list-group-item">Alarm Information</a>
+            </div> -->
+            <div style="padding-top: 80px; padding-bottom:80px; text-align: center">
+                <a href="#"><i class="fa fa-plus-square fa-5x" style="color: white"></i></a>
+            </div>
 
-<i fa [name]="'plus'" (click)="toggleCreate()"></i>
-<div [style.display]="createDisplay">
-  <input [(ngModel)]="createEnbId" placeholder="eNodeB ID" style="width:100%"><br>
-  <input [(ngModel)]="createOamIp" placeholder="OAM IP" style="width:100%">
-  <button class="btn"
-    (click)="create(createEnbId, createOamIp)">
-    Create
-  </button>
-</div>
-
-<input [(ngModel)]="query" placeholder="Search..." style="width:100%"><br>
-<div>
-  <div *ngFor="let node of queryNodes(query)"
-    class="module"
+        </div>
+    </div>
+  <div *ngFor="let node of nodes"
+    class="col-sm-4 col-md-3"
     (click)="onSelect(node)">
-    <div>
-      <table width="100%">
+    <div class="thumbnail" style="background-color: black; border-radius: 8px;">
+        <div class="caption" style="color: white">
+            <h4>ENodeB ID - </h4>
+            <h4>OAM IP - </h4>
+        </div>
+        <div class="list-group">
+            <a href="#" class="list-group-item">Cell Information</a>
+            <a href="#" class="list-group-item">Board Information</a>
+            <a href="#" class="list-group-item">Alarm Information</a>
+        </div>
+
+      <!-- <table width="100%">
         <tr>
           <td>
             <i fa [name]="'building'"></i>
@@ -90,7 +105,7 @@
             {{board.date}}
           </td>
         </tr>
-      </table>
+      </table> -->
     </div>
   </div>
 </div>
