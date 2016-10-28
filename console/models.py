@@ -31,3 +31,14 @@ class Board(models.Model):
 
     class Meta:
         ordering = ['boardType']
+
+
+class Alarm(models.Model):
+    severity = models.CharField(max_length=16, default='Min')
+    problem = models.CharField(max_length=32)
+    description = models.CharField(max_length=128)
+    ownEnb = models.ForeignKey(ENodeB, on_delete=models.CASCADE,
+                               related_name='alarm')
+
+    class Meta:
+        ordering = ['severity']
