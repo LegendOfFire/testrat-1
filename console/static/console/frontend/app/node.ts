@@ -14,7 +14,35 @@ export class Node {
   alarm : Alarm[] = [];
   datetime : string;
 
-  match(query : string) : boolean {
-    return true;
+  match(re) : boolean {
+    return re.test(this.enbId) ||
+           re.test(this.oamIp) ||
+           this.matchCells(re) ||
+           this.matchBoards(re) ||
+           this.matchAlarms(re);
+  }
+
+  matchCells(re) : boolean {
+    for (var c in this.cell) {
+      if (this.cell[c].match(re))
+        return true;
+    }
+    return false;
+  }
+
+  matchBoards(re) : boolean {
+    for (var c in this.board) {
+      if (this.board[c].match(re))
+        return true;
+    }
+    return false;
+  }
+
+  matchAlarms(re) : boolean {
+    for (var c in this.alarm) {
+      if (this.alarm[c].match(re))
+        return true;
+    }
+    return false;
   }
 }

@@ -17,6 +17,9 @@ import { NodeService } from './node.service';
 export class DashboardComponent implements OnInit {
   nodes : Node[];
   query : string;
+  createEnbId : string;
+  createOamIp : string;
+  createDisplay : string = "none";
 
   constructor(private nodeService : NodeService) {}
 
@@ -24,10 +27,50 @@ export class DashboardComponent implements OnInit {
     this.nodeService.getNodes()
       .then(nodes => this.nodes = nodes);
     this.query = "";
+    this.createEnbId = "";
+    this.createOamIp = "";
+    this.createDisplay = "none";
+  }
+
+  queryNodes(query : string) : Node[] {
+    this.query.trim();
+    if (this.query === "")
+      return this.nodes;
+
+    var re = new RegExp(this.query, 'i');
+    return this.nodes.filter(function (n) {
+      return n.match(re);
+    });
   }
 
   onSelect(node : Node) : void {
     console.log('Selected:', node);
+  }
+
+  create(enbId : string, oamIp: string) : void {
+    console.log("create", enbId, oamIp);
+    this.nodeService.create(enbId, oamIp)
+      .then(node => {
+        console.log("created", node);
+        this.nodes.push(node);
+      });
+  }
+
+  remove(enbId : string) : void {
+    console.log("remove", enbId);
+    this.nodeService.delete(enbId)
+      .then(() => {
+        console.log("deleted", enbId);
+        this.nodes = this.nodes.filter(n => n.enbId != enbId);
+      });
+  }
+
+  toggleCreate() : void {
+    console.log("toggleCreate", this.createDisplay);
+    if (this.createDisplay === "none")
+      this.createDisplay = "block";
+    else
+      this.createDisplay = "none";
   }
 
   toggleCellVisible(node : Node) : void {

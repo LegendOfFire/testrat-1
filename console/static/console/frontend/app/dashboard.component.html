@@ -35,14 +35,16 @@
           <td>
             <i fa [name]="'building'"></i>
           </td>
-          <td>
+          <td colspan=2>
             {{node.enbId}}
             <span class="node-type">{{node.Type}}</span>
+            <i fa [name]="'remove'" (click)="remove(node.enbId)"
+              style="float:right"></i>
           </td>
         </tr>
         <tr>
           <td>
-            <a href="http://147.128.86.79:4200/?{{node.oamIp}}" target="_blank">
+            <a href="http://147.128.86.46:4200/?{{node.oamIp}}" target="_blank">
               <i fa [name]="'tty'"></i>
             </a>
           </td>
