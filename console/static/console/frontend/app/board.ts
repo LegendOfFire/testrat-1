@@ -6,4 +6,10 @@ export class Board {
   operLED : string;
   faultLED : string;
   maintLED : string;
+
+  match(re) : boolean {
+    return re.test(this.serial) ||
+           re.test(this.boardType) ||
+           re.test(this.date);
+  }
 }

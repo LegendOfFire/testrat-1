@@ -11,7 +11,7 @@
 
 <input [(ngModel)]="query" placeholder="Search..." style="width:100%"><br>
 <div>
-  <div *ngFor="let node of nodes"
+  <div *ngFor="let node of queryNodes(query)"
     class="module"
     (click)="onSelect(node)">
     <div>

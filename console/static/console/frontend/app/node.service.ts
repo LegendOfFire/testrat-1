@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import { Node } from './node';
 import { Cell } from './cell';
 import { Board } from './board';
+import { Alarm } from './alarm';
 
 const mockNodes : Node[] = [];
 /*
@@ -4226,11 +4227,30 @@ export class NodeService {
     return Promise.reject(error.message || error);
   }
 
+  private populate(d, s) : void {
+    for (var k in s) {
+      d[k] = s[k];
+    }
+  }
+
   private validate(data) : Node {
     var n = new Node();
-    console.log(data, n);
-    for (var k in data) {
-      n[k] = data[k];
+    n.enbId = data.enbId;
+    n.oamIp = data.oamIp;
+    for (var i in data.cell) {
+      var v = new Cell();
+      this.populate(v, data.cell[i]);
+      n.cell.push(v);
+    }
+    for (var i in data.board) {
+      var v1 = new Board();
+      this.populate(v1, data.board[i]);
+      n.board.push(v1);
+    }
+    for (var i in data.alarm) {
+      var v3 = new Alarm();
+      this.populate(v3, data.alarm[i]);
+      n.alarm.push(v3);
     }
     return n;
   }

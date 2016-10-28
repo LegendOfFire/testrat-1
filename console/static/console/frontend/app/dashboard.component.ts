@@ -32,6 +32,17 @@ export class DashboardComponent implements OnInit {
     this.createDisplay = "none";
   }
 
+  queryNodes(query : string) : Node[] {
+    this.query.trim();
+    if (this.query === "")
+      return this.nodes;
+
+    var re = new RegExp(this.query, 'i');
+    return this.nodes.filter(function (n) {
+      return n.match(re);
+    });
+  }
+
   onSelect(node : Node) : void {
     console.log('Selected:', node);
   }
