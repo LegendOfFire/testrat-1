@@ -1,32 +1,64 @@
 {% load staticfiles %}
 <html>
+
 <head>
-  <title>Test RAT</title>
+    <title>Test RAT</title>
 
-  <base href="/">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- <link rel="stylesheet" href="style.css" type="text/css">
+    <!-- <link rel="stylesheet" href="style.css" type="text/css">
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.css"> -->
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="{% static 'console/frontend/node_modules/bootstrap/dist/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'console/frontend/node_modules/bootstrap/dist/css/bootstrap-theme.min.css' %}">
-  <link rel="stylesheet" href="{% static 'console/frontend/node_modules/font-awesome/css/font-awesome.min.css' %}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'console/frontend/node_modules/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'console/frontend/node_modules/bootstrap/dist/css/bootstrap-theme.min.css' %}">
+    <link rel="stylesheet" href="{% static 'console/frontend/node_modules/font-awesome-1/css/font-awesome.min.css' %}">
 
-  <script src="{% static 'console/frontend/node_modules/core-js/client/shim.min.js' %}"></script>
-  <script src="{% static 'console/frontend/node_modules/zone.js/dist/zone.js' %}"></script>
-  <script src="{% static 'console/frontend/node_modules/reflect-metadata/Reflect.js' %}"></script>
-  <script src="{% static 'console/frontend/node_modules/systemjs/dist/system.src.js' %}"></script>
+    <style media="screen">
+        .row {
+            padding-top: 60px;
+        }
+    </style>
 
-  <script src="{% static 'console/frontend/systemjs.config.js' %}"></script>
-  <script>
-    System.import('app').catch(function (err) { console.error(err); });
-  </script>
+    <script src="{% static 'console/frontend/node_modules/core-js/client/shim.min.js' %}"></script>
+    <script src="{% static 'console/frontend/node_modules/zone.js/dist/zone.js' %}"></script>
+    <script src="{% static 'console/frontend/node_modules/reflect-metadata/Reflect.js' %}"></script>
+    <script src="{% static 'console/frontend/node_modules/systemjs/dist/system.src.js' %}"></script>
+
+    <script src="{% static 'console/frontend/systemjs.config.js' %}"></script>
+    <script>
+        System.import('app').catch(function(err) {
+            console.error(err);
+        });
+    </script>
 </head>
+
 <body>
-  <webrat-app>Loading</webrat-app>
+    <nav class="nav-bar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><strong>TAIO - Test All In One</strong></a>
+            </div>
+
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="search" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <webrat-app>Loading</webrat-app>
+        </div>
+    </div>
+
 </body>
+
 </html>

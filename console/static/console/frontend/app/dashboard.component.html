@@ -1,11 +1,36 @@
+<div class="row" style="padding-left:10px; padding-right:10px">
+    <div class="col-sm-4 col-md-3">
+        <div class="thumbnail" style="background-color: black; border-radius: 8px;">
+            <!-- <div class="caption" style="color: white">
+                <h4>ENodeB ID - </h4>
+                <h4>OAM IP - </h4>
+            </div>
+            <div class="list-group">
+                <a href="#" class="list-group-item">Cell Information</a>
+                <a href="#" class="list-group-item">Board Information</a>
+                <a href="#" class="list-group-item">Alarm Information</a>
+            </div> -->
+            <div style="padding-top: 80px; padding-bottom:80px; text-align: center">
+                <a href="#"><i class="fa fa-plus-square fa-5x" style="color: white"></i></a>
+            </div>
 
-<input placeholder="Search..." style="width:100%">
-<div>
+        </div>
+    </div>
   <div *ngFor="let node of nodes"
-    class="module"
+    class="col-sm-4 col-md-3"
     (click)="onSelect(node)">
-    <div>
-      <table width="100%">
+    <div class="thumbnail" style="background-color: black; border-radius: 8px;">
+        <div class="caption" style="color: white">
+            <h4>ENodeB ID - </h4>
+            <h4>OAM IP - </h4>
+        </div>
+        <div class="list-group">
+            <a href="#" class="list-group-item">Cell Information</a>
+            <a href="#" class="list-group-item">Board Information</a>
+            <a href="#" class="list-group-item">Alarm Information</a>
+        </div>
+
+      <!-- <table width="100%">
         <tr>
           <td>
             <i fa [name]="'building'"></i>
@@ -78,7 +103,7 @@
             {{board.date}}
           </td>
         </tr>
-      </table>
+      </table> -->
     </div>
   </div>
 </div>
