@@ -4182,18 +4182,42 @@ const mockNodes : Node[] = [];
 
 @Injectable()
 export class NodeService {
+  private headers = new Headers({'Content-Type' : 'application/json'});
   private enbUrl = '/testrat/enblist';
+  private enbDetailUrl = '/testrat/enbdetail';
 
   constructor(private http : Http) {
   }
 
   getNodes() : Promise<Node[]> {
-    //return Promise.resolve(mockNodes);
-    console.log('getNodes', this.enbUrl);
     return this.http.get(this.enbUrl)
            .toPromise()
-           //.then(response => response.json() as Node[])
-           .then(response => this.validate(response.json()))
+           .then(response => this.validateMany(response.json()))
+           .catch(this.handleError);
+  }
+
+  create(enbId : string, oamIp : string) : Promise<Node> {
+    return this.http.post(this.enbUrl + "/",
+                          JSON.stringify({enbId : enbId, oamIp : oamIp}),
+                          {headers : this.headers})
+           .toPromise()
+           .then(res => this.validate(res.json()))
+           .catch(this.handleError);
+  }
+
+  update(node : Node) : Promise<Node> {
+    const url = `${this.enbDetailUrl}/${node.enbId}/`;
+    return this.http.put(url, JSON.stringify(node), {headers : this.headers})
+           .toPromise()
+           .then(() => this.validate(node))
+           .catch(this.handleError);
+  }
+
+  delete(enbId : string) : Promise<void> {
+    const url = `${this.enbDetailUrl}/${enbId}/`;
+    return this.http.delete(url, {headers : this.headers})
+           .toPromise()
+           .then(() => null)
            .catch(this.handleError);
   }
 
@@ -4202,14 +4226,19 @@ export class NodeService {
     return Promise.reject(error.message || error);
   }
 
-  private validate(data) : Node[] {
+  private validate(data) : Node {
+    var n = new Node();
+    console.log(data, n);
+    for (var k in data) {
+      n[k] = data[k];
+    }
+    return n;
+  }
+
+  private validateMany(data) : Node[] {
     var r : Node[] = [];
     for (var x in data) {
-      var n = new Node();
-      console.log(data[x], n);
-      for (var k in data[x]) {
-        n[k] = data[x][k];
-      }
+      var n = this.validate(data[x]);
       r.push(n);
     }
     return r;

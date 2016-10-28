@@ -1,5 +1,15 @@
 
-<input placeholder="Search..." style="width:100%">
+<i fa [name]="'plus'" (click)="toggleCreate()"></i>
+<div [style.display]="createDisplay">
+  <input [(ngModel)]="createEnbId" placeholder="eNodeB ID" style="width:100%"><br>
+  <input [(ngModel)]="createOamIp" placeholder="OAM IP" style="width:100%">
+  <button class="btn"
+    (click)="create(createEnbId, createOamIp)">
+    Create
+  </button>
+</div>
+
+<input [(ngModel)]="query" placeholder="Search..." style="width:100%"><br>
 <div>
   <div *ngFor="let node of nodes"
     class="module"
@@ -10,14 +20,16 @@
           <td>
             <i fa [name]="'building'"></i>
           </td>
-          <td>
+          <td colspan=2>
             {{node.enbId}}
             <span class="node-type">{{node.Type}}</span>
+            <i fa [name]="'remove'" (click)="remove(node.enbId)"
+              style="float:right"></i>
           </td>
         </tr>
         <tr>
           <td>
-            <a href="http://147.128.86.79:4200/?{{node.oamIp}}" target="_blank">
+            <a href="http://147.128.86.46:4200/?{{node.oamIp}}" target="_blank">
               <i fa [name]="'tty'"></i>
             </a>
           </td>
