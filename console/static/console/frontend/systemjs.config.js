@@ -24,7 +24,9 @@
       // other libraries
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
-      'angular2-fontawesome': 'npm:angular2-fontawesome'
+      'angular2-fontawesome': 'npm:angular2-fontawesome',
+      'angular2-modal': 'npm:angular2-modal',
+      'angular2-modal/plugins/bootstrap' : 'npm:angular2-modal/bundles'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -39,7 +41,15 @@
         main: './index.js',
         defaultExtension: 'js'
       },
-      'angular2-fontawesome': { defaultExtension: 'js' }
+      'angular2-fontawesome': { defaultExtension: 'js' },
+      'angular2-modal': {
+        defaultExtension: 'js',
+        main : 'bundles/angular2-modal.umd'
+      },
+      'angular2-modal/plugins/bootstrap' : {
+        defaultExtension : 'js',
+        main : 'angular2-modal.bootstrap.umd'
+      }
     }
   });
 })(this);
