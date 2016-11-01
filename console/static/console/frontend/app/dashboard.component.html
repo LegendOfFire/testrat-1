@@ -37,12 +37,42 @@
                  style="float:right; color:#992222; cursor:pointer"
                  (click)="confirmRemove(node.enbId)"></i>
             </h4>
-            <h4><a href="http://147.128.83.31:4200/?{{node.oamIp}}" target="_blank">{{node.oamIp}}</a></h4>
+            <h4><a href="http://147.128.83.24:4200/?{{node.oamIp}}" target="_blank">{{node.oamIp}}</a></h4>
           </div>
           <div class="list-group">
-            <a href="#" class="list-group-item">Cell Information</a>
-            <a href="#" class="list-group-item">Board Information</a>
-            <a href="#" class="list-group-item">Alarm Information</a>
+            <div class="list-group-item" style="cursor:pointer"
+              (click)="showCellDetails(node)">
+              Cell
+              <div style="float:right">
+                <i *ngFor="let cell of node.cell"
+                   fa [size]=1 [name]="cellIconName(cell)"
+                   data-toggle="tooltip"
+                   [style.color]="cellIconColor(cell)"
+                   [style.padding]="'2px'"
+                   title="{{cell.cellId}} {{cell.admState}} {{cell.opState}}"
+                   ></i>
+              </div>
+            </div>
+            <div class="list-group-item" style="cursor:pointer"
+              (click)="showAlarmDetails(node)">
+              Alarm
+              <div style="float:right">
+                <span class="badge" *ngIf="node.alarm.length > 0" style="background-color:#c00000">{{node.alarm.length}}</span>
+              </div>
+            </div>
+            <div class="list-group-item" style="cursor:pointer"
+              (click)="showBoardDetails(node)">
+              Board
+              <div style="float:right">
+                <i *ngFor="let board of node.board"
+                   fa [size]=1 [name]="boardIconName(board)"
+                   data-toggle="tooltip"
+                   [style.color]="boardIconColor(board)"
+                   [style.padding]="'2px'"
+                   title="{{board.boardType}} OPER:{{board.operLED}} FAULT:{{board.faultLED}} MAINT:{{board.maintLED}}"
+                   ></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>

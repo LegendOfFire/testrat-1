@@ -1,11 +1,11 @@
 
 export class Cell {
-  id : string;
+  cellId : string;
   opState : string;
   admState : string;
 
   match(re) : boolean {
-    return re.test(this.id) ||
+    return re.test(this.cellId) ||
            re.test(this.opState) ||
            re.test(this.admState);
   }
