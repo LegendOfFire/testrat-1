@@ -3,11 +3,19 @@
 
 use strict;
 use warnings;
+use File::Basename;
 use DateTime;
 use JSON;
+use DBI;
 
+sub load_config;
 sub fetch_node_info;
+sub update_database;
 
+my $scriptDir = dirname($0);
+my $cmdFilename = "$scriptDir/nodechecker.cmd";
+my $cfgFilename = "$scriptDir/nodechecker.cfg";
+my $cfg = load_config($cfgFilename);
 my $ni = {};
 my $niParsers = {
   cell => sub {
@@ -103,10 +111,23 @@ my $niParsers = {
   },
 };
 
-my $server = shift @ARGV;
 for my $ip (@ARGV) {
   my $cni = fetch_node_info($ip);
   defined($cni) and $ni->{$ip} = $cni;
+}
+print to_json($ni, {pretty => 1});
+update_database($ni);
+
+sub load_config {
+  my $fn = shift;
+
+  open my $f, "<$fn" or die "Couldn't open '$fn':$!";
+  local $/;
+  my $s = <$f>;
+  close $f;
+
+  my $cfg = from_json($s);
+  return $cfg;
 }
 
 sub fetch_node_info {
@@ -115,7 +136,7 @@ sub fetch_node_info {
   my $cni = {
     ip => $ip,
   };
-  open(my $p, "ssh eyinyin\@$server /app/moshell/latest/moshell/moshell $ip <nodechecker.cmd|")
+  open(my $p, "ssh eyinyin\@$cfg->{proxy_server} /app/moshell/latest/moshell/moshell $ip <$cmdFilename|")
     or warn "Couldn't open pipe: $!";
   my $parserId = undef;
   my $parser = undef;
@@ -146,4 +167,92 @@ sub fetch_node_info {
   return $cni;
 }
 
-print to_json($ni, {pretty => 1});
+sub update_database {
+  my $ni = shift;
+
+  my $dbh = DBI->connect("dbi:SQLite:dbname=$cfg->{database}", "", "");
+
+  my $cleanEnb = $dbh->prepare(q{
+    DELETE FROM console_enodeb
+    WHERE enbId=?;
+    });
+  my $insertEnb = $dbh->prepare(q{
+    INSERT OR REPLACE INTO console_enodeb(enbId, oamIp)
+    VALUES(?, ?);
+    });
+  my $selectEnbByIp = $dbh->prepare(q{
+    SELECT enbId FROM console_enodeb
+    WHERE oamIp=?;
+    });
+  my $selectEnb = $dbh->prepare(q{
+    SELECT id FROM console_enodeb
+    WHERE enbId=?;
+    });
+
+  my $cleanCell = $dbh->prepare(q{
+    DELETE FROM console_cell
+    WHERE ownEnb_id=(SELECT id FROM console_enodeb WHERE enbId=?);
+    });
+  my $insertCell = $dbh->prepare(q{
+    INSERT OR REPLACE INTO console_cell(cellId, admState, ownEnb_id, opState)
+    VALUES(?, ?, ?, ?);
+    });
+
+  my $cleanBoard = $dbh->prepare(q{
+    DELETE FROM console_board
+    WHERE ownEnb_id=(SELECT id FROM console_enodeb WHERE enbId=?);
+    });
+  my $insertBoard = $dbh->prepare(q{
+    INSERT OR REPLACE INTO console_board(maintLED, faultLED, boardType, ownEnb_id, operLED)
+    VALUES(?, ?, ?, ?, ?);
+    });
+
+  my $cleanAlarm = $dbh->prepare(q{
+    DELETE FROM console_alarm
+    WHERE ownEnb_id=(SELECT id FROM console_enodeb WHERE enbId=?);
+    });
+  my $insertAlarm = $dbh->prepare(q{
+    INSERT OR REPLACE INTO console_alarm(severity, problem, description, ownEnb_id)
+    VALUES(?, ?, ?, ?);
+    });
+
+  $dbh->begin_work;
+  while (my ($ip, $n) = each(%$ni)) {
+    # Get eNodeB ID
+    $selectEnbByIp->execute($ip) or die $selectEnbByIp->errstr;
+    my ($enbId) = $selectEnbByIp->fetchrow_array();
+    $selectEnbByIp->finish();
+
+    # Cleanup tables
+    $cleanCell->execute($enbId) or die $cleanCell->errstr;
+    $cleanBoard->execute($enbId) or die $cleanBoard->errstr;
+    $cleanAlarm->execute($enbId) or die $cleanAlarm->errstr;
+
+    # Populate eNodeB
+    $insertEnb->execute($enbId, $ip) or die $insertEnb->errstr;
+    $selectEnb->execute($enbId) or die $selectEnb->errstr;
+    my ($enbUID) = $selectEnb->fetchrow_array();
+    $selectEnb->finish();
+
+    # Populate cell
+    while (my ($k, $v) = each(%{$n->{cell}})) {
+      $k =~ s/^.*,//g; # Only need last part of a cell LDN
+      $insertCell->execute($k, $v->{admState}, $enbUID, $v->{opState})
+        or die $insertCell->errstr;
+    }
+
+    # Populate board
+    while (my ($k, $v) = each(%{$n->{board}})) {
+      $insertBoard->execute($v->{led}->{maint}, $v->{led}->{fault}, $v->{board}, $enbUID, $v->{led}->{oper})
+        or die $insertBoard->errstr;
+    }
+
+    # Populate alarm
+    for my $alarm (@{$n->{alarm}}) {
+      $insertAlarm->execute($alarm->{severity}, $alarm->{problem}, $alarm->{mo}, $enbUID)
+        or die $insertBoard->errstr;
+    }
+  }
+  $dbh->commit;
+  $dbh->disconnect;
+}
