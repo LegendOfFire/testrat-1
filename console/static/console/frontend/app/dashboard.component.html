@@ -45,7 +45,7 @@
               Cell
               <div style="float:right">
                 <i *ngFor="let cell of node.cell"
-                   fa [size]=1 [name]="cellIconName(cell)"
+                   fa [size]=0 [name]="cellIconName(cell)"
                    data-toggle="tooltip"
                    [style.color]="cellIconColor(cell)"
                    [style.padding]="'2px'"
@@ -62,10 +62,12 @@
             </div>
             <div class="list-group-item" style="cursor:pointer"
               (click)="showBoardDetails(node)">
-              Board
-              <div style="float:right">
+              <div style="display:inline-block">
+                Board
+              </div>
+              <div style="float:right; display:inline-block">
                 <i *ngFor="let board of node.board"
-                   fa [size]=1 [name]="boardIconName(board)"
+                   fa [size]=0 [name]="boardIconName(board)"
                    data-toggle="tooltip"
                    [style.color]="boardIconColor(board)"
                    [style.padding]="'2px'"
